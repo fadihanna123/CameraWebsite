@@ -1,0 +1,250 @@
+// Styles created by Fadi Hanna
+// Variables
+$zero: 0;
+$hundred: 100%;
+$auto: auto;
+$none: none;
+$box: border-box;
+$media: 1900px;
+$ten: 10px;
+$flex: flex;
+$spaceAround: space-around;
+$onepx: 1px;
+$solidbrd: solid;
+$fivepx: 5px;
+$spaceBetween: space-between;
+$block: block;
+$bold: bold;
+$cntr: center;
+$hundredpx: 100px;
+$twohundredpx: 200px;
+$twentyfivepx: 25px;
+$twentypx: 20px;
+$twentyfivepr: 25%;
+$fiveteenpx: 15px;
+$fivetiopr: 50%;
+$blueclr: blue;
+$col: column;
+
+// Selectors
+$selectorMap: (
+  global: "*",
+  body: "body",
+  globalImg: "img",
+  label: "label",
+  btn: ".btn",
+  container: ".container",
+  logoBox: ".logobox",
+  link: ".link",
+  txtInput: ".txtinput",
+  navBar: ".navbar",
+  topBar: ".topbar",
+  loginBox: ".loginbox",
+  loginRow: ".loginrow",
+  loginCol: ".logincol",
+  logo: ".logoimg",
+  loginHeading: ".loginheading",
+  errorHeading: ".errorheading",
+  main: ".main",
+  errorPara: ".errorpara",
+  footerBox: ".footerbox",
+  footerRow: ".footerrow",
+  footerCol: ".footercol",
+  footerLinks: ".footerlinks",
+  contactBox: ".contactbox",
+  contactRow: ".contactrow",
+  contactCol: ".contactcol",
+);
+
+// Global
+#{map-get($selectorMap, global)} {
+  margin: $zero;
+  padding: $zero;
+  box-sizing: $box;
+  font-size: $hundred;
+  outline: $zero;
+  list-style: $none;
+}
+
+#{map-get($selectorMap, body)} {
+  background: #000;
+}
+
+#{map-get($selectorMap, txtInput)} {
+  display: $block;
+  width: $hundred;
+  padding: 0.375rem 0.75rem;
+}
+
+#{map-get($selectorMap, globalImg)} {
+  width: $hundred;
+  max-width: $hundred;
+  height: $auto;
+}
+
+#{map-get($selectorMap, link)} {
+  text-decoration: $none;
+  color: #000ff0;
+}
+
+#{map-get($selectorMap, label)} {
+  padding: $ten;
+}
+
+#{map-get($selectorMap, btn)} {
+  background: #000;
+  color: #fff;
+  padding: $ten;
+  display: $flex;
+  margin: $zero $auto;
+}
+
+#{map-get($selectorMap, container)} {
+  color: #fff;
+  margin: $ten;
+}
+
+// Header
+
+#{map-get($selectorMap, topBar)} {
+  display: $flex;
+  justify-content: $spaceBetween;
+  color: #000;
+  padding: $fivepx;
+  background: url("../Images/background.jpg");
+}
+
+#{map-get($selectorMap, logo)} {
+  width: 460px;
+  height: $twohundredpx;
+  border: $onepx $solidbrd #000;
+  border-radius: $hundredpx;
+}
+
+#{map-get($selectorMap, navBar)} {
+  display: $flex;
+  justify-content: $spaceAround;
+}
+
+#{map-get($selectorMap, container)}
+  #{map-get($selectorMap, navBar)}
+  #{map-get($selectorMap, link)} {
+  color: #fff;
+  border: $onepx $solidbrd #fff;
+  padding: $ten;
+  margin: $ten;
+}
+
+#{map-get($selectorMap, loginHeading)} {
+  font-weight: $bold;
+  text-align: $cntr;
+  font-size: $twentyfivepx;
+  margin: $ten;
+}
+
+#{map-get($selectorMap, loginBox)} {
+  width: 30%;
+}
+
+#{map-get($selectorMap, loginRow)} {
+  display: $flex;
+  padding: $ten;
+}
+
+#{map-get($selectorMap, loginCol)} {
+  width: 40%;
+  margin-bottom: $fiveteenpx;
+}
+
+// Main
+#{map-get($selectorMap, main)} {
+  border: $onepx $solidbrd #fff;
+  text-align: $cntr;
+  padding: $ten;
+  font-size: $twentypx;
+}
+
+#{map-get($selectorMap, contactRow)} {
+  display: $flex;
+  padding: $ten;
+  justify-content: $cntr;
+}
+
+#{map-get($selectorMap, contactCol)} {
+  width: 15%;
+  margin-bottom: $fiveteenpx;
+}
+
+#{map-get($selectorMap, errorHeading)} {
+  color: rgba(255, $zero, $zero);
+}
+
+// Footer
+#{map-get($selectorMap, footerBox)} {
+  border: $onepx $solidbrd #fff;
+  margin-top: $ten;
+  padding: $ten;
+  color: #000;
+  background: #fff;
+}
+
+#{map-get($selectorMap, footerRow)} {
+  display: $flex;
+  justify-content: $spaceAround;
+}
+
+#{map-get($selectorMap, footerCol)} {
+  width: $fivetiopr;
+  address {
+    font-size: 25px;
+  }
+}
+
+#{map-get($selectorMap, footerLinks)} {
+  display: $flex;
+  flex-direction: $col;
+  padding: $ten;
+  a {
+    font-size: $twentypx;
+  }
+}
+
+// Styles for mobiles
+@media screen and (max-width: $media) {
+  // Global
+  #{map-get($selectorMap, body)} {
+    margin: $zero;
+    padding: $zero;
+    font-size: $hundred;
+    width: $hundred;
+  }
+
+  // Header
+  #{map-get($selectorMap, topBar)} {
+    flex-direction: $col;
+  }
+
+  #{map-get($selectorMap, logo)} {
+    width: $hundred;
+    height: $hundred;
+  }
+
+  #{map-get($selectorMap, navBar)} {
+    flex-direction: $col;
+    text-align: $cntr;
+  }
+
+  // Footer
+  #{map-get($selectorMap, footerRow)} {
+    flex-direction: $col;
+  }
+
+  #{map-get($selectorMap, footerCol)} {
+    width: $hundred;
+    text-align: $cntr;
+  }
+
+  #{map-get($selectorMap, footerLinks)} {
+    text-align: $cntr;
+  }
+}
