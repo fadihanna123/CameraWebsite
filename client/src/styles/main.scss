@@ -25,6 +25,21 @@ $fiveteenpx: 15px;
 $fivetiopr: 50%;
 $blueclr: blue;
 $col: column;
+$thirtypr: 30%;
+$fortypr: 40%;
+$fiveteenpr: 15%;
+$fortypx: 40px;
+$fixed: fixed;
+$all: all;
+$easeinout: ease-in-out;
+$fivehundredpx: 500px;
+$one: 1;
+$easeout: ease-out;
+$forwards: forwards;
+$twentypr: 20%;
+$tenpr: 10%;
+$redclr: red;
+$thirtypx: 30px;
 
 // Selectors
 $selectorMap: (
@@ -54,6 +69,14 @@ $selectorMap: (
   contactBox: ".contactbox",
   contactRow: ".contactrow",
   contactCol: ".contactcol",
+  modal: ".modal",
+  modalHeader: ".modal-header",
+  modalBody: ".modal-body",
+  modalMain: ".modal-main",
+  registerBox: ".registerbox",
+  registerRow: ".registerrow",
+  registerCol: ".registercol",
+  registerSpecCol: ".registerspeccol",
 );
 
 // Global
@@ -143,7 +166,10 @@ $selectorMap: (
 }
 
 #{map-get($selectorMap, loginBox)} {
-  width: 30%;
+  width: $thirtypr;
+  label {
+    padding: $fortypx;
+  }
 }
 
 #{map-get($selectorMap, loginRow)} {
@@ -152,8 +178,69 @@ $selectorMap: (
 }
 
 #{map-get($selectorMap, loginCol)} {
-  width: 40%;
+  width: $fortypr;
   margin-bottom: $fiveteenpx;
+}
+
+#{map-get($selectorMap, modal)} {
+  position: $fixed;
+  top: $zero;
+  left: $zero;
+  width: $hundred;
+  height: $hundred;
+  background: rgba($zero, $zero, $zero, 0.6);
+  display: $block;
+  animation: showModal 0.4s $easeout $forwards;
+  animation-duration: 0.3s;
+}
+
+#{map-get($selectorMap, modalHeader)} {
+  padding: $ten;
+  margin: $ten;
+  color: $redclr;
+  font-size: $thirtypx;
+}
+
+#{map-get($selectorMap, modalBody)} {
+  padding: $ten;
+  margin: $ten;
+  color: #000;
+}
+
+#{map-get($selectorMap, modalMain)} {
+  position: $fixed;
+  background: #fff;
+  width: $fortypr;
+  height: $auto;
+  top: $twentypr;
+  left: $fivetiopr;
+  transform: translate(-$fivetiopr, -$fivetiopr);
+  padding: $fortypx;
+  text-align: $cntr;
+  font-size: $twentypx;
+}
+
+@keyframes showModal {
+  from {
+    transform: translateY(-$fivetiopr);
+    opacity: $zero;
+  }
+  to {
+    transform: translateY($zero);
+    opacity: $one;
+  }
+}
+
+@keyframes hideModal {
+  from {
+    transform: translateY($tenpr);
+    opacity: $zero;
+  }
+
+  to {
+    transform: translateX($tenpr);
+    opacity: $one;
+  }
 }
 
 // Main
@@ -171,7 +258,23 @@ $selectorMap: (
 }
 
 #{map-get($selectorMap, contactCol)} {
-  width: 15%;
+  width: $fiveteenpr;
+  margin-bottom: $fiveteenpx;
+}
+
+#{map-get($selectorMap, registerRow)} {
+  display: $flex;
+  padding: $ten;
+  justify-content: $cntr;
+}
+
+#{map-get($selectorMap, registerCol)} {
+  width: $fiveteenpr;
+  margin-bottom: $fiveteenpx;
+}
+
+#{map-get($selectorMap, registerSpecCol)} {
+  width: $fiveteenpr;
   margin-bottom: $fiveteenpx;
 }
 
@@ -196,7 +299,7 @@ $selectorMap: (
 #{map-get($selectorMap, footerCol)} {
   width: $fivetiopr;
   address {
-    font-size: 25px;
+    font-size: $twentyfivepx;
   }
 }
 
@@ -219,10 +322,15 @@ $selectorMap: (
     width: $hundred;
   }
 
-  // Header
-  #{map-get($selectorMap, topBar)} {
+  #{map-get($selectorMap, topBar)},
+  #{map-get($selectorMap, navBar)},
+  #{map-get($selectorMap, loginRow)},
+  #{map-get($selectorMap, contactRow)},
+  #{map-get($selectorMap, registerRow)} {
     flex-direction: $col;
   }
+
+  // Header
 
   #{map-get($selectorMap, logo)} {
     width: $hundred;
@@ -230,8 +338,35 @@ $selectorMap: (
   }
 
   #{map-get($selectorMap, navBar)} {
-    flex-direction: $col;
     text-align: $cntr;
+  }
+
+  #{map-get($selectorMap, loginBox)} {
+    width: $hundred;
+    label {
+      padding: $zero;
+    }
+  }
+
+  #{map-get($selectorMap, loginRow)} {
+    text-align: $cntr;
+  }
+  #{map-get($selectorMap, loginCol)} {
+    width: $hundred;
+  }
+
+  #{map-get($selectorMap, modalMain)} {
+    width: 95%;
+  }
+
+  // Main
+
+  #{map-get($selectorMap, contactCol)} {
+    width: $hundred;
+  }
+
+  #{map-get($selectorMap, registerCol)} {
+    width: $hundred;
   }
 
   // Footer
