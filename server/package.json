@@ -6,23 +6,40 @@
     "start": "ts-node-dev server"
   },
   "devDependencies": {
+    "@types/body-parser": "^1.19.0",
     "@types/cors": "^2.8.10",
+    "@types/crypto-hash": "^1.1.2",
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.11",
+    "@types/express-formidable": "^1.0.4",
+    "@types/formidable": "^1.2.1",
+    "@types/gridfs-stream": "^0.5.33",
     "@types/jsonwebtoken": "^8.5.1",
     "@types/mongoose": "^5.10.4",
     "@types/morgan": "^1.9.2",
+    "@types/multer": "^1.4.5",
+    "@types/multer-gridfs-storage": "^4.0.1",
     "@types/node": "^14.14.35",
+    "@types/striptags": "^3.1.1",
     "@types/validator": "^13.1.3",
     "typescript": "^4.2.3"
   },
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect-multiparty": "^2.2.0",
     "cors": "^2.8.5",
+    "crypto-hash": "^1.3.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "express-formidable": "^1.2.0",
+    "formidable": "^1.2.2",
+    "gridfs-stream": "^1.1.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.2",
     "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "multer-gridfs-storage": "^4.2.0",
+    "striptags": "^3.1.1",
     "validator": "^13.5.2"
   }
 }

@@ -40,6 +40,10 @@ $twentypr: 20%;
 $tenpr: 10%;
 $redclr: red;
 $thirtypx: 30px;
+$fourpx: 4px;
+$eightpx: 8px;
+$sixteenpx: 16px;
+$pointer: pointer;
 
 // Selectors
 $selectorMap: (
@@ -77,6 +81,7 @@ $selectorMap: (
   registerRow: ".registerrow",
   registerCol: ".registercol",
   registerSpecCol: ".registerspeccol",
+  logoutBox: ".logoutbox",
 );
 
 // Global
@@ -108,10 +113,6 @@ $selectorMap: (
 #{map-get($selectorMap, link)} {
   text-decoration: $none;
   color: #000ff0;
-}
-
-#{map-get($selectorMap, label)} {
-  padding: $ten;
 }
 
 #{map-get($selectorMap, btn)} {
@@ -168,7 +169,7 @@ $selectorMap: (
 #{map-get($selectorMap, loginBox)} {
   width: $thirtypr;
   label {
-    padding: $fortypx;
+    margin: 50px;
   }
 }
 
@@ -240,6 +241,18 @@ $selectorMap: (
   to {
     transform: translateX($tenpr);
     opacity: $one;
+  }
+}
+
+#{map-get($selectorMap, logoutBox)} {
+  display: $flex;
+  flex-direction: $col;
+  width: 10%;
+  a {
+    text-decoration: $none;
+  }
+  button {
+    cursor: $pointer;
   }
 }
 
@@ -357,6 +370,13 @@ $selectorMap: (
 
   #{map-get($selectorMap, modalMain)} {
     width: 95%;
+  }
+
+  #{map-get($selectorMap, logoutBox)} {
+    width: $hundred;
+    text-align: $cntr;
+    justify-content: $cntr;
+    align-items: $cntr;
   }
 
   // Main

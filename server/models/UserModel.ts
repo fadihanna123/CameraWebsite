@@ -5,9 +5,10 @@ import { IUsers } from "../typings";
 const UsersSchema: Schema = new Schema(
   {
     uname: { type: String, required: true },
-    emaiL: { type: String, required: true },
+    email: { type: String, required: true },
     mobnr: { type: String },
     psw: { type: String, required: true },
+    img: { type: String },
     locked: { type: Number },
   },
   { collection: "users" }

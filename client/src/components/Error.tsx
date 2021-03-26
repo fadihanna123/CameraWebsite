@@ -1,6 +1,10 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Error = () => {
+  useEffect(() => {
+    document.title = "Surveillance systems Inc - Sidan finns inte";
+  }, []);
   return (
     <>
       <div className="main">

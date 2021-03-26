@@ -6,6 +6,7 @@ export interface ILoginForm {
 export interface ILoginData {
   accessToken: string;
   message: string;
+  author: string;
 }
 
 export interface IRegisterForm {
@@ -19,4 +20,8 @@ export interface IRegisterForm {
 
 export interface IRegisterData {
   message: string;
+}
+
+export interface Props {
+  login: boolean;
 }

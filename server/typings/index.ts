@@ -8,7 +8,7 @@ export interface IUsers extends Document {
   psw: string;
   mobnr: string;
   locked: number;
-  img: string;
+  img: Buffer;
 }
 
 export interface Request extends ExpressRequest {

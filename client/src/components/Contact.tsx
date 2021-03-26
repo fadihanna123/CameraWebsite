@@ -1,6 +1,10 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Contact = () => {
+  useEffect(() => {
+    document.title = "Surveillance systems Inc - Kontakta oss";
+  }, []);
   return (
     <>
       <div className="main">
