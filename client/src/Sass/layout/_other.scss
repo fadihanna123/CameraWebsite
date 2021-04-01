@@ -1,0 +1,34 @@
+#{map-get($selectorMap, body)} {
+  background: #000;
+}
+
+#{map-get($selectorMap, container)} {
+  color: #fff;
+  margin: $ten;
+}
+
+#{map-get($selectorMap, main)} {
+  border: $onepx $solidbrd #fff;
+  text-align: $cntr;
+  padding: $ten;
+  font-size: $twentypx;
+}
+
+// Styles for mobiles
+@media screen and (max-width: $media) {
+  // Global
+  #{map-get($selectorMap, body)} {
+    margin: $zero;
+    padding: $zero;
+    font-size: $hundred;
+    width: $hundred;
+  }
+
+  #{map-get($selectorMap, topBar)},
+  #{map-get($selectorMap, navBar)},
+  #{map-get($selectorMap, loginRow)},
+  #{map-get($selectorMap, contactRow)},
+  #{map-get($selectorMap, registerRow)} {
+    flex-direction: $col;
+  }
+}

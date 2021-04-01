@@ -14,3 +14,7 @@ export interface IUsers extends Document {
 export interface Request extends ExpressRequest {
   user?: IUsers;
 }
+
+export interface MulterRequest extends Request {
+  files: any;
+}

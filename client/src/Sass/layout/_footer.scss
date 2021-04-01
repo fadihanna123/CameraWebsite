@@ -1,0 +1,46 @@
+// Footer
+#{map-get($selectorMap, footerBox)} {
+  border: $onepx $solidbrd #fff;
+  margin-top: $ten;
+  padding: $ten;
+  color: #000;
+  background: #fff;
+}
+
+#{map-get($selectorMap, footerRow)} {
+  display: $flex;
+  justify-content: $spaceAround;
+}
+
+#{map-get($selectorMap, footerCol)} {
+  width: $fivetiopr;
+  address {
+    font-size: $twentyfivepx;
+  }
+}
+
+#{map-get($selectorMap, footerLinks)} {
+  display: $flex;
+  flex-direction: $col;
+  padding: $ten;
+  a {
+    font-size: $twentypx;
+  }
+}
+
+// Styles for mobiles
+@media screen and (max-width: $media) {
+  // Footer
+  #{map-get($selectorMap, footerRow)} {
+    flex-direction: $col;
+  }
+
+  #{map-get($selectorMap, footerCol)} {
+    width: $hundred;
+    text-align: $cntr;
+  }
+
+  #{map-get($selectorMap, footerLinks)} {
+    text-align: $cntr;
+  }
+}

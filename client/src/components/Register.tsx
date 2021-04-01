@@ -25,12 +25,16 @@ const Register = ({ login }: Props) => {
     try {
       setLoading(true);
 
-      const { data } = await axios.post<IRegisterData>(
-        "register",
-        registerForm
-      );
-      setViewModal(true);
+      const file = document.querySelector(
+        'input[type="file"]'
+      ) as HTMLInputElement;
 
+      const myForm: FormData = new FormData();
+      myForm.append("img", file!.files![0]);
+
+      const { data } = await axios.post<IRegisterData>("register", myForm);
+
+      setViewModal(true);
       setMsg(data.message);
     } catch (err) {
       setError(err.message);

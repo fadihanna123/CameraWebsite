@@ -1,0 +1,77 @@
+#{map-get($selectorMap, topBar)} {
+  display: $flex;
+  justify-content: $spaceBetween;
+  color: #000;
+  padding: $fivepx;
+  background: url("../../Images/background.jpg");
+}
+
+#{map-get($selectorMap, logo)} {
+  width: 460px;
+  height: $twohundredpx;
+  border: $onepx $solidbrd #000;
+  border-radius: $hundredpx;
+}
+
+#{map-get($selectorMap, loginHeading)} {
+  font-weight: $bold;
+  text-align: $cntr;
+  font-size: $twentyfivepx;
+  margin: $ten;
+}
+
+#{map-get($selectorMap, loginBox)} {
+  width: $thirtypr;
+  label {
+    margin: 50px;
+  }
+}
+
+#{map-get($selectorMap, loginRow)} {
+  display: $flex;
+  padding: $ten;
+}
+
+#{map-get($selectorMap, loginCol)} {
+  width: $fortypr;
+  margin-bottom: $fiveteenpx;
+}
+
+#{map-get($selectorMap, logoutBox)} {
+  display: $flex;
+  flex-direction: $col;
+  width: 10%;
+  a {
+    text-decoration: $none;
+  }
+  button {
+    cursor: $pointer;
+  }
+}
+@media screen and (max-width: $media) {
+  #{map-get($selectorMap, logo)} {
+    width: $hundred;
+    height: $hundred;
+  }
+
+  #{map-get($selectorMap, loginBox)} {
+    width: $hundred;
+    label {
+      padding: $zero;
+    }
+  }
+
+  #{map-get($selectorMap, loginRow)} {
+    text-align: $cntr;
+  }
+  #{map-get($selectorMap, loginCol)} {
+    width: $hundred;
+  }
+
+  #{map-get($selectorMap, logoutBox)} {
+    width: $hundred;
+    text-align: $cntr;
+    justify-content: $cntr;
+    align-items: $cntr;
+  }
+}

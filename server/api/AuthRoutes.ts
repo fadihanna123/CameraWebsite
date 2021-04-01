@@ -5,10 +5,7 @@ import { sha256 } from "crypto-hash";
 import striptags from "striptags";
 import { router } from "../config";
 import { Users } from "../models";
-import { IUsers, Request } from "../typings";
-import multer from "multer";
-const upload = multer({ dest: "/uploads/" });
-import fs from "fs";
+import { IUsers, MulterRequest, Request } from "../typings";
 
 const auth = async (req: Request, res: Response, next: NextFunction) => {
   const Header = req.headers.authorization;
@@ -65,11 +62,12 @@ router.post("/login", async (req: Request, res: Response) => {
 
 router.post(
   "/register",
-  upload.single("img"),
   async (req: Request, res: Response, next: NextFunction) => {
-    const { uname, email, mobnr, psw, repsw, img } = req.body;
+    const { uname, email, mobnr, psw, repsw } = req.body;
 
-    if (!uname || !email || !mobnr || !psw || !repsw || !img) {
+    console.log(req.body);
+
+    if (!uname || !email || !mobnr || !psw || !repsw) {
       // Om användaren inte fyllde i alla obligatoriska rutor.
       res.json({ message: "Du måste fylla i alla obligatoriska rutor!" });
     } // Slut om användaren inte fyllde i alla obligatoriska rutor.
@@ -113,16 +111,39 @@ router.post(
             else {
               // Om användaren inte hittades i databasen.
               try {
+                let file;
+
+                file = (req as MulterRequest).files.myFile
+                  ? (req as MulterRequest).files.myFile
+                  : "";
+
+                if (!req.files || Object.keys(req.files).length === 0) {
+                  return res.status(400).send("Var vänlig välj en bild.");
+                }
+
+                await file.mv(
+                  "./uploads/" + file.name,
+                  file.name,
+                  (err: Error) => {
+                    if (err) return console.log(err);
+                  }
+                );
+
                 const UserModel: IUsers = new Users({
-                  uname: striptags(req.body.uname),
-                  email: striptags(req.body.email),
-                  psw: await sha256(striptags(req.body.psw)),
-                  mobnr: striptags(req.body.mobnr),
+                  uname: striptags(uname),
+                  email: striptags(email),
+                  psw: await sha256(striptags(psw)),
+                  mobnr: striptags(mobnr),
                   locked: 0,
-                  img: req.body.img.substr(12),
+                  img: (req as MulterRequest).files.img.name,
                 });
 
-                await UserModel.save();
+                const done = await UserModel.save();
+                done &&
+                  res.send({
+                    message:
+                      "Tack för registrering. \n Var vänlig och logga in.",
+                  });
               } catch (error) {
                 console.log("\x1b[31m", error.message);
               }

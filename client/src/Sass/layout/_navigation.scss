@@ -1,0 +1,20 @@
+#{map-get($selectorMap, navBar)} {
+  display: $flex;
+  justify-content: $spaceAround;
+}
+
+#{map-get($selectorMap, container)}
+  #{map-get($selectorMap, navBar)}
+  #{map-get($selectorMap, link)} {
+  color: #fff;
+  border: $onepx $solidbrd #fff;
+  padding: $ten;
+  margin: $ten;
+}
+
+// Styles for mobile
+@media screen and (max-width: $media) {
+  #{map-get($selectorMap, navBar)} {
+    text-align: $cntr;
+  }
+}

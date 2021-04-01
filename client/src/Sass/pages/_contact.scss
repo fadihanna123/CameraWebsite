@@ -1,0 +1,16 @@
+#{map-get($selectorMap, contactRow)} {
+  display: $flex;
+  padding: $ten;
+  justify-content: $cntr;
+}
+
+#{map-get($selectorMap, contactCol)} {
+  width: $fiveteenpr;
+  margin-bottom: $fiveteenpx;
+}
+// Styles for mobiles
+@media screen and (max-width: $media) {
+  #{map-get($selectorMap, contactCol)} {
+    width: $hundred;
+  }
+}

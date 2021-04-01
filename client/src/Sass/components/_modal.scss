@@ -1,0 +1,66 @@
+#{map-get($selectorMap, modal)} {
+  position: $fixed;
+  top: $zero;
+  left: $zero;
+  width: $hundred;
+  height: $hundred;
+  background: rgba($zero, $zero, $zero, 0.6);
+  display: $block;
+  animation: showModal 0.4s $easeout $forwards;
+  animation-duration: 0.3s;
+}
+
+#{map-get($selectorMap, modalHeader)} {
+  padding: $ten;
+  margin: $ten;
+  color: $redclr;
+  font-size: $thirtypx;
+}
+
+#{map-get($selectorMap, modalBody)} {
+  padding: $ten;
+  margin: $ten;
+  color: #000;
+}
+
+#{map-get($selectorMap, modalMain)} {
+  position: $fixed;
+  background: #fff;
+  width: $fortypr;
+  height: $auto;
+  top: $twentypr;
+  left: $fivetiopr;
+  transform: translate(-$fivetiopr, -$fivetiopr);
+  padding: $fortypx;
+  text-align: $cntr;
+  font-size: $twentypx;
+}
+
+@keyframes showModal {
+  from {
+    transform: translateY(-$fivetiopr);
+    opacity: $zero;
+  }
+  to {
+    transform: translateY($zero);
+    opacity: $one;
+  }
+}
+
+@keyframes hideModal {
+  from {
+    transform: translateY($tenpr);
+    opacity: $zero;
+  }
+
+  to {
+    transform: translateX($tenpr);
+    opacity: $one;
+  }
+}
+// Styles for mobiles
+@media screen and (max-width: $media) {
+  #{map-get($selectorMap, modalMain)} {
+    width: 95%;
+  }
+}
