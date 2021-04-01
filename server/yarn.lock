@@ -104,6 +104,26 @@
   dependencies:
     "@types/node" "*"
 
+<<<<<<< HEAD
+=======
+"@types/multer-gridfs-storage@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@types/multer-gridfs-storage/-/multer-gridfs-storage-4.0.1.tgz#7d83488322248daf2dfefeaac5edac7402421ba3"
+  integrity sha512-LVn8jrm4Vv4mHn2N96TCMD8mMzrWMLF1Ah9Y24Z8+ZaaL53TkdEatdHW5U61TBMEOhmefpOMj6ujyndzHHIVRg==
+  dependencies:
+    "@types/express" "*"
+    "@types/mongodb" "*"
+    "@types/mongoose" "*"
+    "@types/multer" "*"
+
+"@types/multer@*", "@types/multer@^1.4.5":
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/@types/multer/-/multer-1.4.5.tgz#db0557562307e9adb6661a9500c334cd7ddd0cd9"
+  integrity sha512-9b/0a8JyrR0r2nQhL73JR86obWL7cogfX12augvlrvcpciCo/hkvEsgu80Z4S2g2DHGVXHr8pUIi1VhqFJ8Ufw==
+  dependencies:
+    "@types/express" "*"
+
+>>>>>>> 84d6240b4ac8700ea6d5b1cacbddf18540ec6c2c
 "@types/node@*", "@types/node@^14.14.37":
   version "14.14.37"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.14.37.tgz#a3dd8da4eb84a996c36e331df98d82abd76b516e"
