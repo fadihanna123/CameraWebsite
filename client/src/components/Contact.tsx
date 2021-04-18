@@ -5,6 +5,7 @@ const Contact = () => {
   useEffect(() => {
     document.title = "Surveillance systems Inc - Kontakta oss";
   }, []);
+
   return (
     <>
       <div className="main">

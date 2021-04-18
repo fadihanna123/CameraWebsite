@@ -5,6 +5,7 @@ const Error = () => {
   useEffect(() => {
     document.title = "Surveillance systems Inc - Sidan finns inte";
   }, []);
+
   return (
     <>
       <div className="main">

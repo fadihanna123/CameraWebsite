@@ -1,8 +1,10 @@
 import { useEffect } from "react";
+
 const About = () => {
   useEffect(() => {
     document.title = "Surveillance systems Inc - Om oss";
   }, []);
+
   return (
     <>
       <div className="main">

@@ -1,8 +1,8 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
-import { ILoginData, ILoginForm, Props } from "../typings";
 import PropTypes from "prop-types";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { ILoginData, ILoginForm, Props } from "typings";
 
 const Login = ({ login }: Props) => {
   const [msg, setMsg] = useState<string>("");

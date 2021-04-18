@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
-import LogoImg from "../Images/logo.png";
-import Login from "../components/Login";
-import { Props } from "../typings";
+import Login from "components/Login";
+import LogoImg from "Images/logo.png";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import { Props } from "typings";
 
 const Header = ({ login }: Props) => {
   return (

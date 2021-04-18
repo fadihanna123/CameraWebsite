@@ -1,8 +1,7 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-
-import { IRegisterData, IRegisterForm, Props } from "../typings";
+import { useEffect, useState } from "react";
+import { IRegisterData, IRegisterForm, Props } from "typings";
 
 const Register = ({ login }: Props) => {
   const [msg, setMsg] = useState<string>("");

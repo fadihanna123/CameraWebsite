@@ -1,15 +1,14 @@
-import { Redirect, Route, Switch } from "react-router-dom";
 import PropTypes from "prop-types";
+import { Redirect, Route, Switch } from "react-router-dom";
+import { Props } from "typings";
 
 import About from "./About";
 import Contact from "./Contact";
-import Error from "./Error";
-import Register from "./Register";
 import Profile from "./Dashboard/Profile";
+import Error from "./Error";
 import Logout from "./Logout";
-
+import Register from "./Register";
 import Start from "./Start";
-import { Props } from "../typings";
 
 const Main = ({ login }: Props) => {
   return (

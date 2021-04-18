@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
-import { Props } from "../typings";
 import { Redirect, useHistory } from "react-router-dom";
+import { Props } from "typings";
 
 const Logout = ({ login }: Props) => {
   const history = useHistory();

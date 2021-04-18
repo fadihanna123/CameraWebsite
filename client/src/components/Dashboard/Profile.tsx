@@ -1,6 +1,6 @@
-import { useEffect } from "react";
 import PropTypes from "prop-types";
-import { Props } from "../../typings";
+import { useEffect } from "react";
+import { Props } from "typings";
 
 const Profile = ({ login }: Props) => {
   useEffect(() => {

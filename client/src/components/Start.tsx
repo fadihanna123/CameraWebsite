@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+
 const Start = () => {
   useEffect(() => {
     document.title = "Surveillance systems Inc - Startsida";
