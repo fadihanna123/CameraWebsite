@@ -1,14 +1,15 @@
 import axios from "axios";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import { ILoginData, ILoginForm, Props } from "typings";
+import LogOutBox from "./LogOutBox";
+import Modal from "./Modal";
 
 const Login = ({ login }: Props) => {
   const [msg, setMsg] = useState<string>("");
+  const [viewModal, setViewModal] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
-  const [viewModal, setViewModal] = useState<boolean>(false);
   const [loginForm, setLoginForm] = useState<ILoginForm>({
     uname: "",
     psw: "",
@@ -89,50 +90,16 @@ const Login = ({ login }: Props) => {
               Logga in
             </button>
           </div>
-          {viewModal && (
-            <div
-              style={{ position: "fixed" }}
-              onClick={(e) => e.target && setViewModal(!viewModal)}
-            >
-              <div className="modal">
-                <section
-                  className="modal-main"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                  }}
-                >
-                  <div className="modal-header">
-                    Varning
-                    <hr />
-                  </div>
-                  <div className="modal-body">
-                    {loading ? "Laddar..." : error ? error : msg}
-                    <br />
-                    <hr />
-                  </div>
-                  <button
-                    type="button"
-                    className="btn"
-                    onClick={() => setViewModal(false)}
-                  >
-                    Stäng
-                  </button>
-                </section>
-              </div>
-            </div>
-          )}
+          <Modal
+            viewModal={viewModal}
+            setViewModal={setViewModal}
+            error={error}
+            msg={msg}
+            loading={loading}
+          />
         </>
       ) : (
-        <div className="logoutbox">
-          <h4>
-            <b>Hej {sessionStorage.getItem("Author")}</b>
-          </h4>
-          <Link to="/Logout">
-            <button className="btn" style={{ margin: "10px" }}>
-              Logga ut
-            </button>
-          </Link>
-        </div>
+        <LogOutBox />
       )}
     </>
   );
