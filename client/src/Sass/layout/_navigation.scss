@@ -6,14 +6,14 @@
 #{map-get($selectorMap, container)}
   #{map-get($selectorMap, navBar)}
   #{map-get($selectorMap, link)} {
-  color: #fff;
-  border: $onepx $solidbrd #fff;
-  padding: $ten;
-  margin: $ten;
+  color: color(white);
+  border: 1px $solidbrd color(white);
+  padding: 10px;
+  margin: 10px;
 }
 
 // Styles for mobile
-@media screen and (max-width: $media) {
+@media screen and (max-width: 1900px) {
   #{map-get($selectorMap, navBar)} {
     text-align: $cntr;
   }

@@ -6,6 +6,7 @@ const Profile = ({ login }: Props) => {
   useEffect(() => {
     document.title = "Surveillance systems Inc - Profil";
   }, []);
+
   return (
     <>
       <div className="main">

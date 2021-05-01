@@ -1,22 +1,22 @@
 #{map-get($selectorMap, registerRow)} {
   display: $flex;
-  padding: $ten;
+  padding: 10px;
   justify-content: $cntr;
 }
 
 #{map-get($selectorMap, registerCol)} {
-  width: $fiveteenpr;
-  margin-bottom: $fiveteenpx;
+  width: 15%;
+  margin-bottom: 15px;
 }
 
 #{map-get($selectorMap, registerSpecCol)} {
-  width: $fiveteenpr;
-  margin-bottom: $fiveteenpx;
+  width: 15%;
+  margin-bottom: 15px;
 }
 
 // Styles for mobiles
-@media screen and (max-width: $media) {
+@media screen and (max-width: 1900px) {
   #{map-get($selectorMap, registerCol)} {
-    width: $hundred;
+    width: 100%;
   }
 }

@@ -1,10 +1,10 @@
 // Footer
 #{map-get($selectorMap, footerBox)} {
-  border: $onepx $solidbrd #fff;
-  margin-top: $ten;
-  padding: $ten;
+  border: 1px $solidbrd color(white);
+  margin-top: 10px;
+  padding: 10px;
   color: #000;
-  background: #fff;
+  background: color(white);
 }
 
 #{map-get($selectorMap, footerRow)} {
@@ -13,30 +13,32 @@
 }
 
 #{map-get($selectorMap, footerCol)} {
-  width: $fivetiopr;
-  address {
-    font-size: $twentyfivepx;
+  width: 50%;
+
+  #{map-get($selectorMap, address)} {
+    font-size: 25px;
   }
 }
 
 #{map-get($selectorMap, footerLinks)} {
   display: $flex;
   flex-direction: $col;
-  padding: $ten;
-  a {
-    font-size: $twentypx;
+  padding: 10px;
+
+  #{map-get($selectorMap, footerLinks)} {
+    font-size: 20px;
   }
 }
 
 // Styles for mobiles
-@media screen and (max-width: $media) {
+@media screen and (max-width: 1900px) {
   // Footer
   #{map-get($selectorMap, footerRow)} {
     flex-direction: $col;
   }
 
   #{map-get($selectorMap, footerCol)} {
-    width: $hundred;
+    width: 100%;
     text-align: $cntr;
   }
 

@@ -1,75 +1,82 @@
 #{map-get($selectorMap, topBar)} {
   display: $flex;
-  justify-content: $spaceBetween;
-  color: #000;
-  padding: $fivepx;
+  justify-content: space-between;
+  color: color(black);
+  padding: 5px;
   background: url("../../Images/background.jpg");
 }
 
 #{map-get($selectorMap, logo)} {
   width: 460px;
-  height: $twohundredpx;
-  border: $onepx $solidbrd #000;
-  border-radius: $hundredpx;
+  height: 200px;
+  border: 1px $solidbrd color(black);
+  border-radius: 100px;
 }
 
 #{map-get($selectorMap, loginHeading)} {
-  font-weight: $bold;
+  font-weight: bold;
   text-align: $cntr;
-  font-size: $twentyfivepx;
-  margin: $ten;
+  font-size: 25px;
+  margin: 10px;
 }
 
 #{map-get($selectorMap, loginBox)} {
-  width: $thirtypr;
-  label {
+  width: 30%;
+
+  #{map-get($selectorMap, label)} {
     margin: 50px;
   }
 }
 
 #{map-get($selectorMap, loginRow)} {
   display: $flex;
-  padding: $ten;
+  padding: 10px;
 }
 
 #{map-get($selectorMap, loginCol)} {
-  width: $fortypr;
-  margin-bottom: $fiveteenpx;
+  width: 40%;
+  margin-bottom: 15px;
 }
 
 #{map-get($selectorMap, logoutBox)} {
   display: $flex;
   flex-direction: $col;
   width: 10%;
-  a {
+
+  #{map-get($selectorMap, link)} {
     text-decoration: $none;
   }
-  button {
-    cursor: $pointer;
+
+  #{map-get($selectorMap, btn)} {
+    cursor: pointer;
   }
 }
-@media screen and (max-width: $media) {
+
+// Styles for mobile
+@media screen and (max-width: 1900px) {
   #{map-get($selectorMap, logo)} {
-    width: $hundred;
-    height: $hundred;
+    width: 100%;
+    height: 100%;
   }
 
   #{map-get($selectorMap, loginBox)} {
-    width: $hundred;
-    label {
-      padding: $zero;
+    width: 100%;
+
+    #{map-get($selectorMap, label)} {
+      padding: 0;
     }
   }
 
   #{map-get($selectorMap, loginRow)} {
     text-align: $cntr;
   }
+
   #{map-get($selectorMap, loginCol)} {
-    width: $hundred;
+    width: 100%;
   }
 
   #{map-get($selectorMap, logoutBox)} {
-    width: $hundred;
+    width: 100%;
     text-align: $cntr;
     justify-content: $cntr;
     align-items: $cntr;

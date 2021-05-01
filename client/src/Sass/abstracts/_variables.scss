@@ -1,48 +1,19 @@
 // Variables
-$zero: 0;
-$hundred: 100%;
 $auto: auto;
 $none: none;
-$box: border-box;
-$media: 1900px;
-$ten: 10px;
 $flex: flex;
 $spaceAround: space-around;
-$onepx: 1px;
 $solidbrd: solid;
-$fivepx: 5px;
-$spaceBetween: space-between;
 $block: block;
-$bold: bold;
 $cntr: center;
-$hundredpx: 100px;
-$twohundredpx: 200px;
-$twentyfivepx: 25px;
-$twentypx: 20px;
-$twentyfivepr: 25%;
-$fiveteenpx: 15px;
-$fivetiopr: 50%;
-$blueclr: blue;
 $col: column;
-$thirtypr: 30%;
-$fortypr: 40%;
-$fiveteenpr: 15%;
-$fortypx: 40px;
 $fixed: fixed;
-$all: all;
-$easeinout: ease-in-out;
-$fivehundredpx: 500px;
-$one: 1;
-$easeout: ease-out;
-$forwards: forwards;
-$twentypr: 20%;
-$tenpr: 10%;
-$redclr: red;
-$thirtypx: 30px;
-$fourpx: 4px;
-$eightpx: 8px;
-$sixteenpx: 16px;
-$pointer: pointer;
+$colors: (
+  blue: #0000ff,
+  red: #ff0000,
+  black: #000,
+  white: #fff,
+);
 
 // Selectors
 $selectorMap: (
@@ -51,6 +22,8 @@ $selectorMap: (
   globalImg: "img",
   label: "label",
   btn: ".btn",
+  globalLink: "a",
+  address: "address",
   container: ".container",
   logoBox: ".logobox",
   link: ".link",
@@ -82,3 +55,8 @@ $selectorMap: (
   registerSpecCol: ".registerspeccol",
   logoutBox: ".logoutbox",
 );
+
+// Functions
+@function color($val) {
+  @return map-get($colors, $val);
+}

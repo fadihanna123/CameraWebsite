@@ -1,27 +1,27 @@
 #{map-get($selectorMap, body)} {
-  background: #000;
+  background: color(black);
 }
 
 #{map-get($selectorMap, container)} {
-  color: #fff;
-  margin: $ten;
+  color: color(white);
+  margin: 10px;
 }
 
 #{map-get($selectorMap, main)} {
-  border: $onepx $solidbrd #fff;
+  border: 1px $solidbrd color(white);
   text-align: $cntr;
-  padding: $ten;
-  font-size: $twentypx;
+  padding: 10px;
+  font-size: 20px;
 }
 
 // Styles for mobiles
-@media screen and (max-width: $media) {
+@media screen and (max-width: 1900px) {
   // Global
   #{map-get($selectorMap, body)} {
-    margin: $zero;
-    padding: $zero;
-    font-size: $hundred;
-    width: $hundred;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    width: 100%;
   }
 
   #{map-get($selectorMap, topBar)},
