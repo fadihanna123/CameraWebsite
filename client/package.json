@@ -14,6 +14,7 @@
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "recoil": "^0.3.1",
     "sass": "^1.34.0",
     "typescript": "^4.2.4",
     "web-vitals": "^1.1.2"
@@ -45,6 +46,7 @@
   "devDependencies": {
     "@types/axios": "^0.14.0",
     "@types/react-router-dom": "^5.1.7",
+    "@types/recoil": "^0.0.9",
     "@types/sass": "^1.16.0"
   }
 }

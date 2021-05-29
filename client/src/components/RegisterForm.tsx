@@ -1,13 +1,16 @@
-import { useState } from "react";
 import axios from "axios";
+import { useState } from "react";
+import { useRecoilState } from "recoil";
+import { errorState, loadingState, msgState, viewModalState } from "States";
 import { IRegisterData, IRegisterForm } from "typings";
+
 import Modal from "./Modal";
 
 const RegisterForm = () => {
-  const [loading, setLoading] = useState<boolean>(false);
-  const [msg, setMsg] = useState<string>("");
-  const [error, setError] = useState<string>("");
-  const [viewModal, setViewModal] = useState<boolean>(false);
+  const [, setLoading] = useRecoilState(loadingState);
+  const [, setMsg] = useRecoilState(msgState);
+  const [, setError] = useRecoilState(errorState);
+  const [, setViewModal] = useRecoilState(viewModalState);
 
   const [registerForm, setRegisterForm] = useState<IRegisterForm>({
     uname: "",
@@ -157,13 +160,7 @@ const RegisterForm = () => {
             Registrera dig
           </button>
         </div>
-        <Modal
-          viewModal={viewModal}
-          setViewModal={setViewModal}
-          error={error}
-          msg={msg}
-          loading={loading}
-        />
+        <Modal />
       </form>
     </>
   );

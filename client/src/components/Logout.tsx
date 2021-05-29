@@ -1,9 +1,10 @@
-import PropTypes from "prop-types";
 import { Redirect, useHistory } from "react-router-dom";
-import { Props } from "typings";
+import { useRecoilState } from "recoil";
+import { loginState } from "States";
 
-const Logout = ({ login }: Props) => {
+const Logout = () => {
   const history = useHistory();
+  const [login] = useRecoilState(loginState);
 
   const DoLogout = () => {
     sessionStorage.removeItem("Token");
@@ -12,10 +13,6 @@ const Logout = ({ login }: Props) => {
   };
 
   return <>{login ? DoLogout : <Redirect to="/Start" />}</>;
-};
-
-Logout.propTypes = {
-  login: PropTypes.bool.isRequired,
 };
 
 export default Logout;

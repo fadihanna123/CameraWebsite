@@ -1,11 +1,12 @@
-import PropTypes from "prop-types";
-import { useEffect, useState } from "react";
-import { Props } from "typings";
+import { useEffect } from "react";
+import { useRecoilState } from "recoil";
+import { loginState, viewModalState } from "States";
+
 import RegisterForm from "./RegisterForm";
 
-const Register = ({ login }: Props) => {
-  // eslint-disable-next-line
-  const [viewModal, setViewModal] = useState<boolean>(false);
+const Register = () => {
+  const [, setViewModal] = useRecoilState<boolean>(viewModalState);
+  const [login] = useRecoilState<boolean>(loginState);
 
   useEffect(() => {
     document.title = "Surveillance systems Inc - Registrera dig";
@@ -16,7 +17,7 @@ const Register = ({ login }: Props) => {
     };
     document.addEventListener("keydown", esc, false);
     return () => document.removeEventListener("keydown", esc, false);
-  }, []);
+  }, [setViewModal]);
 
   return (
     <>
@@ -33,10 +34,6 @@ const Register = ({ login }: Props) => {
       </div>
     </>
   );
-};
-
-Register.propTypes = {
-  login: PropTypes.bool.isRequired,
 };
 
 export default Register;

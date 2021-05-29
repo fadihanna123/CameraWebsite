@@ -1,19 +1,17 @@
 import Login from "components/Login";
 import LogoImg from "Images/logo.png";
-import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { Props } from "typings";
 
-const Header = ({ login }: Props) => {
+const Header = () => {
   return (
-    <>
+    <header>
       <nav className="topbar">
         <div className="logobox">
           <Link to="/">
             <img src={LogoImg} className="logoimg" alt="Logobild" />
           </Link>
         </div>
-        <Login login={login} />
+        <Login />
       </nav>
       <div className="navbar">
         <Link to="/" className="link">
@@ -29,12 +27,8 @@ const Header = ({ login }: Props) => {
           Om oss
         </Link>
       </div>
-    </>
+    </header>
   );
-};
-
-Header.propTypes = {
-  login: PropTypes.bool.isRequired,
 };
 
 export default Header;

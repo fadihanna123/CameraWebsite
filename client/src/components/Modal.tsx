@@ -1,7 +1,12 @@
-import { Props } from "typings";
-import PropTypes from "prop-types";
+import { useRecoilState } from "recoil";
+import { errorState, loadingState, msgState, viewModalState } from "States";
 
-const Modal = ({ viewModal, setViewModal, loading, error, msg }: Props) => {
+const Modal = () => {
+  const [viewModal, setViewModal] = useRecoilState(viewModalState);
+  const [loading] = useRecoilState(loadingState);
+  const [error] = useRecoilState(errorState);
+  const [msg] = useRecoilState(msgState);
+
   return (
     <>
       {viewModal && (
@@ -38,21 +43,6 @@ const Modal = ({ viewModal, setViewModal, loading, error, msg }: Props) => {
       )}
     </>
   );
-};
-
-Modal.propTypes = {
-  loading: PropTypes.bool.isRequired,
-  error: PropTypes.string.isRequired,
-  msg: PropTypes.string.isRequired,
-  viewModal: PropTypes.bool.isRequired,
-  setViewModal: PropTypes.func.isRequired,
-};
-Modal.defaultProps = {
-  loading: false,
-  error: "",
-  msg: "",
-  viewModal: false,
-  setViewModal: false,
 };
 
 export default Modal;

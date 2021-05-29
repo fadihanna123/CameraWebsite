@@ -1,27 +1,23 @@
-import PropTypes from "prop-types";
 import { useEffect } from "react";
-import { Props } from "typings";
+import { useRecoilState } from "recoil";
+import { loginState } from "States";
 
-const Profile = ({ login }: Props) => {
+const Profile = () => {
+  const [login] = useRecoilState(loginState);
+
   useEffect(() => {
     document.title = "Surveillance systems Inc - Profil";
   }, []);
 
   return (
-    <>
-      <div className="main">
-        {login
-          ? {
-              /*  Profile */
-            }
-          : "Du måste logga in för att se innehållet"}
-      </div>
-    </>
+    <main className="main">
+      {login
+        ? {
+            /*  Profile */
+          }
+        : "Du måste logga in för att se innehållet"}
+    </main>
   );
-};
-
-Profile.propTypes = {
-  login: PropTypes.bool.isRequired,
 };
 
 export default Profile;

@@ -1,12 +1,3 @@
-export interface Props {
-  login?: boolean;
-  viewModal?: boolean;
-  setViewModal?: (viewModal: boolean) => void;
-  loading?: boolean;
-  error?: string;
-  msg?: string;
-}
-
 export interface ILoginForm {
   uname: string;
   psw: string;
