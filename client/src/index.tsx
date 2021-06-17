@@ -1,3 +1,4 @@
+import "normalize.css";
 import "Sass/_main.scss";
 
 import App from "App";
