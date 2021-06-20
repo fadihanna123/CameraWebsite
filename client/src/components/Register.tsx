@@ -10,11 +10,7 @@ const Register = () => {
 
   useEffect(() => {
     document.title = "Surveillance systems Inc - Registrera dig";
-    const esc = (e: any) => {
-      if (e.key === "Escape") {
-        setViewModal(false);
-      }
-    };
+    const esc = (e: any) => e.key === "Escape" && setViewModal(false);
     document.addEventListener("keydown", esc, false);
     return () => document.removeEventListener("keydown", esc, false);
   }, [setViewModal]);

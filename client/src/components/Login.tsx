@@ -46,9 +46,7 @@ const Login = () => {
 
   useEffect(() => {
     const esc = (e: any) => {
-      if (e.key === "Escape") {
-        setViewModal(false);
-      }
+      e.key === "Escape" && setViewModal(false);
     };
     document.addEventListener("keydown", esc, false);
     return () => document.removeEventListener("keydown", esc, false);

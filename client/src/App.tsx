@@ -15,11 +15,7 @@ const App = () => {
   const Token: string | null = sessionStorage.getItem("Token");
 
   useEffect(() => {
-    if (Token) {
-      setLogin(true);
-    } else {
-      setLogin(false);
-    }
+    Token ? setLogin(true) : setLogin(false);
   }, [Token, setLogin]);
 
   return (
