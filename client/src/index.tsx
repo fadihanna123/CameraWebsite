@@ -1,5 +1,5 @@
 import "normalize.css";
-import "Sass/_main.scss";
+import "Sass/main.scss";
 
 import App from "App";
 import React from "react";

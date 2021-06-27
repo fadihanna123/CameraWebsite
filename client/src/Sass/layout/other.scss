@@ -15,7 +15,7 @@
 }
 
 // Styles for mobiles
-@media screen and (max-width: 1900px) {
+@media screen and (min-width: 320px) and (max-width: 768px) {
   // Global
   #{map-get($selectorMap, body)} {
     margin: 0;

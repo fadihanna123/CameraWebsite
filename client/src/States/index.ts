@@ -27,3 +27,15 @@ export const loginFormState = atom<ILoginForm>({
     psw: "",
   },
 });
+
+export const registerFormState = atom({
+  key: "registerFormState",
+  default: {
+    uname: "",
+    email: "",
+    mobnr: "",
+    psw: "",
+    repsw: "",
+    img: "",
+  },
+});

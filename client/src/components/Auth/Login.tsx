@@ -1,48 +1,18 @@
-import axios from "axios";
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
-import {
-  errorState,
-  loadingState,
-  loginFormState,
-  loginState,
-  msgState,
-  viewModalState,
-} from "States";
-import { ILoginData } from "typings";
+import { loginFormState, loginState, viewModalState } from "States";
 
 import LogOutBox from "./LogOutBox";
-import Modal from "./Modal";
+import Modal from "../Modal";
+import { CheckLogin } from "./CheckLogin";
 
 const Login = () => {
-  const [, setMsg] = useRecoilState(msgState);
   const [, setViewModal] = useRecoilState(viewModalState);
-  const [, setError] = useRecoilState(errorState);
-  const [, setLoading] = useRecoilState(loadingState);
   const [loginForm, setLoginForm] = useRecoilState(loginFormState);
   const [login] = useRecoilState(loginState);
 
   const typer = (e: React.ChangeEvent<HTMLInputElement>) =>
     setLoginForm({ ...loginForm, [e.target.name]: e.target.value });
-
-  const checkLogin = async () => {
-    try {
-      setLoading(true);
-
-      const { data } = await axios.post<ILoginData>("login", loginForm);
-      if (data.accessToken) {
-        sessionStorage.setItem("Token", data.accessToken);
-        sessionStorage.setItem("Author", data.author);
-      } else {
-        setViewModal(true);
-        setMsg(data.message);
-      }
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   useEffect(() => {
     const esc = (e: any) => {
@@ -91,7 +61,7 @@ const Login = () => {
                 />
               </div>
             </div>
-            <button className="btn" onClick={checkLogin}>
+            <button className="btn" onClick={CheckLogin}>
               Logga in
             </button>
           </div>

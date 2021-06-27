@@ -4,8 +4,8 @@ import About from "./About";
 import Contact from "./Contact";
 import Profile from "./Dashboard/Profile";
 import Error from "./Error";
-import Logout from "./Logout";
-import Register from "./Register";
+import Logout from "./Auth/Logout";
+import Register from "./Auth/Register";
 import Start from "./Start";
 
 const Main = () => {

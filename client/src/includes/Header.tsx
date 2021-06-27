@@ -1,4 +1,4 @@
-import Login from "components/Login";
+import Login from "components/Auth/Login";
 import LogoImg from "Images/logo.png";
 import { Link } from "react-router-dom";
 
