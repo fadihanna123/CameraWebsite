@@ -1,38 +1,48 @@
-import { useEffect } from "react";
 import { useRecoilState } from "recoil";
-import { loginFormState, loginState, viewModalState } from "States";
+import { loadingState, loginFormState, loginState } from "States";
 
 import LogOutBox from "./LogOutBox";
-import Modal from "../Modal";
-import { CheckLogin } from "./CheckLogin";
+import axios from "axios";
+import { ILoginData } from "typings";
+import { Flip, toast, ToastContainer } from "react-toastify";
 
 const Login = () => {
-  const [, setViewModal] = useRecoilState(viewModalState);
   const [loginForm, setLoginForm] = useRecoilState(loginFormState);
   const [login] = useRecoilState(loginState);
+  const [, setLoading] = useRecoilState(loadingState);
+
+  const CheckLogin = async () => {
+    try {
+      setLoading(true);
+
+      const { data } = await axios.post<ILoginData>("login", loginForm);
+      if (data.accessToken) {
+        sessionStorage.setItem("Token", data.accessToken);
+        sessionStorage.setItem("Author", data.author);
+      } else {
+        toast(data.message, { transition: Flip, type: "error" });
+      }
+    } catch (err) {
+      toast((err as Error).message, { transition: Flip, type: "error" });
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const typer = (e: React.ChangeEvent<HTMLInputElement>) =>
     setLoginForm({ ...loginForm, [e.target.name]: e.target.value });
-
-  useEffect(() => {
-    const esc = (e: any) => {
-      e.key === "Escape" && setViewModal(false);
-    };
-    document.addEventListener("keydown", esc, false);
-    return () => document.removeEventListener("keydown", esc, false);
-  }, [setViewModal]);
 
   return (
     <>
       {!login ? (
         <>
-          <div className="loginbox">
+          <section className="loginbox">
             <h1 className="loginheading">Logga in</h1>
-            <div className="loginrow">
-              <div className="logincol">
+            <section className="loginrow">
+              <section className="logincol">
                 <label htmlFor="loginuname">Användarnamn: </label>
-              </div>
-              <div className="logincol">
+              </section>
+              <section className="logincol">
                 <input
                   id="loginuname"
                   type="text"
@@ -42,8 +52,8 @@ const Login = () => {
                   value={loginForm.uname}
                   required
                 />
-              </div>
-            </div>
+              </section>
+            </section>
 
             <div className="loginrow">
               <div className="logincol">
@@ -64,8 +74,8 @@ const Login = () => {
             <button className="btn" onClick={CheckLogin}>
               Logga in
             </button>
-          </div>
-          <Modal />
+          </section>
+          <ToastContainer transition={Flip} />
         </>
       ) : (
         <LogOutBox />

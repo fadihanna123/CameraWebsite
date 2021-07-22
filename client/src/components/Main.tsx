@@ -1,11 +1,11 @@
 import { Redirect, Route, Switch } from "react-router-dom";
 
 import About from "./About";
+import Logout from "./Auth/Logout";
+import Register from "./Auth/Register";
 import Contact from "./Contact";
 import Profile from "./Dashboard/Profile";
 import Error from "./Error";
-import Logout from "./Auth/Logout";
-import Register from "./Auth/Register";
 import Start from "./Start";
 
 const Main = () => {

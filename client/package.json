@@ -12,6 +12,7 @@
     "react-dom": "^17.0.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "react-toastify": "^7.0.4",
     "recoil": "^0.3.1",
     "sass": "^1.35.1",
     "typescript": "^4.3.5"
@@ -20,8 +21,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "postbuild": "purgecss --css build/static/css/*.css --content build/index.html build/static/js/*.js --output build/static/css"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [

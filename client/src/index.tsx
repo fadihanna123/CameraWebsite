@@ -1,4 +1,5 @@
 import "normalize.css";
+import "react-toastify/dist/ReactToastify.css";
 import "Sass/main.scss";
 
 import App from "App";

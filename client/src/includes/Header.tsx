@@ -6,14 +6,14 @@ const Header = () => {
   return (
     <header>
       <nav className="topbar">
-        <div className="logobox">
+        <section className="logobox">
           <Link to="/">
             <img src={LogoImg} className="logoimg" alt="Logobild" />
           </Link>
-        </div>
+        </section>
         <Login />
       </nav>
-      <div className="navbar">
+      <nav className="navbar">
         <Link to="/" className="link">
           Start
         </Link>
@@ -26,7 +26,7 @@ const Header = () => {
         <Link to="/About" className="link">
           Om oss
         </Link>
-      </div>
+      </nav>
     </header>
   );
 };

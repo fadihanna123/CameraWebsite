@@ -1,12 +1,36 @@
+import axios from "axios";
+import { toast, Flip, ToastContainer } from "react-toastify";
 import { useRecoilState } from "recoil";
-import { registerFormState } from "States";
-
-import Modal from "../Modal";
-import { RegisterTyper } from "./RegisterTyper";
-import { RegisterUser } from "./RegisterUser";
+import { loadingState, registerFormState } from "States";
+import { IRegisterData } from "typings";
 
 const RegisterForm = () => {
-  const [registerForm] = useRecoilState(registerFormState);
+  const [registerForm, setRegisterForm] = useRecoilState(registerFormState);
+  const [, setLoading] = useRecoilState(loadingState);
+
+  const RegisterTyper = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setRegisterForm({ ...registerForm, [e.target.name]: e.target.value });
+
+  const RegisterUser = async (): Promise<void> => {
+    try {
+      setLoading(true);
+
+      const file = document.querySelector(
+        'input[type="file"]'
+      ) as HTMLInputElement;
+
+      const myForm: FormData = new FormData();
+      myForm.append("img", file!.files![0]);
+
+      const { data } = await axios.post<IRegisterData>("register", myForm);
+
+      toast(data.message, { transition: Flip, type: "error" });
+    } catch (err) {
+      toast((err as Error).message, { transition: Flip, type: "error" });
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <form encType="multipart/form-data" method="post">
@@ -121,7 +145,7 @@ const RegisterForm = () => {
           Registrera dig
         </button>
       </section>
-      <Modal />
+      <ToastContainer transition={Flip} />
     </form>
   );
 };

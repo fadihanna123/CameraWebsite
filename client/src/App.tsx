@@ -19,11 +19,11 @@ const App = () => {
   }, [Token, setLogin]);
 
   return (
-    <div className="container">
+    <section className="container">
       <Header />
       <Main />
       <Footer />
-    </div>
+    </section>
   );
 };
 

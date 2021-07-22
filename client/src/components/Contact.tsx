@@ -28,44 +28,44 @@ const Contact = () => {
         </Link>
         <br />
       </p>
-      <div className="contactbox">
-        <div className="contactrow">
-          <div className="contactcol">
+      <section className="contactbox">
+        <section className="contactrow">
+          <section className="contactcol">
             <label htmlFor="fullname">Fullständigt namn: </label>
-          </div>
-          <div className="contactcol">
+          </section>
+          <section className="contactcol">
             <input id="fullname" type="text" className="txtinput" />
-          </div>
-        </div>
+          </section>
+        </section>
 
-        <div className="contactrow">
-          <div className="contactcol">
+        <section className="contactrow">
+          <section className="contactcol">
             <label htmlFor="epost">E-postadress: </label>
-          </div>
-          <div className="contactcol">
+          </section>
+          <section className="contactcol">
             <input id="epost" type="email" className="txtinput" />
-          </div>
-        </div>
+          </section>
+        </section>
 
-        <div className="contactrow">
-          <div className="contactcol">
+        <section className="contactrow">
+          <section className="contactcol">
             <label htmlFor="mobnr">Mobilnummer: </label>
-          </div>
-          <div className="contactcol">
+          </section>
+          <section className="contactcol">
             <input id="mobnr" type="text" className="txtinput" />
-          </div>
-        </div>
+          </section>
+        </section>
 
-        <div className="contactrow">
-          <div className="contactcol">
+        <section className="contactrow">
+          <section className="contactcol">
             <label htmlFor="msg">Meddelande: </label>
-          </div>
-          <div className="contactcol">
+          </section>
+          <section className="contactcol">
             <textarea id="msg" className="txtinput"></textarea>
-          </div>
-        </div>
+          </section>
+        </section>
         <button className="btn">Skicka</button>
-      </div>
+      </section>
     </main>
   );
 };
