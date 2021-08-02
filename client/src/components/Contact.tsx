@@ -1,10 +1,13 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { styleTypes } from "typings";
 
 const Contact = () => {
   useEffect(() => {
     document.title = "Surveillance systems Inc - Kontakta oss";
   }, []);
+
+  const styles: styleTypes = { p10: { padding: "10px" } };
 
   return (
     <main className="main">
@@ -13,17 +16,17 @@ const Contact = () => {
       <p>
         <br />
         <b>Telefonnummer: </b>
-        <a style={{ padding: "10px" }} href="tel:0808444975" className="link">
+        <a style={styles.p10} href="tel:0808444975" className="link">
           08-08444975
         </a>
         <br />
         <b>Mobilnummer: </b>
-        <a style={{ padding: "10px" }} href="tel:072897526" className="link">
+        <a style={styles.p10} href="tel:072897526" className="link">
           072-897526
         </a>
         <br />
         <b>Facebook: </b>
-        <Link style={{ padding: "10px" }} to="/#" className="link">
+        <Link style={styles.p10} to="/#" className="link">
           Surveillance systems Inc.
         </Link>
         <br />

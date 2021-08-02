@@ -1,0 +1,22 @@
+#{map-get($selectorMap, registerRow)} {
+  display: $flex;
+  padding: 10px;
+  justify-content: $cntr;
+}
+
+#{map-get($selectorMap, registerCol)} {
+  width: 15%;
+  margin-bottom: 15px;
+}
+
+#{map-get($selectorMap, registerSpecCol)} {
+  width: 15%;
+  margin-bottom: 15px;
+}
+
+// Styles for mobiles
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  #{map-get($selectorMap, registerCol)} {
+    width: 100%;
+  }
+}

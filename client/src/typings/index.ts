@@ -21,3 +21,7 @@ export interface IRegisterForm {
 export interface IRegisterData {
   message: string;
 }
+
+export interface styleTypes {
+  p10: { padding: string };
+}

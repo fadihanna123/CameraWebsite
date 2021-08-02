@@ -1,0 +1,48 @@
+// Footer
+#{map-get($selectorMap, footerBox)} {
+  border: 1px $solidbrd color(white);
+  margin-top: 10px;
+  padding: 10px;
+  color: #000;
+  background: color(white);
+}
+
+#{map-get($selectorMap, footerRow)} {
+  display: $flex;
+  justify-content: $spaceAround;
+}
+
+#{map-get($selectorMap, footerCol)} {
+  width: 50%;
+
+  #{map-get($selectorMap, address)} {
+    font-size: 25px;
+  }
+}
+
+#{map-get($selectorMap, footerLinks)} {
+  display: $flex;
+  flex-direction: $col;
+  padding: 10px;
+
+  #{map-get($selectorMap, footerLinks)} {
+    font-size: 20px;
+  }
+}
+
+// Styles for mobiles
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  // Footer
+  #{map-get($selectorMap, footerRow)} {
+    flex-direction: $col;
+  }
+
+  #{map-get($selectorMap, footerCol)} {
+    width: 100%;
+    text-align: $cntr;
+  }
+
+  #{map-get($selectorMap, footerLinks)} {
+    text-align: $cntr;
+  }
+}
