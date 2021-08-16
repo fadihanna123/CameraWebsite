@@ -1,5 +1,5 @@
 import Login from "components/auth/Login";
-import LogoImg from "Images/logo.png";
+import LogoImg from "images/logo.png";
 import { Link } from "react-router-dom";
 
 const Header = () => (
