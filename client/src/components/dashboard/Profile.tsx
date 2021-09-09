@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { loginState } from "states";
 
-const Profile = () => {
+const Profile: React.FC = () => {
   const [login] = useRecoilState(loginState);
 
   useEffect(() => {

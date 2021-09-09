@@ -4,7 +4,7 @@ import { loginState } from "states";
 
 import RegisterForm from "./RegisterForm";
 
-const Register = () => {
+const Register: React.FC = () => {
   const [login] = useRecoilState<boolean>(loginState);
 
   useEffect(() => {

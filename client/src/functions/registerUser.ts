@@ -6,7 +6,8 @@ const RegisterUser = async (
   setLoading: (loading: boolean) => void
 ): Promise<void> => {
   try {
-    const endPoint: string = "register";
+    const { REACT_APP_REGISTER } = process.env;
+    const endPoint: string | undefined = REACT_APP_REGISTER;
 
     setLoading(true);
 
@@ -17,7 +18,10 @@ const RegisterUser = async (
     const myForm: FormData = new FormData();
     myForm.append("img", file!.files![0]);
 
-    const { data } = await axios.post<IRegisterData>(endPoint, myForm);
+    const { data } = await axios.post<IRegisterData>(
+      endPoint as string,
+      myForm
+    );
 
     toast(data.message, { transition: Flip, type: "error" });
   } catch (err) {

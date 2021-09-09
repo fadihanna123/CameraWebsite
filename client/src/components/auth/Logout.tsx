@@ -2,7 +2,7 @@ import { Redirect, useHistory } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import { loginState } from "states";
 
-const Logout = () => {
+const Logout: React.FC = () => {
   const history = useHistory();
   const [login] = useRecoilState(loginState);
 

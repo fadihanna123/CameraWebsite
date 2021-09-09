@@ -145,7 +145,7 @@ router.post(
                       "Tack för registrering. \n Var vänlig och logga in.",
                   });
               } catch (error) {
-                console.log("\x1b[31m", error.message);
+                console.log("\x1b[31m", (error as Error).message);
               }
             } // Slut om användaren inte hittades i databasen.
           } // Slut om lösenord och bekräfta lösenord fälten matchar varandra.
@@ -156,6 +156,3 @@ router.post(
 );
 
 export default router;
-function hash256(psw: any): any {
-  throw new Error("Function not implemented.");
-}

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Footer = () => (
+const Footer: React.FC = () => (
   <footer className="footerbox">
     <section className="footerrow">
       <section className="footercol">

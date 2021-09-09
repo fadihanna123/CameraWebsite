@@ -2,7 +2,7 @@ import Login from "components/auth/Login";
 import LogoImg from "images/logo.png";
 import { Link } from "react-router-dom";
 
-const Header = () => (
+const Header: React.FC = () => (
   <header>
     <nav className="topbar">
       <section className="logobox">

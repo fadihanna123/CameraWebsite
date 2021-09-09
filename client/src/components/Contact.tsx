@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { styleTypes } from "typings";
 
-const Contact = () => {
+const Contact: React.FC = () => {
   useEffect(() => {
     document.title = "Surveillance systems Inc - Kontakta oss";
   }, []);

@@ -6,17 +6,21 @@ import axios from "axios";
 import { ILoginData } from "typings";
 import { Flip, toast, ToastContainer } from "react-toastify";
 
-const Login = () => {
+const Login: React.FC = () => {
   const [loginForm, setLoginForm] = useRecoilState(loginFormState);
   const [login] = useRecoilState(loginState);
   const [, setLoading] = useRecoilState(loadingState);
-  const endPoint: string = "login";
+  const { REACT_APP_LOGIN } = process.env;
+  const endPoint: string | undefined = REACT_APP_LOGIN;
 
   const CheckLogin = async () => {
     try {
       setLoading(true);
 
-      const { data } = await axios.post<ILoginData>(endPoint, loginForm);
+      const { data } = await axios.post<ILoginData>(
+        endPoint as string,
+        loginForm
+      );
 
       if (data.accessToken) {
         sessionStorage.setItem("Token", data.accessToken);

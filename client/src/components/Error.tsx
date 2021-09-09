@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const Error = () => {
+const Error: React.FC = () => {
   useEffect(() => {
     document.title = "Surveillance systems Inc - Sidan finns inte";
   }, []);

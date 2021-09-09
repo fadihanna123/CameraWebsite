@@ -5,7 +5,7 @@ import { useRecoilState } from "recoil";
 import { loadingState, registerFormState } from "states";
 import { IRegisterForm } from "typings";
 
-const RegisterForm = () => {
+const RegisterForm: React.FC = () => {
   const [registerForm, setRegisterForm] = useRecoilState(registerFormState);
   const [, setLoading] = useRecoilState(loadingState);
 

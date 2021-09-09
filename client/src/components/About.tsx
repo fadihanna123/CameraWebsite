@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const About = () => {
+const About: React.FC = () => {
   useEffect(() => {
     document.title = "Surveillance systems Inc - Om oss";
   }, []);

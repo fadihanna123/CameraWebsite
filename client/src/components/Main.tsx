@@ -8,7 +8,7 @@ import Profile from "./dashboard/Profile";
 import Error from "./Error";
 import Start from "./Start";
 
-const Main = () => (
+const Main: React.FC = () => (
   <Switch>
     <Route exact path="/" component={() => <Start />} />
     <Route exact path="/About" component={() => <About />} />
