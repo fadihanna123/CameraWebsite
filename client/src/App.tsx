@@ -1,7 +1,5 @@
+import Layout from "app/Layout";
 import axios from "axios";
-import Main from "components/Main";
-import Footer from "inc/Footer";
-import Header from "inc/Header";
 import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { loginState } from "states";
@@ -19,13 +17,7 @@ const App: React.FC = () => {
     Token ? setLogin(true) : setLogin(false);
   }, [Token, setLogin]);
 
-  return (
-    <section className="container">
-      <Header />
-      <Main />
-      <Footer />
-    </section>
-  );
+  return <Layout />;
 };
 
 export default App;
