@@ -29,7 +29,7 @@ const Login: React.FC = () => {
         toast(data.message, { transition: Flip, type: "error" });
       }
     } catch (err) {
-      toast((err as Error).message, { transition: Flip, type: "error" });
+      toast.error((err as Error).message, { transition: Flip });
     } finally {
       setLoading(false);
     }

@@ -1,65 +1,14 @@
-import { NextFunction, Response } from "express";
-import jwt from "jsonwebtoken";
-import validator from "validator";
 import { sha256 } from "crypto-hash";
+import { NextFunction, Response, Router } from "express";
 import striptags from "striptags";
-import { router } from "../config";
-import { Users } from "../models";
-import { IUsers, MulterRequest, Request } from "../typings";
+import validator from "validator";
 
-const auth = async (req: Request, res: Response, next: NextFunction) => {
-  const Header = req.headers.authorization;
-  const token = Header && Header.split(" ")?.[1];
-  if (!token) return res.sendStatus(401);
-  try {
-    const user = jwt.verify(token, <string>process.env.Token);
-    req.user = user as IUsers;
-    next();
-  } catch (err) {
-    return res.sendStatus(403);
-  }
-};
+import { Users } from "../../models";
+import { IUsers, MulterRequest, Request } from "../../typings";
 
-// Inloggningskontroll.
-router.post("/login", async (req: Request, res: Response) => {
-  let { uname, psw } = req.body;
-  const userObject: { uname: string } = {
-    uname: uname,
-  };
-
-  if (!uname || !psw) {
-    // Om användaren inte fyllde i alla rutor.
-    res.json({ message: "Du måste fylla i alla rutor!" });
-  } // Slut om användaren inte fyllde i alla rutor.
-  else {
-    // Om användaren fyllde i alla rutor.
-    try {
-      uname = striptags(uname);
-      psw = await sha256(striptags(req.body.psw));
-      const result = await Users.findOne({
-        uname,
-        psw,
-      });
-      if (!result) {
-        res.json({
-          message: "Det finns något fel i ditt användarnamn/lösenord.",
-        });
-      }
-
-      if (result) {
-        // Returnera accesToken.
-        const accessToken = jwt.sign(userObject, <string>process.env.Token);
-        res.json({ accessToken: accessToken, author: uname });
-      }
-    } catch (err) {
-      // Om det finns något fel..
-      return res.status(500).send();
-    }
-  } // Slut om användaren fyllde i alla rutor.
-});
+const router: Router = Router();
 
 // Registreringsprocess.
-
 router.post(
   "/register",
   async (req: Request, res: Response, next: NextFunction) => {
