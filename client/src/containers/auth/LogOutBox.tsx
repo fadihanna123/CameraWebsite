@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 const LogOutBox: React.FC = () => {
   const styles = { logoutLink: { margin: 10 } };
+
   return (
     <section className="logoutbox">
       <h4>

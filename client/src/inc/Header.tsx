@@ -1,5 +1,5 @@
-import Login from "components/auth/Login";
-import LogoImg from "images/logo.png";
+import Login from "containers/auth/Login";
+import LogoImg from "assets/images/logo.png";
 import { Link } from "react-router-dom";
 
 const Header: React.FC = () => (

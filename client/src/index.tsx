@@ -2,7 +2,7 @@ import "normalize.css";
 import "react-toastify/dist/ReactToastify.css";
 import "sass/main.scss";
 
-import App from "App";
+import App from "containers/App";
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";

@@ -1,12 +1,12 @@
 import { Redirect, Route, Switch } from "react-router-dom";
 
-import About from "./About";
-import Logout from "./auth/Logout";
-import Register from "./auth/Register";
-import Contact from "./Contact";
-import Profile from "./dashboard/Profile";
-import Error from "./Error";
-import Start from "./Start";
+import About from "../containers/About";
+import Logout from "../containers/auth/Logout";
+import Register from "../containers/auth/Register";
+import Contact from "../containers/Contact";
+import Profile from "../containers/dashboard/Profile";
+import Error from "../containers/Error";
+import Start from "../containers/Start";
 
 const Main: React.FC = () => (
   <Switch>
