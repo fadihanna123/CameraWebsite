@@ -1,4 +1,3 @@
-import { sha256 } from "crypto-hash";
 import { Response, Router } from "express";
 import jwt from "jsonwebtoken";
 import striptags from "striptags";
@@ -23,7 +22,7 @@ router.post("/login", async (req: Request, res: Response) => {
     // Om användaren fyllde i alla rutor.
     try {
       uname = striptags(uname);
-      psw = await sha256(striptags(req.body.psw));
+      psw = striptags(req.body.psw);
       const result = await Users.findOne({
         uname,
         psw,

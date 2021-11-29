@@ -1,4 +1,4 @@
-import { Redirect, Route, Switch } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 
 import About from "../containers/About";
 import Logout from "../containers/auth/Logout";
@@ -9,16 +9,15 @@ import Error from "../containers/Error";
 import Start from "../containers/Start";
 
 const Main: React.FC = () => (
-  <Switch>
-    <Route exact path="/" component={() => <Start />} />
-    <Route exact path="/About" component={() => <About />} />
-    <Route exact path="/Contact" component={() => <Contact />} />
-    <Route exact path="/Register" component={() => <Register />} />
-    <Route exact path="/Dashboard" component={() => <Profile />} />
-    <Route exact path="/Logout" component={() => <Logout />} />
-    <Route component={Error} />
-    <Redirect to="/Start" />
-  </Switch>
+  <Routes>
+    <Route path="/" element={<Start />} />
+    <Route path="/About" element={<About />} />
+    <Route path="/Contact" element={<Contact />} />
+    <Route path="/Register" element={<Register />} />
+    <Route path="/Dashboard" element={<Profile />} />
+    <Route path="/Logout" element={<Logout />} />
+    <Route element={<Error />} />
+  </Routes>
 );
 
 export default Main;

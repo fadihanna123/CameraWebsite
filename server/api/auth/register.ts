@@ -1,4 +1,3 @@
-import { sha256 } from "crypto-hash";
 import { NextFunction, Response, Router } from "express";
 import striptags from "striptags";
 import validator from "validator";
@@ -81,7 +80,7 @@ router.post(
                 const UserModel: IUsers = new Users({
                   uname: striptags(uname),
                   email: striptags(email),
-                  psw: await sha256(striptags(psw)),
+                  psw: striptags(psw),
                   mobnr: striptags(mobnr),
                   locked: 0,
                   img: (req as MulterRequest).files.img.name,
