@@ -1,14 +1,12 @@
-import axios from "axios";
+import { request } from "api";
 import { toast, Flip } from "react-toastify";
 import { IRegisterData } from "typings";
+import { registerEndPoint } from "utils";
 
 const RegisterUser = async (
   setLoading: (loading: boolean) => void
 ): Promise<void> => {
   try {
-    const { REACT_APP_REGISTER } = process.env;
-    const endPoint: string | undefined = REACT_APP_REGISTER;
-
     setLoading(true);
 
     const file = document.querySelector(
@@ -18,8 +16,8 @@ const RegisterUser = async (
     const myForm: FormData = new FormData();
     myForm.append("img", file!.files![0]);
 
-    const { data } = await axios.post<IRegisterData>(
-      endPoint as string,
+    const data: IRegisterData = await request.post(
+      registerEndPoint as string,
       myForm
     );
 

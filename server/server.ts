@@ -4,20 +4,17 @@ import register from "./api/auth/register";
 
 import cors from "cors";
 import express from "express";
-import mongoose from "mongoose";
+
 import morgan from "morgan";
 import "./api/auth";
+import { PrismaClient } from "@prisma/client";
 
+export const prisma = new PrismaClient();
 const server = express();
 
-const { PORT, DATABASE_URL } = process.env;
-
-mongoose.connect(<string>DATABASE_URL, () =>
-  console.log(" \n Connected... \n")
-);
+const { PORT } = process.env;
 
 // Settings
-
 const whiteList: string[] = ["http://localhost:3000"];
 
 const corsOptions = {
@@ -30,7 +27,7 @@ const corsOptions = {
   },
 };
 
-server.use(cors(corsOptions));
+server.use(cors());
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 server.use(morgan("dev"));

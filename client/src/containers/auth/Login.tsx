@@ -1,42 +1,15 @@
+import { checkLogin, loginTyper } from "functions";
+import React from "react";
+import { Flip, ToastContainer } from "react-toastify";
 import { useRecoilState } from "recoil";
 import { loadingState, loginFormState, loginState } from "states";
 
 import LogOutBox from "./LogOutBox";
-import axios from "axios";
-import { ILoginData } from "typings";
-import { Flip, toast, ToastContainer } from "react-toastify";
 
 const Login: React.FC = () => {
   const [loginForm, setLoginForm] = useRecoilState(loginFormState);
   const [login] = useRecoilState(loginState);
   const [, setLoading] = useRecoilState(loadingState);
-  const { REACT_APP_LOGIN } = process.env;
-  const endPoint: string | undefined = REACT_APP_LOGIN;
-
-  const CheckLogin = async () => {
-    try {
-      setLoading(true);
-
-      const { data } = await axios.post<ILoginData>(
-        endPoint as string,
-        loginForm
-      );
-
-      if (data.accessToken) {
-        sessionStorage.setItem("Token", data.accessToken);
-        sessionStorage.setItem("Author", data.author);
-      } else {
-        toast(data.message, { transition: Flip, type: "error" });
-      }
-    } catch (err) {
-      toast.error((err as Error).message, { transition: Flip });
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const typer = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setLoginForm({ ...loginForm, [e.target.name]: e.target.value });
 
   return (
     <>
@@ -54,7 +27,9 @@ const Login: React.FC = () => {
                   type="text"
                   className="txtinput"
                   name="uname"
-                  onChange={typer}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    loginTyper(e, loginForm, setLoginForm)
+                  }
                   value={loginForm.uname}
                   required
                 />
@@ -71,13 +46,18 @@ const Login: React.FC = () => {
                   type="password"
                   className="txtinput"
                   name="psw"
-                  onChange={typer}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    loginTyper(e, loginForm, setLoginForm)
+                  }
                   value={loginForm.psw}
                   required
                 />
               </div>
             </div>
-            <button className="btn" onClick={CheckLogin}>
+            <button
+              className="btn"
+              onClick={() => checkLogin(setLoading, loginForm)}
+            >
               Logga in
             </button>
           </section>

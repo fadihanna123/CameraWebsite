@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import About from "../containers/About";
 import Logout from "../containers/auth/Logout";
