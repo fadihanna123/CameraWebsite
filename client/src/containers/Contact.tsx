@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { styleTypes } from "typings";
+import { StyleTypes } from "typings";
 
 const Contact: React.FC = () => {
   useEffect(() => {
     document.title = "Surveillance systems Inc - Kontakta oss";
   }, []);
 
-  const styles: styleTypes = { p10: { padding: "10px" } };
+  const styles: StyleTypes = { p10: { padding: "10px" } };
 
   return (
     <main className="main">

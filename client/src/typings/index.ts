@@ -22,6 +22,10 @@ export interface IRegisterData {
   message: string;
 }
 
-export interface styleTypes {
-  p10: { padding: string };
+export interface StyleTypes {
+  p10: P10;
+}
+
+export interface P10 {
+  padding: string;
 }
