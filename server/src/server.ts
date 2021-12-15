@@ -1,15 +1,14 @@
+import "api/auth";
 import "dotenv/config";
-import login from "./api/auth/login";
-import register from "./api/auth/register";
 
+import login from "api/auth/login";
+import register from "api/auth/register";
 import cors from "cors";
 import express from "express";
-
+import helmet from "helmet";
 import morgan from "morgan";
-import "./api/auth";
-import { PrismaClient } from "@prisma/client";
+import { errorHandler } from "utils";
 
-export const prisma = new PrismaClient();
 const server = express();
 
 const { PORT } = process.env;
@@ -28,11 +27,13 @@ const corsOptions = {
 };
 
 server.use(cors());
-server.use(express.json());
+server.use(express.json({ type: "application/json", limit: "1kb" }));
 server.use(express.urlencoded({ extended: true }));
 server.use(morgan("dev"));
+server.use(helmet());
 server.use(login);
 server.use(register);
+server.use(errorHandler);
 
 const port: number = parseInt(<string>PORT);
 

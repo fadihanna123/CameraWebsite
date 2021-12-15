@@ -1,15 +1,21 @@
 {
   "name": "surveillance",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
+  "author": "Fadi Hanna",
   "scripts": {
-    "start": "ts-node-dev server"
+    "start": "ts-node-dev -r tsconfig-paths/register src/server",
+    "docs": "apidoc -i src/ -o doc/"
+  },
+  "prisma": {
+    "schema": "src/prisma/schema.prisma"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/express-fileupload": "^1.2.0",
     "@types/jsonwebtoken": "^8.5.6",
+    "@types/luxon": "^2.0.8",
     "@types/morgan": "^1.9.3",
     "@types/node": "^16.11.10",
     "@types/validator": "^13.7.0",
@@ -21,10 +27,14 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-fileupload": "^1.2.1",
+    "helmet": "^4.6.0",
     "jsonwebtoken": "^8.5.1",
+    "luxon": "^2.2.0",
     "morgan": "^1.10.0",
     "pg": "^8.7.1",
     "striptags": "^3.2.0",
-    "validator": "^13.7.0"
+    "tsconfig-paths": "^3.12.0",
+    "validator": "^13.7.0",
+    "winston": "^3.3.3"
   }
 }

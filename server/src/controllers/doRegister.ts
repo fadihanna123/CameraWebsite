@@ -1,15 +1,10 @@
-import { NextFunction, Response } from "express";
+import { prisma } from "db";
+import { Response } from "express";
 import striptags from "striptags";
+import { Request } from "typings";
 import validator from "validator";
 
-import { prisma } from ".././server";
-import { MulterRequest, Request } from ".././typings";
-
-export const doRegister = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+export const doRegister = async (req: Request, res: Response) => {
   const { uname, email, mobnr, psw, repsw } = req.body;
 
   if (!uname || !email || !mobnr || !psw || !repsw) {
@@ -61,9 +56,7 @@ export const doRegister = async (
             try {
               let file;
 
-              file = (req as MulterRequest).files.myFile
-                ? (req as MulterRequest).files.myFile
-                : "";
+              file = (req as any).files.myFile ? (req as any).files.myFile : "";
 
               if (!req.files || Object.keys(req.files).length === 0) {
                 return res.status(400).send("Var vänlig välj en bild.");
@@ -84,7 +77,7 @@ export const doRegister = async (
                   psw: striptags(psw),
                   mobnr: striptags(mobnr),
                   locked: 0,
-                  img: (req as MulterRequest).files.img.name,
+                  img: (req as any).files.img.name,
                 },
               });
 

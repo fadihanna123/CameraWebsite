@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import striptags from "striptags";
 
-import { prisma } from "../server";
+import { prisma } from "db";
 
 export const doLogin = async (req: Request, res: Response) => {
   let { uname, psw } = req.body;
