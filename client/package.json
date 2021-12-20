@@ -1,7 +1,7 @@
 {
   "name": "surveillance",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.2",
+  "author": "Fadi Hanna",
   "dependencies": {
     "@types/jest": "^27.0.3",
     "@types/react": "^17.0.37",
@@ -10,12 +10,12 @@
     "normalize.css": "^8.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-router-dom": "^6.0.2",
-    "react-scripts": "4.0.3",
+    "react-router-dom": "^6.2.1",
+    "react-scripts": "5.0.0",
     "react-toastify": "^8.1.0",
     "recoil": "^0.5.2",
-    "sass": "^1.43.5",
-    "typescript": "^4.5.2"
+    "sass": "^1.45.0",
+    "typescript": "^4.5.4"
   },
   "scripts": {
     "start": "react-scripts start",

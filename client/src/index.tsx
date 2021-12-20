@@ -1,6 +1,6 @@
 import "normalize.css";
 import "react-toastify/dist/ReactToastify.css";
-import "sass/main.scss";
+import "./sass/main.scss";
 
 import App from "containers/App";
 import React from "react";
