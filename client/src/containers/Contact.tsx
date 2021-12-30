@@ -1,18 +1,29 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { StyleTypes } from "typings";
 
 const Contact: React.FC = () => {
   useEffect(() => {
     document.title = "Surveillance systems Inc - Kontakta oss";
   }, []);
 
-  const styles: StyleTypes = { p10: { padding: "10px" } };
+  const styles = {
+    p10: { padding: "10px" },
+  };
 
   return (
     <main className="main">
       <h1>Kontakta oss</h1>
       <p>Ni kan nå oss via dessa kontaktuppifter:</p>
+      <ul>
+        <li>
+          <br />
+          <b>Telefonnummer: </b>
+          <a style={styles.p10} href="tel:0808444975" className="link">
+            08-08444975
+          </a>
+          <br />
+        </li>
+      </ul>
       <p>
         <br />
         <b>Telefonnummer: </b>

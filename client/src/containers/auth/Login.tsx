@@ -15,7 +15,7 @@ const Login: React.FC = () => {
     <>
       {!login ? (
         <>
-          <section className="loginbox">
+          <section className="loginsection">
             <h1 className="loginheading">Logga in</h1>
             <section className="loginrow">
               <section className="logincol">

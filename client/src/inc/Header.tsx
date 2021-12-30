@@ -10,7 +10,9 @@ const Header: React.FC = () => (
           <img src={LogoImg} className="logoimg" alt="Logobild" />
         </Link>
       </section>
-      <Login />
+      <section className="loginbox">
+        <Login />
+      </section>
     </nav>
     <nav className="navbar">
       <Link to="/" className="link">

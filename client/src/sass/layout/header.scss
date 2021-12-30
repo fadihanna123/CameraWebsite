@@ -13,6 +13,10 @@
   border-radius: 100px;
 }
 
+#{map-get($selectorMap, logoBox)} {
+  width: 50%;
+}
+
 #{map-get($selectorMap, loginHeading)} {
   font-weight: bold;
   text-align: $cntr;
@@ -20,7 +24,9 @@
   margin: 10px;
 }
 
-#{map-get($selectorMap, loginBox)} {
+#{map-get($selectorMap, loginSection)} {
+  width: 90%;
+
   #{map-get($selectorMap, label)} {
     margin: 50px;
   }
