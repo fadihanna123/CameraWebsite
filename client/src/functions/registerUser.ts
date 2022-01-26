@@ -1,7 +1,7 @@
-import { request } from "api";
-import { toast, Flip } from "react-toastify";
-import { IRegisterData } from "typings";
-import { registerEndPoint } from "utils";
+import { request } from 'api';
+import { Flip, toast } from 'react-toastify';
+import { IRegisterData } from 'typings';
+import { registerEndPoint } from 'utils/envs';
 
 const RegisterUser = async (
   setLoading: (loading: boolean) => void
