@@ -1,9 +1,8 @@
-import { request } from 'api';
 import { Flip, toast } from 'react-toastify';
-import { IRegisterData } from 'typings';
-import { registerEndPoint } from 'utils/envs';
 
-const RegisterUser = async (
+import { registerUser } from './auth';
+
+export const RegisterUser = async (
   setLoading: (loading: boolean) => void
 ): Promise<void> => {
   try {
@@ -13,20 +12,15 @@ const RegisterUser = async (
       'input[type="file"]'
     ) as HTMLInputElement;
 
-    const myForm: FormData = new FormData();
+    const myForm = new FormData();
     myForm.append("img", file!.files![0]);
 
-    const data: IRegisterData = await request.post(
-      registerEndPoint as string,
-      myForm
-    );
+    const data = await registerUser(myForm);
 
-    toast(data.message, { transition: Flip, type: "error" });
+    toast.error(data.message, { transition: Flip });
   } catch (err) {
-    toast((err as Error).message, { transition: Flip, type: "error" });
+    toast.error((err as Error).message, { transition: Flip });
   } finally {
     setLoading(false);
   }
 };
-
-export { RegisterUser };

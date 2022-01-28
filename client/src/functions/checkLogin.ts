@@ -1,9 +1,9 @@
-import { request } from 'api';
 import localforage from 'localforage';
 import { Flip, toast } from 'react-toastify';
-import { ILoginData, ILoginForm } from 'typings';
+import { ILoginForm } from 'typings';
 import { localForageKeys } from 'utils/constants';
-import { loginEndPoint } from 'utils/envs';
+
+import { loginUser } from './auth';
 
 export const checkLogin = async (
   setLoading: (loading: boolean) => void,
@@ -12,10 +12,7 @@ export const checkLogin = async (
   try {
     setLoading(true);
 
-    const data: ILoginData = await request.post(
-      loginEndPoint as string,
-      loginForm
-    );
+    const data = await loginUser(loginForm);
 
     if (data.accessToken) {
       localforage

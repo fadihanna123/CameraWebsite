@@ -3,6 +3,8 @@ import { NavigateFunction } from 'react-router';
 import { toast } from 'react-toastify';
 import { localForageKeys } from 'utils/constants';
 
+import { redirectToRoute } from './helper';
+
 export const doLogOut = (navigate: NavigateFunction) => {
   localforage
     .removeItem(localForageKeys.Token)
@@ -11,5 +13,5 @@ export const doLogOut = (navigate: NavigateFunction) => {
     .removeItem(localForageKeys.Author)
     .catch((err) => toast.error((err as Error).message));
 
-  navigate("/Start");
+  redirectToRoute("/Start");
 };
