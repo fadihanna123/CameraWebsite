@@ -1,15 +1,16 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import useTitle from 'hooks/useTitle';
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Heading from 'ui/Heading';
+import Para from 'ui/Para';
 
 const Error: React.FC = () => {
-  useEffect(() => {
-    document.title = "Surveillance systems Inc - Sidan finns inte";
-  }, []);
+  useTitle("Surveillance systems Inc - Sidan finns inte");
 
   return (
     <main className="main">
-      <h1 className="errorheading">404 NOT FOUND</h1>
-      <p className="errorpara"> Sidan som du letar efter finns inte. </p>
+      <Heading className="errorheading">404 NOT FOUND</Heading>
+      <Para className="errorpara"> Sidan som du letar efter finns inte. </Para>
       <Link to="/" className="link">
         Startsida
       </Link>

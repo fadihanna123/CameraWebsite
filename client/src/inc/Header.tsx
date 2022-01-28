@@ -1,13 +1,20 @@
-import Login from "containers/auth/Login";
-import LogoImg from "assets/logo.png";
-import { Link } from "react-router-dom";
+import LogoImg from 'assets/logo.png';
+import Login from 'containers/auth/Login';
+import { Link } from 'react-router-dom';
+import Img from 'ui/Img';
 
 const Header: React.FC = () => (
   <header>
     <nav className="topbar">
       <section className="logobox">
         <Link to="/">
-          <img src={LogoImg} className="logoimg" alt="Logobild" />
+          <Img
+            source={LogoImg}
+            className="logoimg"
+            alt="Logobild"
+            ariaLabel="Logobild"
+            loading="lazy"
+          />
         </Link>
       </section>
       <section className="loginbox">

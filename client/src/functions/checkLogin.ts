@@ -7,7 +7,8 @@ import { loginUser } from './auth';
 
 export const checkLogin = async (
   setLoading: (loading: boolean) => void,
-  loginForm: ILoginForm
+  loginForm: ILoginForm,
+  setLogin: (login: boolean) => void
 ): Promise<void> => {
   try {
     setLoading(true);
@@ -21,6 +22,7 @@ export const checkLogin = async (
       localforage
         .setItem(localForageKeys.Author, data.author)
         .catch((err) => toast.error((err as Error).message));
+      //setLogin(true);
     } else {
       toast.error(data.message, { transition: Flip });
     }

@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import Heading from 'ui/Heading';
 
 const Footer: React.FC = () => (
   <footer className="footerbox">
     <section className="footerrow">
       <section className="footercol">
-        <h1>Surveillance systems Inc</h1>
+        <Heading>Surveillance systems Inc</Heading>
         <address>Svemevägen 5, Stockholm</address>
       </section>
 

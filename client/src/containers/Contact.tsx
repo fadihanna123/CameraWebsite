@@ -1,10 +1,14 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import useTitle from 'hooks/useTitle';
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import Btn from 'ui/Btn';
+import Heading from 'ui/Heading';
+import Input from 'ui/Input';
+import Para from 'ui/Para';
+import TxtArea from 'ui/TxtArea';
 
 const Contact: React.FC = () => {
-  useEffect(() => {
-    document.title = "Surveillance systems Inc - Kontakta oss";
-  }, []);
+  useTitle("Surveillance systems Inc - Kontakta oss");
 
   const styles = {
     p10: { padding: "10px" },
@@ -12,8 +16,8 @@ const Contact: React.FC = () => {
 
   return (
     <main className="main">
-      <h1>Kontakta oss</h1>
-      <p>Ni kan nå oss via dessa kontaktuppifter:</p>
+      <Heading>Kontakta oss</Heading>
+      <Para>Ni kan nå oss via dessa kontaktuppifter:</Para>
       <ul>
         <li>
           <br />
@@ -24,7 +28,7 @@ const Contact: React.FC = () => {
           <br />
         </li>
       </ul>
-      <p>
+      <Para>
         <br />
         <b>Telefonnummer: </b>
         <a style={styles.p10} href="tel:0808444975" className="link">
@@ -41,14 +45,14 @@ const Contact: React.FC = () => {
           Surveillance systems Inc.
         </Link>
         <br />
-      </p>
+      </Para>
       <section className="contactbox">
         <section className="contactrow">
           <section className="contactcol">
             <label htmlFor="fullname">Fullständigt namn: </label>
           </section>
           <section className="contactcol">
-            <input id="fullname" type="text" className="txtinput" />
+            <Input id="fullname" className="txtinput" />
           </section>
         </section>
 
@@ -57,7 +61,7 @@ const Contact: React.FC = () => {
             <label htmlFor="epost">E-postadress: </label>
           </section>
           <section className="contactcol">
-            <input id="epost" type="email" className="txtinput" />
+            <Input id="epost" type="email" className="txtinput" />
           </section>
         </section>
 
@@ -66,7 +70,7 @@ const Contact: React.FC = () => {
             <label htmlFor="mobnr">Mobilnummer: </label>
           </section>
           <section className="contactcol">
-            <input id="mobnr" type="text" className="txtinput" />
+            <Input id="mobnr" className="txtinput" />
           </section>
         </section>
 
@@ -75,10 +79,10 @@ const Contact: React.FC = () => {
             <label htmlFor="msg">Meddelande: </label>
           </section>
           <section className="contactcol">
-            <textarea id="msg" className="txtinput"></textarea>
+            <TxtArea id="msg" className="txtinput"></TxtArea>
           </section>
         </section>
-        <button className="btn">Skicka</button>
+        <Btn className="btn">Skicka</Btn>
       </section>
     </main>
   );

@@ -1,9 +1,12 @@
-import { RegisterTyper, RegisterUser } from "functions";
-import React from "react";
-import { Flip, ToastContainer } from "react-toastify";
-import { useRecoilState } from "recoil";
-import { loadingState, registerFormState } from "states";
-import { IRegisterForm } from "typings";
+import { RegisterTyper, RegisterUser } from 'functions';
+import React from 'react';
+import { Flip, ToastContainer } from 'react-toastify';
+import { useRecoilState } from 'recoil';
+import { loadingState, registerFormState } from 'states';
+import { IRegisterForm } from 'typings';
+import Btn from 'ui/Btn';
+import FileUploader from 'ui/FileUploader';
+import Input from 'ui/Input';
 
 const RegisterForm: React.FC = () => {
   const [registerForm, setRegisterForm] = useRecoilState(registerFormState);
@@ -17,15 +20,14 @@ const RegisterForm: React.FC = () => {
             <label htmlFor="uname">Användarnamn: </label>
           </section>
           <section className="registercol">
-            <input
-              type="text"
+            <Input
               id="uname"
-              value={registerForm.uname}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              val={registerForm.uname}
+              changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
                 RegisterTyper(e, registerForm as IRegisterForm, setRegisterForm)
               }
               name="uname"
-              required
+              isRequired={true}
               className="txtinput"
             />
           </section>
@@ -35,14 +37,14 @@ const RegisterForm: React.FC = () => {
             <label htmlFor="email">E-postadress: </label>
           </section>
           <section className="registercol">
-            <input
+            <Input
               type="email"
               id="email"
-              value={registerForm.email}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              val={registerForm.email}
+              changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
                 RegisterTyper(e, registerForm as IRegisterForm, setRegisterForm)
               }
-              required
+              isRequired={true}
               className="txtinput"
               name="email"
             />
@@ -53,11 +55,11 @@ const RegisterForm: React.FC = () => {
             <label htmlFor="mobnr">Mobilnummer: </label>
           </section>
           <section className="registercol">
-            <input
+            <Input
               type="text"
               id="mobnr"
-              value={registerForm.mobnr}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              val={registerForm.mobnr}
+              changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
                 RegisterTyper(e, registerForm as IRegisterForm, setRegisterForm)
               }
               className="txtinput"
@@ -70,14 +72,14 @@ const RegisterForm: React.FC = () => {
             <label htmlFor="psw">Lösenord: </label>
           </section>
           <section className="registercol">
-            <input
+            <Input
               type="password"
               id="psw"
-              value={registerForm.psw}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              val={registerForm.psw}
+              changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
                 RegisterTyper(e, registerForm as IRegisterForm, setRegisterForm)
               }
-              required
+              isRequired={true}
               className="txtinput"
               name="psw"
             />
@@ -88,14 +90,14 @@ const RegisterForm: React.FC = () => {
             <label htmlFor="repsw">Bekräfta lösenord: </label>
           </section>
           <section className="registercol">
-            <input
+            <Input
               type="password"
               id="repsw"
-              value={registerForm.repsw}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              val={registerForm.repsw}
+              changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
                 RegisterTyper(e, registerForm as IRegisterForm, setRegisterForm)
               }
-              required
+              isRequired={true}
               className="txtinput"
               name="repsw"
             />
@@ -106,26 +108,22 @@ const RegisterForm: React.FC = () => {
             <label htmlFor="img">Profilbild: </label>
           </section>
           <section className="registerspeccol">
-            <input
+            <FileUploader
               type="file"
               id="img"
-              value={registerForm.img}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              val={registerForm.img}
+              changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
                 RegisterTyper(e, registerForm as IRegisterForm, setRegisterForm)
               }
-              accept="image/*"
-              required
+              acceptValues="image/*"
+              isRequired={true}
               name="img"
             />
           </section>
         </section>
-        <button
-          type="button"
-          className="btn"
-          onClick={() => RegisterUser(setLoading)}
-        >
+        <Btn className="btn" clickFunc={() => RegisterUser(setLoading)}>
           Registrera dig
-        </button>
+        </Btn>
       </section>
       <ToastContainer transition={Flip} />
     </form>

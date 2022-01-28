@@ -1,13 +1,12 @@
-import { useEffect } from "react";
-import { useRecoilState } from "recoil";
-import { loginState } from "states";
+import useTitle from 'hooks/useTitle';
+import { useEffect } from 'react';
+import { useRecoilState } from 'recoil';
+import { loginState } from 'states';
 
 const Profile: React.FC = () => {
   const [login] = useRecoilState(loginState);
 
-  useEffect(() => {
-    document.title = "Surveillance systems Inc - Profil";
-  }, []);
+  useTitle("Surveillance systems Inc - Profil");
 
   return (
     <main className="main">

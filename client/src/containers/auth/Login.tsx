@@ -1,14 +1,17 @@
-import { checkLogin, loginTyper } from "functions";
-import React from "react";
-import { Flip, ToastContainer } from "react-toastify";
-import { useRecoilState } from "recoil";
-import { loadingState, loginFormState, loginState } from "states";
+import { checkLogin, loginTyper } from 'functions';
+import React from 'react';
+import { Flip, ToastContainer } from 'react-toastify';
+import { useRecoilState } from 'recoil';
+import { loadingState, loginFormState, loginState } from 'states';
+import Btn from 'ui/Btn';
+import Heading from 'ui/Heading';
+import Input from 'ui/Input';
 
-import LogOutBox from "./LogOutBox";
+import LogOutBox from './LogOutBox';
 
 const Login: React.FC = () => {
   const [loginForm, setLoginForm] = useRecoilState(loginFormState);
-  const [login] = useRecoilState(loginState);
+  const [login, setLogin] = useRecoilState(loginState);
   const [, setLoading] = useRecoilState(loadingState);
 
   return (
@@ -16,22 +19,24 @@ const Login: React.FC = () => {
       {!login ? (
         <>
           <section className="loginsection">
-            <h1 className="loginheading">Logga in</h1>
+            <Heading headingLevel={1} className="loginheading">
+              Logga in
+            </Heading>
             <section className="loginrow">
               <section className="logincol">
                 <label htmlFor="loginuname">Användarnamn: </label>
               </section>
               <section className="logincol">
-                <input
+                <Input
                   id="loginuname"
                   type="text"
                   className="txtinput"
                   name="uname"
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
                     loginTyper(e, loginForm, setLoginForm)
                   }
-                  value={loginForm.uname}
-                  required
+                  val={loginForm.uname}
+                  isRequired={true}
                 />
               </section>
             </section>
@@ -41,25 +46,25 @@ const Login: React.FC = () => {
                 <label htmlFor="loginpsw">Lösenord: </label>
               </div>
               <div className="logincol">
-                <input
+                <Input
                   id="loginpsw"
                   type="password"
                   className="txtinput"
                   name="psw"
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
                     loginTyper(e, loginForm, setLoginForm)
                   }
-                  value={loginForm.psw}
-                  required
+                  val={loginForm.psw}
+                  isRequired={true}
                 />
               </div>
             </div>
-            <button
+            <Btn
               className="btn"
-              onClick={() => checkLogin(setLoading, loginForm)}
+              clickFunc={() => checkLogin(setLoading, loginForm, setLogin)}
             >
               Logga in
-            </button>
+            </Btn>
           </section>
           <ToastContainer transition={Flip} />
         </>

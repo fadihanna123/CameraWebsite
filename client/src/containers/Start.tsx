@@ -1,14 +1,15 @@
-import { useEffect } from "react";
+import useTitle from 'hooks/useTitle';
+import { useEffect } from 'react';
+import Heading from 'ui/Heading';
+import Para from 'ui/Para';
 
 const Start: React.FC = () => {
-  useEffect(() => {
-    document.title = "Surveillance systems Inc - Startsida";
-  }, []);
+  useTitle("Surveillance systems Inc - Startsida");
 
   return (
     <main className="main">
-      <h1>Välkommen!</h1>
-      <p>Varsågod logga in ovan för att kunna se dina videofilmer.</p>
+      <Heading>Välkommen!</Heading>
+      <Para>Varsågod logga in ovan för att kunna se dina videofilmer.</Para>
     </main>
   );
 };

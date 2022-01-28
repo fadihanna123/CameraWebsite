@@ -1,14 +1,15 @@
-import { useEffect } from "react";
+import useTitle from 'hooks/useTitle';
+import { useEffect } from 'react';
+import Heading from 'ui/Heading';
+import Para from 'ui/Para';
 
 const About: React.FC = () => {
-  useEffect(() => {
-    document.title = "Surveillance systems Inc - Om oss";
-  }, []);
+  useTitle("Surveillance systems Inc - Om oss");
 
   return (
     <main className="main">
-      <h1>Om oss</h1>
-      <p>
+      <Heading>Om oss</Heading>
+      <Para>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis
         odio non odio finibus imperdiet. Morbi augue ante, scelerisque in metus
         et, feugiat mattis nisi. Aenean vehicula augue quis odio hendrerit
@@ -52,7 +53,7 @@ const About: React.FC = () => {
         quis turpis ac, dignissim sagittis massa. Phasellus sapien lectus,
         condimentum vel elit a, sodales egestas urna. Suspendisse et libero
         malesuada, sollicitudin lacus eu, sagittis felis.
-      </p>
+      </Para>
     </main>
   );
 };
