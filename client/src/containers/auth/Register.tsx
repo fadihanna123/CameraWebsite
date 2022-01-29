@@ -1,14 +1,13 @@
 import useTitle from 'hooks/useTitle';
-import { useEffect } from 'react';
-import { useRecoilState } from 'recoil';
-import { loginState } from 'states';
+import { useSelector } from 'react-redux';
+import { LoginReducerTypes } from 'typings';
 import Heading from 'ui/Heading';
 import Para from 'ui/Para';
 
 import RegisterForm from './RegisterForm';
 
 const Register: React.FC = () => {
-  const [login] = useRecoilState<boolean>(loginState);
+  const login = useSelector((state: LoginReducerTypes) => state.loginReducer);
 
   useTitle("Surveillance systems Inc - Registrera dig");
 
@@ -16,7 +15,7 @@ const Register: React.FC = () => {
     <main className="main">
       {!login ? (
         <>
-          <Heading headingLevel={1}>Registrera dig</Heading>
+          <Heading>Registrera dig</Heading>
           <Para>Här kan du registrera dig.</Para>
           <RegisterForm />
         </>

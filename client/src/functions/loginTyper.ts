@@ -1,7 +1,9 @@
-import { ILoginForm } from "typings";
+import { Dispatch } from 'redux';
+import { setLoginForm } from 'redux/actions';
+import { ILoginForm } from 'typings';
 
 export const loginTyper = (
   e: React.ChangeEvent<HTMLInputElement>,
   loginForm: ILoginForm,
-  setLoginForm: (loginForm: ILoginForm) => void
-) => setLoginForm({ ...loginForm, [e.target.name]: e.target.value });
+  dispatch: Dispatch<any>
+) => dispatch(setLoginForm({ ...loginForm, [e.target.name]: e.target.value }));

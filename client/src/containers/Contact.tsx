@@ -18,16 +18,6 @@ const Contact: React.FC = () => {
     <main className="main">
       <Heading>Kontakta oss</Heading>
       <Para>Ni kan nå oss via dessa kontaktuppifter:</Para>
-      <ul>
-        <li>
-          <br />
-          <b>Telefonnummer: </b>
-          <a style={styles.p10} href="tel:0808444975" className="link">
-            08-08444975
-          </a>
-          <br />
-        </li>
-      </ul>
       <Para>
         <br />
         <b>Telefonnummer: </b>

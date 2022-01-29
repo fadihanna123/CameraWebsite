@@ -1,19 +1,20 @@
-import "normalize.css";
-import "react-toastify/dist/ReactToastify.css";
-import "./sass/main.scss";
+import './sass/main.scss';
+import 'normalize.css';
+import 'react-toastify/dist/ReactToastify.css';
 
-import App from "containers/App";
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router } from "react-router-dom";
-import { RecoilRoot } from "recoil";
+import App from 'containers/App';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { store } from 'redux/store';
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <RecoilRoot>
+      <Provider store={store}>
         <App />
-      </RecoilRoot>
+      </Provider>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")

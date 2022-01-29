@@ -1,12 +1,12 @@
 import { Flip, toast } from 'react-toastify';
+import { Dispatch } from 'redux';
+import { setLoading } from 'redux/actions';
 
 import { registerUser } from './auth';
 
-export const RegisterUser = async (
-  setLoading: (loading: boolean) => void
-): Promise<void> => {
+export const RegisterUser = async (dispatch: Dispatch<any>): Promise<void> => {
   try {
-    setLoading(true);
+    dispatch(setLoading(true));
 
     const file = document.querySelector(
       'input[type="file"]'
@@ -21,6 +21,6 @@ export const RegisterUser = async (
   } catch (err) {
     toast.error((err as Error).message, { transition: Flip });
   } finally {
-    setLoading(false);
+    dispatch(setLoading(false));
   }
 };

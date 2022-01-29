@@ -1,16 +1,18 @@
 import { RegisterTyper, RegisterUser } from 'functions';
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Flip, ToastContainer } from 'react-toastify';
-import { useRecoilState } from 'recoil';
-import { loadingState, registerFormState } from 'states';
-import { IRegisterForm } from 'typings';
+import { IRegisterForm, RegisterFormReducerTypes } from 'typings';
 import Btn from 'ui/Btn';
 import FileUploader from 'ui/FileUploader';
 import Input from 'ui/Input';
 
 const RegisterForm: React.FC = () => {
-  const [registerForm, setRegisterForm] = useRecoilState(registerFormState);
-  const [, setLoading] = useRecoilState(loadingState);
+  const registerForm = useSelector(
+    (state: RegisterFormReducerTypes) => state.registerFormReducer
+  );
+
+  const dispatch = useDispatch();
 
   return (
     <form encType="multipart/form-data" method="post">
@@ -24,7 +26,7 @@ const RegisterForm: React.FC = () => {
               id="uname"
               val={registerForm.uname}
               changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
-                RegisterTyper(e, registerForm as IRegisterForm, setRegisterForm)
+                RegisterTyper(e, registerForm as IRegisterForm, dispatch)
               }
               name="uname"
               isRequired={true}
@@ -42,7 +44,7 @@ const RegisterForm: React.FC = () => {
               id="email"
               val={registerForm.email}
               changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
-                RegisterTyper(e, registerForm as IRegisterForm, setRegisterForm)
+                RegisterTyper(e, registerForm as IRegisterForm, dispatch)
               }
               isRequired={true}
               className="txtinput"
@@ -60,7 +62,7 @@ const RegisterForm: React.FC = () => {
               id="mobnr"
               val={registerForm.mobnr}
               changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
-                RegisterTyper(e, registerForm as IRegisterForm, setRegisterForm)
+                RegisterTyper(e, registerForm as IRegisterForm, dispatch)
               }
               className="txtinput"
               name="mobnr"
@@ -77,7 +79,7 @@ const RegisterForm: React.FC = () => {
               id="psw"
               val={registerForm.psw}
               changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
-                RegisterTyper(e, registerForm as IRegisterForm, setRegisterForm)
+                RegisterTyper(e, registerForm as IRegisterForm, dispatch)
               }
               isRequired={true}
               className="txtinput"
@@ -95,7 +97,7 @@ const RegisterForm: React.FC = () => {
               id="repsw"
               val={registerForm.repsw}
               changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
-                RegisterTyper(e, registerForm as IRegisterForm, setRegisterForm)
+                RegisterTyper(e, registerForm as IRegisterForm, dispatch)
               }
               isRequired={true}
               className="txtinput"
@@ -113,7 +115,7 @@ const RegisterForm: React.FC = () => {
               id="img"
               val={registerForm.img}
               changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
-                RegisterTyper(e, registerForm as IRegisterForm, setRegisterForm)
+                RegisterTyper(e, registerForm as IRegisterForm, dispatch)
               }
               acceptValues="image/*"
               isRequired={true}
@@ -121,7 +123,7 @@ const RegisterForm: React.FC = () => {
             />
           </section>
         </section>
-        <Btn className="btn" clickFunc={() => RegisterUser(setLoading)}>
+        <Btn className="btn" clickFunc={() => RegisterUser(dispatch)}>
           Registrera dig
         </Btn>
       </section>

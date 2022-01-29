@@ -1,5 +1,4 @@
 import useTitle from 'hooks/useTitle';
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Heading from 'ui/Heading';
 import Para from 'ui/Para';

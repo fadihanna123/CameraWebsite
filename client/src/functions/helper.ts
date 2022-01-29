@@ -1,6 +1,6 @@
-import { NavigateFunction, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-export const redirectToRoute = (route: string) => {
-  const navigate: NavigateFunction = useNavigate();
+export const RedirectToRoute = (route: string) => {
+  const navigate = useNavigate();
   navigate(route);
 };

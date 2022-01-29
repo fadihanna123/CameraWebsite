@@ -1,10 +1,9 @@
 import useTitle from 'hooks/useTitle';
-import { useEffect } from 'react';
-import { useRecoilState } from 'recoil';
-import { loginState } from 'states';
+import { useSelector } from 'react-redux';
+import { LoginReducerTypes } from 'typings';
 
 const Profile: React.FC = () => {
-  const [login] = useRecoilState(loginState);
+  const login = useSelector((state: LoginReducerTypes) => state.loginReducer);
 
   useTitle("Surveillance systems Inc - Profil");
 

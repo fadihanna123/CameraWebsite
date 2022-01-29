@@ -1,8 +1,12 @@
+import { Dispatch } from 'redux';
+import { setRegisterForm } from 'redux/actions';
 import { IRegisterForm } from 'typings';
 
 export const RegisterTyper = (
   e: React.ChangeEvent<HTMLInputElement>,
   registerForm: IRegisterForm,
-  setRegisterForm: (registerForm: IRegisterForm) => void
-): void =>
-  setRegisterForm({ ...registerForm, [e.target.name]: e.target.value });
+  dispatch: Dispatch<any>
+): Object =>
+  dispatch(
+    setRegisterForm({ ...registerForm, [e.target.name]: e.target.value })
+  );

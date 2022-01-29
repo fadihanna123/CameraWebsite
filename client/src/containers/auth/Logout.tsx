@@ -1,12 +1,14 @@
 import { doLogOut } from 'functions';
+import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
-import { useRecoilState } from 'recoil';
-import { loginState } from 'states';
+import { LoginReducerTypes } from 'typings';
 
 const Logout: React.FC = () => {
-  const [login] = useRecoilState(loginState);
+  const login = useSelector((state: LoginReducerTypes) => state.loginReducer);
 
-  return <>{login ? doLogOut() : <Navigate to="/Start" />}</>;
+  const dispatch = useDispatch();
+
+  return <>{login ? doLogOut(dispatch) : <Navigate to="/" />}</>;
 };
 
 export default Logout;

@@ -1,17 +1,19 @@
 import localforage from 'localforage';
 import { Flip, toast } from 'react-toastify';
+import { Dispatch } from 'redux';
+import { setLoading, setLogin } from 'redux/actions';
 import { ILoginForm } from 'typings';
 import { localForageKeys } from 'utils/constants';
 
 import { loginUser } from './auth';
+import { RedirectToRoute } from './helper';
 
 export const checkLogin = async (
-  setLoading: (loading: boolean) => void,
-  loginForm: ILoginForm,
-  setLogin: (login: boolean) => void
+  dispatch: Dispatch<any>,
+  loginForm: ILoginForm
 ): Promise<void> => {
   try {
-    setLoading(true);
+    dispatch(setLoading(true));
 
     const data = await loginUser(loginForm);
 
@@ -22,13 +24,16 @@ export const checkLogin = async (
       localforage
         .setItem(localForageKeys.Author, data.author)
         .catch((err) => toast.error((err as Error).message));
-      //setLogin(true);
+
+      dispatch(setLogin(true));
+
+      RedirectToRoute("/");
     } else {
       toast.error(data.message, { transition: Flip });
     }
   } catch (err) {
     toast.error((err as Error).message, { transition: Flip });
   } finally {
-    setLoading(false);
+    dispatch(setLoading(false));
   }
 };

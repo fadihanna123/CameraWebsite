@@ -45,14 +45,11 @@
 #{map-get($selectorMap, logoutBox)} {
   display: $flex;
   flex-direction: $col;
-  width: 10%;
-
-  #{map-get($selectorMap, link)} {
-    text-decoration: $none;
-  }
+  width: 100%;
 
   #{map-get($selectorMap, btn)} {
     cursor: pointer;
+    margin-top: 20px;
   }
 }
 
