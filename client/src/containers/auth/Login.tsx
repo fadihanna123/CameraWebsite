@@ -1,8 +1,9 @@
 import { checkLogin, loginTyper } from 'functions';
+import useTranslation from 'hooks/useTranslation';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Flip, ToastContainer } from 'react-toastify';
-import { LoginFormReducerTypes, LoginReducerTypes } from 'typings';
+import { LangReducerTypes, LoginFormReducerTypes, LoginReducerTypes } from 'typings';
 import Btn from 'ui/Btn';
 import Heading from 'ui/Heading';
 import Input from 'ui/Input';
@@ -16,6 +17,8 @@ const Login: React.FC = () => {
 
   const login = useSelector((state: LoginReducerTypes) => state.loginReducer);
 
+  const lang = useSelector((state: LangReducerTypes) => state.langReducer);
+
   const dispatch = useDispatch();
 
   return (
@@ -23,10 +26,14 @@ const Login: React.FC = () => {
       {!login ? (
         <form>
           <section className="loginsection">
-            <Heading className="loginheading">Logga in</Heading>
+            <Heading className="loginheading">
+              {useTranslation("Login", lang)}
+            </Heading>
             <section className="loginrow">
               <section className="logincol">
-                <label htmlFor="loginuname">Användarnamn: </label>
+                <label htmlFor="loginuname">
+                  {useTranslation("Username", lang)}:
+                </label>
               </section>
               <section className="logincol">
                 <Input
@@ -45,7 +52,9 @@ const Login: React.FC = () => {
 
             <div className="loginrow">
               <div className="logincol">
-                <label htmlFor="loginpsw">Lösenord: </label>
+                <label htmlFor="loginpsw">
+                  {useTranslation("Password", lang)}:
+                </label>
               </div>
               <div className="logincol">
                 <Input
@@ -65,7 +74,7 @@ const Login: React.FC = () => {
               className="btn"
               clickFunc={() => checkLogin(dispatch, loginForm)}
             >
-              Logga in
+              {useTranslation("Login", lang)}
             </Btn>
           </section>
           <ToastContainer transition={Flip} />

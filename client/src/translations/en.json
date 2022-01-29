@@ -1,0 +1,14 @@
+{
+  "Hi": "Hi",
+  "Login": "Login",
+  "Username": "Username",
+  "Email": "Email",
+  "Mobilenumber": "Mobilenumber",
+  "Password": "Password",
+  "repsw": "Confirm password",
+  "Logout": "Logout",
+  "Register": "Register",
+  "RegisterText": "Here you can register.",
+  "AlreadyRegistredText": "You are already registred.",
+  "Profilephoto": "Profilephoto"
+}

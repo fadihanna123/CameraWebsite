@@ -4,7 +4,7 @@ import localforage from 'localforage';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
-import { setLogin } from 'redux/actions';
+import { setLang, setLogin } from 'redux/actions';
 import { localForageKeys } from 'utils/constants';
 import { baseURL } from 'utils/envs';
 
@@ -17,6 +17,17 @@ const App: React.FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    const langVal = localforage
+      .getItem(localForageKeys.Lang)
+      .then((data) => {
+        data === "" && dispatch(setLang("en"));
+      })
+      .catch((err) => toast.error((err as Error).message));
+
+    if (langVal !== null) {
+      localforage.setItem(localForageKeys.Lang, "en");
+    }
+
     localforage
       .getItem(localForageKeys.Token)
       .then((Token) => {

@@ -1,5 +1,5 @@
 import { ILoginForm, IRegisterForm } from 'typings';
-import { SET_AUTHOR, SET_LOADING, SET_LOGIN, SET_LOGIN_FORM, SET_REGISTER_FORM } from 'utils/constants';
+import { SET_AUTHOR, SET_LANG, SET_LOADING, SET_LOGIN, SET_LOGIN_FORM, SET_REGISTER_FORM } from 'utils/constants';
 
 export const setLoginForm = (payload: ILoginForm): Object => {
   return { type: SET_LOGIN_FORM, payload };
@@ -19,4 +19,8 @@ export const setAuthor = (payload: unknown): Object => {
 
 export const setRegisterForm = (payload: IRegisterForm): Object => {
   return { type: SET_REGISTER_FORM, payload };
+};
+
+export const setLang = (payload: string): Object => {
+  return { type: SET_LANG, payload };
 };

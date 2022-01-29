@@ -1,12 +1,15 @@
 import LogoImg from 'assets/logo.png';
 import Login from 'containers/auth/Login';
-import { useSelector } from 'react-redux';
+import { langSwitcher } from 'functions';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { LoginReducerTypes } from 'typings';
 import Img from 'ui/Img';
 
 const Header: React.FC = () => {
   const login = useSelector((state: LoginReducerTypes) => state.loginReducer);
+
+  const dispatch = useDispatch();
 
   return (
     <header>
@@ -46,6 +49,12 @@ const Header: React.FC = () => {
         <Link to="/About" className="link">
           Om oss
         </Link>
+        <a onClick={() => langSwitcher("en", dispatch)} className="link">
+          EN
+        </a>
+        <a onClick={() => langSwitcher("sw", dispatch)} className="link">
+          SV
+        </a>
       </nav>
     </header>
   );

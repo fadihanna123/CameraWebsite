@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 
 import { authorReducer } from './author';
+import { langReducer } from './lang';
 import { loadingReducer } from './loading';
 import { loginReducer } from './login';
 import { loginFormReducer } from './loginForm';
@@ -12,4 +13,5 @@ export const allReducers = combineReducers({
   loadingReducer,
   authorReducer,
   registerFormReducer,
+  langReducer,
 });

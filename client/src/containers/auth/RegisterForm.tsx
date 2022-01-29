@@ -1,8 +1,9 @@
 import { RegisterTyper, RegisterUser } from 'functions';
+import useTranslation from 'hooks/useTranslation';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Flip, ToastContainer } from 'react-toastify';
-import { IRegisterForm, RegisterFormReducerTypes } from 'typings';
+import { IRegisterForm, LangReducerTypes, RegisterFormReducerTypes } from 'typings';
 import Btn from 'ui/Btn';
 import FileUploader from 'ui/FileUploader';
 import Input from 'ui/Input';
@@ -12,6 +13,8 @@ const RegisterForm: React.FC = () => {
     (state: RegisterFormReducerTypes) => state.registerFormReducer
   );
 
+  const lang = useSelector((state: LangReducerTypes) => state.langReducer);
+
   const dispatch = useDispatch();
 
   return (
@@ -19,7 +22,7 @@ const RegisterForm: React.FC = () => {
       <section className="registerbox">
         <section className="registerrow">
           <section className="registercol">
-            <label htmlFor="uname">Användarnamn: </label>
+            <label htmlFor="uname">{useTranslation("Username", lang)} </label>
           </section>
           <section className="registercol">
             <Input
@@ -36,7 +39,7 @@ const RegisterForm: React.FC = () => {
         </section>
         <section className="registerrow">
           <section className="registercol">
-            <label htmlFor="email">E-postadress: </label>
+            <label htmlFor="email">{useTranslation("Email", lang)}: </label>
           </section>
           <section className="registercol">
             <Input
@@ -54,7 +57,9 @@ const RegisterForm: React.FC = () => {
         </section>
         <section className="registerrow">
           <section className="registercol">
-            <label htmlFor="mobnr">Mobilnummer: </label>
+            <label htmlFor="mobnr">
+              {useTranslation("Mobilenumber", lang)}:
+            </label>
           </section>
           <section className="registercol">
             <Input
@@ -71,7 +76,7 @@ const RegisterForm: React.FC = () => {
         </section>
         <section className="registerrow">
           <section className="registercol">
-            <label htmlFor="psw">Lösenord: </label>
+            <label htmlFor="psw">{useTranslation("Password", lang)}: </label>
           </section>
           <section className="registercol">
             <Input
@@ -89,7 +94,7 @@ const RegisterForm: React.FC = () => {
         </section>
         <section className="registerrow">
           <section className="registercol">
-            <label htmlFor="repsw">Bekräfta lösenord: </label>
+            <label htmlFor="repsw">{useTranslation("repsw", lang)}: </label>
           </section>
           <section className="registercol">
             <Input
@@ -107,7 +112,7 @@ const RegisterForm: React.FC = () => {
         </section>
         <section className="registerrow">
           <section className="registercol">
-            <label htmlFor="img">Profilbild: </label>
+            <label htmlFor="img">{useTranslation("Profilephoto", lang)}:</label>
           </section>
           <section className="registerspeccol">
             <FileUploader
@@ -124,7 +129,7 @@ const RegisterForm: React.FC = () => {
           </section>
         </section>
         <Btn className="btn" clickFunc={() => RegisterUser(dispatch)}>
-          Registrera dig
+          {useTranslation("Register", lang)}
         </Btn>
       </section>
       <ToastContainer transition={Flip} />

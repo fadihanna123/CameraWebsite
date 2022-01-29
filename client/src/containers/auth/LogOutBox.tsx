@@ -1,9 +1,10 @@
 import { doLogOut } from 'functions';
+import useTranslation from 'hooks/useTranslation';
 import localforage from 'localforage';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setAuthor } from 'redux/actions';
-import { AuthorReducerTypes } from 'typings';
+import { AuthorReducerTypes, LangReducerTypes } from 'typings';
 import Btn from 'ui/Btn';
 import Heading from 'ui/Heading';
 import { localForageKeys } from 'utils/constants';
@@ -12,6 +13,8 @@ const LogOutBox: React.FC = () => {
   const author = useSelector(
     (state: AuthorReducerTypes) => state.authorReducer
   );
+
+  const lang = useSelector((state: LangReducerTypes) => state.langReducer);
 
   const dispatch = useDispatch();
 
@@ -22,10 +25,13 @@ const LogOutBox: React.FC = () => {
   return (
     <section className="logoutbox">
       <Heading headingLevel={4}>
-        <b>Hej {author}</b>
+        <b>
+          {useTranslation("Hi", lang)}
+          {author}
+        </b>
       </Heading>
       <Btn className="btn" clickFunc={() => doLogOut(dispatch)}>
-        Logga ut
+        {useTranslation("Logout", lang)}
       </Btn>
     </section>
   );

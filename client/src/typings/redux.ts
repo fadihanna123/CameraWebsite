@@ -24,3 +24,7 @@ export interface AuthorReducerTypes {
 export interface RegisterFormReducerTypes {
   registerFormReducer: IRegisterForm;
 }
+
+export interface LangReducerTypes {
+  langReducer: string;
+}
