@@ -14,7 +14,7 @@ const Input: React.FC<InputProps> = ({
     <input
       id={id}
       type={type}
-      className={className}
+      className={className?.join(" ")}
       name={name}
       onChange={changeFunc}
       value={val}

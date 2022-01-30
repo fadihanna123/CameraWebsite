@@ -1,4 +1,4 @@
-import LogoImg from 'assets/logo.png';
+import LogoImg from 'assets/logo.webp';
 import Login from 'containers/auth/Login';
 import { langSwitcher } from 'functions';
 import { useDispatch, useSelector } from 'react-redux';
@@ -18,10 +18,11 @@ const Header: React.FC = () => {
           <Link to="/">
             <Img
               source={LogoImg}
-              className="logoimg"
+              className={["logoimg"]}
               alt="Logobild"
               ariaLabel="Logobild"
               loading="lazy"
+              dimensions={[460, 200]}
             />
           </Link>
         </section>

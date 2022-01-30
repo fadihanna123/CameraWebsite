@@ -30,7 +30,7 @@ const LogOutBox: React.FC = () => {
           {author}
         </b>
       </Heading>
-      <Btn className="btn" clickFunc={() => doLogOut(dispatch)}>
+      <Btn clickFunc={() => doLogOut(dispatch)}>
         {useTranslation("Logout", lang)}
       </Btn>
     </section>

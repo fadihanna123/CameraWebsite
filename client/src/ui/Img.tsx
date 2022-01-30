@@ -7,14 +7,17 @@ const Img: React.FC<ImgProps> = ({
   alt,
   ariaLabel,
   loading,
+  dimensions,
 }: ImgProps) => {
   return (
     <img
       src={source}
-      className={className}
+      className={className?.join(" ")}
       alt={alt}
       aria-label={ariaLabel}
       loading={loading}
+      width={dimensions[0]}
+      height={dimensions[1]}
     />
   );
 };

@@ -33,7 +33,7 @@ const RegisterForm: React.FC = () => {
               }
               name="uname"
               isRequired={true}
-              className="txtinput"
+              className={["txtinput"]}
             />
           </section>
         </section>
@@ -50,7 +50,7 @@ const RegisterForm: React.FC = () => {
                 RegisterTyper(e, registerForm as IRegisterForm, dispatch)
               }
               isRequired={true}
-              className="txtinput"
+              className={["txtinput"]}
               name="email"
             />
           </section>
@@ -69,7 +69,7 @@ const RegisterForm: React.FC = () => {
               changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
                 RegisterTyper(e, registerForm as IRegisterForm, dispatch)
               }
-              className="txtinput"
+              className={["txtinput"]}
               name="mobnr"
             />
           </section>
@@ -87,7 +87,7 @@ const RegisterForm: React.FC = () => {
                 RegisterTyper(e, registerForm as IRegisterForm, dispatch)
               }
               isRequired={true}
-              className="txtinput"
+              className={["txtinput"]}
               name="psw"
             />
           </section>
@@ -105,7 +105,7 @@ const RegisterForm: React.FC = () => {
                 RegisterTyper(e, registerForm as IRegisterForm, dispatch)
               }
               isRequired={true}
-              className="txtinput"
+              className={["txtinput"]}
               name="repsw"
             />
           </section>
@@ -128,7 +128,7 @@ const RegisterForm: React.FC = () => {
             />
           </section>
         </section>
-        <Btn className="btn" clickFunc={() => RegisterUser(dispatch)}>
+        <Btn clickFunc={() => RegisterUser(dispatch)}>
           {useTranslation("Register", lang)}
         </Btn>
       </section>

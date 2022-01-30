@@ -10,7 +10,7 @@ const Btn: React.FC<BtnProps> = ({
     <button
       style={btnStyle}
       type="button"
-      className={className}
+      className={className?.join(" ")}
       onClick={clickFunc}
     >
       {children}

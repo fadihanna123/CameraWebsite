@@ -26,7 +26,7 @@ const Login: React.FC = () => {
       {!login ? (
         <form>
           <section className="loginsection">
-            <Heading className="loginheading">
+            <Heading className={["loginheading"]}>
               {useTranslation("Login", lang)}
             </Heading>
             <section className="loginrow">
@@ -39,7 +39,7 @@ const Login: React.FC = () => {
                 <Input
                   id="loginuname"
                   type="text"
-                  className="txtinput"
+                  className={["txtinput"]}
                   name="uname"
                   changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
                     loginTyper(e, loginForm, dispatch)
@@ -60,7 +60,7 @@ const Login: React.FC = () => {
                 <Input
                   id="loginpsw"
                   type="password"
-                  className="txtinput"
+                  className={["txtinput"]}
                   name="psw"
                   changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
                     loginTyper(e, loginForm, dispatch)
@@ -71,7 +71,7 @@ const Login: React.FC = () => {
               </div>
             </div>
             <Btn
-              className="btn"
+              className={["btn"]}
               clickFunc={() => checkLogin(dispatch, loginForm)}
             >
               {useTranslation("Login", lang)}

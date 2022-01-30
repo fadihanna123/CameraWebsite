@@ -8,8 +8,10 @@ const Error: React.FC = () => {
 
   return (
     <main className="main">
-      <Heading className="errorheading">404 NOT FOUND</Heading>
-      <Para className="errorpara"> Sidan som du letar efter finns inte. </Para>
+      <Heading className={["errorheading"]}>404 NOT FOUND</Heading>
+      <Para className={["errorpara"]}>
+        Sidan som du letar efter finns inte.
+      </Para>
       <Link to="/" className="link">
         Startsida
       </Link>

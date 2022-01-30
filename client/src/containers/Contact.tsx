@@ -1,5 +1,4 @@
 import useTitle from 'hooks/useTitle';
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Btn from 'ui/Btn';
 import Heading from 'ui/Heading';
@@ -42,7 +41,7 @@ const Contact: React.FC = () => {
             <label htmlFor="fullname">Fullständigt namn: </label>
           </section>
           <section className="contactcol">
-            <Input id="fullname" className="txtinput" />
+            <Input id="fullname" className={["txtinput"]} />
           </section>
         </section>
 
@@ -51,7 +50,7 @@ const Contact: React.FC = () => {
             <label htmlFor="epost">E-postadress: </label>
           </section>
           <section className="contactcol">
-            <Input id="epost" type="email" className="txtinput" />
+            <Input id="epost" type="email" className={["txtinput"]} />
           </section>
         </section>
 
@@ -60,7 +59,7 @@ const Contact: React.FC = () => {
             <label htmlFor="mobnr">Mobilnummer: </label>
           </section>
           <section className="contactcol">
-            <Input id="mobnr" className="txtinput" />
+            <Input id="mobnr" className={["txtinput"]} />
           </section>
         </section>
 
@@ -69,10 +68,10 @@ const Contact: React.FC = () => {
             <label htmlFor="msg">Meddelande: </label>
           </section>
           <section className="contactcol">
-            <TxtArea id="msg" className="txtinput"></TxtArea>
+            <TxtArea id="msg" className={["txtinput"]}></TxtArea>
           </section>
         </section>
-        <Btn className="btn">Skicka</Btn>
+        <Btn className={["btn"]}>Skicka</Btn>
       </section>
     </main>
   );

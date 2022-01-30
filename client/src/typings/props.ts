@@ -2,14 +2,14 @@ import { ChangeEventHandler, MouseEventHandler, ReactElement } from 'react';
 
 export interface HeadingProps {
   headingLevel?: 1 | number;
-  className?: string;
+  className?: string[];
   children: ReactElement<any, any> | string;
 }
 
 export interface InputProps {
   id: string;
   type?: "text" | string;
-  className?: string;
+  className?: string[];
   name?: string;
   val?: string;
   isRequired?: boolean;
@@ -18,21 +18,21 @@ export interface InputProps {
 }
 
 export interface BtnProps {
-  className: "btn" | string;
+  className?: ["btn"] | string[];
   clickFunc?: MouseEventHandler<HTMLButtonElement>;
   children: ReactElement<any, any> | string;
   btnStyle?: Object;
 }
 
 export interface ParaProps {
-  className?: string;
+  className?: string[];
   children: JSX.Element | JSX.Element[] | string;
 }
 
 export interface FileUploaderProps {
   id: string;
   type?: "text" | string;
-  className?: string;
+  className?: string[];
   name: string;
   val: string;
   isRequired?: boolean;
@@ -42,13 +42,14 @@ export interface FileUploaderProps {
 
 export interface TxtAreaProps {
   id: string;
-  className?: string;
+  className?: string[];
 }
 
 export interface ImgProps {
   source: string;
-  className: string;
+  className: string[];
   alt: string;
   ariaLabel: string;
   loading: "eager" | "lazy" | undefined;
+  dimensions: number[];
 }
