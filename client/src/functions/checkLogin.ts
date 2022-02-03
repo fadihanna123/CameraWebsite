@@ -15,22 +15,22 @@ export const checkLogin = async (
   try {
     dispatch(setLoading(true));
 
-    const data = await loginUser(loginForm);
+    await loginUser(loginForm).then((res) => {
+      if (res.accessToken) {
+        localforage
+          .setItem(localForageKeys.Token, res.accessToken)
+          .catch((err) => toast.error((err as Error).message));
+        localforage
+          .setItem(localForageKeys.Author, res.author)
+          .catch((err) => toast.error((err as Error).message));
 
-    if (data.accessToken) {
-      localforage
-        .setItem(localForageKeys.Token, data.accessToken)
-        .catch((err) => toast.error((err as Error).message));
-      localforage
-        .setItem(localForageKeys.Author, data.author)
-        .catch((err) => toast.error((err as Error).message));
+        dispatch(setLogin(true));
 
-      dispatch(setLogin(true));
-
-      RedirectToRoute("/");
-    } else {
-      toast.error(data.message, { transition: Flip });
-    }
+        RedirectToRoute("/");
+      } else {
+        toast.error(res.message, { transition: Flip });
+      }
+    });
   } catch (err) {
     toast.error((err as Error).message, { transition: Flip });
   } finally {

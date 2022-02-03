@@ -15,9 +15,9 @@ export const RegisterUser = async (dispatch: Dispatch<any>): Promise<void> => {
     const myForm = new FormData();
     myForm.append("img", file!.files![0]);
 
-    const data = await registerUser(myForm);
-
-    toast.error(data.message, { transition: Flip });
+    await registerUser(myForm).then((res) => {
+      if (res.message) toast.error(res.message, { transition: Flip });
+    });
   } catch (err) {
     toast.error((err as Error).message, { transition: Flip });
   } finally {
