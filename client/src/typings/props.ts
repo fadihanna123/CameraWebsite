@@ -53,3 +53,17 @@ export interface ImgProps {
   loading: "eager" | "lazy" | undefined;
   dimensions: number[];
 }
+
+export interface MainFooterProps {
+  classNames: string[];
+  children: JSX.Element | JSX.Element[] | string;
+}
+
+export interface MainHeaderProps {
+  children: JSX.Element | JSX.Element[] | string;
+}
+
+export interface MenuProps {
+  classNames: string[];
+  children: any;
+}

@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { LoginReducerTypes } from 'typings';
 import Img from 'ui/Img';
+import MainHeader from 'ui/MainHeader';
+import Menu from 'ui/Menu';
 
 const Header: React.FC = () => {
   const login = useSelector((state: LoginReducerTypes) => state.loginReducer);
@@ -12,7 +14,7 @@ const Header: React.FC = () => {
   const dispatch = useDispatch();
 
   return (
-    <header>
+    <MainHeader>
       <nav className="topbar">
         <section className="logobox">
           <Link to="/">
@@ -30,7 +32,7 @@ const Header: React.FC = () => {
           <Login />
         </section>
       </nav>
-      <nav className="navbar">
+      <Menu classNames={["navbar"]}>
         <Link to="/" className="link">
           Start
         </Link>
@@ -56,8 +58,8 @@ const Header: React.FC = () => {
         <a onClick={() => langSwitcher("sw", dispatch)} className="link">
           SV
         </a>
-      </nav>
-    </header>
+      </Menu>
+    </MainHeader>
   );
 };
 export default Header;

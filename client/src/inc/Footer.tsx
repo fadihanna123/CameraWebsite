@@ -2,12 +2,13 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { LoginReducerTypes } from 'typings';
 import Heading from 'ui/Heading';
+import MainFooter from 'ui/MainFooter';
 
 const Footer: React.FC = () => {
   const login = useSelector((state: LoginReducerTypes) => state.loginReducer);
 
   return (
-    <footer className="footerbox">
+    <MainFooter classNames={["footerbox"]}>
       <section className="footerrow">
         <section className="footercol">
           <Heading>Surveillance systems Inc</Heading>
@@ -46,7 +47,7 @@ const Footer: React.FC = () => {
           </li>
         </ul>
       </section>
-    </footer>
+    </MainFooter>
   );
 };
 
