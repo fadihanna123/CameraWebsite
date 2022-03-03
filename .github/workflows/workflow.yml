@@ -21,7 +21,7 @@ jobs:
         run: npm install && npm run build
 
       - name: Deploy
-        working-directory: ./client
+        working-directory: client
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
           branch: publish # The branch the action should deploy to.
