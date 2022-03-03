@@ -8,6 +8,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: client
 
     strategy:
       matrix:
@@ -16,7 +19,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-        working-directory: client
 
       - name: Install and build
         run: npm install && npm run build
