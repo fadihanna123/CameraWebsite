@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./
+        working-directory: ./client
 
     strategy:
       matrix:
@@ -27,4 +27,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@4.1.1
         with:
           branch: publish # The branch the action should deploy to.
-          folder: build # The folder the action should deploy.
+          folder: ./ # The folder the action should deploy.
