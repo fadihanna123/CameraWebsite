@@ -1,5 +1,5 @@
 import { request } from 'api';
-import { ILoginData, ILoginForm, IRegisterData } from 'typings';
+import { ILoginData, ILoginForm, IRegisterData } from 'models';
 import { loginEndPoint, registerEndPoint } from 'utils/envs';
 
 export const loginUser = async (loginForm: ILoginForm): Promise<ILoginData> =>

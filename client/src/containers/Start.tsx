@@ -1,6 +1,6 @@
 import useTitle from 'hooks/useTitle';
+import { LoginReducerTypes } from 'models';
 import { useSelector } from 'react-redux';
-import { LoginReducerTypes } from 'typings';
 import Heading from 'ui/Heading';
 import Para from 'ui/Para';
 

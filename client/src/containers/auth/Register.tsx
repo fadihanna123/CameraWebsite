@@ -1,7 +1,7 @@
 import useTitle from 'hooks/useTitle';
 import useTranslation from 'hooks/useTranslation';
+import { LangReducerTypes, LoginReducerTypes } from 'models';
 import { useSelector } from 'react-redux';
-import { LangReducerTypes, LoginReducerTypes } from 'typings';
 import Heading from 'ui/Heading';
 import Para from 'ui/Para';
 

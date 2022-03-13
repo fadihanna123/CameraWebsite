@@ -1,4 +1,4 @@
-import { HeadingProps } from 'typings';
+import { HeadingProps } from 'models';
 
 const Heading: React.FC<HeadingProps> = ({
   headingLevel,

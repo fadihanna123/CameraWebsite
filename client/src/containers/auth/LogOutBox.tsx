@@ -1,10 +1,10 @@
 import { doLogOut } from 'functions';
 import useTranslation from 'hooks/useTranslation';
 import localforage from 'localforage';
+import { AuthorReducerTypes, LangReducerTypes } from 'models';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setAuthor } from 'redux/actions';
-import { AuthorReducerTypes, LangReducerTypes } from 'typings';
 import Btn from 'ui/Btn';
 import Heading from 'ui/Heading';
 import { localForageKeys } from 'utils/constants';

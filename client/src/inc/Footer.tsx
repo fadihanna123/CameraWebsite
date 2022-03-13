@@ -1,6 +1,6 @@
+import { LoginReducerTypes } from 'models';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { LoginReducerTypes } from 'typings';
 import Heading from 'ui/Heading';
 import MainFooter from 'ui/MainFooter';
 

@@ -1,4 +1,4 @@
-import { FileUploaderProps } from 'typings';
+import { FileUploaderProps } from 'models';
 
 import Input from './Input';
 
