@@ -1,4 +1,4 @@
-import { MainHeaderProps } from 'typings';
+import { MainHeaderProps } from 'models';
 
 const mainHeader: React.FC<MainHeaderProps> = ({
   children,

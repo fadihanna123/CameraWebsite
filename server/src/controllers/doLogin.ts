@@ -1,13 +1,13 @@
-import { Request, Response } from "express";
-import jwt from "jsonwebtoken";
-import striptags from "striptags";
-
-import { prisma } from "db";
+import { prisma } from 'db';
+import { Request, Response } from 'express';
+import jwt from 'jsonwebtoken';
+import { UsrObjJwt } from 'models';
+import striptags from 'striptags';
 
 export const doLogin = async (req: Request, res: Response) => {
   let { uname, psw } = req.body;
-  const userObject: { uname: string } = {
-    uname: uname,
+  const userObject: UsrObjJwt = {
+    uname,
   };
 
   if (!uname || !psw) {

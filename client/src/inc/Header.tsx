@@ -1,9 +1,9 @@
 import LogoImg from 'assets/logo.webp';
 import Login from 'containers/auth/Login';
 import { langSwitcher } from 'functions';
+import { LoginReducerTypes } from 'models';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { LoginReducerTypes } from 'typings';
 import Img from 'ui/Img';
 import MainHeader from 'ui/MainHeader';
 import Menu from 'ui/Menu';

@@ -1,4 +1,4 @@
-import { BtnProps } from 'typings';
+import { BtnProps } from 'models';
 
 const Btn: React.FC<BtnProps> = ({
   className,

@@ -1,8 +1,8 @@
-import { prisma } from "db";
-import { Response } from "express";
-import striptags from "striptags";
-import { Request } from "typings";
-import validator from "validator";
+import { prisma } from 'db';
+import { Response } from 'express';
+import { Request } from 'models/auth';
+import striptags from 'striptags';
+import validator from 'validator';
 
 export const doRegister = async (req: Request, res: Response) => {
   const { uname, email, mobnr, psw, repsw } = req.body;

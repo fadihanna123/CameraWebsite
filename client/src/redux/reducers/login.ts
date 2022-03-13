@@ -1,4 +1,4 @@
-import { ActionTypes } from 'typings';
+import { ActionTypes } from 'models';
 import { SET_LOGIN } from 'utils/constants';
 
 const initialState: boolean = false;

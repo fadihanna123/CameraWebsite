@@ -1,6 +1,6 @@
+import { ILoginForm } from 'models';
 import { Dispatch } from 'redux';
 import { setLoginForm } from 'redux/actions';
-import { ILoginForm } from 'typings';
 
 export const loginTyper = (
   e: React.ChangeEvent<HTMLInputElement>,

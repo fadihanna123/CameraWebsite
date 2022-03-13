@@ -1,4 +1,4 @@
-import { ActionTypes, ILoginForm } from 'typings';
+import { ActionTypes, ILoginForm } from 'models';
 import { SET_LOGIN_FORM } from 'utils/constants';
 
 const initialState: ILoginForm = {

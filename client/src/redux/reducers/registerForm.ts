@@ -1,4 +1,4 @@
-import { ActionTypes, IRegisterForm } from 'typings';
+import { ActionTypes, IRegisterForm } from 'models';
 import { SET_REGISTER_FORM } from 'utils/constants';
 
 const initialState: IRegisterForm = {
