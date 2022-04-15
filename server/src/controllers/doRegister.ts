@@ -2,6 +2,7 @@ import { prisma } from 'db';
 import { Response } from 'express';
 import { Request } from 'models/auth';
 import striptags from 'striptags';
+import { logger } from 'tools';
 import validator from 'validator';
 
 export const doRegister = async (req: Request, res: Response) => {
@@ -54,9 +55,9 @@ export const doRegister = async (req: Request, res: Response) => {
           else {
             // Om användaren inte hittades i databasen.
             try {
-              let file;
-
-              file = (req as any).files.myFile ? (req as any).files.myFile : "";
+              const file = (req as any).files.myFile
+                ? (req as any).files.myFile
+                : "";
 
               if (!req.files || Object.keys(req.files).length === 0) {
                 return res.status(400).send("Var vänlig välj en bild.");
@@ -66,7 +67,7 @@ export const doRegister = async (req: Request, res: Response) => {
                 "./uploads/" + file.name,
                 file.name,
                 (err: Error) => {
-                  if (err) return console.log(err);
+                  if (err) return logger.error(err);
                 }
               );
 
@@ -81,12 +82,13 @@ export const doRegister = async (req: Request, res: Response) => {
                 },
               });
 
-              UserModel &&
+              if (UserModel) {
                 res.send({
                   message: "Tack för registrering. \n Var vänlig och logga in.",
                 });
+              }
             } catch (error) {
-              console.log("\x1b[31m", (error as Error).message);
+              logger.error("\x1b[31m", (error as Error).message);
             }
           } // Slut om användaren inte hittades i databasen.
         } // Slut om lösenord och bekräfta lösenord fälten matchar varandra.

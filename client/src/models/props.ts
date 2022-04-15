@@ -42,7 +42,7 @@ export class BtnProps {
   public className?: ["btn"] | string[];
   public clickFunc?: MouseEventHandler<HTMLButtonElement>;
   public children: ReactElement<any, any> | string;
-  public btnStyle?: Object;
+  public btnStyle?: object;
 }
 
 export class ParaProps {

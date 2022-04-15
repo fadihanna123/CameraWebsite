@@ -33,7 +33,7 @@ export const doLogin = async (req: Request, res: Response) => {
         });
       } else {
         // Returnera accesToken.
-        const accessToken = jwt.sign(userObject, <string>process.env.Token);
+        const accessToken = jwt.sign(userObject, process.env.Token as string);
         res.json({ accessToken: accessToken, author: uname });
       }
     } catch (err) {

@@ -17,21 +17,25 @@ const App: React.FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const langVal = localforage
+    localforage
       .getItem(localForageKeys.Lang)
       .then((data) => {
-        data === "" && dispatch(setLang("en"));
+        if (data === "") dispatch(setLang("en"));
+
+        if (data === null) {
+          localforage.setItem(localForageKeys.Lang, "en");
+        }
       })
       .catch((err) => toast.error((err as Error).message));
-
-    if (langVal !== null) {
-      localforage.setItem(localForageKeys.Lang, "en");
-    }
 
     localforage
       .getItem(localForageKeys.Token)
       .then((Token) => {
-        Token ? dispatch(setLogin(true)) : dispatch(setLogin(false));
+        if (Token) {
+          dispatch(setLogin(true));
+        } else {
+          dispatch(setLogin(false));
+        }
       })
       .catch((err) => toast.error((err as Error).message));
   }, []);
