@@ -6,7 +6,7 @@ export const RegisterTyper = (
   e: React.ChangeEvent<HTMLInputElement>,
   registerForm: IRegisterForm,
   dispatch: Dispatch<any>
-): Object =>
+): object =>
   dispatch(
     setRegisterForm({ ...registerForm, [e.target.name]: e.target.value })
   );

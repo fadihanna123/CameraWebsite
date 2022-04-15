@@ -20,6 +20,7 @@ export const checkLogin = async (
         localforage
           .setItem(localForageKeys.Token, res.accessToken)
           .catch((err) => toast.error((err as Error).message));
+
         localforage
           .setItem(localForageKeys.Author, res.author)
           .catch((err) => toast.error((err as Error).message));

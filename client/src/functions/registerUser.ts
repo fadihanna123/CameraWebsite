@@ -13,7 +13,8 @@ export const RegisterUser = async (dispatch: Dispatch<any>): Promise<void> => {
     ) as HTMLInputElement;
 
     const myForm = new FormData();
-    myForm.append("img", file!.files![0]);
+    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+    myForm.append("img", file?.files![0]);
 
     await registerUser(myForm).then((res) => {
       if (res.message) toast.error(res.message, { transition: Flip });

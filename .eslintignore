@@ -1,0 +1,5 @@
+server/node_modules
+client/node_modules
+server/.eslintrc.js
+client/.eslintrc.js
+server/src/tools/docs/*.ts

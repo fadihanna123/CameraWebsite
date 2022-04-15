@@ -1,13 +1,14 @@
-import "api/auth";
-import "dotenv/config";
+import 'api/auth';
+import 'dotenv/config';
 
-import login from "api/auth/login";
-import register from "api/auth/register";
-import cors from "cors";
-import express from "express";
-import helmet from "helmet";
-import morgan from "morgan";
-import { errorHandler } from "utils";
+import login from 'api/auth/login';
+import register from 'api/auth/register';
+import cors from 'cors';
+import express from 'express';
+import helmet from 'helmet';
+import morgan from 'morgan';
+import { logger } from 'tools';
+import { errorHandler } from 'utils';
 
 const server = express();
 
@@ -26,7 +27,7 @@ const corsOptions = {
   },
 };
 
-server.use(cors());
+server.use(cors(corsOptions));
 server.use(express.json({ type: "application/json", limit: "1kb" }));
 server.use(express.urlencoded({ extended: true }));
 server.use(morgan("dev"));
@@ -35,8 +36,8 @@ server.use(login);
 server.use(register);
 server.use(errorHandler);
 
-const port: number = parseInt(<string>PORT);
+const port: number = parseInt(PORT as string, 10);
 
 server.listen(port, () =>
-  console.log(` \n Server started on port ${port} \n `)
+  logger.debug(` \n Server started on port ${port} \n `)
 );

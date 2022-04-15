@@ -9,11 +9,7 @@ const Profile: React.FC = () => {
 
   return (
     <main className="main">
-      {login
-        ? {
-            /*  Profile */
-          }
-        : "Du måste logga in för att se innehållet"}
+      {login ? "" : "Du måste logga in för att se innehållet"}
     </main>
   );
 };
