@@ -18,13 +18,13 @@ const { PORT } = process.env;
 const whiteList: string[] = ["http://localhost:3000"];
 
 const corsOptions = {
-  origin: (origin: any, callback: any) => {
-    if (whiteList.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
+    origin: (origin: any, callback: any) => {
+        if (whiteList.indexOf(origin) !== -1) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
 };
 
 server.use(cors(corsOptions));
@@ -39,5 +39,5 @@ server.use(errorHandler);
 const port: number = parseInt(PORT as string, 10);
 
 server.listen(port, () =>
-  logger.debug(` \n Server started on port ${port} \n `)
+    logger.debug(` \n Server started on port ${port} \n `)
 );

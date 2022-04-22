@@ -8,10 +8,10 @@ import { loginFormReducer } from './loginForm';
 import { registerFormReducer } from './registerForm';
 
 export const allReducers = combineReducers({
-  loginFormReducer,
-  loginReducer,
-  loadingReducer,
-  authorReducer,
-  registerFormReducer,
-  langReducer,
+    loginFormReducer,
+    loginReducer,
+    loadingReducer,
+    authorReducer,
+    registerFormReducer,
+    langReducer,
 });

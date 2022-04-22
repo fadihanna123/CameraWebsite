@@ -1,10 +1,10 @@
 import { MainFooterProps } from 'models';
 
 const mainFooter: React.FC<MainFooterProps> = ({
-  classNames,
-  children,
+    classNames,
+    children,
 }: MainFooterProps) => (
-  <footer className={classNames.join(" ")}>{children}</footer>
+    <footer className={classNames.join(" ")}>{children}</footer>
 );
 
 export default mainFooter;
