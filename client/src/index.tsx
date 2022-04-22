@@ -10,15 +10,15 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { store } from 'redux/store';
 
 const root: ReactDOM.Root = ReactDOM.createRoot(
-  document.getElementById("root") as HTMLDivElement
+    document.getElementById("root") as HTMLDivElement
 );
 
 root.render(
-  <React.StrictMode>
-    <Router>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </Router>
-  </React.StrictMode>
+    <React.StrictMode>
+        <Router>
+            <Provider store={store}>
+                <App />
+            </Provider>
+        </Router>
+    </React.StrictMode>
 );

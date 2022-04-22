@@ -8,14 +8,14 @@ import Error from '../containers/Error';
 import Start from '../containers/Start';
 
 const Main: React.FC = () => (
-  <Routes>
-    <Route path="/" element={<Start />} />
-    <Route path="/About" element={<About />} />
-    <Route path="/Contact" element={<Contact />} />
-    <Route path="/Register" element={<Register />} />
-    <Route path="/Dashboard" element={<Profile />} />
-    <Route element={<Error />} />
-  </Routes>
+    <Routes>
+        <Route path="/" element={<Start />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Contact" element={<Contact />} />
+        <Route path="/Register" element={<Register />} />
+        <Route path="/Dashboard" element={<Profile />} />
+        <Route element={<Error />} />
+    </Routes>
 );
 
 export default Main;

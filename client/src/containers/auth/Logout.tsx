@@ -4,11 +4,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 
 const Logout: React.FC = () => {
-  const login = useSelector((state: LoginReducerTypes) => state.loginReducer);
+    const login = useSelector((state: LoginReducerTypes) => state.loginReducer);
 
-  const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-  return <>{login ? doLogOut(dispatch) : <Navigate to="/" />}</>;
+    return <>{login ? doLogOut(dispatch) : <Navigate to="/" />}</>;
 };
 
 export default Logout;

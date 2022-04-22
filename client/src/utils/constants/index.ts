@@ -1,7 +1,7 @@
 export enum localForageKeys {
-  Token = "Token",
-  Author = "Author",
-  Lang = "lang",
+    Token = "Token",
+    Author = "Author",
+    Lang = "lang",
 }
 
 export const SET_LOGIN_FORM = "setLoginForm";
