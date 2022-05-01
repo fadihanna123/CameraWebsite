@@ -1,48 +1,54 @@
 // Footer
 #{map-get($selectorMap, footerBox)} {
-  border: 1px $solidbrd color(white);
-  margin-top: 10px;
-  padding: 10px;
-  color: #000;
-  background: color(white);
+    border: 1px $solidbrd color(white);
+    margin-top: 10px;
+    padding: 10px;
+    color: #000;
+    background: color(white);
+    transition: 0.3s;
 }
 
 #{map-get($selectorMap, footerRow)} {
-  display: $flex;
-  justify-content: $spaceAround;
+    display: $flex;
+    justify-content: $spaceAround;
+    transition: 0.3s;
 }
 
 #{map-get($selectorMap, footerCol)} {
-  width: 50%;
+    width: 50%;
+    transition: 0.3s;
 
-  #{map-get($selectorMap, address)} {
-    font-size: 25px;
-  }
+    #{map-get($selectorMap, address)} {
+        font-size: 25px;
+        transition: 0.3s;
+    }
 }
 
 #{map-get($selectorMap, footerLinks)} {
-  display: $flex;
-  flex-direction: $col;
-  padding: 10px;
+    display: $flex;
+    flex-direction: $col;
+    padding: 10px;
+    transition: 0.3s;
 
-  #{map-get($selectorMap, footerLinks)} {
-    font-size: 20px;
-  }
+    #{map-get($selectorMap, footerLinks)} {
+        font-size: 20px;
+        transition: 0.3s;
+    }
 }
 
 // Styles for mobiles
 @media screen and (min-width: 320px) and (max-width: 768px) {
-  // Footer
-  #{map-get($selectorMap, footerRow)} {
-    flex-direction: $col;
-  }
+    // Footer
+    #{map-get($selectorMap, footerRow)} {
+        flex-direction: $col;
+    }
 
-  #{map-get($selectorMap, footerCol)} {
-    width: 100%;
-    text-align: $cntr;
-  }
+    #{map-get($selectorMap, footerCol)} {
+        width: 100%;
+        text-align: $cntr;
+    }
 
-  #{map-get($selectorMap, footerLinks)} {
-    text-align: $cntr;
-  }
+    #{map-get($selectorMap, footerLinks)} {
+        text-align: $cntr;
+    }
 }
