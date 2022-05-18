@@ -1,18 +1,17 @@
 import { DateTime } from 'luxon';
 import winston, { format } from 'winston';
 
-const myFormat = format.printf(({ level, message, label, timestamp }) => {
+const myFormat = format.printf(({ level, message, timestamp }) => {
     timestamp = DateTime.fromJSDate(new Date(timestamp)).toFormat(
         "yyyy-MM-dd HH:mm"
     );
 
-    return `{\n 'time': '${timestamp}',\n 'label': ['${label}'],\n 'level': '${level}',\n 'message': '${message}'\n}`;
+    return `{\n 'time': '${timestamp}', \n 'level': '${level}', \n 'message': '${message}'\n}`;
 });
 
 export const logger = winston.createLogger({
     level: "info",
     format: winston.format.json(),
-    defaultMeta: { service: "user-service" },
 
     transports: [
         new winston.transports.File({

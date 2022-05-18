@@ -16,3 +16,12 @@ model users {
   img    String?
   locked BigInt?
 }
+
+model errors {
+  id      Int     @id @default(autoincrement())
+  errorId Int
+  method  String
+  message String?
+  located String
+  time    String
+}
