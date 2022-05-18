@@ -37,7 +37,7 @@ export const doLogin = async (req: Request, res: Response) => {
                     userObject,
                     process.env.Token as string
                 );
-                res.json({ accessToken: accessToken, author: uname });
+                res.json({ accessToken, author: uname });
             }
         } catch (err) {
             // Om det finns något fel..

@@ -39,5 +39,5 @@ server.use(errorHandler);
 const port: number = parseInt(PORT as string, 10);
 
 server.listen(port, () =>
-    logger.debug(` \n Server started on port ${port} \n `)
+    logger.info(` \n Server started on port ${port} \n `)
 );
