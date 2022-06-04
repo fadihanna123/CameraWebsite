@@ -1,4 +1,4 @@
-import { InputProps } from 'models';
+import { InputProps } from "models";
 
 const Input: React.FC<InputProps> = ({
     id,

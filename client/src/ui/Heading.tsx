@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/indent */
-import { HeadingProps } from 'models';
+import { HeadingProps } from "models";
 
 const Heading: React.FC<HeadingProps> = ({
     headingLevel,

@@ -4,7 +4,7 @@ const useTranslation = (val: string, lang: string) => {
     if (lang === "en") {
         data = require(`../translations/${lang}.json`);
     } else {
-        data = require(`../translations/sw.json`);
+        data = require("../translations/sw.json");
     }
 
     return data[val];

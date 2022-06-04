@@ -1,8 +1,8 @@
-import { LoginReducerTypes } from 'models';
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import Heading from 'ui/Heading';
-import MainFooter from 'ui/MainFooter';
+import { LoginReducerTypes } from "models";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import Heading from "ui/Heading";
+import MainFooter from "ui/MainFooter";
 
 const Footer: React.FC = () => {
     const login = useSelector((state: LoginReducerTypes) => state.loginReducer);

@@ -1,10 +1,10 @@
-import useTitle from 'hooks/useTitle';
-import { Link } from 'react-router-dom';
-import Btn from 'ui/Btn';
-import Heading from 'ui/Heading';
-import Input from 'ui/Input';
-import Para from 'ui/Para';
-import TxtArea from 'ui/TxtArea';
+import useTitle from "hooks/useTitle";
+import { Link } from "react-router-dom";
+import Btn from "ui/Btn";
+import Heading from "ui/Heading";
+import Input from "ui/Input";
+import Para from "ui/Para";
+import TxtArea from "ui/TxtArea";
 
 const Contact: React.FC = () => {
     useTitle("Surveillance systems Inc - Kontakta oss");

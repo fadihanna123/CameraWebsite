@@ -1,11 +1,11 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes } from "react-router-dom";
 
-import About from '../containers/About';
-import Register from '../containers/auth/Register';
-import Contact from '../containers/Contact';
-import Profile from '../containers/dashboard/Profile';
-import Error from '../containers/Error';
-import Start from '../containers/Start';
+import About from "../containers/About";
+import Register from "../containers/auth/Register";
+import Contact from "../containers/Contact";
+import Profile from "../containers/dashboard/Profile";
+import Error from "../containers/Error";
+import Start from "../containers/Start";
 
 const Main: React.FC = () => (
     <Routes>

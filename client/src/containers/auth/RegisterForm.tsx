@@ -1,12 +1,12 @@
-import { RegisterTyper, RegisterUser } from 'functions';
-import useTranslation from 'hooks/useTranslation';
-import { IRegisterForm, LangReducerTypes, RegisterFormReducerTypes } from 'models';
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Flip, ToastContainer } from 'react-toastify';
-import Btn from 'ui/Btn';
-import FileUploader from 'ui/FileUploader';
-import Input from 'ui/Input';
+import { RegisterTyper, RegisterUser } from "functions";
+import useTranslation from "hooks/useTranslation";
+import { IRegisterForm, LangReducerTypes, RegisterFormReducerTypes } from "models";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Flip, ToastContainer } from "react-toastify";
+import Btn from "ui/Btn";
+import FileUploader from "ui/FileUploader";
+import Input from "ui/Input";
 
 const RegisterForm: React.FC = () => {
     const registerForm = useSelector(
