@@ -1,6 +1,6 @@
-import Main from 'components/Main';
-import Footer from 'inc/Footer';
-import Header from 'inc/Header';
+import Main from "components/Main";
+import Footer from "inc/Footer";
+import Header from "inc/Header";
 
 const Layout: React.FC = () => (
     <section className="container">

@@ -1,5 +1,5 @@
-import { ImgProps } from 'models';
-import React from 'react';
+import { ImgProps } from "models";
+import React from "react";
 
 const Img: React.FC<ImgProps> = ({
     source,

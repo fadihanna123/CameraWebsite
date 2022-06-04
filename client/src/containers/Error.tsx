@@ -1,7 +1,7 @@
-import useTitle from 'hooks/useTitle';
-import { Link } from 'react-router-dom';
-import Heading from 'ui/Heading';
-import Para from 'ui/Para';
+import useTitle from "hooks/useTitle";
+import { Link } from "react-router-dom";
+import Heading from "ui/Heading";
+import Para from "ui/Para";
 
 const Error: React.FC = () => {
     useTitle("Surveillance systems Inc - Sidan finns inte");

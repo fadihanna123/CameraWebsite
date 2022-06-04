@@ -78,7 +78,7 @@ module.exports = {
         "@typescript-eslint/dot-notation": "error",
         "@typescript-eslint/indent": "error",
         "@typescript-eslint/member-ordering": "off",
-        "@typescript-eslint/naming-convention": "off",
+        "@typescript-eslint/naming-convention": "error",
         "@typescript-eslint/no-empty-function": [
             "error",
             {
@@ -90,6 +90,12 @@ module.exports = {
         "@typescript-eslint/no-misused-new": "error",
         "@typescript-eslint/no-namespace": "error",
         "@typescript-eslint/no-parameter-properties": "off",
+        "@typescript-eslint/no-shadow": [
+            "error",
+            {
+                hoist: "all",
+            },
+        ],
         "@typescript-eslint/no-unused-expressions": "error",
         "@typescript-eslint/no-use-before-define": "off",
         "@typescript-eslint/no-var-requires": "error",
@@ -131,7 +137,7 @@ module.exports = {
         "jsdoc/check-alignment": "error",
         "jsdoc/check-indentation": "error",
         "jsdoc/newline-after-description": "error",
-        "max-classes-per-file": ["error", 6],
+        "max-classes-per-file": ["error", 1],
         "max-len": "off",
         "new-parens": "error",
         "no-bitwise": "off",
@@ -151,7 +157,7 @@ module.exports = {
         "@typescript-eslint/no-inferrable-types": "off",
         "no-invalid-this": "off",
         "no-new-wrappers": "error",
-        "no-shadow": "off",
+        "no-shadow": "error",
         "no-throw-literal": "error",
         "no-trailing-spaces": "error",
         "no-undef-init": "error",
@@ -167,6 +173,7 @@ module.exports = {
         "one-var": ["error", "never"],
         "prefer-arrow/prefer-arrow-functions": "error",
         "prefer-const": "error",
+        quotes: ["warn", "double"],
         radix: "error",
         semi: "error",
         "spaced-comment": [

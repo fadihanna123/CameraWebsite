@@ -1,6 +1,6 @@
-import useTitle from 'hooks/useTitle';
-import Heading from 'ui/Heading';
-import Para from 'ui/Para';
+import useTitle from "hooks/useTitle";
+import Heading from "ui/Heading";
+import Para from "ui/Para";
 
 const About: React.FC = () => {
     useTitle("Surveillance systems Inc - Om oss");

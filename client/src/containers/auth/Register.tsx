@@ -1,11 +1,11 @@
-import useTitle from 'hooks/useTitle';
-import useTranslation from 'hooks/useTranslation';
-import { LangReducerTypes, LoginReducerTypes } from 'models';
-import { useSelector } from 'react-redux';
-import Heading from 'ui/Heading';
-import Para from 'ui/Para';
+import useTitle from "hooks/useTitle";
+import useTranslation from "hooks/useTranslation";
+import { LangReducerTypes, LoginReducerTypes } from "models";
+import { useSelector } from "react-redux";
+import Heading from "ui/Heading";
+import Para from "ui/Para";
 
-import RegisterForm from './RegisterForm';
+import RegisterForm from "./RegisterForm";
 
 const Register: React.FC = () => {
     const login = useSelector((state: LoginReducerTypes) => state.loginReducer);

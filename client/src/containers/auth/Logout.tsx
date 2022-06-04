@@ -1,7 +1,7 @@
-import { doLogOut } from 'functions';
-import { LoginReducerTypes } from 'models';
-import { useDispatch, useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import { doLogOut } from "functions";
+import { LoginReducerTypes } from "models";
+import { useDispatch, useSelector } from "react-redux";
+import { Navigate } from "react-router-dom";
 
 const Logout: React.FC = () => {
     const login = useSelector((state: LoginReducerTypes) => state.loginReducer);

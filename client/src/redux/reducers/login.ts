@@ -1,5 +1,5 @@
-import { ActionTypes } from 'models';
-import { SET_LOGIN } from 'utils/constants';
+import { ActionTypes } from "models";
+import { SET_LOGIN } from "utils/constants";
 
 const initialState: boolean = false;
 

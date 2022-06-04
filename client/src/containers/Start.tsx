@@ -1,8 +1,8 @@
-import useTitle from 'hooks/useTitle';
-import { LoginReducerTypes } from 'models';
-import { useSelector } from 'react-redux';
-import Heading from 'ui/Heading';
-import Para from 'ui/Para';
+import useTitle from "hooks/useTitle";
+import { LoginReducerTypes } from "models";
+import { useSelector } from "react-redux";
+import Heading from "ui/Heading";
+import Para from "ui/Para";
 
 const Start: React.FC = () => {
     const login = useSelector((state: LoginReducerTypes) => state.loginReducer);

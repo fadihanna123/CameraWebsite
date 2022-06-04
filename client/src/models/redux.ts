@@ -1,4 +1,4 @@
-import { ILoginForm, IRegisterForm } from './forms';
+import { ILoginForm, IRegisterForm } from "./forms";
 
 export class ActionTypes {
     constructor(other?: any) {

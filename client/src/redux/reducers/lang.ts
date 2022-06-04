@@ -1,5 +1,5 @@
-import { ActionTypes } from 'models';
-import { SET_LANG } from 'utils/constants';
+import { ActionTypes } from "models";
+import { SET_LANG } from "utils/constants";
 
 const initialState: string = "";
 

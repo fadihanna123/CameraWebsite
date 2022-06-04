@@ -1,4 +1,4 @@
-import { ChangeEventHandler, MouseEventHandler, ReactElement } from 'react';
+import { ChangeEventHandler, MouseEventHandler, ReactElement } from "react";
 
 export class HeadingProps {
     constructor(other?: any) {

@@ -1,12 +1,12 @@
-import Layout from 'app/Layout';
-import axios from 'axios';
-import localforage from 'localforage';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { toast } from 'react-toastify';
-import { setLang, setLogin } from 'redux/actions';
-import { localForageKeys } from 'utils/constants';
-import { baseURL } from 'utils/envs';
+import Layout from "app/Layout";
+import axios from "axios";
+import localforage from "localforage";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
+import { setLang, setLogin } from "redux/actions";
+import { localForageKeys } from "utils/constants";
+import { baseURL } from "utils/envs";
 
 const globalHeader: string = "application/json";
 

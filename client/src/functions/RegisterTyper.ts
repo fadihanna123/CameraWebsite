@@ -1,6 +1,6 @@
-import { IRegisterForm } from 'models';
-import { Dispatch } from 'redux';
-import { setRegisterForm } from 'redux/actions';
+import { IRegisterForm } from "models";
+import { Dispatch } from "redux";
+import { setRegisterForm } from "redux/actions";
 
 export const RegisterTyper = (
     e: React.ChangeEvent<HTMLInputElement>,

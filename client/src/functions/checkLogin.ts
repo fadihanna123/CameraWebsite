@@ -1,12 +1,12 @@
-import localforage from 'localforage';
-import { ILoginForm } from 'models';
-import { Flip, toast } from 'react-toastify';
-import { Dispatch } from 'redux';
-import { setLoading, setLogin } from 'redux/actions';
-import { localForageKeys } from 'utils/constants';
+import localforage from "localforage";
+import { ILoginForm } from "models";
+import { Flip, toast } from "react-toastify";
+import { Dispatch } from "redux";
+import { setLoading, setLogin } from "redux/actions";
+import { localForageKeys } from "utils/constants";
 
-import { loginUser } from './auth';
-import { RedirectToRoute } from './helper';
+import { loginUser } from "./auth";
+import { RedirectToRoute } from "./helper";
 
 export const checkLogin = async (
     dispatch: Dispatch<any>,
