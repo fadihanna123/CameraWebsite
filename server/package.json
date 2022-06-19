@@ -1,8 +1,11 @@
 {
     "name": "surveillance_server",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "license": "MIT",
-    "author": "Fadi Hanna",
+    "author": {
+        "name": "Fadi Hanna",
+        "email": "fhanna181@gmail.com"
+    },
     "scripts": {
         "start": "ts-node-dev -r tsconfig-paths/register src/server",
         "docs": "apidoc -i src/ -o doc/"
@@ -19,7 +22,7 @@
         "@types/morgan": "^1.9.3",
         "@types/node": "^17.0.24",
         "@types/validator": "^13.7.2",
-        "@typescript-eslint/eslint-plugin": "^5.9.1",
+        "@typescript-eslint/eslint-plugin": "^5.28.0",
         "@typescript-eslint/parser": "^5.9.1",
         "eslint": "^8.6.0",
         "eslint-plugin-import": "^2.25.4",
@@ -44,5 +47,9 @@
         "tsconfig-paths": "^3.14.1",
         "validator": "^13.7.0",
         "winston": "^3.7.2"
+    },
+    "engines": {
+        "node": ">=14.17.0",
+        "npm": ">=6.0.0"
     }
 }
