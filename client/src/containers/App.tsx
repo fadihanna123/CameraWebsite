@@ -17,15 +17,21 @@ const App: React.FC = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
+        let isSubscribed: boolean = true;
+
         localforage
             .getItem(localForageKeys.Lang)
             .then((data) => {
-                if (data === "") {
-                    dispatch(setLang("en"));
-                }
+                if (isSubscribed) {
+                    if (data === "") {
+                        dispatch(setLang("en"));
+                    }
 
-                if (data === null) {
-                    localforage.setItem(localForageKeys.Lang, "en");
+                    if (data === null) {
+                        localforage.setItem(localForageKeys.Lang, "en");
+                    }
+                } else {
+                    return null;
                 }
             })
             .catch((err) => toast.error((err as Error).message));
@@ -33,13 +39,24 @@ const App: React.FC = () => {
         localforage
             .getItem(localForageKeys.Token)
             .then((Token) => {
-                if (Token) {
-                    dispatch(setLogin(true));
+                if (isSubscribed) {
+                    if (Token) {
+                        dispatch(setLogin(true));
+                    } else {
+                        dispatch(setLogin(false));
+                    }
                 } else {
-                    dispatch(setLogin(false));
+                    return null;
                 }
             })
-            .catch((err) => toast.error((err as Error).message));
+            .catch((err: Error) =>
+                isSubscribed ? toast.error((err as Error).message) : null
+            );
+
+        return () => {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            isSubscribed = false;
+        };
     }, []);
 
     return <Layout />;
