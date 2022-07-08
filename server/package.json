@@ -9,7 +9,7 @@
         "email": "fhanna181@gmail.com"
     },
     "scripts": {
-        "start": "ts-node-dev -r tsconfig-paths/register src/server",
+        "start": "prisma db push && prisma db pull && prisma generate && ts-node-dev -r tsconfig-paths/register src/server",
         "docs": "apidoc -i src/ -o doc/"
     },
     "prisma": {
