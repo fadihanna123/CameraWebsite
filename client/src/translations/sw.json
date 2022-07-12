@@ -1,14 +1,15 @@
 {
-  "Hi": "Hej",
-  "Login": "Logga in",
-  "Username": "Användarnamn",
-  "Email": "E-postadress",
-  "Mobilenumber": "Mobilnummer",
-  "Password": "Lösenord",
-  "repsw": "Bekräfta lösenordet",
-  "Logout": "Logga ut",
-  "Register": "Registrera dig",
-  "RegisterText": "Här kan du registrera dig.",
-  "AlreadyRegistredText": "Du är redan registrerad.",
-  "Profilephoto": "Profilbild"
+    "Hi": "Hej",
+    "Login": "Logga in",
+    "Username": "Användarnamn",
+    "Email": "E-postadress",
+    "Mobilenumber": "Mobilnummer",
+    "Password": "Lösenord",
+    "repsw": "Bekräfta lösenordet",
+    "Logout": "Logga ut",
+    "Register": "Registrera dig",
+    "RegisterText": "Här kan du registrera dig.",
+    "AlreadyRegistredText": "Du är redan registrerad.",
+    "Profilephoto": "Profilbild",
+    "About_us": "Om Oss"
 }

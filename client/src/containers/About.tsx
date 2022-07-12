@@ -1,13 +1,18 @@
 import useTitle from "hooks/useTitle";
+import useTranslation from "hooks/useTranslation";
+import { LangReducerTypes } from "models";
+import { useSelector } from "react-redux";
 import Heading from "ui/Heading";
 import Para from "ui/Para";
 
 const About: React.FC = () => {
+    const lang = useSelector((state: LangReducerTypes) => state.langReducer);
+
     useTitle("Surveillance systems Inc - Om oss");
 
     return (
         <main className="main">
-            <Heading>Om oss</Heading>
+            <Heading>{useTranslation("About_us", lang)}</Heading>
             <Para>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
                 sagittis odio non odio finibus imperdiet. Morbi augue ante,
