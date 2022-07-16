@@ -1,13 +1,13 @@
 {
-    "version": "0.0.1",
-    "configurations": [
-        {
-            "name": "Launch Frontend",
-            "type": "pwa-chrome",
-            "request": "attach",
-            "url": "https://localhost:3000",
-            "port": 9222,
-            "webRoot": "${workspaceFolder}/client"
-        }
-    ]
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Launch Frontend",
+      "type": "chrome",
+      "request": "attach",
+      "url": "https://localhost:3000",
+      "port": 9222,
+      "webRoot": "${workspaceFolder}/client"
+    }
+  ]
 }
