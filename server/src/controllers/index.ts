@@ -1,2 +1,2 @@
-export * from "./doLogin";
-export * from "./doRegister";
+export * from './doLogin';
+export * from './doRegister';
