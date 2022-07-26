@@ -6,6 +6,7 @@ import register from 'api/auth/register';
 import { listenFn } from 'controllers/listenFn';
 import cors from 'cors';
 import express from 'express';
+import rateLimit from 'express-rate-limit';
 import fs from 'fs';
 import helmet from 'helmet';
 import https from 'https';
@@ -18,6 +19,8 @@ const { PORT } = process.env;
 
 // Settings
 const whiteList: string[] = ['http://localhost:3000'];
+
+const limiter = rateLimit({ windowMs: 3600000, max: 429 });
 
 const corsOptions = {
   origin: (origin: any, callback: any) => {
@@ -35,6 +38,7 @@ const httpsOptions = {
 };
 
 server.use(cors(corsOptions));
+server.use(limiter);
 server.use(express.json({ type: 'application/json', limit: '1kb' }));
 server.use(express.urlencoded({ extended: true }));
 server.use(morgan('dev'));
