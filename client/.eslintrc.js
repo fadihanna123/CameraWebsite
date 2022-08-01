@@ -35,8 +35,7 @@ module.exports = {
     'eslint-plugin-prefer-arrow',
     '@typescript-eslint',
   ],
-    rules: {
-    '@typescript-eslint/naming-convention': 'error',
+  rules: {
     '@typescript-eslint/adjacent-overload-signatures': 'error',
     '@typescript-eslint/array-type': [
       'error',
