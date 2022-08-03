@@ -173,7 +173,7 @@ client/thumb
 client/sketch
 
 ### VisualStudioCode ###
-.vscode/*
+.vscode/launch.json
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
