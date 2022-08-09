@@ -1,6 +1,6 @@
 {
   "name": "surveillance",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "author": {
     "name": "Fadi Hanna",
     "email": "fhanna181@gmail.com"
@@ -10,7 +10,6 @@
   "private": "true",
   "lastUpgrade": "20220801",
   "dependencies": {
-    "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "axios": "^0.27.2",
     "localforage": "^1.10.0",
@@ -45,6 +44,7 @@
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
+    "@types/react": "^18.0.17",
     "@types/react-router-dom": "^5.3.3",
     "@types/sass": "^1.43.1",
     "@typescript-eslint/eslint-plugin": "^5.31.0",
