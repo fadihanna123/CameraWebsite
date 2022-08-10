@@ -1,6 +1,6 @@
 {
     "name": "surveillance_server",
-    "version": "1.0.10",
+    "version": "1.0.11",
     "license": "MIT",
     "private": "true",
     "bugs": "https://github.com/fadihanna123/CameraWebsite/issues",
@@ -56,7 +56,8 @@
         "winston": "^3.8.1"
     },
     "engines": {
-        "node": ">=14.17.0",
-        "npm": ">=6.0.0"
-    }
+    "node": ">=14.12.0",
+    "npm": "Please use pnpm instead of NPM to install dependencies",
+    "yarn": "Please use pnpm instead of Yarn to install dependencies"
+  }
 }
