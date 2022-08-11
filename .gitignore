@@ -176,6 +176,7 @@ client/sketch
 .vscode/*
 .vscode/launch.json
 !.vscode/settings.json
+!.vscode/extensions.json
 !.vscode/tasks.json
 !.vscode/*.code-snippets
 
