@@ -18,7 +18,7 @@ const server = express();
 const { PORT } = process.env;
 
 // Settings
-const whiteList: string[] = ['http://localhost:3000'];
+const whiteList: string[] = ['https://localhost:3000'];
 
 const limiter = rateLimit({ windowMs: 3600000, max: 429 });
 

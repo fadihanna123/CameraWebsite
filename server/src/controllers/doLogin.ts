@@ -30,7 +30,11 @@ export const doLogin = async (req: Request, res: Response) => {
       });
 
       if (result.length === 0) {
-        storeError('Det finns något fel i ditt användarnamn/lösenord.', 'POST', '/login');
+        storeError(
+          'Det finns något fel i ditt användarnamn/lösenord.',
+          'POST',
+          '/login'
+        );
 
         res.json({
           message: 'Det finns något fel i ditt användarnamn/lösenord.',

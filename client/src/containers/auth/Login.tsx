@@ -15,13 +15,9 @@ const Login: React.FC = () => {
     (state: LoginFormReducerTypes) => state.loginFormReducer
   );
 
-  const login = useSelector(
-    (state: LoginReducerTypes) => state.loginReducer
-  );
+  const login = useSelector((state: LoginReducerTypes) => state.loginReducer);
 
-  const lang = useSelector(
-    (state: LangReducerTypes) => state.langReducer
-  );
+  const lang = useSelector((state: LangReducerTypes) => state.langReducer);
 
   const dispatch = useDispatch();
 
@@ -45,9 +41,9 @@ const Login: React.FC = () => {
                   type='text'
                   className={['txtinput']}
                   name='uname'
-                  changeFunc={(
-                    e: React.ChangeEvent<HTMLInputElement>
-                  ) => loginTyper(e, loginForm, dispatch)}
+                  changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    loginTyper(e, loginForm, dispatch)
+                  }
                   val={loginForm.uname}
                   isRequired={true}
                 />
@@ -66,11 +62,12 @@ const Login: React.FC = () => {
                   type='password'
                   className={['txtinput']}
                   name='psw'
-                  changeFunc={(
-                    e: React.ChangeEvent<HTMLInputElement>
-                  ) => loginTyper(e, loginForm, dispatch)}
+                  changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    loginTyper(e, loginForm, dispatch)
+                  }
                   val={loginForm.psw}
                   isRequired={true}
+                  autoComplete='on'
                 />
               </div>
             </div>
