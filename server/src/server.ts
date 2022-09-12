@@ -1,5 +1,6 @@
 import 'api/auth';
 import 'dotenv/config';
+import 'tasks';
 
 import login from 'api/auth/login';
 import register from 'api/auth/register';
