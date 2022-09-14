@@ -4,9 +4,13 @@ import { setLoading } from 'redux/actions';
 
 import { registerUser } from './auth';
 
-export const RegisterUser = async (
-  dispatch: Dispatch<any>
-): Promise<void> => {
+/**
+ * Register a user.
+ *
+ * @param dispatch
+ */
+
+export const RegisterUser = async (dispatch: Dispatch<any>): Promise<void> => {
   try {
     dispatch(setLoading(true));
 

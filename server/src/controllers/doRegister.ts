@@ -7,6 +7,16 @@ import { storeError } from 'utils/storeError';
 import { storeLog } from 'utils/storeLog';
 import validator from 'validator';
 
+/**
+ * Registration functionality.
+ *
+ * @route POST /register
+ *
+ * @param req
+ * @param res
+ * @returns Promise.
+ */
+
 export const doRegister = async (req: Request, res: Response) => {
   const { uname, email, mobnr, psw, repsw } = req.body;
 
@@ -46,8 +56,7 @@ export const doRegister = async (req: Request, res: Response) => {
         );
 
         res.json({
-          message:
-            'Du måste välja ett lösenord som är minst 8 tecken!',
+          message: 'Du måste välja ett lösenord som är minst 8 tecken!',
         });
       } else {
         // Om lösenord och bekräfta lösenord fälten innehåller starka lösenord som har minst 8 tecken.
@@ -60,8 +69,7 @@ export const doRegister = async (req: Request, res: Response) => {
           );
 
           res.json({
-            message:
-              'Ditt lösenord matchar inte det bekräftade lösenordet.',
+            message: 'Ditt lösenord matchar inte det bekräftade lösenordet.',
           });
         } else {
           // Om lösenord och bekräfta lösenord fälten matchar varandra.
@@ -81,8 +89,7 @@ export const doRegister = async (req: Request, res: Response) => {
             );
 
             res.json({
-              message:
-                'Du är redan registrerad hos oss. Du kan logga in ovan.',
+              message: 'Du är redan registrerad hos oss. Du kan logga in ovan.',
             });
           } else {
             // Om användaren inte hittades i databasen.
@@ -92,14 +99,8 @@ export const doRegister = async (req: Request, res: Response) => {
                 : '';
 
               if (!req.files || Object.keys(req.files).length === 0) {
-                storeLog(
-                  'Var vänlig välj en bild.',
-                  'POST',
-                  '/register'
-                );
-                return res
-                  .status(400)
-                  .send('Var vänlig välj en bild.');
+                storeLog('Var vänlig välj en bild.', 'POST', '/register');
+                return res.status(400).send('Var vänlig välj en bild.');
               }
 
               await file.mv(
@@ -130,16 +131,11 @@ export const doRegister = async (req: Request, res: Response) => {
                   '/register'
                 );
                 res.send({
-                  message:
-                    'Tack för registrering. \n Var vänlig och logga in.',
+                  message: 'Tack för registrering. \n Var vänlig och logga in.',
                 });
               }
             } catch (error) {
-              storeError(
-                (error as Error).message,
-                'POST',
-                '/register'
-              );
+              storeError((error as Error).message, 'POST', '/register');
               logger.error('\x1b[31m', (error as Error).message);
             }
           } // Slut om användaren inte hittades i databasen.

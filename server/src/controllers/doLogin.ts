@@ -6,6 +6,15 @@ import striptags from 'striptags';
 import { storeError } from 'utils/storeError';
 import { storeLog } from 'utils/storeLog';
 
+/**
+ * Do a login check.
+ *
+ * @route POST /login
+ * @param req
+ * @param res
+ * @returns Promise.
+ */
+
 export const doLogin = async (req: Request, res: Response) => {
   let { uname, psw } = req.body;
   const userObject: UsrObjJwt = {

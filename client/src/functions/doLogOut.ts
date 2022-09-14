@@ -6,6 +6,12 @@ import { localForageKeys } from 'utils/constants';
 
 import { RedirectToRoute } from './helper';
 
+/**
+ * Do logout functionality.
+ *
+ * @param dispatch
+ */
+
 export const doLogOut = (dispatch: Dispatch<any>) => {
   localforage
     .removeItem(localForageKeys.Token)

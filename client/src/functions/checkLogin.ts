@@ -8,6 +8,13 @@ import { localForageKeys } from 'utils/constants';
 import { loginUser } from './auth';
 import { RedirectToRoute } from './helper';
 
+/**
+ * Do a login check.
+ *
+ * @param dispatch
+ * @param loginForm
+ */
+
 export const checkLogin = async (
   dispatch: Dispatch<any>,
   loginForm: ILoginForm

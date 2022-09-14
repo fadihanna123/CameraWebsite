@@ -1,6 +1,14 @@
 import { prisma } from 'db';
 import { DateTime } from 'luxon';
 
+/**
+ * Store logs in the database.
+ *
+ * @param message
+ * @param method
+ * @param located
+ */
+
 export const storeLog = async (
   message: string,
   method: string,
