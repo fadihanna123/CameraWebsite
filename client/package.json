@@ -1,6 +1,6 @@
 {
   "name": "surveillance",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "author": {
     "name": "Fadi Hanna",
     "email": "fhanna181@gmail.com"
@@ -11,7 +11,7 @@
     "url": "https://github.com/fadihanna123/CameraWebsite/tree/main/client"
   },
   "license": "MIT",
-  "homepage": ".",
+  "homepage": "https://localhost:5000",
   "private": "true",
   "lastUpgrade": "20220801",
   "dependencies": {
