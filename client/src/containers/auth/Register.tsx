@@ -1,20 +1,16 @@
 import useTitle from 'hooks/useTitle';
 import useTranslation from 'hooks/useTranslation';
-import { LangReducerTypes, LoginReducerTypes } from 'models';
-import { useSelector } from 'react-redux';
+import { useAppSelector } from 'redux/app';
+import { getLang, getLogin } from 'redux/reducers';
 import Heading from 'ui/Heading';
 import Para from 'ui/Para';
 
 import RegisterForm from './RegisterForm';
 
 const Register: React.FC = () => {
-  const login = useSelector(
-    (state: LoginReducerTypes) => state.loginReducer
-  );
+  const login = useAppSelector(getLogin);
 
-  const lang = useSelector(
-    (state: LangReducerTypes) => state.langReducer
-  );
+  const lang = useAppSelector(getLang);
 
   useTitle('Surveillance systems Inc - Registrera dig');
 

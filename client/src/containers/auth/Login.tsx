@@ -1,9 +1,9 @@
 import { checkLogin, loginTyper } from 'functions';
 import useTranslation from 'hooks/useTranslation';
-import { LangReducerTypes, LoginFormReducerTypes, LoginReducerTypes } from 'models';
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { Flip, ToastContainer } from 'react-toastify';
+import { useAppDispatch, useAppSelector } from 'redux/app';
+import { getLang, getLogin, getLoginForm } from 'redux/reducers';
 import Btn from 'ui/Btn';
 import Heading from 'ui/Heading';
 import Input from 'ui/Input';
@@ -11,15 +11,13 @@ import Input from 'ui/Input';
 import LogOutBox from './LogOutBox';
 
 const Login: React.FC = () => {
-  const loginForm = useSelector(
-    (state: LoginFormReducerTypes) => state.loginFormReducer
-  );
+  const loginForm = useAppSelector(getLoginForm);
 
-  const login = useSelector((state: LoginReducerTypes) => state.loginReducer);
+  const login = useAppSelector(getLogin);
 
-  const lang = useSelector((state: LangReducerTypes) => state.langReducer);
+  const lang = useAppSelector(getLang);
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   return (
     <>

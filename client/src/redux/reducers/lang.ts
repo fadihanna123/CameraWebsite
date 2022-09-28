@@ -1,25 +1,20 @@
-import { ActionTypes } from 'models';
-import { SET_LANG } from 'utils/constants';
+import { createSlice } from '@reduxjs/toolkit';
+import { RootState } from 'redux/app';
+
+import type { PayloadAction } from '@reduxjs/toolkit';
 
 const initialState: string = '';
 
-/**
- * Language reducer.
- *
- * @param state
- * @param param1
- * @returns String.
- */
+export const langSlice = createSlice({
+  name: 'lang',
+  initialState,
+  reducers: {
+    setLang: (state, action: PayloadAction<string>) => {
+      return (state = action.payload);
+    },
+  },
+});
 
-export const langReducer = (
-  state = initialState,
-  { type, payload }: ActionTypes
-) => {
-  switch (type) {
-    case SET_LANG:
-      return payload;
-
-    default:
-      return state;
-  }
-};
+export const { setLang } = langSlice.actions;
+export default langSlice.reducer;
+export const getLang = (state: RootState) => state.lang;

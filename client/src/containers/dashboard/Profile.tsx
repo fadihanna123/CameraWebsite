@@ -1,11 +1,9 @@
 import useTitle from 'hooks/useTitle';
-import { LoginReducerTypes } from 'models';
 import { useSelector } from 'react-redux';
+import { getLang } from 'redux/reducers';
 
 const Profile: React.FC = () => {
-  const login = useSelector(
-    (state: LoginReducerTypes) => state.loginReducer
-  );
+  const login = useSelector(getLang);
 
   useTitle('Surveillance systems Inc - Profil');
 

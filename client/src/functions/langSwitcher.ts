@@ -1,7 +1,7 @@
 import localforage from 'localforage';
 import { toast } from 'react-toastify';
 import { Dispatch } from 'redux';
-import { setLang } from 'redux/actions';
+import { setLang } from 'redux/reducers';
 import { localForageKeys } from 'utils/constants';
 
 /**

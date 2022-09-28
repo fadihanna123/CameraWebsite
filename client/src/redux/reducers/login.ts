@@ -1,25 +1,20 @@
-import { ActionTypes } from 'models';
-import { SET_LOGIN } from 'utils/constants';
+import { createSlice } from '@reduxjs/toolkit';
+import { RootState } from 'redux/app';
+
+import type { PayloadAction } from '@reduxjs/toolkit';
 
 const initialState: boolean = false;
 
-/**
- * Login reducer.
- *
- * @param state
- * @param param1
- * @returns Boolean.
- */
+export const loginSlice = createSlice({
+  name: 'login',
+  initialState,
+  reducers: {
+    setLogin: (state, action: PayloadAction<boolean>) => {
+      return (state = action.payload);
+    },
+  },
+});
 
-export const loginReducer = (
-  state = initialState,
-  { type, payload }: ActionTypes
-) => {
-  switch (type) {
-    case SET_LOGIN:
-      return payload;
-
-    default:
-      return state;
-  }
-};
+export const { setLogin } = loginSlice.actions;
+export default loginSlice.reducer;
+export const getLogin = (state: RootState) => state.login;

@@ -1,6 +1,6 @@
 import { IRegisterForm } from 'models';
 import { Dispatch } from 'redux';
-import { setRegisterForm } from 'redux/actions';
+import { setRegisterForm } from 'redux/reducers';
 
 /**
  * Handle registrations form values.

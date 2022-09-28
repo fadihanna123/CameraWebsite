@@ -1,6 +1,6 @@
 import { Flip, toast } from 'react-toastify';
 import { Dispatch } from 'redux';
-import { setLoading } from 'redux/actions';
+import { setLoading } from 'redux/reducers';
 
 import { registerUser } from './auth';
 
@@ -19,7 +19,6 @@ export const RegisterUser = async (dispatch: Dispatch<any>): Promise<void> => {
     ) as HTMLInputElement;
 
     const myForm = new FormData();
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
     myForm.append('img', file?.files![0]);
 
     await registerUser(myForm).then((res) => {

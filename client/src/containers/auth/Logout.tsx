@@ -1,14 +1,12 @@
 import { doLogOut } from 'functions';
-import { LoginReducerTypes } from 'models';
-import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from 'redux/app';
+import { getLang } from 'redux/reducers';
 
 const Logout: React.FC = () => {
-  const login = useSelector(
-    (state: LoginReducerTypes) => state.loginReducer
-  );
+  const login = useAppSelector(getLang);
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   return <>{login ? doLogOut(dispatch) : <Navigate to='/' />}</>;
 };

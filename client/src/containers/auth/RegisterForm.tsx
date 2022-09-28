@@ -1,43 +1,34 @@
 import { RegisterTyper, RegisterUser } from 'functions';
 import useTranslation from 'hooks/useTranslation';
-import { IRegisterForm, LangReducerTypes, RegisterFormReducerTypes } from 'models';
+import { IRegisterForm } from 'models';
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { Flip, ToastContainer } from 'react-toastify';
+import { useAppDispatch, useAppSelector } from 'redux/app';
+import { getLang, getRegisterForm } from 'redux/reducers';
 import Btn from 'ui/Btn';
 import FileUploader from 'ui/FileUploader';
 import Input from 'ui/Input';
 
 const RegisterForm: React.FC = () => {
-  const registerForm = useSelector(
-    (state: RegisterFormReducerTypes) => state.registerFormReducer
-  );
+  const registerForm = useAppSelector(getRegisterForm);
 
-  const lang = useSelector(
-    (state: LangReducerTypes) => state.langReducer
-  );
+  const lang = useAppSelector(getLang);
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   return (
     <form encType='multipart/form-data' method='post'>
       <section className='registerbox'>
         <section className='registerrow'>
           <section className='registercol'>
-            <label htmlFor='uname'>
-              {useTranslation('Username', lang)}{' '}
-            </label>
+            <label htmlFor='uname'>{useTranslation('Username', lang)} </label>
           </section>
           <section className='registercol'>
             <Input
               id='uname'
               val={registerForm.uname}
               changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
-                RegisterTyper(
-                  e,
-                  registerForm as IRegisterForm,
-                  dispatch
-                )
+                RegisterTyper(e, registerForm as IRegisterForm, dispatch)
               }
               name='uname'
               isRequired={true}
@@ -47,9 +38,7 @@ const RegisterForm: React.FC = () => {
         </section>
         <section className='registerrow'>
           <section className='registercol'>
-            <label htmlFor='email'>
-              {useTranslation('Email', lang)}:{' '}
-            </label>
+            <label htmlFor='email'>{useTranslation('Email', lang)}: </label>
           </section>
           <section className='registercol'>
             <Input
@@ -57,11 +46,7 @@ const RegisterForm: React.FC = () => {
               id='email'
               val={registerForm.email}
               changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
-                RegisterTyper(
-                  e,
-                  registerForm as IRegisterForm,
-                  dispatch
-                )
+                RegisterTyper(e, registerForm as IRegisterForm, dispatch)
               }
               isRequired={true}
               className={['txtinput']}
@@ -81,11 +66,7 @@ const RegisterForm: React.FC = () => {
               id='mobnr'
               val={registerForm.mobnr}
               changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
-                RegisterTyper(
-                  e,
-                  registerForm as IRegisterForm,
-                  dispatch
-                )
+                RegisterTyper(e, registerForm as IRegisterForm, dispatch)
               }
               className={['txtinput']}
               name='mobnr'
@@ -94,9 +75,7 @@ const RegisterForm: React.FC = () => {
         </section>
         <section className='registerrow'>
           <section className='registercol'>
-            <label htmlFor='psw'>
-              {useTranslation('Password', lang)}:{' '}
-            </label>
+            <label htmlFor='psw'>{useTranslation('Password', lang)}: </label>
           </section>
           <section className='registercol'>
             <Input
@@ -104,11 +83,7 @@ const RegisterForm: React.FC = () => {
               id='psw'
               val={registerForm.psw}
               changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
-                RegisterTyper(
-                  e,
-                  registerForm as IRegisterForm,
-                  dispatch
-                )
+                RegisterTyper(e, registerForm as IRegisterForm, dispatch)
               }
               isRequired={true}
               className={['txtinput']}
@@ -118,9 +93,7 @@ const RegisterForm: React.FC = () => {
         </section>
         <section className='registerrow'>
           <section className='registercol'>
-            <label htmlFor='repsw'>
-              {useTranslation('repsw', lang)}:{' '}
-            </label>
+            <label htmlFor='repsw'>{useTranslation('repsw', lang)}: </label>
           </section>
           <section className='registercol'>
             <Input
@@ -128,11 +101,7 @@ const RegisterForm: React.FC = () => {
               id='repsw'
               val={registerForm.repsw}
               changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
-                RegisterTyper(
-                  e,
-                  registerForm as IRegisterForm,
-                  dispatch
-                )
+                RegisterTyper(e, registerForm as IRegisterForm, dispatch)
               }
               isRequired={true}
               className={['txtinput']}
@@ -142,9 +111,7 @@ const RegisterForm: React.FC = () => {
         </section>
         <section className='registerrow'>
           <section className='registercol'>
-            <label htmlFor='img'>
-              {useTranslation('Profilephoto', lang)}:
-            </label>
+            <label htmlFor='img'>{useTranslation('Profilephoto', lang)}:</label>
           </section>
           <section className='registerspeccol'>
             <FileUploader
@@ -152,11 +119,7 @@ const RegisterForm: React.FC = () => {
               id='img'
               val={registerForm.img}
               changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
-                RegisterTyper(
-                  e,
-                  registerForm as IRegisterForm,
-                  dispatch
-                )
+                RegisterTyper(e, registerForm as IRegisterForm, dispatch)
               }
               acceptValues='image/*'
               isRequired={true}

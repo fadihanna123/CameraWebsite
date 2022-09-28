@@ -1,4 +1,3 @@
-export * from "./apiData";
-export * from "./forms";
-export * from "./props";
-export * from "./redux";
+export * from './apiData.model';
+export * from './forms.model';
+export * from './props.model';

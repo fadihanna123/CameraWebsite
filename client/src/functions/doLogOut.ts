@@ -1,7 +1,7 @@
 import localforage from 'localforage';
 import { toast } from 'react-toastify';
 import { Dispatch } from 'redux';
-import { setLogin } from 'redux/actions';
+import { setLogin } from 'redux/reducers';
 import { localForageKeys } from 'utils/constants';
 
 import { RedirectToRoute } from './helper';

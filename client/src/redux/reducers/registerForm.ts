@@ -1,6 +1,8 @@
-import { ActionTypes, IRegisterForm } from 'models';
-import { SET_REGISTER_FORM } from 'utils/constants';
+import { createSlice } from '@reduxjs/toolkit';
+import { IRegisterForm } from 'models';
+import { RootState } from 'redux/app';
 
+import type { PayloadAction } from '@reduxjs/toolkit';
 const initialState: IRegisterForm = {
   uname: '',
   email: '',
@@ -10,23 +12,16 @@ const initialState: IRegisterForm = {
   img: '',
 };
 
-/**
- * Register-form reducer.
- *
- * @param state
- * @param param1
- * @returns IRegisterForm object.
- */
+export const registerFormSlice = createSlice({
+  name: 'registerForm',
+  initialState,
+  reducers: {
+    setRegisterForm: (state, action: PayloadAction<IRegisterForm>) => {
+      return (state = action.payload);
+    },
+  },
+});
 
-export const registerFormReducer = (
-  state = initialState,
-  { type, payload }: ActionTypes
-) => {
-  switch (type) {
-    case SET_REGISTER_FORM:
-      return payload;
-
-    default:
-      return state;
-  }
-};
+export const { setRegisterForm } = registerFormSlice.actions;
+export default registerFormSlice.reducer;
+export const getRegisterForm = (state: RootState) => state.registerForm;

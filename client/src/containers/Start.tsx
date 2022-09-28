@@ -1,13 +1,11 @@
 import useTitle from 'hooks/useTitle';
-import { LoginReducerTypes } from 'models';
-import { useSelector } from 'react-redux';
+import { useAppSelector } from 'redux/app';
+import { getLogin } from 'redux/reducers';
 import Heading from 'ui/Heading';
 import Para from 'ui/Para';
 
 const Start: React.FC = () => {
-  const login = useSelector(
-    (state: LoginReducerTypes) => state.loginReducer
-  );
+  const login = useAppSelector(getLogin);
 
   useTitle('Surveillance systems Inc - Startsida');
 
@@ -15,9 +13,7 @@ const Start: React.FC = () => {
     <main className='main'>
       <Heading>Välkommen!</Heading>
       {!login && (
-        <Para>
-          Varsågod logga in ovan för att kunna se dina videofilmer.
-        </Para>
+        <Para>Varsågod logga in ovan för att kunna se dina videofilmer.</Para>
       )}
     </main>
   );

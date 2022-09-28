@@ -1,6 +1,6 @@
 {
   "name": "surveillance",
-  "version": "0.1.20",
+  "version": "0.1.21",
   "author": {
     "name": "Fadi Hanna",
     "email": "fhanna181@gmail.com"
@@ -47,7 +47,7 @@
     ]
   },
   "devDependencies": {
-    "@redux-devtools/extension": "^3.2.3",
+    "@reduxjs/toolkit": "^1.8.5",
     "@testing-library/react": "^13.4.0",
     "@types/jest": "^29.0.3",
     "@types/react": "^18.0.21",

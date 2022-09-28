@@ -10,20 +10,18 @@ const Input: React.FC<InputProps> = ({
   changeFunc,
   acceptValues,
   autoComplete,
-}: InputProps) => {
-  return (
-    <input
-      id={id}
-      type={type}
-      className={className?.join(' ')}
-      name={name}
-      onChange={changeFunc}
-      value={val}
-      required={isRequired}
-      accept={acceptValues}
-      autoComplete={autoComplete}
-    />
-  );
-};
+}: InputProps) => (
+  <input
+    id={id}
+    type={type}
+    className={className?.join(' ')}
+    name={name}
+    onChange={changeFunc}
+    value={val}
+    required={isRequired}
+    accept={acceptValues}
+    autoComplete={autoComplete}
+  />
+);
 
 export default Input;

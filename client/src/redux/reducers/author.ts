@@ -1,25 +1,20 @@
-import { ActionTypes } from 'models';
-import { SET_AUTHOR } from 'utils/constants';
+import { createSlice } from '@reduxjs/toolkit';
+import { RootState } from 'redux/app';
+
+import type { PayloadAction } from '@reduxjs/toolkit';
 
 const initialState: string = '';
 
-/**
- * Author reducer.
- *
- * @param state
- * @param param1
- * @returns String.
- */
+export const authorSlice = createSlice({
+  name: 'author',
+  initialState,
+  reducers: {
+    setAuthor: (state, action: PayloadAction<string>) => {
+      return (state = action.payload);
+    },
+  },
+});
 
-export const authorReducer = (
-  state = initialState,
-  { type, payload }: ActionTypes
-) => {
-  switch (type) {
-    case SET_AUTHOR:
-      return payload;
-
-    default:
-      return state;
-  }
-};
+export const { setAuthor } = authorSlice.actions;
+export default authorSlice.reducer;
+export const getAuthor = (state: RootState) => state.author;

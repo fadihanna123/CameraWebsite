@@ -2,11 +2,11 @@ import Layout from 'app/Layout';
 import axios from 'axios';
 import localforage from 'localforage';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
-import { setLang, setLogin } from 'redux/actions';
+import { useAppDispatch } from 'redux/app';
+import { setLang, setLogin } from 'redux/reducers';
+import { baseURL } from 'utils';
 import { localForageKeys } from 'utils/constants';
-import { baseURL } from 'utils/envs';
 
 const globalHeader: string = 'application/json';
 
@@ -14,7 +14,7 @@ axios.defaults.baseURL = baseURL;
 axios.defaults.headers.common['Content-Type'] = globalHeader;
 
 const App: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     let isSubscribed: boolean = true;

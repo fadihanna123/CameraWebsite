@@ -43,6 +43,7 @@ module.exports = {
         default: 'array',
       },
     ],
+    '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/ban-types': [
       'error',
       {

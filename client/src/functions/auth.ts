@@ -1,6 +1,6 @@
 import { request } from 'api';
 import { ILoginData, ILoginForm, IRegisterData } from 'models';
-import { loginEndPoint, registerEndPoint } from 'utils/envs';
+import { loginEndPoint, registerEndPoint } from 'utils';
 
 /**
  * Login a user.

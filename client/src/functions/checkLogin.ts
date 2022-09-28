@@ -2,8 +2,8 @@ import localforage from 'localforage';
 import { ILoginForm } from 'models';
 import { Flip, toast } from 'react-toastify';
 import { Dispatch } from 'redux';
-import { setLoading, setLogin } from 'redux/actions';
-import { localForageKeys } from 'utils/constants';
+import { setLoading, setLogin } from 'redux/reducers';
+import { localForageKeys } from 'utils';
 
 import { loginUser } from './auth';
 import { RedirectToRoute } from './helper';
