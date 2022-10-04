@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to Camera Website 👋</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version- 1.0.13-blue.svg?cacheSeconds=2592000" />
+  <img alt="Version" src="https://img.shields.io/badge/version- 1.0.14-blue.svg?cacheSeconds=2592000" />
   <a href="https://github.com/fadihanna123/CameraWebsite/blob/main/README.md" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
