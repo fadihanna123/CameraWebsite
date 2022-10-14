@@ -23,7 +23,7 @@ const { PORT } = process.env;
 // Settings
 const whiteList: string[] = ['https://localhost:3000'];
 
-const limiter = rateLimit({ windowMs: 3600000, max: 429 });
+const limiter = rateLimit({ windowMs: 3600000, max: 10 });
 
 const corsOptions = {
   origin: (origin: any, callback: any) => {
@@ -64,9 +64,7 @@ server.use(morgan('dev'));
 server.use(helmet());
 server.use(login);
 server.use(register);
-server.use((_, res) => {
-  res.send('This route does not exist!');
-});
+server.use((_, res) => res.send('This route does not exist!'));
 
 server.use(errorHandler);
 

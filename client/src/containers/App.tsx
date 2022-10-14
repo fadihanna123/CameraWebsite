@@ -54,7 +54,6 @@ const App: React.FC = () => {
       );
 
     return () => {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       isSubscribed = false;
     };
   }, []);
