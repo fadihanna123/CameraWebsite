@@ -19,6 +19,7 @@ const Layout: React.FC = () => (
       <Route path='/Register' element={<Register />} />
       <Route path='/Dashboard' element={<Profile />} />
       <Route element={<Error />} />
+      <Route path='*' element={<Start />} />
     </Routes>
     <Footer />
   </section>
