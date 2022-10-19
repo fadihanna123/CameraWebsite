@@ -9,6 +9,7 @@ const FileUploader: React.FC<FileUploaderProps> = ({
   acceptValues,
   isRequired,
   name,
+  className,
 }: FileUploaderProps) => (
   <Input
     type='file'
@@ -18,6 +19,7 @@ const FileUploader: React.FC<FileUploaderProps> = ({
     acceptValues={acceptValues}
     isRequired={isRequired}
     name={name}
+    className={className}
   />
 );
 

@@ -52,6 +52,7 @@
     "@types/jest": "^29.1.1",
     "@types/react": "^18.0.21",
     "@types/react-router-dom": "^5.3.3",
+    "@types/react-toastify": "^4.1.0",
     "@types/sass": "^1.43.1",
     "@typescript-eslint/eslint-plugin": "^5.39.0",
     "@typescript-eslint/parser": "^5.39.0",

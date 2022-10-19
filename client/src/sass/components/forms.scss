@@ -1,15 +1,22 @@
+input::file-selector-button {
+  background: color(black);
+  color: color(white);
+  padding: 10px;
+  transition: 0.3s;
+}
+
 #{map-get($selectorMap, txtInput)} {
-    display: $block;
-    width: 100%;
-    padding: 0.375rem 0.75rem;
-    transition: 0.3s;
+  display: $block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  transition: 0.3s;
 }
 
 #{map-get($selectorMap, btn)} {
-    background: color(black);
-    color: color(white);
-    padding: 10px;
-    display: $flex;
-    margin: 0 $auto;
-    transition: 0.3s;
+  background: color(black);
+  color: color(white);
+  padding: 10px;
+  display: $flex;
+  margin: 0 $auto;
+  transition: 0.3s;
 }

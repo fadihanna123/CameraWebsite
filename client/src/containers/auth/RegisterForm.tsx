@@ -127,7 +127,7 @@ const RegisterForm: React.FC = () => {
             />
           </section>
         </section>
-        <Btn clickFunc={() => RegisterUser(dispatch)}>
+        <Btn className={['btn']} clickFunc={() => RegisterUser(dispatch)}>
           {useTranslation('Register', lang)}
         </Btn>
       </section>
