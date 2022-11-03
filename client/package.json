@@ -1,6 +1,6 @@
 {
   "name": "surveillance",
-  "version": "0.1.23",
+  "version": "0.1.25",
   "author": {
     "name": "Fadi Hanna",
     "email": "fhanna181@gmail.com"
@@ -13,7 +13,7 @@
   "license": "MIT",
   "homepage": "./",
   "private": "true",
-  "lastUpgrade": "20221004",
+  "lastUpgrade": "20221104",
   "dependencies": {
     "@types/react-dom": "^18.0.8",
     "axios": "^1.1.3",
@@ -22,9 +22,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.4",
-    "react-router-dom": "^6.4.2",
+    "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
-    "react-toastify": "^9.0.8",
+    "react-toastify": "^9.1.1",
     "redux": "^4.2.0",
     "sass": "^1.55.0"
   },
@@ -49,16 +49,16 @@
   "devDependencies": {
     "@reduxjs/toolkit": "^1.8.6",
     "@testing-library/react": "^13.4.0",
-    "@types/jest": "^29.2.0",
+    "@types/jest": "^29.2.1",
     "@types/react": "^18.0.24",
     "@types/react-router-dom": "^5.3.3",
     "@types/react-toastify": "^4.1.0",
     "@types/sass": "^1.43.1",
-    "@typescript-eslint/eslint-plugin": "^5.41.0",
-    "@typescript-eslint/parser": "^5.41.0",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
     "eslint": "^8.26.0",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsdoc": "^39.3.25",
+    "eslint-plugin-jsdoc": "^39.6.2",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "htmlhint": "^1.1.4",
     "prettier": "^2.7.1",
