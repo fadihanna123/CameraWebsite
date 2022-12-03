@@ -13,7 +13,7 @@
   "license": "MIT",
   "homepage": "./",
   "private": "true",
-  "lastUpgrade": "20221104",
+  "lastUpgrade": "20221203",
   "dependencies": {
     "@types/react-dom": "^18.0.9",
     "axios": "^1.2.0",
