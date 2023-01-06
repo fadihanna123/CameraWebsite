@@ -8,13 +8,11 @@ import { listenFn } from 'controllers/listenFn';
 import cors from 'cors';
 import express from 'express';
 import rateLimit from 'express-rate-limit';
-import fs from 'fs';
 import helmet from 'helmet';
-import https from 'https';
 import ip from 'ip';
 import morgan from 'morgan';
 import { logger } from 'tools';
-import { crtFile, errorHandler, keyFile, storeLog } from 'utils';
+import { errorHandler, storeLog } from 'utils';
 
 const server = express();
 
@@ -33,11 +31,6 @@ const corsOptions = {
       callback(new Error('Not allowed by CORS'));
     }
   },
-};
-
-const httpsOptions = {
-  key: fs.readFileSync(keyFile as string),
-  cert: fs.readFileSync(crtFile as string),
 };
 
 server.use((req, res, next) => {
@@ -70,4 +63,4 @@ server.use(errorHandler);
 
 export const port: number = parseInt(PORT as string, 10);
 
-https.createServer(httpsOptions, server).listen(port, listenFn);
+server.listen(port, listenFn);

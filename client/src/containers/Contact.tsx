@@ -1,5 +1,8 @@
 import useTitle from 'hooks/useTitle';
+import useTranslation from 'hooks/useTranslation';
 import { Link } from 'react-router-dom';
+import { useAppSelector } from 'redux/app';
+import { getLang } from 'redux/reducers';
 import Btn from 'ui/Btn';
 import Heading from 'ui/Heading';
 import Input from 'ui/Input';
@@ -12,6 +15,8 @@ const Contact: React.FC = () => {
   const styles = {
     p10: { padding: '10px' },
   };
+
+  const lang = useAppSelector(getLang);
 
   return (
     <main className='main'>
@@ -65,7 +70,7 @@ const Contact: React.FC = () => {
 
         <section className='contactrow'>
           <section className='contactcol'>
-            <label htmlFor='msg'>Meddelande: </label>
+            <label htmlFor='msg'>{useTranslation('Message', lang)}: </label>
           </section>
           <section className='contactcol'>
             <TxtArea id='msg' className={['txtinput']}></TxtArea>
