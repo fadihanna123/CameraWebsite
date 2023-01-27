@@ -9,13 +9,17 @@ import { storeLog } from 'utils/storeLog';
 /**
  * Do a login check.
  *
+ * @function doLogin
+ * @async
  * @route POST /login
- * @param req
- * @param res
- * @returns Promise.
+ * @param { Request } req
+ * @param { Response } res
+ * @returns { Promise<Response<any, Record<string, any>> | undefined> } Promise.
  */
-
-export const doLogin = async (req: Request, res: Response) => {
+export const doLogin = async (
+  req: Request,
+  res: Response
+): Promise<Response<any, Record<string, any>> | undefined> => {
   let { uname, psw } = req.body;
   const userObject: UsrObjJwt = {
     uname,

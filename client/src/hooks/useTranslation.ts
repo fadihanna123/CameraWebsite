@@ -1,12 +1,12 @@
 /**
  * Handle translations.
  *
- * @param val
- * @param lang
- * @returns Any.
+ * @function useTranslation
+ * @param { string } val
+ * @param { string } lang
+ * @returns { any } Any.
  */
-
-const useTranslation = (val: string, lang: string) => {
+const useTranslation = (val: string, lang: string): any => {
   let data;
 
   if (lang === 'en') {

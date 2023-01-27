@@ -7,9 +7,11 @@ import { registerUser } from './auth';
 /**
  * Register a user.
  *
- * @param dispatch
+ * @function RegisterUser
+ * @async
+ * @param { Dispatch<any> } dispatch
+ * @returns { Promise<void> }
  */
-
 export const RegisterUser = async (dispatch: Dispatch<any>): Promise<void> => {
   try {
     dispatch(setLoading(true));

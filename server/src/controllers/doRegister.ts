@@ -10,14 +10,18 @@ import validator from 'validator';
 /**
  * Registration functionality.
  *
+ * @function doRegister
+ * @async
  * @route POST /register
- *
- * @param req
- * @param res
- * @returns Promise.
+ * @param { Request } req
+ * @param { Response } res
+ * @returns { Promise<Response<any, Record<string, any>> | undefined> } Promise
  */
 
-export const doRegister = async (req: Request, res: Response) => {
+export const doRegister = async (
+  req: Request,
+  res: Response
+): Promise<Response<any, Record<string, any>> | undefined> => {
   const { uname, email, mobnr, psw, repsw } = req.body;
 
   if (!uname || !email || !mobnr || !psw || !repsw) {

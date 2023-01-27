@@ -9,10 +9,11 @@ import { RedirectToRoute } from './helper';
 /**
  * Do logout functionality.
  *
- * @param dispatch
+ * @function doLogOut
+ * @param { Dispatch<any> } dispatch
+ * @returns { void }
  */
-
-export const doLogOut = (dispatch: Dispatch<any>) => {
+export const doLogOut = (dispatch: Dispatch<any>): void => {
   localforage
     .removeItem(localForageKeys.Token)
     .catch((err) => toast.error((err as Error).message));

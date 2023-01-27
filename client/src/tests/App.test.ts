@@ -1,6 +1,10 @@
 import { loginUser } from 'functions';
 
 it('login User', async () => {
+  /**
+   * @param { string } uname
+   * @param { string } psw
+   */
   const loginForm = {
     uname: 'Test',
     psw: '123',

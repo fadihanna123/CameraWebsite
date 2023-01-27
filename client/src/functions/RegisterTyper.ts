@@ -5,10 +5,11 @@ import { setRegisterForm } from 'redux/reducers';
 /**
  * Handle registrations form values.
  *
- * @param e
- * @param registerForm
- * @param dispatch
- * @returns Object.
+ * @function RegisterTyper
+ * @param { React.ChangeEvent<HTMLInputElement> } e
+ * @param { IRegisterForm } registerForm
+ * @param { Dispatch<any> } dispatch
+ * @returns { object } Object.
  */
 
 export const RegisterTyper = (

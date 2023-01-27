@@ -7,11 +7,12 @@ import { localForageKeys } from 'utils/constants';
 /**
  * Switch to the selected language.
  *
- * @param lang
- * @param dispatch
+ * @function langSwitcher
+ * @param { string } lang
+ * @param { Dispatch<any> } dispatch
+ * @returns { void }
  */
-
-export const langSwitcher = (lang: string, dispatch: Dispatch<any>) => {
+export const langSwitcher = (lang: string, dispatch: Dispatch<any>): void => {
   localforage
     .setItem(localForageKeys.Lang, lang)
     .catch((err) => toast.error((err as Error).message));

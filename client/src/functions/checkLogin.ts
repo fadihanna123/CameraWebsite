@@ -11,10 +11,12 @@ import { RedirectToRoute } from './helper';
 /**
  * Do a login check.
  *
- * @param dispatch
- * @param loginForm
+ * @function checkLogin
+ * @async
+ * @param { Dispatch<any> } dispatch
+ * @param { ILoginForm } loginForm
+ * @returns { Promise<void> }
  */
-
 export const checkLogin = async (
   dispatch: Dispatch<any>,
   loginForm: ILoginForm

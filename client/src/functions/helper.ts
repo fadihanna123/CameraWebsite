@@ -3,10 +3,12 @@ import { useNavigate } from 'react-router-dom';
 /**
  * Redirect to a route.
  *
- * @param route
+ * @function RedirectToRoute
+ * @param { string } route
+ * @returns { void }
  */
 
-export const RedirectToRoute = (route: string) => {
+export const RedirectToRoute = (route: string): void => {
   const navigate = useNavigate();
   navigate(route);
 };

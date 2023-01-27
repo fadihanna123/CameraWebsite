@@ -5,12 +5,12 @@ import { setLoginForm } from 'redux/reducers';
 /**
  * Handle login-form values.
  *
- * @param e
- * @param loginForm
- * @param dispatch
- * @returns Object.
+ * @function loginTyper
+ * @param { React.ChangeEvent<HTMLInputElement> } e
+ * @param { ILoginForm } loginForm
+ * @param { Dispatch<any> } dispatch
+ * @returns { object } Object
  */
-
 export const loginTyper = (
   e: React.ChangeEvent<HTMLInputElement>,
   loginForm: ILoginForm,

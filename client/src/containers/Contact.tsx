@@ -12,6 +12,9 @@ import TxtArea from 'ui/TxtArea';
 const Contact: React.FC = () => {
   useTitle('Surveillance systems Inc - Kontakta oss');
 
+  /**
+   * @param {{p10: { padding: string }}}
+   */
   const styles = {
     p10: { padding: '10px' },
   };
