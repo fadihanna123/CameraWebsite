@@ -1,8 +1,9 @@
 import { prisma } from 'db';
-import { Request, Response } from 'express';
+import { Response } from 'express';
 import jwt from 'jsonwebtoken';
-import { UsrObjJwt } from 'models';
+import { IUsers, UsrObjJwt } from 'models';
 import striptags from 'striptags';
+import { typedRequestBody } from 'types/global';
 import { storeError } from 'utils/storeError';
 import { storeLog } from 'utils/storeLog';
 
@@ -12,12 +13,12 @@ import { storeLog } from 'utils/storeLog';
  * @function doLogin
  * @async
  * @route POST /login
- * @param { Request } req
+ * @param { typedRequestedBody<IUsers> } req
  * @param { Response } res
  * @returns { Promise<Response<any, Record<string, any>> | undefined> } Promise.
  */
 export const doLogin = async (
-  req: Request,
+  req: typedRequestBody<IUsers>,
   res: Response
 ): Promise<Response<any, Record<string, any>> | undefined> => {
   let { uname, psw } = req.body;

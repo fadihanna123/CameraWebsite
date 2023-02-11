@@ -3,6 +3,7 @@ export class IUsers {
     this.id = other.id;
     this.uname = other.uname;
     this.psw = other.psw;
+    this.repsw = other.repsw;
     this.mobnr = other.mobnr;
     this.locked = other.locked;
     this.img = other.img;
@@ -12,6 +13,7 @@ export class IUsers {
   public uname: string;
   public email: string;
   public psw: string;
+  public repsw: string;
   public mobnr: string;
   public locked: number;
   public img: Buffer;

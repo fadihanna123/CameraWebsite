@@ -1,8 +1,9 @@
 import { prisma } from 'db';
 import { Response } from 'express';
-import { Request } from 'models/auth';
+import { IUsers } from 'models';
 import striptags from 'striptags';
 import { logger } from 'tools';
+import { typedRequestBody } from 'types/global';
 import { storeError } from 'utils/storeError';
 import { storeLog } from 'utils/storeLog';
 import validator from 'validator';
@@ -13,13 +14,13 @@ import validator from 'validator';
  * @function doRegister
  * @async
  * @route POST /register
- * @param { Request } req
+ * @param { typedRequestedBody<IUsers> } req
  * @param { Response } res
  * @returns { Promise<Response<any, Record<string, any>> | undefined> } Promise
  */
 
 export const doRegister = async (
-  req: Request,
+  req: typedRequestBody<IUsers>,
   res: Response
 ): Promise<Response<any, Record<string, any>> | undefined> => {
   const { uname, email, mobnr, psw, repsw } = req.body;
