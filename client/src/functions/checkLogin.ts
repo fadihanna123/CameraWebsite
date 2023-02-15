@@ -16,6 +16,7 @@ import { RedirectToRoute } from './helper';
  * @param { Dispatch<any> } dispatch
  * @param { ILoginForm } loginForm
  * @returns { Promise<void> }
+ * @example checkLogin(dispatch, { uname: 'Erik', psw: 123 });
  */
 export const checkLogin = async (
   dispatch: Dispatch<any>,

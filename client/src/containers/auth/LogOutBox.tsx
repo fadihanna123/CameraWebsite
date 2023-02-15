@@ -2,6 +2,7 @@ import { doLogOut } from 'functions';
 import useTranslation from 'hooks/useTranslation';
 import localforage from 'localforage';
 import { useEffect } from 'react';
+import { Flip, toast } from 'react-toastify';
 import { useAppDispatch, useAppSelector } from 'redux/app';
 import { getAuthor, getLang, setAuthor } from 'redux/reducers';
 import Btn from 'ui/Btn';
@@ -18,7 +19,10 @@ const LogOutBox: React.FC = () => {
   useEffect(() => {
     localforage
       .getItem(localForageKeys.Author)
-      .then((data: any) => setAuthor(data));
+      .then((data: any) => setAuthor(data))
+      .catch((err) =>
+        toast.error((err as Error).message, { transition: Flip })
+      );
   }, []);
 
   return (

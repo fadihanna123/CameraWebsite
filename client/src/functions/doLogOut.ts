@@ -12,6 +12,7 @@ import { RedirectToRoute } from './helper';
  * @function doLogOut
  * @param { Dispatch<any> } dispatch
  * @returns { void }
+ * @example doLogOut(dispatch);
  */
 export const doLogOut = (dispatch: Dispatch<any>): void => {
   localforage

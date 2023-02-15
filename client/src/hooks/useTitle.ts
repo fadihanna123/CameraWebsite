@@ -6,6 +6,7 @@ import { useEffect } from 'react';
  * @function useTitle
  * @param { string } title
  * @returns { void }
+ * @example useTitle("Profile");
  */
 const useTitle = (title: string): void => {
   useEffect(() => {

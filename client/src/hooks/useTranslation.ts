@@ -4,7 +4,8 @@
  * @function useTranslation
  * @param { string } val
  * @param { string } lang
- * @returns { any } Any.
+ * @returns { any } Any
+ * @example useTranslation("Start", "en");
  */
 const useTranslation = (val: string, lang: string): any => {
   let data;

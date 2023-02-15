@@ -11,6 +11,7 @@ import { localForageKeys } from 'utils/constants';
  * @param { string } lang
  * @param { Dispatch<any> } dispatch
  * @returns { void }
+ * @example langSwitcher("en", dispatch);
  */
 export const langSwitcher = (lang: string, dispatch: Dispatch<any>): void => {
   localforage

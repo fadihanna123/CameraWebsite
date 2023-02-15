@@ -10,6 +10,7 @@ import { setLoginForm } from 'redux/reducers';
  * @param { ILoginForm } loginForm
  * @param { Dispatch<any> } dispatch
  * @returns { object } Object
+ * @example loginTyper(e, { uname: 'Erik', psw: 123 }, dispatch)
  */
 export const loginTyper = (
   e: React.ChangeEvent<HTMLInputElement>,

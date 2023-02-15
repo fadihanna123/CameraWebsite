@@ -58,9 +58,8 @@ server.use(helmet());
 server.use(login);
 server.use(register);
 server.use((_, res) => res.send('This route does not exist!'));
-
 server.use(errorHandler);
 
-export const port: number = parseInt(PORT as string, 10);
+export const port = PORT || 5000;
 
 server.listen(port, listenFn);
