@@ -1,6 +1,6 @@
 {
   "name": "surveillance_website_client",
-  "version": "0.1.30",
+  "version": "0.1.31",
   "author": {
     "name": "Fadi Hanna",
     "email": "fhanna181@gmail.com"
@@ -32,7 +32,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint ."
   },
   "browserslist": {
     "production": [

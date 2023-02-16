@@ -1,0 +1,5 @@
+node_modules
+.eslintrc.js
+docs/*
+src/tools/docs/*.ts
+*.html

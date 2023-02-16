@@ -1,6 +1,6 @@
 {
   "name": "surveillance_server",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "homepage": "https://localhost:5000",
   "license": "MIT",
   "private": "true",
@@ -19,7 +19,10 @@
     "url": "https://localhost:5000"
   },
   "scripts": {
-    "start": "pnpm dbDocs && apidoc -i src/ -o docs/ && prisma db push && prisma db pull && prisma generate && ts-node-dev -r tsconfig-paths/register src/server",
+    "dev": "pnpm dbDocs && apidoc -i src/ -o docs/ && pnpm seed && ts-node-dev -r tsconfig-paths/register src/server",
+    "seed": "prisma db push && prisma db pull && prisma generate",
+    "seed-delete": "prisma migrate reset",
+    "lint": "eslint .",
     "dbDocs": "npx prisma generate"
   },
   "prisma": {
@@ -70,4 +73,3 @@
     "yarn": "Please use pnpm instead of Yarn to install dependencies"
   }
 }
-
