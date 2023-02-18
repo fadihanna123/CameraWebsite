@@ -25,7 +25,7 @@ module.exports = {
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: ['tsconfig.json' /* ,"tsconfig.spec.json" */],
+    project: ['tsconfig.json'],
     sourceType: 'module',
     tsconfigRootDir: __dirname,
   },
@@ -36,6 +36,7 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
+    'no-console': 'error',
     '@typescript-eslint/naming-convention': 'off',
     '@typescript-eslint/adjacent-overload-signatures': 'error',
     '@typescript-eslint/array-type': [
