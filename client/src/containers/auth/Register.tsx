@@ -4,7 +4,7 @@ import { useAppSelector } from 'redux/app';
 import { getLang, getLogin } from 'redux/reducers';
 import Heading from 'ui/Heading';
 import Para from 'ui/Para';
-
+import React from 'react';
 import RegisterForm from './RegisterForm';
 
 const Register: React.FC = () => {

@@ -4,6 +4,7 @@ import { useAppSelector } from 'redux/app';
 import { getLang } from 'redux/reducers';
 import Heading from 'ui/Heading';
 import Para from 'ui/Para';
+import React from 'react';
 
 const About: React.FC = () => {
   const lang = useAppSelector(getLang);

@@ -1,4 +1,5 @@
 import { BtnProps } from 'models';
+import React from 'react';
 
 const Btn: React.FC<BtnProps> = ({
   className,

@@ -2,6 +2,7 @@ import useTitle from 'hooks/useTitle';
 import { Link } from 'react-router-dom';
 import Heading from 'ui/Heading';
 import Para from 'ui/Para';
+import React from 'react';
 
 const Error: React.FC = () => {
   useTitle('Surveillance systems Inc - Sidan finns inte');

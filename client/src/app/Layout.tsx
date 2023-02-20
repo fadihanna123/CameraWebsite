@@ -6,7 +6,7 @@ import Start from 'containers/Start';
 import Footer from 'inc/Footer';
 import Header from 'inc/Header';
 import { Route, Routes } from 'react-router-dom';
-
+import React from 'react';
 import Error from '../containers/Error';
 
 const Layout: React.FC = () => (

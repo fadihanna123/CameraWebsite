@@ -7,6 +7,7 @@ import { useAppDispatch } from 'redux/app';
 import { setLang, setLogin } from 'redux/reducers';
 import { baseURL } from 'utils';
 import { localForageKeys } from 'utils/constants';
+import React from 'react';
 
 const globalHeader: string = 'application/json';
 
@@ -49,9 +50,7 @@ const App: React.FC = () => {
           return null;
         }
       })
-      .catch((err: Error) =>
-        isSubscribed ? toast.error((err as Error).message) : null
-      );
+      .catch((err: Error) => (isSubscribed ? toast.error(err.message) : null));
 
     return () => {
       isSubscribed = false;

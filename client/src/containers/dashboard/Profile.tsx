@@ -1,6 +1,7 @@
 import useTitle from 'hooks/useTitle';
 import { useSelector } from 'react-redux';
 import { getLang } from 'redux/reducers';
+import React from 'react';
 
 const Profile: React.FC = () => {
   const login = useSelector(getLang);

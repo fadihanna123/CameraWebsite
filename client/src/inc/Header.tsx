@@ -7,6 +7,7 @@ import { getLogin } from 'redux/reducers';
 import Img from 'ui/Img';
 import MainHeader from 'ui/MainHeader';
 import Menu from 'ui/Menu';
+import React from 'react';
 
 const Header: React.FC = () => {
   const login = useAppSelector(getLogin);

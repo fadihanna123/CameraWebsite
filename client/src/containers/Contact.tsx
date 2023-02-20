@@ -8,6 +8,7 @@ import Heading from 'ui/Heading';
 import Input from 'ui/Input';
 import Para from 'ui/Para';
 import TxtArea from 'ui/TxtArea';
+import React from 'react';
 
 const Contact: React.FC = () => {
   useTitle('Surveillance systems Inc - Kontakta oss');

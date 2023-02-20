@@ -3,6 +3,7 @@ import { useAppSelector } from 'redux/app';
 import { getLogin } from 'redux/reducers';
 import Heading from 'ui/Heading';
 import MainFooter from 'ui/MainFooter';
+import React from 'react';
 
 const Footer: React.FC = () => {
   const login = useAppSelector(getLogin);

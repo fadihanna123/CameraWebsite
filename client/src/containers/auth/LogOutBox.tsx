@@ -8,6 +8,7 @@ import { getAuthor, getLang, setAuthor } from 'redux/reducers';
 import Btn from 'ui/Btn';
 import Heading from 'ui/Heading';
 import { localForageKeys } from 'utils/constants';
+import React from 'react';
 
 const LogOutBox: React.FC = () => {
   const author = useAppSelector(getAuthor);

@@ -1,6 +1,5 @@
 import { RegisterTyper, RegisterUser } from 'functions';
 import useTranslation from 'hooks/useTranslation';
-import { IRegisterForm } from 'models';
 import React from 'react';
 import { Flip, ToastContainer } from 'react-toastify';
 import { useAppDispatch, useAppSelector } from 'redux/app';
@@ -28,7 +27,7 @@ const RegisterForm: React.FC = () => {
               id='uname'
               val={registerForm.uname}
               changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
-                RegisterTyper(e, registerForm as IRegisterForm, dispatch)
+                RegisterTyper(e, registerForm, dispatch)
               }
               name='uname'
               isRequired={true}
@@ -46,7 +45,7 @@ const RegisterForm: React.FC = () => {
               id='email'
               val={registerForm.email}
               changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
-                RegisterTyper(e, registerForm as IRegisterForm, dispatch)
+                RegisterTyper(e, registerForm, dispatch)
               }
               isRequired={true}
               className={['txtinput']}
@@ -66,7 +65,7 @@ const RegisterForm: React.FC = () => {
               id='mobnr'
               val={registerForm.mobnr}
               changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
-                RegisterTyper(e, registerForm as IRegisterForm, dispatch)
+                RegisterTyper(e, registerForm, dispatch)
               }
               className={['txtinput']}
               name='mobnr'
@@ -83,7 +82,7 @@ const RegisterForm: React.FC = () => {
               id='psw'
               val={registerForm.psw}
               changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
-                RegisterTyper(e, registerForm as IRegisterForm, dispatch)
+                RegisterTyper(e, registerForm, dispatch)
               }
               isRequired={true}
               className={['txtinput']}
@@ -101,7 +100,7 @@ const RegisterForm: React.FC = () => {
               id='repsw'
               val={registerForm.repsw}
               changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
-                RegisterTyper(e, registerForm as IRegisterForm, dispatch)
+                RegisterTyper(e, registerForm, dispatch)
               }
               isRequired={true}
               className={['txtinput']}
@@ -119,7 +118,7 @@ const RegisterForm: React.FC = () => {
               id='img'
               val={registerForm.img}
               changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
-                RegisterTyper(e, registerForm as IRegisterForm, dispatch)
+                RegisterTyper(e, registerForm, dispatch)
               }
               acceptValues='image/*'
               isRequired={true}

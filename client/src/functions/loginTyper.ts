@@ -1,6 +1,7 @@
 import { ILoginForm } from 'models';
 import { Dispatch } from 'redux';
 import { setLoginForm } from 'redux/reducers';
+import React from 'react';
 
 /**
  * Handle login-form values.

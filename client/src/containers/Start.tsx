@@ -3,6 +3,7 @@ import { useAppSelector } from 'redux/app';
 import { getLogin } from 'redux/reducers';
 import Heading from 'ui/Heading';
 import Para from 'ui/Para';
+import React from 'react';
 
 const Start: React.FC = () => {
   const login = useAppSelector(getLogin);

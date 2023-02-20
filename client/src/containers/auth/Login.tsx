@@ -7,7 +7,6 @@ import { getLang, getLogin, getLoginForm } from 'redux/reducers';
 import Btn from 'ui/Btn';
 import Heading from 'ui/Heading';
 import Input from 'ui/Input';
-
 import LogOutBox from './LogOutBox';
 
 const Login: React.FC = () => {
