@@ -1,6 +1,6 @@
 {
   "name": "surveillance_server",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "homepage": "https://localhost:5000",
   "license": "MIT",
   "private": "true",
@@ -23,6 +23,7 @@
     "seed": "prisma db push && prisma db pull && prisma generate",
     "seed-delete": "prisma migrate reset",
     "lint": "eslint .",
+    "format": "prettier -w .",
     "dbDocs": "npx prisma generate"
   },
   "prisma": {
@@ -42,9 +43,11 @@
     "@typescript-eslint/parser": "^5.50.0",
     "dotenv": "^16.0.3",
     "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsdoc": "^39.7.5",
     "eslint-plugin-prefer-arrow": "^1.2.3",
+    "eslint-plugin-prettier": "^4.2.1",
     "ip": "^1.1.8",
     "node-cron": "^3.0.2",
     "prettier": "^2.8.3",
