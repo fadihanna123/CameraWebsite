@@ -29,6 +29,7 @@ const config = {
     ecmaFeatures: {
       jsx: true,
     },
+    ecmaVersion: 2023,
   },
   plugins: [
     'eslint-plugin-import',
