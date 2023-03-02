@@ -1,6 +1,6 @@
 {
   "name": "surveillance_website_client",
-  "version": "0.1.32",
+  "version": "0.1.33",
   "author": {
     "name": "Fadi Hanna",
     "email": "fhanna181@gmail.com"
@@ -13,20 +13,20 @@
   "license": "MIT",
   "homepage": "./",
   "private": "true",
-  "lastUpgrade": "20230201",
+  "lastUpgrade": "20230302",
   "dependencies": {
-    "@types/react-dom": "^18.0.10",
-    "axios": "^1.3.0",
+    "@types/react-dom": "^18.0.11",
+    "axios": "^1.3.4",
     "localforage": "^1.10.0",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
-    "react-router-dom": "^6.8.0",
+    "react-router-dom": "^6.8.2",
     "react-scripts": "5.0.1",
     "react-toastify": "^9.1.1",
     "redux": "^4.2.1",
-    "sass": "^1.57.1"
+    "sass": "^1.58.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -49,22 +49,22 @@
     ]
   },
   "devDependencies": {
-    "@reduxjs/toolkit": "^1.9.2",
+    "@reduxjs/toolkit": "^1.9.3",
     "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.4.0",
-    "@types/react": "^18.0.27",
+    "@types/react": "^18.0.28",
     "@types/react-router-dom": "^5.3.3",
     "@types/sass": "^1.43.1",
-    "@typescript-eslint/eslint-plugin": "^5.50.0",
-    "@typescript-eslint/parser": "^5.50.0",
-    "eslint": "^8.33.0",
+    "@typescript-eslint/eslint-plugin": "^5.54.0",
+    "@typescript-eslint/parser": "^5.54.0",
+    "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsdoc": "^40.0.0",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
-    "prettier": "^2.8.3",
+    "prettier": "^2.8.4",
     "typescript": "^4.9.5"
   },
   "engines": {
