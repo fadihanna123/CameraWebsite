@@ -9,7 +9,7 @@ import { baseURL } from 'utils';
 import { localForageKeys } from 'utils/constants';
 import React from 'react';
 
-const globalHeader: string = 'application/json';
+const globalHeader = 'application/json';
 
 axios.defaults.baseURL = baseURL;
 axios.defaults.headers.common['Content-Type'] = globalHeader;
@@ -18,7 +18,7 @@ const App: React.FC = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    let isSubscribed: boolean = true;
+    let isSubscribed = true;
 
     localforage
       .getItem(localForageKeys.Lang)

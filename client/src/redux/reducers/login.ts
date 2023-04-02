@@ -3,7 +3,7 @@ import { RootState } from 'redux/app';
 
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-const initialState: boolean = false;
+const initialState = false;
 
 export const loginSlice = createSlice({
   name: 'login',

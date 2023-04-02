@@ -18,12 +18,12 @@ const Heading: React.FC<HeadingProps> = ({
     ) : headingLevel === 5 ? (
       <h5 className={className?.join(' ')}>{children}</h5>
     ) : headingLevel === 6 && (
-        <h6 className={className?.join(' ')}>{children}</h6>
-      ) ? (
-      !headingLevel
-    ) : (
-      <h1 className={className?.join(' ')}>{children}</h1>
-    )}
+      <h6 className={className?.join(' ')}>{children}</h6>
+    ) ? (
+        !headingLevel
+      ) : (
+        <h1 className={className?.join(' ')}>{children}</h1>
+      )}
   </>
 );
 

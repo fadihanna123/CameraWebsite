@@ -3,7 +3,7 @@ import { RootState } from 'redux/app';
 
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-const initialState: string = '';
+const initialState = '';
 
 export const authorSlice = createSlice({
   name: 'author',

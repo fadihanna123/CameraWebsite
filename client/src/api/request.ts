@@ -8,7 +8,7 @@ export const request = {
 
   post: async <T>(
     url: string,
-    redata: any,
+    redata: unknown,
     headers?: { headers: Record<string, never> }
   ): Promise<T> => {
     const { data } = await axios.post<T>(url, redata, headers);
@@ -17,7 +17,7 @@ export const request = {
 
   put: async <T>(
     url: string,
-    redata: any,
+    redata: unknown,
     headers?: { headers: Record<string, never> }
   ): Promise<T> => {
     const { data } = await axios.put<T>(url, redata, headers);

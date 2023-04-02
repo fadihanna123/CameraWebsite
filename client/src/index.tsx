@@ -11,7 +11,7 @@ import { store } from 'redux/app/store';
 
 if (process.env.NODE_ENV === 'development') {
   // eslint-disable-next-line no-console
-  console.log("It's looks like we are in a development mode!");
+  console.log('It\'s looks like we are in a development mode!');
 }
 
 const root: ReactDOM.Root = ReactDOM.createRoot(

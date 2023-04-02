@@ -13,5 +13,6 @@
   },
   "git.ignoreLimitWarning": true,
   "terminal.integrated.defaultProfile.windows": "Git Bash",
-  "editor.fontSize": 14
+  "editor.fontSize": 14,
+  "eslint.workingDirectories": ["src", "public"]
 }
