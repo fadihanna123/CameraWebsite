@@ -1,22 +1,22 @@
 #{map-get($selectorMap, navBar)} {
-    display: $flex;
-    justify-content: $spaceAround;
-    transition: 0.3s;
+  display: $flex;
+  justify-content: $spaceAround;
+  transition: 0.3s;
 }
 
 #{map-get($selectorMap, container)}
-    #{map-get($selectorMap, navBar)}
-    #{map-get($selectorMap, link)} {
-    color: color(white);
-    border: 1px $solidbrd color(white);
-    padding: 10px;
-    margin: 10px;
-    transition: 0.3s;
+  #{map-get($selectorMap, navBar)}
+  #{map-get($selectorMap, link)} {
+  color: color(white);
+  border: 1px $solidbrd color(white);
+  padding: 10px;
+  margin: 10px;
+  transition: 0.3s;
 }
 
 // Styles for mobile
 @media screen and (min-width: 320px) and (max-width: 768px) {
-    #{map-get($selectorMap, navBar)} {
-        text-align: $cntr;
-    }
+  #{map-get($selectorMap, navBar)} {
+    text-align: $cntr;
+  }
 }

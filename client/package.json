@@ -50,6 +50,7 @@
   },
   "devDependencies": {
     "@craco/craco": "^7.1.0",
+    "@html-eslint/eslint-plugin": "^0.18.0",
     "@reduxjs/toolkit": "^1.9.3",
     "@types/eslint": "^8.37.0",
     "@types/jest": "^29.5.0",

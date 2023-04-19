@@ -29,8 +29,6 @@ const config = {
   rules: {
     '@html-eslint/indent': ['error', 2],
     'no-console': 'error',
-    indent: ['error', 2],
-    'linebreak-style': ['error', 'unix'],
     quotes: ['off', 'single'],
     semi: ['error', 'always'],
     'no-undef': 'off',

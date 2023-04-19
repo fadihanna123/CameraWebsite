@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    container_name: db
+    ports:
+      - 5432:5432
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: camera_website_docker
+    volumes:
+      - camera_website_postgres-data:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer:latest
+    container_name: db_admin
+    ports:
+      - 8080:8080
+    restart: unless-stopped
+    volumes:
+      - camera_website_postgres-admin:/var/lib/db/data
+
+  api:
+    build: ./server
+    container_name: backend
+    ports:
+      - 5000:5000
+    env_file:
+      - ./server/.env.prod
+    restart: unless-stopped
+    links:
+      - db
+
+  web:
+    build: ./client
+    container_name: frontend
+    ports:
+      - 3000:3000
+    env_file:
+      - ./client/.env
+    restart: unless-stopped
+    links:
+      - api
+
+volumes:
+  camera_website_postgres-data:
+  camera_website_postgres-admin:
