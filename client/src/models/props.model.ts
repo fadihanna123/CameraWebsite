@@ -43,8 +43,9 @@ export class BtnProps {
   }
   public className?: ['btn'] | string[];
   public clickFunc?: MouseEventHandler<HTMLButtonElement>;
-  public children: ReactElement<any, any> | string;
+  public children?: ReactElement<any, any> | string;
   public btnStyle?: object;
+  public backgroundColor?: string;
 }
 
 export class ParaProps {
