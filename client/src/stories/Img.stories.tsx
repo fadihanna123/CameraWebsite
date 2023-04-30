@@ -2,15 +2,18 @@ import React from 'react';
 import Img from 'ui/Img';
 import { Meta } from '@storybook/react';
 import bgImage from '../assets/background.jpg';
+import { ImgProps } from 'models';
 
-const meta: Meta = {
+const meta: Meta<typeof Img> = {
   title: 'Image',
   component: Img,
 };
 
 export default meta;
 
-const Template = (args: any) => <Img {...args} />;
+const Template = (args: JSX.IntrinsicAttributes & ImgProps) => (
+  <Img {...args} />
+);
 
 export const Default: any = Template.bind({});
 

@@ -1,15 +1,18 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
 import Para from 'ui/Para';
+import { ParaProps } from 'models';
 
-const meta: Meta = {
+const meta: Meta<typeof Para> = {
   title: 'Paragraph',
   component: Para,
 };
 
 export default meta;
 
-const Template = (args: any) => <Para {...args} />;
+const Template = (args: JSX.IntrinsicAttributes & ParaProps) => (
+  <Para {...args} />
+);
 
 export const Default: any = Template.bind({});
 

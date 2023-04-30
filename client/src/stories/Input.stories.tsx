@@ -1,15 +1,18 @@
 import React from 'react';
 import Input from 'ui/Input';
 import { Meta } from '@storybook/react';
+import { InputProps } from 'models';
 
-const meta: Meta = {
+const meta: Meta<typeof Input> = {
   title: 'Input',
   component: Input,
 };
 
 export default meta;
 
-const Template = (args: any) => <Input {...args} />;
+const Template = (args: JSX.IntrinsicAttributes & InputProps) => (
+  <Input {...args} />
+);
 
 export const Default: any = Template.bind({});
 

@@ -1,15 +1,18 @@
 import React from 'react';
 import FileUploader from 'ui/FileUploader';
 import { Meta } from '@storybook/react';
+import { FileUploaderProps } from 'models';
 
-const meta: Meta = {
+const meta: Meta<typeof FileUploader> = {
   title: 'FileUploader',
   component: FileUploader,
 };
 
 export default meta;
 
-const Template = (args: any) => <FileUploader {...args} />;
+const Template = (args: JSX.IntrinsicAttributes & FileUploaderProps) => (
+  <FileUploader {...args} />
+);
 
 export const Default: any = Template.bind({});
 

@@ -1,15 +1,18 @@
 import React from 'react';
 import Btn from 'ui/Btn';
 import { Meta } from '@storybook/react';
+import { BtnProps } from 'models';
 
-const meta: Meta = {
+const meta: Meta<typeof Btn> = {
   title: 'Button',
   component: Btn,
 };
 
 export default meta;
 
-const Template = (args: any) => <Btn {...args} />;
+const Template = (args: JSX.IntrinsicAttributes & BtnProps) => (
+  <Btn {...args} />
+);
 
 export const Default: any = Template.bind({});
 
