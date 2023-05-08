@@ -85,7 +85,7 @@
     "prop-types": "15.8.1",
     "storybook": "7.0.7",
     "typescript": "^5.0.2",
-    "webpack": "5.81.0"
+    "webpack": "5.82.0"
   },
   "engines": {
     "node": ">=14.17.0",
