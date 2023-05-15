@@ -4,15 +4,15 @@ import { DateTime } from 'luxon';
 /**
  * Store errors in the database
  *
- * @param message
- * @param method
- * @param located
+ * @param { string } message
+ * @param { string } method
+ * @param { string } located
+ * @returns { Promise<void> } A promise
  */
-
 export const storeError = async (
   message: string,
-  method: string,
-  located: string
+  method?: string,
+  located?: string
 ): Promise<void> => {
   const rnd: number = Math.floor(Math.random() * 1000);
 
@@ -21,9 +21,9 @@ export const storeError = async (
   await prisma.errors.create({
     data: {
       errorId: rnd,
-      method,
+      method: method || '/',
       message,
-      located,
+      located: located || '/',
       time,
     },
   });

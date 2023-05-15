@@ -16,9 +16,9 @@ import validator from 'validator';
  * @route POST /register
  * @param { typedRequestedBody<IUsers> } req
  * @param { Response } res
+ * @access Public
  * @returns { Promise<Response<any, Record<string, any>> | undefined> } Promise
  */
-
 export const doRegister = async (
   req: typedRequestBody<IUsers>,
   res: Response

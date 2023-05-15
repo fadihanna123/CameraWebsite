@@ -12,6 +12,7 @@ import { storeLog } from 'utils/storeLog';
  *
  * @function doLogin
  * @async
+ * @access Public
  * @route POST /login
  * @param { typedRequestedBody<IUsers> } req
  * @param { Response } res

@@ -13,6 +13,7 @@ import ip from 'ip';
 import morgan from 'morgan';
 import { logger } from 'tools';
 import { errorHandler, storeLog } from 'utils';
+import { connectDb } from 'db';
 
 const server = express();
 
@@ -50,6 +51,7 @@ server.use((req, res, next) => {
   next();
 });
 
+connectDb();
 server.use(cors(corsOptions));
 server.use(limiter);
 server.use(express.json({ type: 'application/json', limit: '1kb' }));
