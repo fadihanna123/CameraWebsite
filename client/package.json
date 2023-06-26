@@ -15,7 +15,7 @@
   "private": "true",
   "lastUpgrade": "20230607",
   "dependencies": {
-    "@types/react-dom": "^18.2.4",
+    "@types/react-dom": "^18.2.6",
     "axios": "^1.4.0",
     "localforage": "^1.10.0",
     "normalize.css": "^8.0.1",
