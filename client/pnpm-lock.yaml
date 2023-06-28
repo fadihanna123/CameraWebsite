@@ -31,7 +31,7 @@ dependencies:
     version: 6.12.0(react-dom@18.2.0)(react@18.2.0)
   react-scripts:
     specifier: 5.0.1
-    version: 5.0.1(@babel/plugin-syntax-flow@7.21.4)(@babel/plugin-transform-react-jsx@7.22.3)(@swc/core@1.3.62)(esbuild@0.17.19)(eslint@8.42.0)(react@18.2.0)(sass@1.62.1)(typescript@5.1.3)
+    version: 5.0.1(@babel/plugin-syntax-flow@7.21.4)(@babel/plugin-transform-react-jsx@7.22.3)(@swc/core@1.3.62)(esbuild@0.17.19)(eslint@8.42.0)(react@18.2.0)(sass@1.63.6)(typescript@5.1.3)
   react-toastify:
     specifier: ^9.1.3
     version: 9.1.3(react-dom@18.2.0)(react@18.2.0)
@@ -39,8 +39,8 @@ dependencies:
     specifier: ^4.2.1
     version: 4.2.1
   sass:
-    specifier: ^1.62.1
-    version: 1.62.1
+    specifier: ^1.63.6
+    version: 1.63.6
 
 devDependencies:
   '@craco/craco':
@@ -2552,7 +2552,7 @@ packages:
       cosmiconfig-typescript-loader: 1.0.9(@swc/core@1.3.62)(@types/node@20.2.5)(cosmiconfig@7.1.0)(typescript@5.1.3)
       cross-spawn: 7.0.3
       lodash: 4.17.21
-      react-scripts: 5.0.1(@babel/plugin-syntax-flow@7.21.4)(@babel/plugin-transform-react-jsx@7.22.3)(@swc/core@1.3.62)(esbuild@0.17.19)(eslint@8.42.0)(react@18.2.0)(sass@1.62.1)(typescript@5.1.3)
+      react-scripts: 5.0.1(@babel/plugin-syntax-flow@7.21.4)(@babel/plugin-transform-react-jsx@7.22.3)(@swc/core@1.3.62)(esbuild@0.17.19)(eslint@8.42.0)(react@18.2.0)(sass@1.63.6)(typescript@5.1.3)
       semver: 7.5.1
       webpack-merge: 5.9.0
     transitivePeerDependencies:
@@ -4511,7 +4511,7 @@ packages:
       '@types/babel__core': 7.20.1
       babel-plugin-react-docgen: 4.2.1
       pnp-webpack-plugin: 1.7.0(typescript@5.1.3)
-      react-scripts: 5.0.1(@babel/plugin-syntax-flow@7.21.4)(@babel/plugin-transform-react-jsx@7.22.3)(@swc/core@1.3.62)(esbuild@0.17.19)(eslint@8.42.0)(react@18.2.0)(sass@1.62.1)(typescript@5.1.3)
+      react-scripts: 5.0.1(@babel/plugin-syntax-flow@7.21.4)(@babel/plugin-transform-react-jsx@7.22.3)(@swc/core@1.3.62)(esbuild@0.17.19)(eslint@8.42.0)(react@18.2.0)(sass@1.63.6)(typescript@5.1.3)
       semver: 7.5.1
     transitivePeerDependencies:
       - '@types/webpack'
@@ -6897,7 +6897,7 @@ packages:
       '@swc/core': 1.3.62(@swc/helpers@0.3.17)
       '@swc/helpers': 0.3.17
       '@swc/jest': 0.2.26(@swc/core@1.3.62)
-      react-scripts: 5.0.1(@babel/plugin-syntax-flow@7.21.4)(@babel/plugin-transform-react-jsx@7.22.3)(@swc/core@1.3.62)(esbuild@0.17.19)(eslint@8.42.0)(react@18.2.0)(sass@1.62.1)(typescript@5.1.3)
+      react-scripts: 5.0.1(@babel/plugin-syntax-flow@7.21.4)(@babel/plugin-transform-react-jsx@7.22.3)(@swc/core@1.3.62)(esbuild@0.17.19)(eslint@8.42.0)(react@18.2.0)(sass@1.63.6)(typescript@5.1.3)
       swc-loader: 0.1.16(@swc/core@1.3.62)(webpack@5.85.1)
     transitivePeerDependencies:
       - webpack
@@ -12162,7 +12162,7 @@ packages:
       react: 18.2.0
     dev: false
 
-  /react-scripts@5.0.1(@babel/plugin-syntax-flow@7.21.4)(@babel/plugin-transform-react-jsx@7.22.3)(@swc/core@1.3.62)(esbuild@0.17.19)(eslint@8.42.0)(react@18.2.0)(sass@1.62.1)(typescript@5.1.3):
+  /react-scripts@5.0.1(@babel/plugin-syntax-flow@7.21.4)(@babel/plugin-transform-react-jsx@7.22.3)(@swc/core@1.3.62)(esbuild@0.17.19)(eslint@8.42.0)(react@18.2.0)(sass@1.63.6)(typescript@5.1.3):
     resolution: {integrity: sha512-8VAmEm/ZAwQzJ+GOMLbBsTdDKOpuZh7RPs0UymvBR2vRk4iZWCskjbFnxqjrzoIvlNNRZ3QJFx6/qDSi6zSnaQ==}
     engines: {node: '>=14.0.0'}
     hasBin: true
@@ -12212,7 +12212,7 @@ packages:
       react-refresh: 0.11.0
       resolve: 1.22.2
       resolve-url-loader: 4.0.0
-      sass-loader: 12.6.0(sass@1.62.1)(webpack@5.85.1)
+      sass-loader: 12.6.0(sass@1.63.6)(webpack@5.85.1)
       semver: 7.5.1
       source-map-loader: 3.0.2(webpack@5.85.1)
       style-loader: 3.3.3(webpack@5.85.1)
@@ -12609,7 +12609,7 @@ packages:
   /sanitize.css@13.0.0:
     resolution: {integrity: sha512-ZRwKbh/eQ6w9vmTjkuG0Ioi3HBwPFce0O+v//ve+aOq1oeCy7jMV2qzzAlpsNuqpqCBjjriM1lbtZbF/Q8jVyA==}
 
-  /sass-loader@12.6.0(sass@1.62.1)(webpack@5.85.1):
+  /sass-loader@12.6.0(sass@1.63.6)(webpack@5.85.1):
     resolution: {integrity: sha512-oLTaH0YCtX4cfnJZxKSLAyglED0naiYfNG1iXfU5w1LNZ+ukoA5DtyDIN5zmKVZwYNJP4KRc5Y3hkWga+7tYfA==}
     engines: {node: '>= 12.13.0'}
     peerDependencies:
@@ -12630,11 +12630,11 @@ packages:
     dependencies:
       klona: 2.0.6
       neo-async: 2.6.2
-      sass: 1.62.1
+      sass: 1.63.6
       webpack: 5.85.1(@swc/core@1.3.62)(esbuild@0.17.19)
 
-  /sass@1.62.1:
-    resolution: {integrity: sha512-NHpxIzN29MXvWiuswfc1W3I0N8SXBd8UR26WntmDlRYf0bSADnwnOjsyMZ3lMezSlArD33Vs3YFhp7dWvL770A==}
+  /sass@1.63.6:
+    resolution: {integrity: sha512-MJuxGMHzaOW7ipp+1KdELtqKbfAWbH7OLIdoSMnVe3EXPMTmxTmlaZDCTsgIpPCs3w99lLo9/zDKkOrJuT5byw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
