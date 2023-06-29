@@ -55,7 +55,7 @@
     "@html-eslint/eslint-plugin": "^0.19.0",
     "@reduxjs/toolkit": "^1.9.5",
     "@storybook/addon-essentials": "7.0.23",
-    "@storybook/addon-interactions": "7.0.23",
+    "@storybook/addon-interactions": "7.0.24",
     "@storybook/addon-links": "7.0.23",
     "@storybook/blocks": "7.0.18",
     "@storybook/preset-create-react-app": "7.0.24",
