@@ -2,17 +2,16 @@ version: '3.8'
 
 services:
   db:
-    image: postgres:latest
+    image: mysql:latest
     container_name: db
     ports:
       - 5432:5432
     restart: unless-stopped
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: secret
-      POSTGRES_DB: camera_website_docker
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DB: camera_website_docker
     volumes:
-      - camera_website_postgres-data:/var/lib/postgresql/data
+      - camera_website_mysql-data:/var/lib/mysql
 
   adminer:
     image: adminer:latest
@@ -21,7 +20,7 @@ services:
       - 8080:8080
     restart: unless-stopped
     volumes:
-      - camera_website_postgres-admin:/var/lib/db/data
+      - camera_website_mysql-admin:/var/lib/mysql
 
   api:
     build: ./server
@@ -40,11 +39,11 @@ services:
     ports:
       - 3000:3000
     env_file:
-      - ./client/.env
+      - ./client/.env.prod
     restart: unless-stopped
     links:
       - api
 
 volumes:
-  camera_website_postgres-data:
-  camera_website_postgres-admin:
+  camera_website_mysql-data:
+  camera_website_mysql-admin:
