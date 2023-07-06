@@ -62,8 +62,8 @@ devDependencies:
     specifier: 7.0.26
     version: 7.0.26(react-dom@18.2.0)(react@18.2.0)
   '@storybook/blocks':
-    specifier: 7.0.25
-    version: 7.0.25(react-dom@18.2.0)(react@18.2.0)
+    specifier: 7.0.26
+    version: 7.0.26(react-dom@18.2.0)(react@18.2.0)
   '@storybook/preset-create-react-app':
     specifier: 7.0.25
     version: 7.0.25(@babel/core@7.22.1)(react-refresh@0.14.0)(react-scripts@5.0.1)(typescript@5.1.6)(webpack@5.88.1)
@@ -3889,6 +3889,41 @@ packages:
       - supports-color
     dev: true
 
+  /@storybook/blocks@7.0.26(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-VNYB6Y1Ocja8HVg4Bm1w7LvqRSEc9aLVD8BnI8BInHvekvxhaxTkfpA18qds7d8+RmerrJqAUhGx0jkIB/cvwA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      '@storybook/channels': 7.0.26
+      '@storybook/client-logger': 7.0.26
+      '@storybook/components': 7.0.26(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/core-events': 7.0.26
+      '@storybook/csf': 0.1.1
+      '@storybook/docs-tools': 7.0.26
+      '@storybook/global': 5.0.0
+      '@storybook/manager-api': 7.0.26(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/preview-api': 7.0.26
+      '@storybook/theming': 7.0.26(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/types': 7.0.26
+      '@types/lodash': 4.14.195
+      color-convert: 2.0.1
+      dequal: 2.0.3
+      lodash: 4.17.21
+      markdown-to-jsx: 7.2.1(react@18.2.0)
+      memoizerific: 1.11.3
+      polished: 4.2.2
+      react: 18.2.0
+      react-colorful: 5.6.1(react-dom@18.2.0)(react@18.2.0)
+      react-dom: 18.2.0(react@18.2.0)
+      telejson: 7.1.0
+      ts-dedent: 2.2.0
+      util-deprecate: 1.0.2
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
+    dev: true
+
   /@storybook/builder-manager@7.0.25:
     resolution: {integrity: sha512-ziVXhQHc4GH8iGQHZT1CLk2xLSetr4i8maiwfP6FNLe1/lL1AqtrW+mWsGyhdSfUS6OaMnm/nd62orNftapA4w==}
     dependencies:
@@ -4124,6 +4159,24 @@ packages:
       util-deprecate: 1.0.2
     dev: true
 
+  /@storybook/components@7.0.26(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-n0TVWEF4Bc9JAyEIaN0PqwglbaYYRcPVG7ka+5wgGmBiuDlWI1SXd4EXxv2u0mVibHvtkHvOn6/GaZ1vG45p6g==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      '@storybook/client-logger': 7.0.26
+      '@storybook/csf': 0.1.1
+      '@storybook/global': 5.0.0
+      '@storybook/theming': 7.0.26(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/types': 7.0.26
+      memoizerific: 1.11.3
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      use-resize-observer: 9.1.0(react-dom@18.2.0)(react@18.2.0)
+      util-deprecate: 1.0.2
+    dev: true
+
   /@storybook/core-client@7.0.25:
     resolution: {integrity: sha512-7KZg9DmCxLXLNwFZtalLLvN8kkGrSwf8ASFF1KXK5AM9oi0+ZOMZekCAuUzLM6g/vc/wMNYtQYnmMDlxD4xXSQ==}
     dependencies:
@@ -4136,6 +4189,35 @@ packages:
     dependencies:
       '@storybook/node-logger': 7.0.25
       '@storybook/types': 7.0.25
+      '@types/node': 16.18.34
+      '@types/node-fetch': 2.6.4
+      '@types/pretty-hrtime': 1.0.1
+      chalk: 4.1.2
+      esbuild: 0.17.19
+      esbuild-register: 3.4.2(esbuild@0.17.19)
+      file-system-cache: 2.3.0
+      find-up: 5.0.0
+      fs-extra: 11.1.1
+      glob: 8.1.0
+      glob-promise: 6.0.2(glob@8.1.0)
+      handlebars: 4.7.7
+      lazy-universal-dotenv: 4.0.0
+      node-fetch: 2.6.11
+      picomatch: 2.3.1
+      pkg-dir: 5.0.0
+      pretty-hrtime: 1.0.3
+      resolve-from: 5.0.0
+      ts-dedent: 2.2.0
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
+    dev: true
+
+  /@storybook/core-common@7.0.26:
+    resolution: {integrity: sha512-rojZblzB0egNXX0bZ7R3TuPDiBSIhxpZCrorrDMHOZ8F+zuBxyTiZ0yMxEDn7i46T2n1vX+hUHhwZVxZrLn/ZQ==}
+    dependencies:
+      '@storybook/node-logger': 7.0.26
+      '@storybook/types': 7.0.26
       '@types/node': 16.18.34
       '@types/node-fetch': 2.6.4
       '@types/pretty-hrtime': 1.0.1
@@ -4288,6 +4370,21 @@ packages:
       - supports-color
     dev: true
 
+  /@storybook/docs-tools@7.0.26:
+    resolution: {integrity: sha512-Ibpm/OTR2XmJgix5w+wMYbDwN0zp5e/pcqSHy36OvkBOG588IKSSzYdBjGdTLPHWBoehp2Kyndw/5dL/09ftXA==}
+    dependencies:
+      '@babel/core': 7.22.1
+      '@storybook/core-common': 7.0.26
+      '@storybook/preview-api': 7.0.26
+      '@storybook/types': 7.0.26
+      '@types/doctrine': 0.0.3
+      doctrine: 3.0.0
+      lodash: 4.17.21
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
+    dev: true
+
   /@storybook/global@5.0.0:
     resolution: {integrity: sha512-FcOqPAXACP0I3oJ/ws6/rrPT9WGhu915Cg8D02a9YxLo0DE9zI+a9A5gRGvmQ09fiWPukqI8ZAEoQEdWUKMQdQ==}
     dev: true
@@ -4362,6 +4459,15 @@ packages:
 
   /@storybook/node-logger@7.0.25:
     resolution: {integrity: sha512-ZzglyuEuYgged6xHhupQ3a4N2icvQq+4GL5UXNlMWgSMwthO7yeJERJHavvjjFIukQIF8d5plTy27/LCueIX3g==}
+    dependencies:
+      '@types/npmlog': 4.1.4
+      chalk: 4.1.2
+      npmlog: 5.0.1
+      pretty-hrtime: 1.0.3
+    dev: true
+
+  /@storybook/node-logger@7.0.26:
+    resolution: {integrity: sha512-3Jqv3fRb8+Mn/aNl4IztgUAS/pvouVzpfHDc8+6KYAoFMeDXwHVlfF/+gRCpd/fbYaTHGrycIs5G48bC190Dgg==}
     dependencies:
       '@types/npmlog': 4.1.4
       chalk: 4.1.2
