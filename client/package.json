@@ -62,7 +62,7 @@
     "@storybook/react": "7.0.26",
     "@storybook/react-webpack5": "7.0.25",
     "@storybook/testing-library": "0.2.0",
-    "@types/eslint": "^8.40.2",
+    "@types/eslint": "^8.44.0",
     "@types/jest": "^29.5.3",
     "@types/prop-types": "^15.7.5",
     "@types/react": "^18.2.14",
