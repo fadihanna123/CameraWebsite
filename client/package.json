@@ -67,7 +67,7 @@
     "@types/prop-types": "^15.7.5",
     "@types/react": "^18.2.14",
     "@types/react-router-dom": "^5.3.3",
-    "@typescript-eslint/eslint-plugin": "^5.61.0",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.61.0",
     "babel-plugin-named-exports-order": "0.0.2",
     "craco-swc": "^0.5.1",
