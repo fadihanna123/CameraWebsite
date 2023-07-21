@@ -56,7 +56,7 @@
     "@reduxjs/toolkit": "^1.9.5",
     "@storybook/addon-essentials": "7.1.0",
     "@storybook/addon-interactions": "7.1.0",
-    "@storybook/addon-links": "7.0.27",
+    "@storybook/addon-links": "7.1.0",
     "@storybook/blocks": "7.0.27",
     "@storybook/preset-create-react-app": "7.1.0",
     "@storybook/react": "7.0.27",
