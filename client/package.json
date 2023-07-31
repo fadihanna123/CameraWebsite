@@ -52,7 +52,7 @@
   },
   "devDependencies": {
     "@craco/craco": "^7.1.0",
-    "@html-eslint/eslint-plugin": "^0.19.0",
+    "@html-eslint/eslint-plugin": "^0.19.1",
     "@reduxjs/toolkit": "^1.9.5",
     "@storybook/addon-essentials": "7.1.0",
     "@storybook/addon-interactions": "7.1.1",
