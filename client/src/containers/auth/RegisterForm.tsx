@@ -3,7 +3,7 @@ import useTranslation from 'hooks/useTranslation';
 import React from 'react';
 import { Flip, ToastContainer } from 'react-toastify';
 import { useAppDispatch, useAppSelector } from 'redux/app';
-import { getLang, getRegisterForm } from 'redux/reducers';
+import { getLang, getLoading, getRegisterForm } from 'redux/reducers';
 import Btn from 'ui/Btn';
 import FileUploader from 'ui/FileUploader';
 import Input from 'ui/Input';
@@ -12,6 +12,8 @@ const RegisterForm: React.FC = () => {
   const registerForm = useAppSelector(getRegisterForm);
 
   const lang = useAppSelector(getLang);
+
+  const loading = useAppSelector(getLoading);
 
   const dispatch = useAppDispatch();
 
@@ -126,7 +128,11 @@ const RegisterForm: React.FC = () => {
             />
           </section>
         </section>
-        <Btn className={['btn']} clickFunc={() => RegisterUser(dispatch)}>
+        <Btn
+          disabled={loading}
+          className={['btn']}
+          clickFunc={() => RegisterUser(dispatch)}
+        >
           {useTranslation('Register', lang)}
         </Btn>
       </section>

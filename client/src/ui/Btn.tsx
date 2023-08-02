@@ -6,12 +6,14 @@ const Btn: React.FC<BtnProps> = ({
   className,
   clickFunc,
   children,
+  disabled,
   btnStyle,
 }: BtnProps) => (
   <button
     style={btnStyle}
     type='button'
     className={className?.join(' ')}
+    disabled={disabled}
     onClick={clickFunc}
   >
     {children}

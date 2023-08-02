@@ -2,7 +2,7 @@ import useTitle from 'hooks/useTitle';
 import useTranslation from 'hooks/useTranslation';
 import { Link } from 'react-router-dom';
 import { useAppSelector } from 'redux/app';
-import { getLang } from 'redux/reducers';
+import { getLang, getLoading } from 'redux/reducers';
 import Btn from 'ui/Btn';
 import Heading from 'ui/Heading';
 import Input from 'ui/Input';
@@ -21,6 +21,8 @@ const Contact: React.FC = () => {
   };
 
   const lang = useAppSelector(getLang);
+
+  const loading = useAppSelector(getLoading);
 
   return (
     <main className='main'>
@@ -80,7 +82,9 @@ const Contact: React.FC = () => {
             <TxtArea id='msg' className={['txtinput']}></TxtArea>
           </section>
         </section>
-        <Btn className={['btn']}>Skicka</Btn>
+        <Btn disabled={loading} className={['btn']}>
+          Skicka
+        </Btn>
       </section>
     </main>
   );

@@ -22,9 +22,9 @@ export const checkLogin = async (
   dispatch: Dispatch<any>,
   loginForm: ILoginForm
 ): Promise<void> => {
-  try {
-    dispatch(setLoading(true));
+  dispatch(setLoading(true));
 
+  try {
     await loginUser(loginForm).then((res) => {
       if (res.accessToken) {
         localforage

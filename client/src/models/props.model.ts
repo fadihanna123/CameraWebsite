@@ -46,6 +46,7 @@ export class BtnProps {
   public children?: ReactElement<any, any> | string;
   public btnStyle?: object;
   public backgroundColor?: string;
+  public disabled!: boolean;
 }
 
 export class ParaProps {

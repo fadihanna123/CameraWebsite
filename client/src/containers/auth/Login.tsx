@@ -3,7 +3,9 @@ import useTranslation from 'hooks/useTranslation';
 import React from 'react';
 import { Flip, ToastContainer } from 'react-toastify';
 import { useAppDispatch, useAppSelector } from 'redux/app';
-import { getLang, getLogin, getLoginForm } from 'redux/reducers';
+import { getLang, getLoading, getLogin, getLoginForm } from 'redux/reducers';
+
+// Components
 import Btn from 'ui/Btn';
 import Heading from 'ui/Heading';
 import Input from 'ui/Input';
@@ -15,6 +17,8 @@ const Login: React.FC = () => {
   const login = useAppSelector(getLogin);
 
   const lang = useAppSelector(getLang);
+
+  const loading = useAppSelector(getLoading);
 
   const dispatch = useAppDispatch();
 
@@ -71,6 +75,7 @@ const Login: React.FC = () => {
             <Btn
               className={['btn']}
               clickFunc={() => checkLogin(dispatch, loginForm)}
+              disabled={loading}
             >
               {useTranslation('Login', lang)}
             </Btn>
