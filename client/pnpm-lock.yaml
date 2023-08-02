@@ -62,8 +62,8 @@ devDependencies:
     specifier: 7.1.1
     version: 7.1.1(react-dom@18.2.0)(react@18.2.0)
   '@storybook/blocks':
-    specifier: 7.1.1
-    version: 7.1.1(react-dom@18.2.0)(react@18.2.0)
+    specifier: 7.2.0
+    version: 7.2.0(@types/react-dom@18.2.7)(@types/react@18.2.15)(react-dom@18.2.0)(react@18.2.0)
   '@storybook/preset-create-react-app':
     specifier: 7.1.0
     version: 7.1.0(@babel/core@7.22.9)(react-refresh@0.14.0)(react-scripts@5.0.1)(typescript@5.1.6)(webpack@5.88.2)
@@ -4755,23 +4755,23 @@ packages:
       - supports-color
     dev: true
 
-  /@storybook/blocks@7.1.1(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-YIpIJi/+sByZhKrpKbVmXazUP1hj/QXybVOzwz2PT6tphfhrubGLBgu3RJIp6hwJ/lWf9RfghR7P8n+7aN6U9w==}
+  /@storybook/blocks@7.2.0(@types/react-dom@18.2.7)(@types/react@18.2.15)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-QbRw4lszmkxD86+murh0rJWa2rf9fEhI3vP3BSD+Ta6YgLHt+T94l0K5uQpESs8DRWHFGe5kT33hcAXHIpBqPA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@storybook/channels': 7.1.1
-      '@storybook/client-logger': 7.1.1
-      '@storybook/components': 7.1.1(react-dom@18.2.0)(react@18.2.0)
-      '@storybook/core-events': 7.1.1
+      '@storybook/channels': 7.2.0
+      '@storybook/client-logger': 7.2.0
+      '@storybook/components': 7.2.0(@types/react-dom@18.2.7)(@types/react@18.2.15)(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/core-events': 7.2.0
       '@storybook/csf': 0.1.1
-      '@storybook/docs-tools': 7.1.1
+      '@storybook/docs-tools': 7.2.0
       '@storybook/global': 5.0.0
-      '@storybook/manager-api': 7.1.1(react-dom@18.2.0)(react@18.2.0)
-      '@storybook/preview-api': 7.1.1
-      '@storybook/theming': 7.1.1(react-dom@18.2.0)(react@18.2.0)
-      '@storybook/types': 7.1.1
+      '@storybook/manager-api': 7.2.0(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/preview-api': 7.2.0
+      '@storybook/theming': 7.2.0(react-dom@18.2.0)(react@18.2.0)
+      '@storybook/types': 7.2.0
       '@types/lodash': 4.14.195
       color-convert: 2.0.1
       dequal: 2.0.3
@@ -4787,6 +4787,8 @@ packages:
       ts-dedent: 2.2.0
       util-deprecate: 1.0.2
     transitivePeerDependencies:
+      - '@types/react'
+      - '@types/react-dom'
       - encoding
       - supports-color
     dev: true
@@ -5331,12 +5333,12 @@ packages:
       - supports-color
     dev: true
 
-  /@storybook/docs-tools@7.1.1:
-    resolution: {integrity: sha512-noDgogRHum1FuqgXBdlv2+wOdkIJOJqSUSi0ZGiuP1OEOdA9YdbCfbWn/z734UEmhwraoQSXYb2tvrIEjfzYSw==}
+  /@storybook/docs-tools@7.2.0:
+    resolution: {integrity: sha512-VsgctKraxsw4xXQ44dXqQEi7jooUOgXqcbqru0+HeYznc/FnxXZNl+YgYrl28uOxhnSI6x/tMJs0Cd4YgmmHwA==}
     dependencies:
-      '@storybook/core-common': 7.1.1
-      '@storybook/preview-api': 7.1.1
-      '@storybook/types': 7.1.1
+      '@storybook/core-common': 7.2.0
+      '@storybook/preview-api': 7.2.0
+      '@storybook/types': 7.2.0
       '@types/doctrine': 0.0.3
       doctrine: 3.0.0
       lodash: 4.17.21
