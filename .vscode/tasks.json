@@ -1,0 +1,55 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Install Dependencies - Server",
+      "type": "shell",
+      "command": "yarn --emoji",
+      "runOptions": { "runOn": "folderOpen" },
+      "options": {
+        "cwd": "server"
+      },
+      "presentation": {
+        "reveal": "silent",
+        "close": true
+      }
+    },
+    {
+      "label": "Install Dependencies - Client",
+      "type": "shell",
+      "command": "yarn --emoji",
+      "runOptions": { "runOn": "folderOpen" },
+      "options": {
+        "cwd": "client"
+      },
+      "presentation": {
+        "reveal": "silent",
+        "close": true
+      }
+    },
+    {
+      "label": "Remove Dependencies - Server",
+      "type": "shell",
+      "command": "rm -rf node_modules",
+      "options": {
+        "cwd": "server"
+      },
+      "presentation": {
+        "reveal": "silent",
+        "close": true
+      }
+    },
+    {
+      "label": "Remove Dependencies - Client",
+      "type": "shell",
+      "command": "rm -rf node_modules",
+      "options": {
+        "cwd": "client"
+      },
+      "presentation": {
+        "reveal": "silent",
+        "close": true
+      }
+    }
+  ]
+}

@@ -65,4 +65,8 @@ server.use(errorHandler);
 
 export const port = PORT || 5000;
 
-server.listen(port, listenFn);
+if (process.env.NODE_ENV !== 'test') {
+  server.listen(port, listenFn);
+}
+
+export default server;

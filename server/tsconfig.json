@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "esNext",
+    "outDir": "build",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "baseUrl": "src/",
     "module": "commonjs",
@@ -9,6 +10,7 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "sourceMap": true,
+    "resolveJsonModule": true,
     "paths": {
       "@core/*": ["src/*"]
     }
