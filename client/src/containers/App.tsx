@@ -1,18 +1,11 @@
 import Layout from 'app/Layout';
-import axios from 'axios';
 import localforage from 'localforage';
 import { useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { useAppDispatch } from 'redux/app';
 import { setLang, setLogin } from 'redux/reducers';
-import { baseURL } from 'utils';
 import { localForageKeys } from 'utils/constants';
 import React from 'react';
-
-const globalHeader = 'application/json';
-
-axios.defaults.baseURL = baseURL;
-axios.defaults.headers.common['Content-Type'] = globalHeader;
 
 const App: React.FC = () => {
   const dispatch = useAppDispatch();

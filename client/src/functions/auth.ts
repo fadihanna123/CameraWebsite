@@ -1,5 +1,4 @@
 import { request } from 'api';
-import { ILoginData, ILoginForm, IRegisterData } from 'models';
 import { loginEndPoint, registerEndPoint } from 'utils';
 
 /**
@@ -11,9 +10,13 @@ import { loginEndPoint, registerEndPoint } from 'utils';
  * @returns { Promise<ILoginData> } ILoginData object
  * @example loginUser({ uname: 'Erik', psw: 123 });
  */
-export const loginUser = async (loginForm: ILoginForm): Promise<ILoginData> =>
-  await request.post<ILoginData>(loginEndPoint as string, loginForm);
-
+export const loginUser = async (loginForm: ILoginForm): Promise<ILoginData> => {
+  try {
+    return await request.post<ILoginData>(loginEndPoint as Paths, loginForm);
+  } catch (error: any) {
+    throw new Error(error);
+  }
+};
 /**
  * Register a user.
  *
@@ -23,5 +26,12 @@ export const loginUser = async (loginForm: ILoginForm): Promise<ILoginData> =>
  * @returns { Promise<IRegisterData> } IRegisterData object
  * @example registerUser({ uname: 'Erik', email: 'ab@gmail.com', mobnr: '075 11 75 147', psw: 123, repsw: 123, img: 'me.jpg' });
  */
-export const registerUser = async (myForm: FormData): Promise<IRegisterData> =>
-  await request.post<IRegisterData>(registerEndPoint as string, myForm);
+export const registerUser = async (
+  myForm: FormData
+): Promise<IRegisterData> => {
+  try {
+    return await request.post<IRegisterData>(registerEndPoint as Paths, myForm);
+  } catch (error: any) {
+    throw new Error(error);
+  }
+};

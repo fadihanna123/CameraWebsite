@@ -1,7 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
 import Para from 'ui/Para';
-import { ParaProps } from 'models';
 
 const meta: Meta<typeof Para> = {
   title: 'Paragraph',

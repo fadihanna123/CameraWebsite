@@ -2,7 +2,6 @@ import React from 'react';
 import Img from 'ui/Img';
 import { Meta } from '@storybook/react';
 import bgImage from '../assets/background.jpg';
-import { ImgProps } from 'models';
 
 const meta: Meta<typeof Img> = {
   title: 'Image',

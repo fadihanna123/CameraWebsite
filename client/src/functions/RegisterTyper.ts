@@ -1,4 +1,3 @@
-import { IRegisterForm } from 'models';
 import { Dispatch } from 'redux';
 import { setRegisterForm } from 'redux/reducers';
 import React from 'react';

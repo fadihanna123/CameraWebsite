@@ -1,7 +1,6 @@
 import React from 'react';
 import FileUploader from 'ui/FileUploader';
 import { Meta } from '@storybook/react';
-import { FileUploaderProps } from 'models';
 
 const meta: Meta<typeof FileUploader> = {
   title: 'FileUploader',

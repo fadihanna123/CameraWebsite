@@ -1,7 +1,6 @@
 import React from 'react';
 import Input from 'ui/Input';
 import { Meta } from '@storybook/react';
-import { InputProps } from 'models';
 
 const meta: Meta<typeof Input> = {
   title: 'Input',

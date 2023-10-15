@@ -92,6 +92,9 @@ server/*.tgz
 # Yarn Integrity file
 server/.yarn-integrity
 
+# Storybook
+client/storybook-static
+
 # dotenv environment variable files
 server/.env
 server/.env.development.local
@@ -185,6 +188,9 @@ client/sketch
 
 # Built Visual Studio Code Extensions
 *.vsix
+
+# Build
+client/build
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files

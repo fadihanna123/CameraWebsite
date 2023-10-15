@@ -1,4 +1,3 @@
-import { BtnProps } from 'models';
 import React from 'react';
 import PropTypes from 'prop-types';
 

@@ -1,13 +1,19 @@
 import axios from 'axios';
+import { baseURL } from 'utils';
+
+const globalHeader = 'application/json';
+
+axios.defaults.baseURL = baseURL;
+axios.defaults.headers.common['Content-Type'] = globalHeader;
 
 export const request = {
-  get: async <T>(url: string): Promise<T> => {
+  get: async <T>(url: Paths): Promise<T> => {
     const { data } = await axios.get<T>(url);
     return data;
   },
 
   post: async <T>(
-    url: string,
+    url: Paths,
     redata: unknown,
     headers?: { headers: Record<string, never> }
   ): Promise<T> => {
@@ -16,7 +22,7 @@ export const request = {
   },
 
   put: async <T>(
-    url: string,
+    url: Paths,
     redata: unknown,
     headers?: { headers: Record<string, never> }
   ): Promise<T> => {
@@ -25,7 +31,7 @@ export const request = {
   },
 
   delete: async <T>(
-    url: string,
+    url: Paths,
     headers?: { headers: Record<string, never> }
   ): Promise<T> => {
     const { data } = await axios.delete<T>(url, headers);

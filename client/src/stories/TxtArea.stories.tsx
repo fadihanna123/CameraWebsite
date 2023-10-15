@@ -1,7 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
 import TxtArea from 'ui/TxtArea';
-import { TxtAreaProps } from 'models';
 
 const meta: Meta<typeof TxtArea> = {
   title: 'TextArea',

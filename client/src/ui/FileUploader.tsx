@@ -1,4 +1,3 @@
-import { FileUploaderProps } from 'models';
 import PropTypes from 'prop-types';
 
 import Input from './Input';

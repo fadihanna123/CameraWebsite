@@ -1,7 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
 import MainHeader from 'ui/MainHeader';
-import { MainHeaderProps } from 'models';
 
 const meta: Meta<typeof MainHeader> = {
   title: 'MainHeader',

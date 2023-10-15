@@ -1,7 +1,6 @@
 import React from 'react';
 import Heading from 'ui/Heading';
 import { Meta } from '@storybook/react';
-import { HeadingProps } from 'models';
 
 const meta: Meta<typeof Heading> = {
   title: 'Heading',

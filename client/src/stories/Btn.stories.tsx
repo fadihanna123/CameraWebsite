@@ -1,7 +1,6 @@
 import React from 'react';
 import Btn from 'ui/Btn';
 import { Meta } from '@storybook/react';
-import { BtnProps } from 'models';
 
 const meta: Meta<typeof Btn> = {
   title: 'Button',

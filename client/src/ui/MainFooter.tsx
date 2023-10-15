@@ -1,4 +1,3 @@
-import { MainFooterProps } from 'models';
 import React from 'react';
 import PropTypes from 'prop-types';
 

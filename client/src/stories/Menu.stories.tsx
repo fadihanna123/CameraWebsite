@@ -1,7 +1,6 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
 import Menu from 'ui/Menu';
-import { MenuProps } from 'models';
 
 const meta: Meta<typeof Menu> = {
   title: 'Menu',

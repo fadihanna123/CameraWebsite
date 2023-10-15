@@ -1,3 +1,4 @@
+// @ts-check
 const CracoSwcPlugin = require('craco-swc');
 
 module.exports = {
