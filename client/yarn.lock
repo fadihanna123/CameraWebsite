@@ -2799,14 +2799,6 @@
     use-resize-observer "^9.1.0"
     util-deprecate "^1.0.2"
 
-"@storybook/core-client@7.4.6":
-  version "7.4.6"
-  resolved "https://registry.yarnpkg.com/@storybook/core-client/-/core-client-7.4.6.tgz#880ab2a431133912d0b76f2273cefe95b287d8ca"
-  integrity sha512-tfgxAHeCvMcs6DsVgtb4hQSDaCHeAPJOsoyhb47eDQfk4OmxzriM0qWucJV5DePSMi+KutX/rN2u0JxfOuN68g==
-  dependencies:
-    "@storybook/client-logger" "7.4.6"
-    "@storybook/preview-api" "7.4.6"
-
 "@storybook/core-client@7.5.1":
   version "7.5.1"
   resolved "https://registry.yarnpkg.com/@storybook/core-client/-/core-client-7.5.1.tgz#06bc3711767fa131800d1a0827dd120e89019ccd"
@@ -3206,33 +3198,6 @@
     "@storybook/preset-react-webpack" "7.5.1"
     "@storybook/react" "7.5.1"
     "@types/node" "^18.0.0"
-
-"@storybook/react@7.4.6":
-  version "7.4.6"
-  resolved "https://registry.yarnpkg.com/@storybook/react/-/react-7.4.6.tgz#240a78547add8db69b5d2eeae3d6c45feb79559b"
-  integrity sha512-w0dVo64baFFPTGpUOWFqkKsu6pQincoymegSNgqaBd5DxEyMDRiRoTWSJHMKE9BwgE8SyWhRkP1ak1mkccSOhQ==
-  dependencies:
-    "@storybook/client-logger" "7.4.6"
-    "@storybook/core-client" "7.4.6"
-    "@storybook/docs-tools" "7.4.6"
-    "@storybook/global" "^5.0.0"
-    "@storybook/preview-api" "7.4.6"
-    "@storybook/react-dom-shim" "7.4.6"
-    "@storybook/types" "7.4.6"
-    "@types/escodegen" "^0.0.6"
-    "@types/estree" "^0.0.51"
-    "@types/node" "^16.0.0"
-    acorn "^7.4.1"
-    acorn-jsx "^5.3.1"
-    acorn-walk "^7.2.0"
-    escodegen "^2.1.0"
-    html-tags "^3.1.0"
-    lodash "^4.17.21"
-    prop-types "^15.7.2"
-    react-element-to-jsx-string "^15.0.0"
-    ts-dedent "^2.0.0"
-    type-fest "~2.19"
-    util-deprecate "^1.0.2"
 
 "@storybook/react@7.5.1":
   version "7.5.1"
