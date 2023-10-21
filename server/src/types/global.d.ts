@@ -1,3 +1,5 @@
+import { Request } from 'express';
+
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
@@ -5,6 +7,10 @@ declare global {
       DATABASE_URL: string;
       NODE_ENV: 'development' | 'production' | 'test';
     }
+  }
+
+  interface typedRequestBody<T> extends Request {
+    body: T;
   }
 }
 

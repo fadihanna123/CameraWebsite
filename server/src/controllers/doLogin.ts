@@ -3,7 +3,6 @@ import { Response } from 'express';
 import jwt from 'jsonwebtoken';
 import { IUsers, UsrObjJwt } from 'models';
 import striptags from 'striptags';
-import { typedRequestBody } from 'types/global';
 import { storeError } from 'utils/storeError';
 import { storeLog } from 'utils/storeLog';
 

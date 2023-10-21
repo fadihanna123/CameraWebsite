@@ -3,7 +3,6 @@ import { Response } from 'express';
 import { IUsers } from 'models';
 import striptags from 'striptags';
 import { logger } from 'tools';
-import { typedRequestBody } from 'types/global';
 import { storeError } from 'utils/storeError';
 import { storeLog } from 'utils/storeLog';
 import validator from 'validator';

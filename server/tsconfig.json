@@ -1,4 +1,7 @@
 {
+  "ts-node": {
+    "files": true
+  },
   "compilerOptions": {
     "target": "esNext",
     "outDir": "build",
@@ -16,5 +19,6 @@
     }
   },
   "include": ["src/**/*", ".eslintrc.js"],
+  "files": ["src/types/global.d.ts"],
   "exclude": ["node_modules"]
 }
