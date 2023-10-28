@@ -30,6 +30,7 @@ const config = {
   },
   plugins: ['react', '@typescript-eslint', '@html-eslint', 'html'],
   rules: {
+    'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/no-var-requires': 'off',
     '@html-eslint/indent': ['error', 2],
     'no-console': 'error',

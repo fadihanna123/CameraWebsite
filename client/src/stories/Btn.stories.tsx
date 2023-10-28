@@ -1,4 +1,3 @@
-import React from 'react';
 import Btn from 'ui/Btn';
 import { Meta } from '@storybook/react';
 
