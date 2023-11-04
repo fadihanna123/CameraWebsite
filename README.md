@@ -16,7 +16,7 @@
 👤 **Fadi Hanna**
 
 * Github: [@fadihanna123](https://github.com/fadihanna123)
-* 
+
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/fadihanna123/CameraWebsite/issues). 
