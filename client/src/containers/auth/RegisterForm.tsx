@@ -8,6 +8,10 @@ import Btn from 'ui/Btn';
 import FileUploader from 'ui/FileUploader';
 import Input from 'ui/Input';
 
+/**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
+
 const RegisterForm: React.FC = () => {
   const registerForm = useAppSelector(getRegisterForm);
 
@@ -22,7 +26,7 @@ const RegisterForm: React.FC = () => {
       <section className='registerbox'>
         <section className='registerrow'>
           <section className='registercol'>
-            <label htmlFor='uname'>{useTranslation('Username', lang)} </label>
+            <label htmlFor='uname'>{useTranslation('Username', lang)}: </label>
           </section>
           <section className='registercol'>
             <Input
@@ -71,6 +75,7 @@ const RegisterForm: React.FC = () => {
               }
               className={['txtinput']}
               name='mobnr'
+              autoComplete='tel-local'
             />
           </section>
         </section>
@@ -89,6 +94,7 @@ const RegisterForm: React.FC = () => {
               isRequired={true}
               className={['txtinput']}
               name='psw'
+              autoComplete='new-password'
             />
           </section>
         </section>
@@ -107,14 +113,17 @@ const RegisterForm: React.FC = () => {
               isRequired={true}
               className={['txtinput']}
               name='repsw'
+              autoComplete='new-password'
             />
           </section>
         </section>
         <section className='registerrow'>
           <section className='registercol'>
-            <label htmlFor='img'>{useTranslation('Profilephoto', lang)}:</label>
+            <label htmlFor='img'>
+              {useTranslation('Profilephoto', lang)}:{' '}
+            </label>
           </section>
-          <section className='registerspeccol'>
+          <section className='registercol'>
             <FileUploader
               type='file'
               id='img'

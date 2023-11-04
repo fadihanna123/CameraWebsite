@@ -8,6 +8,7 @@ import { storeLog } from 'utils/storeLog';
  * @function listenFn
  * @access Public
  * @returns { void }
+ * @example listenFn();
  */
 export const listenFn = (): void => {
   storeLog(`Server started on port ${port}`);

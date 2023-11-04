@@ -7,6 +7,10 @@ import loginReducer from '../reducers/login';
 import loginFormReducer from '../reducers/loginForm';
 import registerFormReducer from '../reducers/registerForm';
 
+/**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
+
 export const store = configureStore({
   reducer: {
     loginForm: loginFormReducer,

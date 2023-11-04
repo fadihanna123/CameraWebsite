@@ -1,3 +1,4 @@
+// @ts-check
 import 'api/auth';
 import 'dotenv/config';
 import 'tasks';
@@ -14,6 +15,10 @@ import morgan from 'morgan';
 import { logger } from 'tools';
 import { errorHandler, storeLog } from 'utils';
 import { connectDb } from 'db';
+
+/**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
 
 const server = express();
 

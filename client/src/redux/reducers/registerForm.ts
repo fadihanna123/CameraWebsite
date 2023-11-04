@@ -2,6 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
 import { RootState } from 'redux/app';
 
 import type { PayloadAction } from '@reduxjs/toolkit';
+
+/**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
+
 const initialState: IRegisterForm = {
   uname: '',
   email: '',

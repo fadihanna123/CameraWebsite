@@ -31,11 +31,6 @@
 #{map-get($selectorMap, loginSection)} {
   width: 90%;
   transition: 0.3s;
-
-  #{map-get($selectorMap, label)} {
-    margin: 50px;
-    transition: 0.3s;
-  }
 }
 
 #{map-get($selectorMap, loginRow)} {

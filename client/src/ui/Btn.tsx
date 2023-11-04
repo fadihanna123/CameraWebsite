@@ -23,7 +23,7 @@ Btn.propTypes = {
   btnStyle: PropTypes.object,
   children: PropTypes.any,
   className: PropTypes.array.isRequired,
-  clickFunc: PropTypes.func.isRequired,
+  clickFunc: PropTypes.func,
 };
 
 export default Btn;

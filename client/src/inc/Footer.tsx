@@ -5,6 +5,10 @@ import Heading from 'ui/Heading';
 import MainFooter from 'ui/MainFooter';
 import React from 'react';
 
+/**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
+
 const Footer: React.FC = () => {
   const login = useAppSelector(getLogin);
 
@@ -13,7 +17,7 @@ const Footer: React.FC = () => {
       <section className='footerrow'>
         <section className='footercol'>
           <Heading>Surveillance systems Inc</Heading>
-          <address>Svemevägen 5, Stockholm</address>
+          <address>Sveevägen 5, Stockholm</address>
         </section>
 
         <ul className='footerlinks'>

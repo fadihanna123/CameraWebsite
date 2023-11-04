@@ -1,6 +1,9 @@
 /**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
+
+/**
  * Handle translations.
- *
  * @function useTranslation
  * @param { string } val
  * @param { string } lang

@@ -11,6 +11,10 @@ import Heading from 'ui/Heading';
 import Input from 'ui/Input';
 import LogOutBox from './LogOutBox';
 
+/**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
+
 const Login: React.FC = () => {
   const loginForm = useAppSelector(getLoginForm);
 

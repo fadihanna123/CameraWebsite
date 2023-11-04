@@ -1,6 +1,5 @@
 import { prisma } from 'db';
 import { Response } from 'express';
-import { IUsers } from 'models';
 import striptags from 'striptags';
 import { logger } from 'tools';
 import { storeError } from 'utils/storeError';
@@ -17,6 +16,7 @@ import validator from 'validator';
  * @param { Response } res
  * @access Public
  * @returns { Promise<Response<any, Record<string, any>> | undefined> } Promise
+ * @example doRegister(req, res);
  */
 export const doRegister = async (
   req: typedRequestBody<IUsers>,
@@ -102,7 +102,10 @@ export const doRegister = async (
                 ? (req as any).files.myFile
                 : '';
 
-              if (!req.files || Object.keys(req.files).length === 0) {
+              if (
+                !(req as any).files ||
+                Object.keys((req as any).files).length === 0
+              ) {
                 storeLog('Var vänlig välj en bild.', 'POST', '/register');
                 return res.status(400).send('Var vänlig välj en bild.');
               }

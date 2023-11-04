@@ -4,6 +4,10 @@ import Heading from 'ui/Heading';
 import Para from 'ui/Para';
 import React from 'react';
 
+/**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
+
 const Error: React.FC = () => {
   useTitle('Surveillance systems Inc - Sidan finns inte');
 

@@ -1,13 +1,20 @@
+// @ts-check
 import { prisma } from 'db';
 import { DateTime } from 'luxon';
 
 /**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
+
+/**
  * Store errors in the database
- *
+ * @function storeError
+ * @async
  * @param { string } message
  * @param { string } method
  * @param { string } located
  * @returns { Promise<void> } A promise
+ * @example storeError("Error connecting!", "POST", "/login");
  */
 export const storeError = async (
   message: string,

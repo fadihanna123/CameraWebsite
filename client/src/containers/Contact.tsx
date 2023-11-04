@@ -10,11 +10,15 @@ import Para from 'ui/Para';
 import TxtArea from 'ui/TxtArea';
 import React from 'react';
 
+/**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
+
 const Contact: React.FC = () => {
   useTitle('Surveillance systems Inc - Kontakta oss');
 
   /**
-   * @param {{p10: { padding: string }}}
+   * @param {{ p10: { padding: string }}}
    */
   const styles = {
     p10: { padding: '10px' },

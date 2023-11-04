@@ -2,9 +2,20 @@ import { PrismaClient } from '@prisma/client';
 import { logger } from 'tools';
 import { storeError, storeLog } from 'utils';
 
+/**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
+
 const prisma = new PrismaClient();
 
-const connectDb = async () => {
+/**
+ * Connect the database and check if it success.
+ * @function connectDb
+ * @async
+ * @returns { Promise<void> } A promise
+ * @example connectDb();
+ */
+const connectDb = async (): Promise<void> => {
   try {
     await prisma.$connect();
     logger.info('Database is connnected');

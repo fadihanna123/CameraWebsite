@@ -3,8 +3,11 @@ import { setLoginForm } from 'redux/reducers';
 import React from 'react';
 
 /**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
+
+/**
  * Handle login-form values.
- *
  * @function loginTyper
  * @param { React.ChangeEvent<HTMLInputElement> } e
  * @param { ILoginForm } loginForm

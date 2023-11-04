@@ -1,13 +1,17 @@
 import About from 'containers/About';
 import Register from 'containers/auth/Register';
 import Contact from 'containers/Contact';
-import Profile from 'containers/dashboard/Profile';
+import { Profile } from 'containers/dashboard';
 import Start from 'containers/Start';
 import Footer from 'inc/Footer';
-import Header from 'inc/Header';
+import { Header } from 'inc';
 import { Route, Routes } from 'react-router-dom';
 import React from 'react';
 import Error from '../containers/Error';
+
+/**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
 
 const Layout: React.FC = () => (
   <section className='container'>

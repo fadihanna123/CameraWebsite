@@ -3,6 +3,10 @@ import { RootState } from 'redux/app';
 
 import type { PayloadAction } from '@reduxjs/toolkit';
 
+/**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
+
 const initialState = '';
 
 export const authorSlice = createSlice({

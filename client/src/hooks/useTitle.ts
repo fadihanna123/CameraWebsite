@@ -1,6 +1,10 @@
 import { useEffect } from 'react';
 
 /**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
+
+/**
  * Set page title depends on title param.
  *
  * @function useTitle

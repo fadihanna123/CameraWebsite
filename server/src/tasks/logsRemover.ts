@@ -3,10 +3,17 @@ import { prisma } from 'db';
 import { fileCleaner } from './fileClenaer';
 
 /**
- * Clean log and error data in the database and call fileCleaner.
+ * @author Fadi Hanna<fhanna181@gmail.com>
  */
 
-export const logsRemover = async () => {
+/**
+ * Clean log and error data in the database and call fileCleaner.
+ * @function logsRemover
+ * @async
+ * @returns { Promise<void> }
+ * @example logsRemover();
+ */
+export const logsRemover = async (): Promise<void> => {
   await prisma.logs.deleteMany();
   await prisma.errors.deleteMany();
   fileCleaner();

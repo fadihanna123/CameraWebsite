@@ -1,6 +1,10 @@
 import axios from 'axios';
 import { baseURL } from 'utils';
 
+/**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
+
 const globalHeader = 'application/json';
 
 axios.defaults.baseURL = baseURL;

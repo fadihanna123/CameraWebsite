@@ -10,6 +10,10 @@ import Heading from 'ui/Heading';
 import { localForageKeys } from 'utils/constants';
 import React from 'react';
 
+/**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
+
 const LogOutBox: React.FC = () => {
   const author = useAppSelector(getAuthor);
 

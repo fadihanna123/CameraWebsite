@@ -2,8 +2,11 @@ import { request } from 'api';
 import { loginEndPoint, registerEndPoint } from 'utils';
 
 /**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
+
+/**
  * Login a user.
- *
  * @function loginUser
  * @async
  * @param { ILoginForm } loginForm
@@ -19,7 +22,6 @@ export const loginUser = async (loginForm: ILoginForm): Promise<ILoginData> => {
 };
 /**
  * Register a user.
- *
  * @function registerUser
  * @async
  * @param { FormData } myForm

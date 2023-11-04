@@ -2,11 +2,14 @@ import { Flip, toast } from 'react-toastify';
 import { Dispatch } from 'redux';
 import { setLoading } from 'redux/reducers';
 
-import { registerUser } from './auth';
+import { registerUser } from './apiStore';
+
+/**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
 
 /**
  * Register a user.
- *
  * @function RegisterUser
  * @async
  * @param { Dispatch<any> } dispatch

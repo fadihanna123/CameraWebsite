@@ -5,6 +5,10 @@ import Heading from 'ui/Heading';
 import Para from 'ui/Para';
 import React from 'react';
 
+/**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
+
 const Start: React.FC = () => {
   const login = useAppSelector(getLogin);
 

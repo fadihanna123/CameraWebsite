@@ -1,8 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 
 /**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
+
+/**
  * Redirect to a route.
- *
  * @function RedirectToRoute
  * @param { string } route
  * @returns { void }

@@ -1,6 +1,5 @@
 /**
  * localForageKeys
- *
  * @enum { string }
  * @example localForageKeys.Lang
  */

@@ -7,6 +7,10 @@ import Para from 'ui/Para';
 import React from 'react';
 import RegisterForm from './RegisterForm';
 
+/**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
+
 const Register: React.FC = () => {
   const login = useAppSelector(getLogin);
 

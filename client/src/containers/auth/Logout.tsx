@@ -4,6 +4,10 @@ import { useAppDispatch, useAppSelector } from 'redux/app';
 import { getLang } from 'redux/reducers';
 import React from 'react';
 
+/**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
+
 const Logout: React.FC = () => {
   const login = useAppSelector(getLang);
 

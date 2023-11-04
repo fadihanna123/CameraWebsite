@@ -4,12 +4,15 @@ import { Dispatch } from 'redux';
 import { setLoading, setLogin } from 'redux/reducers';
 import { localForageKeys } from 'utils';
 
-import { loginUser } from './auth';
+import { loginUser } from './apiStore';
 import { RedirectToRoute } from './helper';
 
 /**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
+
+/**
  * Do a login check.
- *
  * @function checkLogin
  * @async
  * @param { Dispatch<any> } dispatch

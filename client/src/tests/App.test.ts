@@ -1,5 +1,9 @@
 import { loginUser } from 'functions';
 
+/**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
+
 it('login User', async () => {
   /**
    * @param { string } uname

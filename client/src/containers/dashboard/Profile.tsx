@@ -3,6 +3,10 @@ import { useSelector } from 'react-redux';
 import { getLang } from 'redux/reducers';
 import React from 'react';
 
+/**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
+
 const Profile: React.FC = () => {
   const login = useSelector(getLang);
 

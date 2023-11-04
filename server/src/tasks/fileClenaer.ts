@@ -1,10 +1,16 @@
 import fs from 'fs';
 
 /**
- * Clean log and error files.
+ * @author Fadi Hanna<fhanna181@gmail.com>
  */
 
-export const fileCleaner = () => {
+/**
+ * Clean log and error files.
+ * @function fileCleaner
+ * @returns { void }
+ * @example fileClenaer();
+ */
+export const fileCleaner = (): void => {
   const logsPath = './src/logs/debug.log';
   const errorPath = './src/logs/error.log';
   const newValue = '';

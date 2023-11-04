@@ -5,8 +5,11 @@ import { setLang } from 'redux/reducers';
 import { localForageKeys } from 'utils/constants';
 
 /**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
+
+/**
  * Switch to the selected language.
- *
  * @function langSwitcher
  * @param { string } lang
  * @param { Dispatch<any> } dispatch

@@ -9,6 +9,10 @@ import MainHeader from 'ui/MainHeader';
 import Menu from 'ui/Menu';
 import React from 'react';
 
+/**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
+
 const Header: React.FC = () => {
   const login = useAppSelector(getLogin);
 
@@ -63,4 +67,5 @@ const Header: React.FC = () => {
     </MainHeader>
   );
 };
+
 export default Header;

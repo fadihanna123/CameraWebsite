@@ -7,6 +7,10 @@ import { setLang, setLogin } from 'redux/reducers';
 import { localForageKeys } from 'utils/constants';
 import React from 'react';
 
+/**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
+
 const App: React.FC = () => {
   const dispatch = useAppDispatch();
 

@@ -7,6 +7,10 @@ import { localForageKeys } from 'utils/constants';
 import { RedirectToRoute } from './helper';
 
 /**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
+
+/**
  * Do logout functionality.
  *
  * @function doLogOut

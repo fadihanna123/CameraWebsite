@@ -3,8 +3,11 @@ import { setRegisterForm } from 'redux/reducers';
 import React from 'react';
 
 /**
+ * @author Fadi Hanna<fhanna181@gmail.com>
+ */
+
+/**
  * Handle registrations form values.
- *
  * @function RegisterTyper
  * @param { React.ChangeEvent<HTMLInputElement> } e
  * @param { IRegisterForm } registerForm

@@ -2,13 +2,13 @@
   display: $flex;
   padding: 10px;
   justify-content: $cntr;
-  transition: 0.3s;
+  transition: 0.3s all;
 }
 
 #{map-get($selectorMap, registerCol)} {
-  width: 15%;
+  width: 20%;
   margin-bottom: 15px;
-  transition: 0.3s;
+  transition: 0.3s all;
 }
 
 #{map-get($selectorMap, registerSpecCol)} {

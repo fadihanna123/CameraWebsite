@@ -1,7 +1,6 @@
 import { prisma } from 'db';
 import { Response } from 'express';
 import jwt from 'jsonwebtoken';
-import { IUsers, UsrObjJwt } from 'models';
 import striptags from 'striptags';
 import { storeError } from 'utils/storeError';
 import { storeLog } from 'utils/storeLog';
@@ -16,6 +15,7 @@ import { storeLog } from 'utils/storeLog';
  * @param { typedRequestedBody<IUsers> } req
  * @param { Response } res
  * @returns { Promise<Response<any, Record<string, any>> | undefined> } Promise.
+ * @example doLogin(req, res);
  */
 export const doLogin = async (
   req: typedRequestBody<IUsers>,
