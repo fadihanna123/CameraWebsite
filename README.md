@@ -16,7 +16,6 @@
 👤 **Fadi Hanna**
 
 * Github: [@fadihanna123](https://github.com/fadihanna123)
-* LinkedIn: [@fadi-hanna-5506401b0](https://linkedin.com/in/fadi-hanna-5506401b0)
 
 ## 🤝 Contributing
 
