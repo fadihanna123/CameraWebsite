@@ -85,7 +85,6 @@ declare global {
     className: string[];
     alt: string;
     ariaLabel: string;
-    loading: 'eager' | 'lazy' | undefined;
     dimensions: number[];
   }
 

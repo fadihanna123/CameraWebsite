@@ -28,7 +28,6 @@ const Header: React.FC = () => {
               className={['logoimg']}
               alt='Logobild'
               ariaLabel='Logobild'
-              loading='lazy'
               dimensions={[460, 200]}
             />
           </Link>
