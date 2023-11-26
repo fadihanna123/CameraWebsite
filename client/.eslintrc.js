@@ -5,7 +5,7 @@
 const config = {
   env: {
     browser: true,
-    es2022: true,
+    es2023: true,
   },
   extends: [
     'eslint:recommended',
@@ -33,7 +33,6 @@ const config = {
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/no-var-requires': 'off',
     '@html-eslint/indent': ['error', 2],
-    'no-console': 'error',
     quotes: ['off', 'single'],
     semi: ['error', 'always'],
     'no-undef': 'off',
