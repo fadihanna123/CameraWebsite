@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 import Input from './Input';
 import React from 'react';
 
@@ -23,15 +21,5 @@ const FileUploader: React.FC<FileUploaderProps> = ({
     className={className}
   />
 );
-
-FileUploader.propTypes = {
-  val: PropTypes.string,
-  id: PropTypes.string.isRequired,
-  changeFunc: PropTypes.func,
-  acceptValues: PropTypes.string,
-  isRequired: PropTypes.bool,
-  name: PropTypes.string,
-  className: PropTypes.array,
-};
 
 export default FileUploader;

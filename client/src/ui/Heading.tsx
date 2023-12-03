@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const Heading: React.FC<HeadingProps> = ({
   headingLevel,
@@ -26,11 +25,5 @@ const Heading: React.FC<HeadingProps> = ({
     )}
   </>
 );
-
-Heading.propTypes = {
-  headingLevel: PropTypes.number,
-  children: PropTypes.any,
-  className: PropTypes.array,
-};
 
 export default Heading;

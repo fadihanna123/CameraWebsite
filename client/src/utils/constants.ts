@@ -1,9 +1,9 @@
 /**
- * localForageKeys
+ * sessionStorageKeys
  * @enum { string }
- * @example localForageKeys.Lang
+ * @example sessionStorageKeys.Lang
  */
-export enum localForageKeys {
+export enum sessionStorageKeys {
   Token = 'Token',
   Author = 'Author',
   Lang = 'lang',

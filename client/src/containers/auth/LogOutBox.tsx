@@ -1,13 +1,12 @@
 import { doLogOut } from 'functions';
 import useTranslation from 'hooks/useTranslation';
-import localforage from 'localforage';
 import { useEffect } from 'react';
 import { Flip, toast } from 'react-toastify';
 import { useAppDispatch, useAppSelector } from 'redux/app';
 import { getAuthor, getLang, getLoading, setAuthor } from 'redux/reducers';
 import Btn from 'ui/Btn';
 import Heading from 'ui/Heading';
-import { localForageKeys } from 'utils/constants';
+import { sessionStorageKeys } from 'utils/constants';
 import React from 'react';
 
 /**
@@ -24,12 +23,13 @@ const LogOutBox: React.FC = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    localforage
-      .getItem(localForageKeys.Author)
-      .then((data: any) => setAuthor(data))
-      .catch((err) =>
-        toast.error((err as Error).message, { transition: Flip })
-      );
+    const author = sessionStorage.getItem(sessionStorageKeys.Author) || '';
+
+    try {
+      setAuthor(author);
+    } catch (err) {
+      toast.error((err as Error).message, { transition: Flip });
+    }
   }, []);
 
   return (

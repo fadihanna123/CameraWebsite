@@ -1,8 +1,7 @@
-import localforage from 'localforage';
 import { toast } from 'react-toastify';
 import { Dispatch } from 'redux';
 import { setLang } from 'redux/reducers';
-import { localForageKeys } from 'utils/constants';
+import { sessionStorageKeys } from 'utils/constants';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
@@ -17,9 +16,11 @@ import { localForageKeys } from 'utils/constants';
  * @example langSwitcher("en", dispatch);
  */
 export const langSwitcher = (lang: string, dispatch: Dispatch<any>): void => {
-  localforage
-    .setItem(localForageKeys.Lang, lang)
-    .catch((err) => toast.error((err as Error).message));
+  try {
+    sessionStorage.setItem(sessionStorageKeys.Lang, lang);
 
-  dispatch(setLang(lang));
+    dispatch(setLang(lang));
+  } catch (err) {
+    toast.error((err as Error).message);
+  }
 };

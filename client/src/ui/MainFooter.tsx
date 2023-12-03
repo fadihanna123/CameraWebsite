@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const mainFooter: React.FC<MainFooterProps> = ({
   classNames,
@@ -7,10 +6,5 @@ const mainFooter: React.FC<MainFooterProps> = ({
 }: MainFooterProps) => (
   <footer className={classNames.join(' ')}>{children}</footer>
 );
-
-mainFooter.propTypes = {
-  classNames: PropTypes.array.isRequired,
-  children: PropTypes.any.isRequired,
-};
 
 export default mainFooter;

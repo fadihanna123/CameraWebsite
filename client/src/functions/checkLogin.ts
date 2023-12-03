@@ -1,8 +1,7 @@
-import localforage from 'localforage';
 import { Flip, toast } from 'react-toastify';
 import { Dispatch } from 'redux';
 import { setLoading, setLogin } from 'redux/reducers';
-import { localForageKeys } from 'utils';
+import { sessionStorageKeys } from 'utils';
 
 import { loginUser } from './apiStore';
 import { RedirectToRoute } from './helper';
@@ -29,13 +28,8 @@ export const checkLogin = async (
   try {
     await loginUser(loginForm).then((res) => {
       if (res.accessToken) {
-        localforage
-          .setItem(localForageKeys.Token, res.accessToken)
-          .catch((err) => toast.error((err as Error).message));
-
-        localforage
-          .setItem(localForageKeys.Author, res.author)
-          .catch((err) => toast.error((err as Error).message));
+        sessionStorage.setItem(sessionStorageKeys.Token, res.accessToken);
+        sessionStorage.setItem(sessionStorageKeys.Author, res.author);
 
         dispatch(setLogin(true));
 

@@ -1,6 +1,5 @@
 import { prisma } from 'db';
 import { Response } from 'express';
-import striptags from 'striptags';
 import { logger } from 'tools';
 import { storeError } from 'utils/storeError';
 import { storeLog } from 'utils/storeLog';
@@ -122,10 +121,10 @@ export const doRegister = async (
 
               const userModel = await prisma.users.create({
                 data: {
-                  uname: striptags(uname),
-                  email: striptags(email),
-                  psw: striptags(psw),
-                  mobnr: striptags(mobnr),
+                  uname,
+                  email,
+                  psw,
+                  mobnr,
                   locked: 0,
                   img: (req as any).files.img.name,
                 },

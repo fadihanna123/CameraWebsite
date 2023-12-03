@@ -1,7 +1,6 @@
 import { prisma } from 'db';
 import { Response } from 'express';
 import jwt from 'jsonwebtoken';
-import striptags from 'striptags';
 import { storeError } from 'utils/storeError';
 import { storeLog } from 'utils/storeLog';
 
@@ -21,7 +20,7 @@ export const doLogin = async (
   req: typedRequestBody<IUsers>,
   res: Response
 ): Promise<Response<any, Record<string, any>> | undefined> => {
-  let { uname, psw } = req.body;
+  const { uname, psw } = req.body;
   const userObject: UsrObjJwt = {
     uname,
   };
@@ -33,9 +32,6 @@ export const doLogin = async (
   } else {
     // Om användaren fyllde i alla rutor.
     try {
-      uname = striptags(uname);
-      psw = striptags(psw);
-
       const result = await prisma.users.findMany({
         where: {
           uname,

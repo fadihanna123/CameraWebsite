@@ -1,8 +1,7 @@
-import localforage from 'localforage';
 import { toast } from 'react-toastify';
 import { Dispatch } from 'redux';
 import { setLogin } from 'redux/reducers';
-import { localForageKeys } from 'utils/constants';
+import { sessionStorageKeys } from 'utils/constants';
 
 import { RedirectToRoute } from './helper';
 
@@ -19,15 +18,15 @@ import { RedirectToRoute } from './helper';
  * @example doLogOut(dispatch);
  */
 export const doLogOut = (dispatch: Dispatch<any>): void => {
-  localforage
-    .removeItem(localForageKeys.Token)
-    .catch((err) => toast.error((err as Error).message));
+  try {
+    sessionStorage.removeItem(sessionStorageKeys.Token);
 
-  localforage
-    .removeItem(localForageKeys.Author)
-    .catch((err) => toast.error((err as Error).message));
+    sessionStorage.removeItem(sessionStorageKeys.Author);
 
-  dispatch(setLogin(false));
+    dispatch(setLogin(false));
 
-  RedirectToRoute('/');
+    RedirectToRoute('/');
+  } catch (err) {
+    toast.error((err as Error).message);
+  }
 };

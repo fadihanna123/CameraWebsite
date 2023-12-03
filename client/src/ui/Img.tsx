@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const Img: React.FC<ImgProps> = ({
   source,
@@ -17,13 +16,5 @@ const Img: React.FC<ImgProps> = ({
     height={dimensions[1]}
   />
 );
-
-Img.propTypes = {
-  source: PropTypes.string.isRequired,
-  className: PropTypes.array.isRequired,
-  alt: PropTypes.string.isRequired,
-  ariaLabel: PropTypes.string.isRequired,
-  dimensions: PropTypes.array.isRequired,
-};
 
 export default Img;
