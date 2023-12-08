@@ -10,6 +10,7 @@ const Input: React.FC<InputProps> = ({
   changeFunc,
   acceptValues,
   autoComplete,
+  placeHolder,
 }: InputProps) => (
   <input
     id={id}
@@ -21,6 +22,7 @@ const Input: React.FC<InputProps> = ({
     required={isRequired}
     accept={acceptValues}
     autoComplete={autoComplete}
+    placeholder={placeHolder}
   />
 );
 

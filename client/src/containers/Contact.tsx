@@ -65,7 +65,12 @@ const Contact: React.FC = () => {
             <label htmlFor='epost'>E-postadress: </label>
           </section>
           <section className='contactcol'>
-            <Input id='epost' type='email' className={['txtinput']} />
+            <Input
+              id='epost'
+              placeHolder='user@gmail.com'
+              type='email'
+              className={['txtinput']}
+            />
           </section>
         </section>
 
@@ -74,7 +79,11 @@ const Contact: React.FC = () => {
             <label htmlFor='mobnr'>Mobilnummer: </label>
           </section>
           <section className='contactcol'>
-            <Input id='mobnr' className={['txtinput']} />
+            <Input
+              placeHolder='07X-XXXXXXX'
+              id='mobnr'
+              className={['txtinput']}
+            />
           </section>
         </section>
 
@@ -83,7 +92,7 @@ const Contact: React.FC = () => {
             <label htmlFor='msg'>{useTranslation('Message', lang)}: </label>
           </section>
           <section className='contactcol'>
-            <TxtArea id='msg' className={['txtinput']}></TxtArea>
+            <TxtArea id='msg' className={['txtArea']}></TxtArea>
           </section>
         </section>
         <Btn disabled={loading} className={['btn']}>

@@ -38,29 +38,29 @@ const Header: React.FC = () => {
       </nav>
       <Menu classNames={['navbar']}>
         <Link to='/' className='link'>
-          Start
+          <i className='fa-solid fa-house'></i> Start
         </Link>
         {!login && (
           <Link to='/Register' className='link'>
-            Registrera dig
+            <i className='fa-solid fa-user-plus'></i> Registrera dig
           </Link>
         )}
         {login && (
           <Link to='/Dashobard' className='link'>
-            Profil
+            <i className='fa-solid fa-user'></i> Profil
           </Link>
         )}
         <Link to='/Contact' className='link'>
-          Kontakta oss
+          <i className='fa-solid fa-phone'></i> Kontakta oss
         </Link>
         <Link to='/About' className='link'>
-          Om oss
+          <i className='fa-solid fa-address-card'></i> Om oss
         </Link>
         <a onClick={() => langSwitcher('en', dispatch)} className='link'>
-          EN
+          <i className='fa-solid fa-language'></i> EN
         </a>
         <a onClick={() => langSwitcher('sw', dispatch)} className='link'>
-          SV
+          <i className='fa-solid fa-language'></i> SV
         </a>
       </Menu>
     </MainHeader>

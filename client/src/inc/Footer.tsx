@@ -23,31 +23,31 @@ const Footer: React.FC = () => {
         <ul className='footerlinks'>
           <li>
             <Link to='/' className='link'>
-              Start
+              <i className='fa-solid fa-house'></i> Start
             </Link>
           </li>
           <li>
             {!login && (
               <Link to='/Register' className='link'>
-                Registrera dig
+                <i className='fa-solid fa-user-plus'></i> Registrera dig
               </Link>
             )}
           </li>
           {login && (
             <li>
               <Link to='/Dashobard' className='link'>
-                Profil
+                <i className='fa-solid fa-user'></i> Profil
               </Link>
             </li>
           )}
           <li>
             <Link to='/Contact' className='link'>
-              Kontakta oss
+              <i className='fa-solid fa-phone'></i> Kontakta oss
             </Link>
           </li>
           <li>
             <Link to='/About' className='link'>
-              Om oss
+              <i className='fa-solid fa-address-card'></i> Om oss
             </Link>
           </li>
         </ul>

@@ -48,6 +48,7 @@ declare global {
     changeFunc?: ChangeEventHandler<HTMLInputElement>;
     acceptValues?: string;
     autoComplete?: string;
+    placeHolder?: string;
   }
 
   interface BtnProps {

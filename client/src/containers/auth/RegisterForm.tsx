@@ -49,6 +49,7 @@ const RegisterForm: React.FC = () => {
             <Input
               type='email'
               id='email'
+              placeHolder='user@gmail.com'
               val={registerForm.email}
               changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
                 RegisterTyper(e, registerForm, dispatch)
@@ -76,6 +77,7 @@ const RegisterForm: React.FC = () => {
               className={['txtinput']}
               name='mobnr'
               autoComplete='tel-local'
+              placeHolder='07X-XXXXXXX'
             />
           </section>
         </section>

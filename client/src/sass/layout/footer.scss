@@ -2,7 +2,6 @@
 #{map-get($selectorMap, footerBox)} {
   border: 1px $solidbrd color(white);
   margin-top: 10px;
-  padding: 10px;
   color: #000;
   background: color(white);
   transition: 0.3s;
@@ -17,6 +16,7 @@
 #{map-get($selectorMap, footerCol)} {
   width: 50%;
   transition: 0.3s;
+  padding: 40px;
 
   #{map-get($selectorMap, address)} {
     font-size: 25px;

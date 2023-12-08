@@ -2,14 +2,31 @@ input::file-selector-button {
   background: color(black);
   color: color(white);
   padding: 10px;
-  transition: 0.3s;
+  transition: all 0.5s linear;
 }
 
 #{map-get($selectorMap, txtInput)} {
   display: $block;
   width: 100%;
-  padding: 0.375rem 0.75rem;
-  transition: 0.3s all;
+  padding: 1%;
+  height: 35px;
+  border: 0;
+  border-radius: 8px;
+  text-indent: 10px;
+  font-size: 18px;
+  transition: all 0.5s linear;
+}
+
+#{map-get($selectorMap, txtArea)} {
+  display: $block;
+  width: 100%;
+  padding: 1%;
+  height: 100px;
+  border: 0;
+  border-radius: 8px;
+  text-indent: 10px;
+  font-size: 18px;
+  transition: all 0.5s linear;
 }
 
 #{map-get($selectorMap, label)} {
