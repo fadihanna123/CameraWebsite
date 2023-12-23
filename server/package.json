@@ -19,7 +19,7 @@
     "url": "https://localhost:5000"
   },
   "scripts": {
-    "dev": "ts-node -r tsconfig-paths/register src/server",
+    "dev": "ts-node-dev -r tsconfig-paths/register src/server",
     "postinstall": "yarn seed",
     "seed": "prisma db push && prisma db pull && prisma generate",
     "seed-delete": "prisma migrate reset",
