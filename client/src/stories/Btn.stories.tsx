@@ -23,6 +23,6 @@ Default.args = {
   children: 'Send',
   clickFunc: () => {
     // eslint-disable-next-line no-console
-    console.log('Clicked!');
+    console.log('🖱️Clicked!');
   },
 };

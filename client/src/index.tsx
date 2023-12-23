@@ -9,7 +9,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { store } from 'redux/app/store';
 
 if (process.env.NODE_ENV === 'development') {
-  console.log("It's looks like we are in a development mode!");
+  console.log("🤔 It's looks like we are in a development mode!");
 } else {
   console.log = () => {};
   console.warn = () => {};
