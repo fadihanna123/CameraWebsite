@@ -1,6 +1,6 @@
 import useTitle from 'hooks/useTitle';
 import { useSelector } from 'react-redux';
-import { getLang } from 'redux/reducers';
+import { getLang } from '../../redux/reducers';
 import React from 'react';
 
 /**

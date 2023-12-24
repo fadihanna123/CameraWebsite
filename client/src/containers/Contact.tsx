@@ -1,8 +1,8 @@
 import useTitle from 'hooks/useTitle';
 import useTranslation from 'hooks/useTranslation';
 import { Link } from 'react-router-dom';
-import { useAppSelector } from 'redux/app';
-import { getLang, getLoading } from 'redux/reducers';
+import { useAppSelector } from '../redux/app';
+import { getLang, getLoading } from '../redux/reducers';
 import Btn from 'ui/Btn';
 import Heading from 'ui/Heading';
 import Input from 'ui/Input';

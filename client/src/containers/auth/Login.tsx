@@ -2,8 +2,13 @@ import { checkLogin, loginTyper } from 'functions';
 import useTranslation from 'hooks/useTranslation';
 import React from 'react';
 import { Flip, ToastContainer } from 'react-toastify';
-import { useAppDispatch, useAppSelector } from 'redux/app';
-import { getLang, getLoading, getLogin, getLoginForm } from 'redux/reducers';
+import { useAppDispatch, useAppSelector } from '../../redux/app';
+import {
+  getLang,
+  getLoading,
+  getLogin,
+  getLoginForm,
+} from '../../redux/reducers';
 
 // Components
 import Btn from 'ui/Btn';

@@ -1,5 +1,5 @@
 import { Dispatch } from 'redux';
-import { setRegisterForm } from 'redux/reducers';
+import { setRegisterForm } from '../redux/reducers';
 import React from 'react';
 
 /**

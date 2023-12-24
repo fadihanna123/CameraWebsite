@@ -1,6 +1,6 @@
 import { toast } from 'react-toastify';
 import { Dispatch } from 'redux';
-import { setLogin } from 'redux/reducers';
+import { setLogin } from '../redux/reducers';
 import { sessionStorageKeys } from 'utils/constants';
 
 import { RedirectToRoute } from './helper';

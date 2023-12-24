@@ -1,6 +1,6 @@
 import { toast } from 'react-toastify';
 import { Dispatch } from 'redux';
-import { setLang } from 'redux/reducers';
+import { setLang } from '../redux/reducers';
 import { sessionStorageKeys } from 'utils/constants';
 
 /**

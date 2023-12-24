@@ -2,8 +2,13 @@ import { doLogOut } from 'functions';
 import useTranslation from 'hooks/useTranslation';
 import { useEffect } from 'react';
 import { Flip, toast } from 'react-toastify';
-import { useAppDispatch, useAppSelector } from 'redux/app';
-import { getAuthor, getLang, getLoading, setAuthor } from 'redux/reducers';
+import { useAppDispatch, useAppSelector } from '../../redux/app';
+import {
+  getAuthor,
+  getLang,
+  getLoading,
+  setAuthor,
+} from '../../redux/reducers';
 import Btn from 'ui/Btn';
 import Heading from 'ui/Heading';
 import { sessionStorageKeys } from 'utils/constants';
