@@ -35,8 +35,6 @@
   "devDependencies": {
     "@types/eslint": "^8.56.0",
     "@types/express": "^4.17.21",
-    "@types/express-fileupload": "^1.4.4",
-    "@types/jest": "^29.5.11",
     "@types/jsonwebtoken": "^9.0.5",
     "@types/luxon": "^3.3.7",
     "@types/node-cron": "^3.0.11",
@@ -57,12 +55,10 @@
   "dependencies": {
     "@prisma/client": "^5.7.1",
     "express": "^4.18.2",
-    "express-fileupload": "^1.4.3",
     "express-rate-limit": "^7.1.5",
     "helmet": "^7.1.0",
     "jsonwebtoken": "^9.0.2",
     "luxon": "^3.4.4",
-    "node-emoji": "^2.1.3",
     "validator": "^13.11.0",
     "winston": "^3.11.0"
   },
