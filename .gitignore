@@ -40,7 +40,8 @@ server/*.pid.lock
 server/lib-cov
 
 # Docs
-dbDocs
+server/dbDocs
+server/Docs
 
 # Coverage directory used by tools like istanbul
 server/coverage
