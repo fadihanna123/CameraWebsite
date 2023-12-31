@@ -1,6 +1,6 @@
 {
   "name": "surveillance_website_client",
-  "version": "0.1.43",
+  "version": "0.1.44",
   "author": {
     "name": "Fadi Hanna",
     "email": "fhanna181@gmail.com"
@@ -16,7 +16,7 @@
   "lastUpgrade": "20231008",
   "dependencies": {
     "@types/react-dom": "^18.2.18",
-    "axios": "^1.6.2",
+    "axios": "^1.6.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^9.0.4",
@@ -24,7 +24,7 @@
     "react-scripts": "5.0.1",
     "react-toastify": "^9.1.3",
     "redux": "^5.0.1",
-    "sass": "^1.69.5"
+    "sass": "^1.69.6"
   },
   "scripts": {
     "dev": "react-scripts start",
@@ -35,7 +35,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint .",
     "format": "prettier -w .",
-    "preview": "yarn build && live-server build",
+    "preview": "yarn build && serve build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -62,10 +62,10 @@
     "@storybook/react-webpack5": "7.6.6",
     "@types/eslint": "^8.56.0",
     "@types/jest": "^29.5.11",
-    "@types/react": "^18.2.45",
+    "@types/react": "^18.2.46",
     "@types/react-router-dom": "^5.3.3",
-    "@typescript-eslint/eslint-plugin": "^6.15.0",
-    "@typescript-eslint/parser": "^6.15.0",
+    "@typescript-eslint/eslint-plugin": "^6.16.0",
+    "@typescript-eslint/parser": "^6.16.0",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.2",
