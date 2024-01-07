@@ -6,7 +6,7 @@ import 'tasks';
 import login from 'api/auth/login';
 import register from 'api/auth/register';
 import { listenFn } from 'controllers/listenFn';
-import express from 'express';
+import express, { Application } from 'express';
 import rateLimit from 'express-rate-limit';
 import helmet from 'helmet';
 import { logger } from 'tools';
@@ -17,12 +17,11 @@ import { connectDb } from 'db';
  * @author Fadi Hanna<fhanna181@gmail.com>
  */
 
-const server = express();
+const server: Application = express();
 
 const { PORT } = process.env;
 
 // Settings
-
 const limiter = rateLimit({ windowMs: 3600000, max: 10 });
 
 server.use((req, res, next) => {
@@ -36,19 +35,29 @@ server.use((req, res, next) => {
   next();
 });
 
+// Handle connection to database.
 connectDb();
+// Limit api requests by number.
 server.use(limiter);
+// Parse JSON bodies (as send by API clients) and add 1 kb limit to sending json.
 server.use(express.json({ type: 'application/json', limit: '1kb' }));
+// Parse URL-encoded bodies (as sent by HTML forms)
 server.use(express.urlencoded({ extended: true }));
+// Add security to the server.
 server.use(helmet());
+// Use login routes.
 server.use(login);
+// Use register routes.
 server.use(register);
+// Handle if someone access unknown or not found route.
 server.use((_, res) => res.send('This route does not exist!'));
+// Handle errors.
 server.use(errorHandler);
 
 export const port = PORT || 5000;
 
 if (process.env.NODE_ENV !== 'test') {
+  // Start the server.
   server.listen(port, listenFn);
 }
 
