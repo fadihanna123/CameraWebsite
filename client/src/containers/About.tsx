@@ -14,7 +14,7 @@ const About: React.FC = () => {
   return (
     <main className='main'>
       <Heading>{useTranslation('About_us', lang)}</Heading>
-      <Para>
+      <Para className={['aboutTxt']}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis
         odio non odio finibus imperdiet. Morbi augue ante, scelerisque in metus
         et, feugiat mattis nisi. Aenean vehicula augue quis odio hendrerit

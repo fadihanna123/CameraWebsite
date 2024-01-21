@@ -19,7 +19,7 @@ const App: React.FC = () => {
       dispatch(setLang('en'));
     }
 
-    if (lang === null) {
+    if (lang === null || undefined) {
       sessionStorage.setItem(sessionStorageKeys.Lang, 'en');
     }
 

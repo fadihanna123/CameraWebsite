@@ -9,6 +9,11 @@
   transition: 0.3s;
 }
 
+#{map-get($selectorMap, aboutTxt)} {
+  margin-left: 170px;
+  margin-top: 50px;
+}
+
 #{map-get($selectorMap, main)} {
   border: 1px $solidbrd color(white);
   text-align: $cntr;
