@@ -10,8 +10,9 @@ import express, { Application } from 'express';
 import rateLimit from 'express-rate-limit';
 import helmet from 'helmet';
 import { logger } from 'tools';
-import { errorHandler, storeLog } from 'utils';
+import { errorHandler, storeLog, allowedURLs } from 'utils';
 import { connectDb } from 'db';
+import cors, { CorsOptions } from 'cors';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
@@ -23,6 +24,7 @@ const { PORT } = process.env;
 
 // Settings
 const limiter = rateLimit({ windowMs: 3600000, max: 10 });
+const whiteList = allowedURLs?.split(', ');
 
 server.use((req, res, next) => {
   logger.info(`Method: ${req.method}, URL: ${req.url}`);
@@ -35,6 +37,18 @@ server.use((req, res, next) => {
   next();
 });
 
+const corsOptions: CorsOptions = {
+  origin: (origin, callback) => {
+    if (whiteList?.indexOf(origin as string) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+};
+
+// Use CORS.
+server.use(cors(corsOptions));
 // Handle connection to database.
 connectDb();
 // Limit api requests by number.
