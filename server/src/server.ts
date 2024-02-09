@@ -7,7 +7,6 @@ import login from 'api/auth/login';
 import register from 'api/auth/register';
 import { listenFn } from 'controllers/listenFn';
 import express, { Application } from 'express';
-import rateLimit from 'express-rate-limit';
 import helmet from 'helmet';
 import { logger } from 'tools';
 import { errorHandler, storeLog, allowedURLs } from 'utils';
@@ -23,7 +22,6 @@ const server: Application = express();
 const { PORT } = process.env;
 
 // Settings
-const limiter = rateLimit({ windowMs: 3600000, max: 10 });
 const whiteList = allowedURLs?.split(', ');
 
 server.use((req, res, next) => {
@@ -51,8 +49,6 @@ const corsOptions: CorsOptions = {
 server.use(cors(corsOptions));
 // Handle connection to database.
 connectDb();
-// Limit api requests by number.
-server.use(limiter);
 // Parse JSON bodies (as send by API clients) and add 1 kb limit to sending json.
 server.use(express.json({ type: 'application/json', limit: '1kb' }));
 // Parse URL-encoded bodies (as sent by HTML forms)
