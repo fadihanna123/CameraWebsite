@@ -1,4 +1,4 @@
-FROM node:19-alpine
+FROM node:21.6.1-alpine
 WORKDIR /backend
 COPY ./ .
 RUN npm install -g pnpm prisma ts-node-dev
