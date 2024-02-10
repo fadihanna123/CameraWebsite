@@ -12,6 +12,7 @@ import { logger } from 'tools';
 import { errorHandler, storeLog, allowedURLs } from 'utils';
 import { connectDb } from 'db';
 import cors, { CorsOptions } from 'cors';
+import { rateLimit } from 'express-rate-limit';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
@@ -23,6 +24,10 @@ const { PORT } = process.env;
 
 // Settings
 const whiteList = allowedURLs?.split(', ');
+const limiter = {
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  limit: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes).
+};
 
 server.use((req, res, next) => {
   logger.info(`Method: ${req.method}, URL: ${req.url}`);
@@ -47,6 +52,8 @@ const corsOptions: CorsOptions = {
 
 // Use CORS.
 server.use(cors(corsOptions));
+// Restrict counts of requests.
+server.use(rateLimit(limiter));
 // Handle connection to database.
 connectDb();
 // Parse JSON bodies (as send by API clients) and add 1 kb limit to sending json.
