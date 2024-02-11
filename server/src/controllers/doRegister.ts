@@ -17,7 +17,7 @@ import validator from 'validator';
  * @returns { Promise<Response<any, Record<string, any>> | undefined> } Promise
  * @example doRegister(req, res);
  */
-// deepcode ignore NoRateLimitingForExpensiveWebOperation: <please specify a reason of ignoring this>
+// deepcode ignore NoRateLimitingForExpensiveWebOperation: The fix is already there in server.ts.
 export const doRegister = async (
   req: typedRequestBody<IUsers>,
   res: Response
