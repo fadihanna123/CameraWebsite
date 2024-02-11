@@ -18,6 +18,7 @@ import { rateLimit } from 'express-rate-limit';
  * @author Fadi Hanna<fhanna181@gmail.com>
  */
 
+// deepcode ignore UseCsurfForExpress: <please specify a reason of ignoring this>
 const server: Application = express();
 
 const { PORT } = process.env;

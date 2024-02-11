@@ -26,18 +26,22 @@ export const checkLogin = async (
   dispatch(setLoading(true));
 
   try {
-    await loginUser(loginForm).then((res) => {
-      if (res.accessToken) {
-        sessionStorage.setItem(sessionStorageKeys.Token, res.accessToken);
-        sessionStorage.setItem(sessionStorageKeys.Author, res.author);
+    await loginUser(loginForm)
+      .then((res) => {
+        if (res.accessToken) {
+          sessionStorage.setItem(sessionStorageKeys.Token, res.accessToken);
+          sessionStorage.setItem(sessionStorageKeys.Author, res.author);
 
-        dispatch(setLogin(true));
+          dispatch(setLogin(true));
 
-        RedirectToRoute('/');
-      } else {
-        toast.error(res.message, { transition: Flip });
-      }
-    });
+          RedirectToRoute('/');
+        } else {
+          toast.error(res.message, { transition: Flip });
+        }
+      })
+      .catch((err) =>
+        toast.error((err as Error).message, { transition: Flip })
+      );
   } catch (err) {
     toast.error((err as Error).message, { transition: Flip });
   } finally {
