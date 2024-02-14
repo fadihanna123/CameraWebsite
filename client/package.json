@@ -10,7 +10,7 @@
     "type": "git",
     "url": "https://github.com/fadihanna123/CameraWebsite/tree/main/client"
   },
-  "license": "UNLICENSED",
+  "license": "MIT",
   "homepage": "./",
   "private": "true",
   "dependencies": {
