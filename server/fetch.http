@@ -1,0 +1,8 @@
+@base=http://localhost:5000
+
+
+### Login
+POST {{base}}/login
+
+### Register
+POST {{base}}/register
