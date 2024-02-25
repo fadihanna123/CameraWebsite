@@ -3,7 +3,7 @@
     "target": "esNext",
     "outDir": "build",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "baseUrl": "src/",
+    "baseUrl": "src",
     "module": "commonjs",
     "strict": true,
     "esModuleInterop": true,
@@ -33,10 +33,7 @@
     "noUnusedLocals": true,
     "noPropertyAccessFromIndexSignature": true,
     "noUncheckedIndexedAccess": true,
-    "removeComments": true,
-    "paths": {
-      "@core/*": ["src/*"]
-    }
+    "removeComments": true
   },
   "include": ["src/**/*"],
   "files": ["src/types/global.d.ts"],

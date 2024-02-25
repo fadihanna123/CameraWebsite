@@ -1,5 +1,4 @@
 // @ts-check
-import 'api/auth';
 import 'dotenv/config';
 import 'tasks';
 

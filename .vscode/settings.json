@@ -14,5 +14,8 @@
   "git.ignoreLimitWarning": true,
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "editor.fontSize": 14,
-  "eslint.workingDirectories": ["src", "public"]
+  "eslint.workingDirectories": ["src", "public"],
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  }
 }
