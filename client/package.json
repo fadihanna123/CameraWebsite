@@ -1,6 +1,6 @@
 {
   "name": "surveillance_website_client",
-  "version": "0.1.50",
+  "version": "0.1.51",
   "author": {
     "name": "Fadi Hanna",
     "email": "fhanna181@gmail.com"
@@ -61,10 +61,10 @@
     "@storybook/react-webpack5": "7.6.17",
     "@types/eslint": "^8.56.3",
     "@types/jest": "^29.5.12",
-    "@types/react": "^18.2.58",
+    "@types/react": "^18.2.59",
     "@types/react-router-dom": "^5.3.3",
-    "@typescript-eslint/eslint-plugin": "^7.0.2",
-    "@typescript-eslint/parser": "^7.0.2",
+    "@typescript-eslint/eslint-plugin": "^7.1.0",
+    "@typescript-eslint/parser": "^7.1.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
