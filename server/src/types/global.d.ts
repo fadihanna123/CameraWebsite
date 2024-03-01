@@ -54,6 +54,8 @@ declare global {
   interface typedRequestBody<T> extends Request {
     body: T;
   }
+
+  type Routes = '/login' | '/register';
 }
 
 export {};
