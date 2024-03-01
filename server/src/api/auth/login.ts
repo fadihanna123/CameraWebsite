@@ -5,6 +5,6 @@ import { doLogin } from '../../controllers';
 const router = Router();
 
 // Inloggningskontroll.
-router.post('/login', doLogin);
+router.post<Routes>('/login', doLogin);
 
 export default router;
