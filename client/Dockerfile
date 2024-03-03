@@ -1,8 +1,11 @@
 FROM node:21.6.1-alpine
 WORKDIR /frontend
 COPY ./ .
-RUN npm i -g pnpm serve
-RUN pnpm i
-RUN pnpm build
+ENV REACT_APP_BACKEND_URL http://localhost:5000
+ENV REACT_APP_LOGIN_API login
+ENV REACT_APP_REGISTER_API register
+RUN npm i -g yarn serve
+RUN yarn
+RUN yarn build
 EXPOSE 3000
-CMD pnpm serve build
+CMD npx serve build

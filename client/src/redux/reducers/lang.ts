@@ -14,7 +14,8 @@ export const langSlice = createSlice({
   initialState,
   reducers: {
     setLang: (state, action: PayloadAction<string>) => {
-      return (state = action.payload);
+      state = action.payload;
+      return state;
     },
   },
 });

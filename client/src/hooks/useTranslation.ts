@@ -11,7 +11,7 @@
  * @example useTranslation("Start", "en");
  */
 const useTranslation = (val: string, lang: string): any => {
-  let data;
+  let data: Record<string, string>;
 
   if (lang === 'en') {
     data = require(`../translations/${lang}.json`);

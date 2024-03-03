@@ -1,6 +1,6 @@
 import { doLogOut } from 'functions';
 import useTranslation from 'hooks/useTranslation';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Flip, toast } from 'react-toastify';
 import { useAppDispatch, useAppSelector } from '../../redux/app';
 import {
@@ -12,7 +12,6 @@ import {
 import Btn from 'ui/Btn';
 import Heading from 'ui/Heading';
 import { sessionStorageKeys } from 'utils/constants';
-import React from 'react';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
@@ -28,7 +27,7 @@ const LogOutBox: React.FC = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    const author = sessionStorage.getItem(sessionStorageKeys.Author) || '';
+    const author = sessionStorage.getItem(sessionStorageKeys.Author) ?? '';
 
     try {
       setAuthor(author);

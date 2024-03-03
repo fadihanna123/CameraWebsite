@@ -28,9 +28,9 @@ export const storeError = async (
   await prisma.errors.create({
     data: {
       errorId: rnd,
-      method: method || '/',
+      method: method ?? '/',
       message,
-      located: located || '/',
+      located: located ?? '/',
       time,
     },
   });

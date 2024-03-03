@@ -21,7 +21,8 @@ export const registerFormSlice = createSlice({
   initialState,
   reducers: {
     setRegisterForm: (state, action: PayloadAction<IRegisterForm>) => {
-      return (state = action.payload);
+      state = action.payload;
+      return state;
     },
   },
 });

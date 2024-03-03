@@ -56,12 +56,20 @@ const Header: React.FC = () => {
         <Link to='/About' className='link'>
           <i className='fa-solid fa-address-card'></i> Om oss
         </Link>
-        <a onClick={() => langSwitcher('en', dispatch)} className='link'>
+        <Link
+          to='#'
+          onClick={() => langSwitcher('en', dispatch)}
+          className='link'
+        >
           <i className='fa-solid fa-language'></i> EN
-        </a>
-        <a onClick={() => langSwitcher('sw', dispatch)} className='link'>
+        </Link>
+        <Link
+          to='#'
+          onClick={() => langSwitcher('sw', dispatch)}
+          className='link'
+        >
           <i className='fa-solid fa-language'></i> SV
-        </a>
+        </Link>
       </Menu>
     </MainHeader>
   );

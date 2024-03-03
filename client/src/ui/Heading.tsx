@@ -4,26 +4,28 @@ const Heading: React.FC<HeadingProps> = ({
   headingLevel,
   className,
   children,
-}: HeadingProps) => (
-  <>
-    {headingLevel === 1 ? (
-      <h1 className={className?.join(' ')}>{children}</h1>
-    ) : headingLevel === 2 ? (
-      <h2 className={className?.join(' ')}>{children}</h2>
-    ) : headingLevel === 3 ? (
-      <h3 className={className?.join(' ')}>{children}</h3>
-    ) : headingLevel === 4 ? (
-      <h4 className={className?.join(' ')}>{children}</h4>
-    ) : headingLevel === 5 ? (
-      <h5 className={className?.join(' ')}>{children}</h5>
-    ) : headingLevel === 6 && (
-        <h6 className={className?.join(' ')}>{children}</h6>
-      ) ? (
-      !headingLevel
-    ) : (
-      <h1 className={className?.join(' ')}>{children}</h1>
-    )}
-  </>
-);
+}: HeadingProps) => {
+  const headingLevelTag = (tag: number | undefined) => {
+    const attrs = { className: className?.join(' ') };
+
+    if (tag === 1) {
+      return <h1 {...attrs}> {children} </h1>;
+    } else if (tag === 2) {
+      return <h2 {...attrs}> {children} </h2>;
+    } else if (tag === 3) {
+      return <h3 {...attrs}> {children} </h3>;
+    } else if (tag === 4) {
+      return <h4 {...attrs}> {children} </h4>;
+    } else if (tag === 5) {
+      return <h5 {...attrs}> {children} </h5>;
+    } else if (tag === 6) {
+      return <h6 {...attrs}> {children} </h6>;
+    } else {
+      return <h1 {...attrs}> {children} </h1>;
+    }
+  };
+
+  return <>{headingLevelTag(headingLevel)}</>;
+};
 
 export default Heading;
