@@ -1,2 +1,2 @@
 export * from './useTitle';
-export * from './useTranslation';
+export * from './useTranslate';

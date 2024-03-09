@@ -1,5 +1,5 @@
 import { doLogOut } from 'functions';
-import useTranslation from 'hooks/useTranslation';
+import useTranslation from 'hooks/useTranslate';
 import React, { useEffect } from 'react';
 import { Flip, toast } from 'react-toastify';
 import { useAppDispatch, useAppSelector } from '../../redux/app';

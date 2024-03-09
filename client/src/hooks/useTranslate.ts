@@ -10,7 +10,7 @@
  * @returns { any } Any
  * @example useTranslation("Start", "en");
  */
-const useTranslation = (val: string, lang: string): any => {
+const useTranslate = (val: string, lang: string): any => {
   let data: Record<string, string>;
 
   if (lang === 'en') {
@@ -22,4 +22,4 @@ const useTranslation = (val: string, lang: string): any => {
   return data[val];
 };
 
-export default useTranslation;
+export default useTranslate;

@@ -20,6 +20,7 @@ export const loginUser = async (loginForm: ILoginForm): Promise<ILoginData> => {
     throw new Error(error);
   }
 };
+
 /**
  * Register a user.
  * @function registerUser

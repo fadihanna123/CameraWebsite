@@ -1,5 +1,5 @@
 import useTitle from 'hooks/useTitle';
-import useTranslation from 'hooks/useTranslation';
+import useTranslation from 'hooks/useTranslate';
 import { Link } from 'react-router-dom';
 import { useAppSelector } from '../redux/app';
 import { getLang, getLoading } from '../redux/reducers';

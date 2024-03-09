@@ -1,5 +1,5 @@
 import { RegisterTyper, RegisterUser } from 'functions';
-import useTranslation from 'hooks/useTranslation';
+import useTranslation from 'hooks/useTranslate';
 import React from 'react';
 import { Flip, ToastContainer } from 'react-toastify';
 import { useAppDispatch, useAppSelector } from '../../redux/app';

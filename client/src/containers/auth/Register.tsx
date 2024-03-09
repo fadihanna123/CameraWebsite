@@ -1,5 +1,5 @@
 import useTitle from 'hooks/useTitle';
-import useTranslation from 'hooks/useTranslation';
+import useTranslation from 'hooks/useTranslate';
 import { useAppSelector } from '../../redux/app';
 import { getLang, getLogin } from '../../redux/reducers';
 import Heading from 'ui/Heading';

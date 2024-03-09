@@ -1,9 +1,10 @@
 import useTitle from 'hooks/useTitle';
 import { useAppSelector } from '../redux/app';
-import { getLogin } from '../redux/reducers';
+import { getLang, getLogin } from '../redux/reducers';
 import Heading from 'ui/Heading';
 import Para from 'ui/Para';
 import React from 'react';
+import useTranslate from 'hooks/useTranslate';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
@@ -11,12 +12,13 @@ import React from 'react';
 
 const Start: React.FC = () => {
   const login = useAppSelector(getLogin);
+  const lang = useAppSelector(getLang);
 
   useTitle('Surveillance systems Inc - Startsida');
 
   return (
     <main className='main'>
-      <Heading>Välkommen!</Heading>
+      <Heading>{useTranslate('Welcome', lang)}!</Heading>
       {!login && (
         <Para>Varsågod logga in ovan för att kunna se dina videofilmer.</Para>
       )}

@@ -3,11 +3,12 @@ import Login from 'containers/auth/Login';
 import { langSwitcher } from 'functions';
 import { Link } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../redux/app';
-import { getLogin } from '../redux/reducers';
+import { getLang, getLogin } from '../redux/reducers';
 import Img from 'ui/Img';
 import MainHeader from 'ui/MainHeader';
 import Menu from 'ui/Menu';
 import React from 'react';
+import useTranslate from 'hooks/useTranslate';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
@@ -17,6 +18,7 @@ const Header: React.FC = () => {
   const login = useAppSelector(getLogin);
 
   const dispatch = useAppDispatch();
+  const lang = useAppSelector(getLang);
 
   return (
     <MainHeader>
@@ -42,19 +44,21 @@ const Header: React.FC = () => {
         </Link>
         {!login && (
           <Link to='/Register' className='link'>
-            <i className='fa-solid fa-user-plus'></i> Registrera dig
+            <i className='fa-solid fa-user-plus'></i>{' '}
+            {useTranslate('Register', lang)}
           </Link>
         )}
         {login && (
           <Link to='/Dashobard' className='link'>
-            <i className='fa-solid fa-user'></i> Profil
+            <i className='fa-solid fa-user'></i> {useTranslate('Profile', lang)}
           </Link>
         )}
         <Link to='/Contact' className='link'>
-          <i className='fa-solid fa-phone'></i> Kontakta oss
+          <i className='fa-solid fa-phone'></i> {useTranslate('Contact', lang)}
         </Link>
         <Link to='/About' className='link'>
-          <i className='fa-solid fa-address-card'></i> Om oss
+          <i className='fa-solid fa-address-card'></i>{' '}
+          {useTranslate('About', lang)}
         </Link>
         <Link
           to='#'

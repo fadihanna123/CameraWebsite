@@ -16,7 +16,7 @@ export const loginFormSlice = createSlice({
   name: 'loginForm',
   initialState,
   reducers: {
-    setLoginForm: (state, action: PayloadAction<ILoginForm>) => {
+    setLoginForm: (state: ILoginForm, action: PayloadAction<ILoginForm>) => {
       state = action.payload;
       return state;
     },
