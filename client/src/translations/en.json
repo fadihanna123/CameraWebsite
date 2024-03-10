@@ -1,5 +1,4 @@
 {
-  "Hi": "Hi",
   "Login": "Login",
   "Username": "Username",
   "Email": "Email",
@@ -15,5 +14,7 @@
   "Message": "Message",
   "Contact": "Contact",
   "About": "About",
-  "Welcome": "Welcome"
+  "Welcome": "Welcome",
+  "Profile": "Profile",
+  "Start": "Start"
 }

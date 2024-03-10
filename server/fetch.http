@@ -1,11 +1,11 @@
 @base=http://localhost:{{PORT}}
 ###
 POST {{base}}/login
-<<<<<<< HEAD
-###
-POST {{base}}/register
-=======
+Content-Type: application/json
 
+{
+    "uname": "Erik",
+    "psw": "123"
+}
 ###
 POST {{base}}/register
->>>>>>> 05c447c3745f3ddae173f6566e2fee5a16ce04ab

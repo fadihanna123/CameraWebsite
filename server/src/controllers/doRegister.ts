@@ -77,14 +77,14 @@ export const doRegister = async (
           });
         } else {
           // Om lösenord och bekräfta lösenord fälten matchar varandra.
-          const findUser = await prisma.users.findMany({
+          const findUser = await prisma.users.count({
             where: {
               uname,
               email,
             },
           });
 
-          if (findUser !== null) {
+          if (findUser !== 0) {
             // Om användaren hittades i databasen.
             storeLog(
               'Du är redan registrerad hos oss. Du kan logga in ovan.',

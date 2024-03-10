@@ -15,6 +15,7 @@ import Btn from 'ui/Btn';
 import Heading from 'ui/Heading';
 import Input from 'ui/Input';
 import LogOutBox from './LogOutBox';
+import { useNavigate } from 'react-router-dom';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
@@ -30,6 +31,7 @@ const Login: React.FC = () => {
   const loading = useAppSelector(getLoading);
 
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   return (
     <>
@@ -83,7 +85,9 @@ const Login: React.FC = () => {
             </div>
             <Btn
               className={['btn']}
-              clickFunc={() => checkLogin(dispatch, loginForm)}
+              clickFunc={() => {
+                checkLogin(dispatch, loginForm), navigate('/');
+              }}
               disabled={loading}
             >
               {useTranslation('Login', lang)}

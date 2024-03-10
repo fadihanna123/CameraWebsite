@@ -39,12 +39,13 @@ const LogOutBox: React.FC = () => {
   return (
     <section className='logoutbox'>
       <Heading headingLevel={4}>
-        <b>
-          {useTranslation('Hi', lang)}
-          {author}
-        </b>
+        <b>{author}</b>
       </Heading>
-      <Btn disabled={loading} clickFunc={() => doLogOut(dispatch)}>
+      <Btn
+        className={['btn']}
+        disabled={loading}
+        clickFunc={() => doLogOut(dispatch)}
+      >
         {useTranslation('Logout', lang)}
       </Btn>
     </section>

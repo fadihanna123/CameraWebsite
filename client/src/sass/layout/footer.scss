@@ -32,7 +32,7 @@
   transition: 0.3s all;
 
   & li {
-    margin: 40px;
+    margin: 30px;
   }
 }
 
@@ -50,5 +50,9 @@
 
   #{map-get($selectorMap, footerLinks)} {
     text-align: $cntr;
+
+    & li {
+      margin: auto;
+    }
   }
 }

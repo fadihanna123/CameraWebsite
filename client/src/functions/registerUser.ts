@@ -16,7 +16,10 @@ import { registerUser } from './apiStore';
  * @returns { Promise<void> }
  * @example RegisterUser(dispatch);
  */
-export const RegisterUser = async (dispatch: Dispatch<any>): Promise<void> => {
+export const RegisterUser = async (
+  dispatch: Dispatch<any>,
+  registerForm: IRegisterForm
+): Promise<void> => {
   try {
     dispatch(setLoading(true));
 
@@ -25,6 +28,11 @@ export const RegisterUser = async (dispatch: Dispatch<any>): Promise<void> => {
     ) as HTMLInputElement;
 
     const myForm = new FormData();
+    myForm.append('uname', registerForm.uname);
+    myForm.append('email', registerForm.email);
+    myForm.append('mobnr', registerForm.mobnr);
+    myForm.append('psw', registerForm.psw);
+    myForm.append('repsw', registerForm.repsw);
     myForm.append('img', file?.files![0]);
 
     await registerUser(myForm)

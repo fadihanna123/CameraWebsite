@@ -40,7 +40,7 @@ const Header: React.FC = () => {
       </nav>
       <Menu classNames={['navbar']}>
         <Link to='/' className='link'>
-          <i className='fa-solid fa-house'></i> Start
+          <i className='fa-solid fa-house'></i> {useTranslate('Start', lang)}
         </Link>
         {!login && (
           <Link to='/Register' className='link'>
@@ -49,7 +49,7 @@ const Header: React.FC = () => {
           </Link>
         )}
         {login && (
-          <Link to='/Dashobard' className='link'>
+          <Link to='/Profile' className='link'>
             <i className='fa-solid fa-user'></i> {useTranslate('Profile', lang)}
           </Link>
         )}

@@ -1,5 +1,4 @@
 {
-  "Hi": "Hej",
   "Login": "Logga in",
   "Username": "Användarnamn",
   "Email": "E-postadress",
@@ -15,5 +14,7 @@
   "Message": "Meddelande",
   "Contact": "Kontakt",
   "About": "Om oss",
-  "Welcome": "Välkommen"
+  "Welcome": "Välkommen",
+  "Profile": "Profil",
+  "Start": "Startsida"
 }

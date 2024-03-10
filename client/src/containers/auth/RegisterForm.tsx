@@ -142,7 +142,7 @@ const RegisterForm: React.FC = () => {
         <Btn
           disabled={loading}
           className={['btn']}
-          clickFunc={() => RegisterUser(dispatch)}
+          clickFunc={() => RegisterUser(dispatch, registerForm)}
         >
           {useTranslation('Register', lang)}
         </Btn>

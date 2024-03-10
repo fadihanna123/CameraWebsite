@@ -39,4 +39,5 @@ const config = {
     '@typescript-eslint/no-non-null-assertion': 'off',
   },
 };
+
 module.exports = config;

@@ -4,7 +4,6 @@ import { setLoading, setLogin } from '../redux/reducers';
 import { sessionStorageKeys } from 'utils';
 
 import { loginUser } from './apiStore';
-import { RedirectToRoute } from './helper';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
@@ -33,8 +32,6 @@ export const checkLogin = async (
           sessionStorage.setItem(sessionStorageKeys.Author, res.author);
 
           dispatch(setLogin(true));
-
-          RedirectToRoute('/');
         } else {
           toast.error(res.message, { transition: Flip });
         }

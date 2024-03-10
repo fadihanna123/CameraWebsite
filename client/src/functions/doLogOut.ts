@@ -3,8 +3,6 @@ import { Dispatch } from 'redux';
 import { setLogin } from '../redux/reducers';
 import { sessionStorageKeys } from 'utils/constants';
 
-import { RedirectToRoute } from './helper';
-
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
  */
@@ -24,8 +22,6 @@ export const doLogOut = (dispatch: Dispatch<any>): void => {
     sessionStorage.removeItem(sessionStorageKeys.Author);
 
     dispatch(setLogin(false));
-
-    RedirectToRoute('/');
   } catch (err) {
     toast.error((err as Error).message);
   }

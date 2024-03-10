@@ -1,2 +1,2 @@
-export * from './useTitle';
-export * from './useTranslate';
+export { default as useTitle } from './useTitle';
+export { default as useTranslate } from './useTranslate';

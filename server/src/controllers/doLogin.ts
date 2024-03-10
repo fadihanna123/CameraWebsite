@@ -21,6 +21,7 @@ export const doLogin = async (
   res: Response
 ): Promise<Response<any, Record<string, any>> | undefined> => {
   const { uname, psw } = req.body;
+
   const userObject: UsrObjJwt = {
     uname,
   };

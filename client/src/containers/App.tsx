@@ -22,6 +22,8 @@ const App: React.FC = () => {
       sessionStorage.setItem(sessionStorageKeys.Lang, 'en');
     }
 
+    dispatch(setLang(lang!));
+
     if (token) {
       dispatch(setLogin(true));
     } else {
