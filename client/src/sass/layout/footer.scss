@@ -50,9 +50,5 @@
 
   #{map-get($selectorMap, footerLinks)} {
     text-align: $cntr;
-
-    & li {
-      margin: auto;
-    }
   }
 }
