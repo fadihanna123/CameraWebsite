@@ -3215,13 +3215,13 @@
   dependencies:
     "@storybook/global" "^5.0.0"
 
-"@storybook/addon-interactions@7.6.17":
-  version "7.6.17"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-interactions/-/addon-interactions-7.6.17.tgz#5860cf6f2fb9999e0b83ac07a0b7f3a9988ff22a"
-  integrity sha512-6zlX+RDQ1PlA6fp7C+hun8t7h2RXfCGs5dGrhEenp2lqnR/rYuUJRC0tmKpkZBb8kZVcbSChzkB/JYkBjBCzpQ==
+"@storybook/addon-interactions@8.0.0":
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-interactions/-/addon-interactions-8.0.0.tgz#0e577cb62c26829a417fb9f6258eea5168dbbac0"
+  integrity sha512-lb6WZAeF3MIT05wSVbz2ZKDpTIoTmHW5e8hImdquNlOm8qNm4fl5BLpVrZT1YkC6v42MM8yU/DeeUw+8w7rXDg==
   dependencies:
     "@storybook/global" "^5.0.0"
-    "@storybook/types" "7.6.17"
+    "@storybook/types" "8.0.0"
     jest-mock "^27.0.6"
     polished "^4.2.2"
     ts-dedent "^2.2.0"
@@ -4437,10 +4437,10 @@
     "@types/history" "^4.7.11"
     "@types/react" "*"
 
-"@types/react@*", "@types/react@>=16", "@types/react@^18.2.64":
-  version "18.2.64"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.64.tgz#3700fbb6b2fa60a6868ec1323ae4cbd446a2197d"
-  integrity sha512-MlmPvHgjj2p3vZaxbQgFUQFvD8QiZwACfGqEdDSWou5yISWxDQ4/74nCAwsUiX7UFLKZz3BbVSPj+YxeoGGCfg==
+"@types/react@*", "@types/react@>=16", "@types/react@^18.2.65":
+  version "18.2.65"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.65.tgz#54eb311fa9aba173c9e163d42ec188d5a42878b8"
+  integrity sha512-98TsY0aW4jqx/3RqsUXwMDZSWR1Z4CUlJNue8ueS2/wcxZOsz4xmW1X8ieaWVRHcmmQM3R8xVA4XWB3dJnWwDQ==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
