@@ -14,7 +14,7 @@
   "homepage": "./",
   "private": "true",
   "dependencies": {
-    "@types/react-dom": "^18.2.21",
+    "@types/react-dom": "^18.2.22",
     "axios": "^1.6.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -63,7 +63,7 @@
     "@types/jest": "^29.5.12",
     "@types/react": "^18.2.65",
     "@types/react-router-dom": "^5.3.3",
-    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.1.1",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
