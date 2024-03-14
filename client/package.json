@@ -23,7 +23,7 @@
     "react-scripts": "5.0.1",
     "react-toastify": "^10.0.4",
     "redux": "^5.0.1",
-    "sass": "^1.71.1"
+    "sass": "^1.72.0"
   },
   "scripts": {
     "dev": "react-scripts start",
