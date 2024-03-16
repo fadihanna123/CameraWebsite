@@ -86,7 +86,8 @@ const Login: React.FC = () => {
             <Btn
               className={['btn']}
               clickFunc={() => {
-                checkLogin(dispatch, loginForm), navigate('/');
+                checkLogin(dispatch, loginForm);
+                navigate('/');
               }}
               disabled={loading}
             >
