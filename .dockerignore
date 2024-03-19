@@ -1,5 +1,9 @@
+# Dependencies
 server/node_modules
-client/build
-client/.env
 client/node_modules
+
+# Build
+client/build
+
+# Git
 .git

@@ -7,6 +7,7 @@ const config = {
     browser: true,
     es2023: true,
   },
+  root: true,
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
