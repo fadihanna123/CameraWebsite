@@ -1,6 +1,5 @@
 FROM node:lts
 WORKDIR /frontend
-RUN rm -rf node_modules yarn.lock
 COPY package.json .
 RUN yarn
 COPY . .
