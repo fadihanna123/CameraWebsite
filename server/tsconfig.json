@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
-    "target": "esNext",
+    "target": "es6",
     "outDir": "build",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "baseUrl": "src",
-    "module": "commonjs",
+    "module": "NodeNext",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
