@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "setup": "cd server && yarn --emoji && cd .. && cd client && yarn --emoji && cd .. && yarn seed",
+    "dev": "concurrently \"cd server && yarn dev\" \"cd client && yarn dev\"",
     "clear": "cd server && rimraf node_modules && cd .. && cd client && rimraf node_modules build",
     "seed": "cd server && yarn seed",
     "fetch-changes": "git fetch && git fetch --prune && git pull"
