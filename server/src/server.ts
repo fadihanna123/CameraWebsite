@@ -12,6 +12,7 @@ import { errorHandler, storeLog, allowedURLs } from 'utils';
 import { connectDb } from 'db';
 import cors, { CorsOptions } from 'cors';
 import { rateLimit } from 'express-rate-limit';
+import ip from 'ip';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
@@ -26,16 +27,17 @@ const { PORT } = process.env;
 const whiteList = allowedURLs?.split(', ');
 const limiter = {
   windowMs: 15 * 60 * 1000, // 15 minutes
-  limit: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes).
+  limit: 100,
 };
 
 server.use((req, res, next) => {
-  logger.info(`Method: ${req.method}, URL: ${req.url}`);
+  logger.info(`${req.method}, ${req.url}, ${ip.address()}`);
 
-  storeLog(`Method: ${req.method}, URL: ${req.url}`, req.method, req.url);
-
-  // eslint-disable-next-line no-console
-  console.log(`Method: ${req.method}, URL: ${req.url}`);
+  storeLog(
+    `Method: ${req.method}, ${req.url}, ${ip.address()}`,
+    req.method,
+    req.url
+  );
 
   next();
 });
