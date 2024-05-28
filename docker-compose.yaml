@@ -1,30 +1,30 @@
-version: "3.8"
-
 services:
   db:
     image: mysql:latest
-    container_name: db
+    container_name: camera_website_db
     ports:
       - 3306:3306
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: secret
-      MYSQL_DB: camera_website_docker
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: camera_website_db
+      MYSQL_PASSWORD: '0000'
+      MYSQL_USER: fadi
     volumes:
-      - camera_website_mysql-data:/var/lib/mysql
+      - camera_website_db-data:/var/lib/mysql
 
   adminer:
     image: adminer:latest
-    container_name: db_admin
+    container_name: camera_website_db_admin
     ports:
       - 8080:8080
     restart: unless-stopped
     volumes:
-      - camera_website_mysql-admin:/var/lib/mysql
+      - camera_website_db_admin:/var/lib/mysql
 
   api:
     build: ./server
-    container_name: backend
+    container_name: camera_website_backend
     ports:
       - 5000:5000
     env_file:
@@ -35,7 +35,7 @@ services:
 
   web:
     build: ./client
-    container_name: frontend
+    container_name: camera_website_fronted
     ports:
       - 3000:3000
     env_file:
@@ -45,5 +45,5 @@ services:
       - api
 
 volumes:
-  camera_website_mysql-data:
-  camera_website_mysql-admin:
+  camera_website_db-data:
+  camera_website_db_admin:

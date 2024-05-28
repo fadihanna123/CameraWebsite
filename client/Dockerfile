@@ -3,9 +3,6 @@ WORKDIR /frontend
 COPY package.json .
 RUN yarn
 COPY . .
-ENV REACT_APP_BACKEND_URL http://localhost:5000
-ENV REACT_APP_LOGIN_API login
-ENV REACT_APP_REGISTER_API register
 RUN npm i -g serve
 RUN yarn build
 EXPOSE 3000
