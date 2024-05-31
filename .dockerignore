@@ -1,9 +1,16 @@
 # Dependencies
+
 server/node_modules
 client/node_modules
 
 # Build
+
 client/build
 
 # Git
+
 .git
+
+# Readme
+
+README.md

@@ -1,10 +1,8 @@
-FROM node:lts
+FROM node:20.14.0-alpine3.20
 WORKDIR /backend
 COPY package.json .
 RUN yarn
 COPY . .
-ENV PORT 5000
-ENV DATABASE_URL mysql://fadi:0000@db:3306/camera_website_db
 RUN npm install -g prisma ts-node-dev
 EXPOSE 5000
 CMD yarn dev
