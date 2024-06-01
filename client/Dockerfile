@@ -2,7 +2,7 @@ FROM node:20.14.0-alpine3.20
 WORKDIR /frontend
 COPY package.json .
 RUN npm i -g serve
-RUN yarn --only production
+RUN yarn --production
 COPY . .
 RUN yarn build
 EXPOSE 3000
