@@ -1,7 +1,7 @@
 FROM node:20.14.0-alpine3.20
 WORKDIR /backend
 COPY package.json .
-RUN yarn --production
+RUN yarn
 COPY . .
 RUN npm install -g prisma ts-node-dev 
 EXPOSE 5000

@@ -1,0 +1,11 @@
+# Environment
+.env
+
+# Tests
+src/tests
+
+# Docker
+Dockerfile
+
+# Dependencies
+node_modules

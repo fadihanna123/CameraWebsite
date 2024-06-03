@@ -29,6 +29,7 @@
     "dev": "react-scripts start",
     "prebuild": "rm -rf build dist",
     "build": "yarn prebuild && react-scripts build",
+    "build:prod": "yarn prebuild && NODE_ENV=production react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint .",
