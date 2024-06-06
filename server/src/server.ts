@@ -12,7 +12,6 @@ import { errorHandler, storeLog, allowedURLs } from 'utils';
 import { connectDb } from 'db';
 import cors, { CorsOptions } from 'cors';
 import { rateLimit } from 'express-rate-limit';
-import ip from 'ip';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
@@ -31,13 +30,9 @@ const limiter = {
 };
 
 server.use((req, res, next) => {
-  logger.info(`${req.method}, ${req.url}, ${ip.address()}`);
+  logger.info(`${req.method}, ${req.url}`);
 
-  storeLog(
-    `Method: ${req.method}, ${req.url}, ${ip.address()}`,
-    req.method,
-    req.url
-  );
+  storeLog(`Method: ${req.method}, ${req.url}}`, req.method, req.url);
 
   next();
 });
