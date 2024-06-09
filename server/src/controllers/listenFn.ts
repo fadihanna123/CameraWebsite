@@ -1,6 +1,6 @@
-import { port } from 'server';
-import { logger } from 'tools';
-import { storeLog } from 'utils/storeLog';
+import { port } from '@core/server';
+import { logger } from '@core/tools';
+import { storeLog } from '@core/utils';
 
 /**
  * Listen to the server.

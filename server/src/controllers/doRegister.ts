@@ -1,8 +1,7 @@
 import { prisma } from 'db';
 import { Response } from 'express';
-import { logger } from 'tools';
-import { storeError } from 'utils/storeError';
-import { storeLog } from 'utils/storeLog';
+import { logger } from '@core/tools';
+import { storeError, storeLog } from '@core/utils';
 import validator from 'validator';
 
 /**

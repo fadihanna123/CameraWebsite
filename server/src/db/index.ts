@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client';
-import { logger } from 'tools';
-import { storeError, storeLog } from 'utils';
+import { logger } from '@core/tools';
+import { storeError, storeLog } from '@core/utils';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

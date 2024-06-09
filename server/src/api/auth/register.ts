@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import { doRegister } from '../../controllers';
+import { doRegister } from '@core/controllers';
 
 const router: Router = Router();
 

@@ -1,15 +1,15 @@
 // @ts-check
 import 'dotenv/config';
-import 'tasks';
+import '@core/tasks';
 
-import login from 'api/auth/login';
-import register from 'api/auth/register';
-import { listenFn } from 'controllers/listenFn';
+import login from '@core/api/auth/login';
+import register from '@core/api/auth/register';
+import { listenFn } from '@core/controllers';
 import express, { Application } from 'express';
 import helmet from 'helmet';
-import { logger } from 'tools';
-import { errorHandler, storeLog, allowedURLs } from 'utils';
-import { connectDb } from 'db';
+import { logger } from '@core/tools';
+import { errorHandler, storeLog, allowedURLs } from '@core/utils';
+import { connectDb } from '@core/db';
 import cors, { CorsOptions } from 'cors';
 import { rateLimit } from 'express-rate-limit';
 

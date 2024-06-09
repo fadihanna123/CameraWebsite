@@ -1,8 +1,7 @@
-import { prisma } from 'db';
+import { prisma } from '@core/db';
 import { Response } from 'express';
 import jwt from 'jsonwebtoken';
-import { storeError } from 'utils/storeError';
-import { storeLog } from 'utils/storeLog';
+import { storeError, storeLog } from '@core/utils';
 
 /**
  * Do a login check.

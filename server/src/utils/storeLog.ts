@@ -1,5 +1,5 @@
 // @ts-check
-import { prisma } from 'db';
+import { prisma } from '@core/db';
 import { DateTime } from 'luxon';
 
 /**

@@ -1,5 +1,5 @@
 // @ts-check
-import { logger } from 'tools';
+import { logger } from '@core/tools';
 
 import { storeError } from './storeError';
 

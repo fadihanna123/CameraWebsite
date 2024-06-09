@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { baseURL } from 'utils';
+import { baseURL } from '@core/utils';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
