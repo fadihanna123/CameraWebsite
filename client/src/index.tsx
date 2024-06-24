@@ -7,7 +7,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 // Components
 import './sass/main.scss';
 import { App } from './containers';
-import { store } from '@core/redux/app';
+import { store } from './redux/app';
 
 if (process.env.NODE_ENV === 'development') {
   console.log("🤔 It's looks like we are in a development mode!");

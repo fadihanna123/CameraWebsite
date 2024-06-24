@@ -2,13 +2,13 @@ import React from 'react';
 import { Flip, ToastContainer } from 'react-toastify';
 
 // Components
-import { RegisterTyper, RegisterUser } from '@core/functions';
-import useTranslation from '@core/hooks/useTranslate';
-import { useAppDispatch, useAppSelector } from '@core/redux/app';
-import { getLang, getLoading, getRegisterForm } from '@core/redux/reducers';
-import Btn from '@core/ui/Btn';
-import FileUploader from '@core/ui/FileUploader';
-import Input from '@core/ui/Input';
+import { RegisterTyper, RegisterUser } from '../../functions';
+import useTranslation from '../../hooks/useTranslate';
+import { useAppDispatch, useAppSelector } from '../../redux/app';
+import { getLang, getLoading, getRegisterForm } from '../../redux/reducers';
+import Btn from '../../ui/Btn';
+import FileUploader from '../../ui/FileUploader';
+import Input from '../../ui/Input';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

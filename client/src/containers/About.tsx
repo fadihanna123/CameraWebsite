@@ -1,10 +1,10 @@
 import React from 'react';
 
 // Components
-import { useTitle, useTranslate } from '@core/hooks';
-import { useAppSelector } from '@core/redux/app';
-import { getLang } from '@core/redux/reducers';
-import { Heading, Para } from '@core/ui';
+import { useTitle, useTranslate } from '../hooks';
+import { useAppSelector } from '../redux/app';
+import { getLang } from '../redux/reducers';
+import { Heading, Para } from '../ui';
 
 const About: React.FC = () => {
   const lang = useAppSelector(getLang);

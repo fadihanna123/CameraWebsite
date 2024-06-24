@@ -1,8 +1,8 @@
 import React from 'react';
 
 // Components
-import { Login } from '@core/containers/auth';
-import { MainHeader } from '@core/ui';
+import { Login } from '../containers/auth';
+import { MainHeader } from '../ui';
 import { NavBar, LogoBox } from './components';
 
 /**

@@ -1,7 +1,7 @@
 import { Meta } from '@storybook/react';
 
 // Components
-import Btn from '@core/ui/Btn';
+import Btn from '../ui/Btn';
 
 const meta: Meta<typeof Btn> = {
   title: 'Button',

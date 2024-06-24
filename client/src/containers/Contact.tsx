@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import useTitle from '@core/hooks/useTitle';
-import useTranslation from '@core/hooks/useTranslate';
-import { useAppSelector } from '@core/redux/app';
-import { getLang, getLoading } from '@core/redux/reducers';
-import { Btn, Heading, Input, Para, TxtArea } from '@core/ui';
+import useTitle from '../hooks/useTitle';
+import useTranslation from '../hooks/useTranslate';
+import { useAppSelector } from '../redux/app';
+import { getLang, getLoading } from '../redux/reducers';
+import { Btn, Heading, Input, Para, TxtArea } from '../ui';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

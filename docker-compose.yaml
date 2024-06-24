@@ -32,6 +32,9 @@ services:
       - 5000:5000
     env_file:
       - ./server/.docker.env
+    volumes:
+      - ./server:/backend
+      - /backend/node_modules
     restart: unless-stopped
     links:
       - db
@@ -43,6 +46,9 @@ services:
       - 3000:3000
     env_file:
       - ./client/.docker.env
+    volumes:
+      - ./client:/frontend
+      - /frontend/node_modules
     restart: unless-stopped
     links:
       - api

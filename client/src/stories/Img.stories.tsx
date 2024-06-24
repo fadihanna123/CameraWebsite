@@ -1,8 +1,8 @@
 import { Meta } from '@storybook/react';
 
 // Components
-import Img from '@core/ui/Img';
-import bgImage from '@assets/background.jpg';
+import Img from '../ui/Img';
+import bgImage from '../background.jpg';
 
 const meta: Meta<typeof Img> = {
   title: 'Image',

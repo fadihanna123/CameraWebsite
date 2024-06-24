@@ -3,18 +3,18 @@ import { Flip, ToastContainer } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
 // Components
-import { checkLogin, loginTyper } from '@core/functions';
-import useTranslation from '@core/hooks/useTranslate';
-import { useAppDispatch, useAppSelector } from '@core/redux/app';
+import { checkLogin, loginTyper } from '../../functions';
+import useTranslation from '../../hooks/useTranslate';
+import { useAppDispatch, useAppSelector } from '../../redux/app';
 import {
   getLang,
   getLoading,
   getLogin,
   getLoginForm,
-} from '@core/redux/reducers';
-import Btn from 'ui/Btn';
-import Heading from 'ui/Heading';
-import Input from 'ui/Input';
+} from '../../redux/reducers';
+import Btn from '../../ui/Btn';
+import Heading from '../../ui/Heading';
+import Input from '../../ui/Input';
 import LogOutBox from './LogOutBox';
 
 /**

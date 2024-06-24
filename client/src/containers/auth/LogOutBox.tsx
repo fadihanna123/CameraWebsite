@@ -2,18 +2,18 @@ import React, { useEffect } from 'react';
 import { Flip, toast } from 'react-toastify';
 
 // Components
-import { doLogOut } from '@core/functions';
-import useTranslation from '@core/hooks/useTranslate';
-import { useAppDispatch, useAppSelector } from '@core/redux/app';
+import { doLogOut } from '../../functions';
+import useTranslation from '../../hooks/useTranslate';
+import { useAppDispatch, useAppSelector } from '../../redux/app';
 import {
   getAuthor,
   getLang,
   getLoading,
   setAuthor,
-} from '@core/redux/reducers';
-import Btn from '@core/ui/Btn';
-import Heading from '@core/ui/Heading';
-import { sessionStorageKeys } from '@core/utils/constants';
+} from '../../redux/reducers';
+import Btn from '../../ui/Btn';
+import Heading from '../../ui/Heading';
+import { sessionStorageKeys } from '../../utils/constants';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

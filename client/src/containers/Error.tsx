@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // Components
-import useTitle from '@core/hooks/useTitle';
-import { Heading, Para } from '@core/ui';
+import useTitle from '../hooks/useTitle';
+import { Heading, Para } from '../ui';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

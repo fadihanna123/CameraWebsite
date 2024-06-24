@@ -1,5 +1,5 @@
-import { request } from '@core/api';
-import { loginEndPoint, registerEndPoint } from '@core/utils';
+import { request } from '../api';
+import { loginEndPoint, registerEndPoint } from '../utils';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

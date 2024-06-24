@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
 // Components
-import { RootState } from '@core/redux/app';
+import { RootState } from '../../redux/app';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

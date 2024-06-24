@@ -1,7 +1,7 @@
 import { Meta } from '@storybook/react';
 
 // Components
-import { MainHeader } from '@core/ui';
+import { MainHeader } from '../ui';
 
 const meta: Meta<typeof MainHeader> = {
   title: 'MainHeader',

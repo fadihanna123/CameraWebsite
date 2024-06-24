@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Components
-import MainFooter from '@core/ui/MainFooter';
+import MainFooter from '../ui/MainFooter';
 import { FooterCompanyDetails, FooterLinks } from './components';
 
 /**

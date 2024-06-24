@@ -1,7 +1,7 @@
 import { Meta } from '@storybook/react';
 
 // Components
-import { Para } from '@core/ui';
+import { Para } from '../ui';
 
 const meta: Meta<typeof Para> = {
   title: 'Paragraph',

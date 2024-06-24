@@ -2,8 +2,8 @@ import { Flip, toast } from 'react-toastify';
 import { Dispatch } from 'redux';
 
 // Components
-import { setLoading, setLogin } from '@core/redux/reducers';
-import { sessionStorageKeys } from '@core/utils';
+import { setLoading, setLogin } from '../redux/reducers';
+import { sessionStorageKeys } from '../utils';
 import { loginUser } from './apiStore';
 
 /**
