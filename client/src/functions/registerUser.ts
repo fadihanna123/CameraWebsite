@@ -1,7 +1,8 @@
 import { Flip, toast } from 'react-toastify';
 import { Dispatch } from 'redux';
-import { setLoading } from '../redux/reducers';
 
+// Components
+import { setLoading } from '@core/redux/reducers';
 import { registerUser } from './apiStore';
 
 /**

@@ -1,5 +1,7 @@
-import Input from './Input';
 import React from 'react';
+
+// Components
+import Input from './Input';
 
 const FileUploader: React.FC<FileUploaderProps> = ({
   val,

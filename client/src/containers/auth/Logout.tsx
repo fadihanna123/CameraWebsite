@@ -1,8 +1,10 @@
-import { doLogOut } from 'functions';
 import { Navigate } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../../redux/app';
-import { getLang } from '../../redux/reducers';
 import React from 'react';
+
+// Components
+import { doLogOut } from '@core/functions';
+import { useAppDispatch, useAppSelector } from '@core/redux/app';
+import { getLang } from '@core/redux/reducers';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

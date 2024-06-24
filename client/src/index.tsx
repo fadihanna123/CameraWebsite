@@ -1,12 +1,13 @@
-import './sass/main.scss';
 import 'react-toastify/dist/ReactToastify.css';
-
-import App from 'containers/App';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { store } from './redux/app/store';
+
+// Components
+import './sass/main.scss';
+import { App } from './containers';
+import { store } from '@core/redux/app';
 
 if (process.env.NODE_ENV === 'development') {
   console.log("🤔 It's looks like we are in a development mode!");

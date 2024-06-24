@@ -1,8 +1,10 @@
-import Layout from 'app/Layout';
 import React, { useEffect } from 'react';
-import { useAppDispatch } from '../redux/app';
-import { setLang, setLogin } from '../redux/reducers';
-import { sessionStorageKeys } from 'utils/constants';
+
+// Components
+import Layout from '@core/app/Layout';
+import { useAppDispatch } from '@core/redux/app';
+import { setLang, setLogin } from '@core/redux/reducers';
+import { sessionStorageKeys } from '@core/utils/constants';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

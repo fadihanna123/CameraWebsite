@@ -1,8 +1,9 @@
-import useTitle from 'hooks/useTitle';
-import { Link } from 'react-router-dom';
-import Heading from 'ui/Heading';
-import Para from 'ui/Para';
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+// Components
+import useTitle from '@core/hooks/useTitle';
+import { Heading, Para } from '@core/ui';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

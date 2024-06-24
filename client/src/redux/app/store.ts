@@ -1,5 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
+// Components
 import authorReducer from '../reducers/author';
 import langReducer from '../reducers/lang';
 import loadingReducer from '../reducers/loading';

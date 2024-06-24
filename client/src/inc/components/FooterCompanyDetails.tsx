@@ -1,4 +1,4 @@
-import Heading from 'ui/Heading';
+import { Heading } from '@core/ui';
 
 const FooterCompanyDetails: React.FC = () => {
   return (

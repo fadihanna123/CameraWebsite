@@ -1,21 +1,21 @@
-import { checkLogin, loginTyper } from 'functions';
-import useTranslation from 'hooks/useTranslate';
 import React from 'react';
 import { Flip, ToastContainer } from 'react-toastify';
-import { useAppDispatch, useAppSelector } from '../../redux/app';
+import { useNavigate } from 'react-router-dom';
+
+// Components
+import { checkLogin, loginTyper } from '@core/functions';
+import useTranslation from '@core/hooks/useTranslate';
+import { useAppDispatch, useAppSelector } from '@core/redux/app';
 import {
   getLang,
   getLoading,
   getLogin,
   getLoginForm,
-} from '../../redux/reducers';
-
-// Components
+} from '@core/redux/reducers';
 import Btn from 'ui/Btn';
 import Heading from 'ui/Heading';
 import Input from 'ui/Input';
 import LogOutBox from './LogOutBox';
-import { useNavigate } from 'react-router-dom';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

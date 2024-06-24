@@ -1,10 +1,12 @@
-import useTitle from 'hooks/useTitle';
-import useTranslation from 'hooks/useTranslate';
-import { useAppSelector } from '../../redux/app';
-import { getLang, getLogin } from '../../redux/reducers';
-import Heading from 'ui/Heading';
-import Para from 'ui/Para';
 import React from 'react';
+
+// Components
+import useTitle from '@core/hooks/useTitle';
+import useTranslation from '@core/hooks/useTranslate';
+import { useAppSelector } from '@core/redux/app';
+import { getLang, getLogin } from '@core/redux/reducers';
+import Heading from '@core/ui/Heading';
+import Para from '@core/ui/Para';
 import RegisterForm from './RegisterForm';
 
 /**

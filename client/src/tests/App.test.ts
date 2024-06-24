@@ -1,4 +1,4 @@
-import { loginUser } from 'functions';
+import { loginUser } from '@core/functions';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

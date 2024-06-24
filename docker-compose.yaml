@@ -13,12 +13,15 @@ services:
     volumes:
       - camera_website_db-data:/var/lib/mysql
 
-  adminer:
-    image: adminer:standalone
+  db_admin:
+    image: phpmyadmin:fpm-alpine
     container_name: camera_website_db_admin
     ports:
-      - 8080:8080
+      - 8080:80
     restart: unless-stopped
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: root
     volumes:
       - camera_website_db_admin:/var/lib/mysql
 
@@ -28,7 +31,7 @@ services:
     ports:
       - 5000:5000
     env_file:
-      - ./server/.env.production
+      - ./server/.docker.env
     restart: unless-stopped
     links:
       - db
@@ -39,7 +42,7 @@ services:
     ports:
       - 3000:3000
     env_file:
-      - ./client/.env.production
+      - ./client/.docker.env
     restart: unless-stopped
     links:
       - api

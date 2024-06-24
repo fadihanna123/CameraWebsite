@@ -1,7 +1,9 @@
-import { useTranslate } from 'hooks';
 import { Link } from 'react-router-dom';
-import { useAppSelector } from '../../redux/app';
-import { getLang, getLogin } from '../../redux/reducers';
+
+// Components
+import { useTranslate } from '@core/hooks';
+import { useAppSelector } from '@core/redux/app';
+import { getLang, getLogin } from '@core/redux/reducers';
 
 const FooterLinks: React.FC = () => {
   const login = useAppSelector(getLogin);

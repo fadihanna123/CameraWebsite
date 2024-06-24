@@ -34,7 +34,6 @@ storybook-static
 
 # dotenv environment variable files
 .env
-.env.prod
 
 ### VisualStudioCode ###
 .vscode/*

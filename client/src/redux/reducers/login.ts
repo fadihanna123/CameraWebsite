@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../../redux/app';
-
 import type { PayloadAction } from '@reduxjs/toolkit';
+
+// Components
+import { RootState } from '@core/redux/app';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

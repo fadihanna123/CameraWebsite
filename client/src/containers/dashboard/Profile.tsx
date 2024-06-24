@@ -1,7 +1,9 @@
-import useTitle from 'hooks/useTitle';
-import { useSelector } from 'react-redux';
-import { getLogin } from '../../redux/reducers';
 import React from 'react';
+import { useSelector } from 'react-redux';
+
+// Components
+import useTitle from '@core/hooks/useTitle';
+import { getLogin } from '@core/redux/reducers';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

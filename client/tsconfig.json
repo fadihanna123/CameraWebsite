@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "baseUrl": "src",
+    "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -38,12 +37,9 @@
     "noUnusedLocals": true,
     "noPropertyAccessFromIndexSignature": true,
     "removeComments": true,
-    "paths": {
-      "@core/*": ["src/*"],
-      "@assets/*": ["assets/*"]
-    },
     "outDir": "dist"
   },
+  "extends": "./tsconfig.paths.json",
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
 }

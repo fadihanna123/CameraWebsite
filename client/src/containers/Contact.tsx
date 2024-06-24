@@ -1,14 +1,11 @@
-import useTitle from 'hooks/useTitle';
-import useTranslation from 'hooks/useTranslate';
-import { Link } from 'react-router-dom';
-import { useAppSelector } from '../redux/app';
-import { getLang, getLoading } from '../redux/reducers';
-import Btn from 'ui/Btn';
-import Heading from 'ui/Heading';
-import Input from 'ui/Input';
-import Para from 'ui/Para';
-import TxtArea from 'ui/TxtArea';
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+import useTitle from '@core/hooks/useTitle';
+import useTranslation from '@core/hooks/useTranslate';
+import { useAppSelector } from '@core/redux/app';
+import { getLang, getLoading } from '@core/redux/reducers';
+import { Btn, Heading, Input, Para, TxtArea } from '@core/ui';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

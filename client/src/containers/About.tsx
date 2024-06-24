@@ -1,10 +1,10 @@
-import useTitle from 'hooks/useTitle';
-import useTranslation from 'hooks/useTranslate';
-import { useAppSelector } from '../redux/app';
-import { getLang } from '../redux/reducers';
-import Heading from 'ui/Heading';
-import Para from 'ui/Para';
 import React from 'react';
+
+// Components
+import { useTitle, useTranslate } from '@core/hooks';
+import { useAppSelector } from '@core/redux/app';
+import { getLang } from '@core/redux/reducers';
+import { Heading, Para } from '@core/ui';
 
 const About: React.FC = () => {
   const lang = useAppSelector(getLang);
@@ -13,7 +13,7 @@ const About: React.FC = () => {
 
   return (
     <main className='main'>
-      <Heading>{useTranslation('About_us', lang)}</Heading>
+      <Heading>{useTranslate('About_us', lang)}</Heading>
       <Para className={['aboutTxt']}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis
         odio non odio finibus imperdiet. Morbi augue ante, scelerisque in metus

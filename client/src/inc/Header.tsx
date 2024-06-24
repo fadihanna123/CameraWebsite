@@ -1,8 +1,9 @@
-import Login from 'containers/auth/Login';
-import MainHeader from 'ui/MainHeader';
 import React from 'react';
-import NavBar from './components/NavBar';
-import { LogoBox } from './components';
+
+// Components
+import { Login } from '@core/containers/auth';
+import { MainHeader } from '@core/ui';
+import { NavBar, LogoBox } from './components';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

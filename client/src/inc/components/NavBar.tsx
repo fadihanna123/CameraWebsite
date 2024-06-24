@@ -1,9 +1,11 @@
-import { langSwitcher } from 'functions';
-import { useTranslate } from 'hooks';
 import { Link } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../../redux/app';
-import { getLang, getLogin } from '../../redux/reducers';
-import Menu from 'ui/Menu';
+
+// Components
+import { langSwitcher } from '@core/functions';
+import { useTranslate } from '@core/hooks';
+import { useAppDispatch, useAppSelector } from '@core/redux/app';
+import { getLang, getLogin } from '@core/redux/reducers';
+import { Menu } from '@core/ui';
 
 const NavBar: React.FC = () => {
   const login = useAppSelector(getLogin);

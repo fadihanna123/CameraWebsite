@@ -1,5 +1,7 @@
-import FileUploader from 'ui/FileUploader';
 import { Meta } from '@storybook/react';
+
+// Components
+import FileUploader from '@core/ui/FileUploader';
 
 const meta: Meta<typeof FileUploader> = {
   title: 'FileUploader',

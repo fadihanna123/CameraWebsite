@@ -1,13 +1,13 @@
-import About from 'containers/About';
-import Register from 'containers/auth/Register';
-import Contact from 'containers/Contact';
-import Start from 'containers/Start';
-import Footer from 'inc/Footer';
-import { Header } from 'inc';
 import { Route, Routes } from 'react-router-dom';
 import React from 'react';
-import Error from '../containers/Error';
-import { Profile } from 'containers/dashboard';
+
+import About from '@core/containers/About';
+import Register from '@core/containers/auth/Register';
+import Contact from '@core/containers/Contact';
+import Start from '@core/containers/Start';
+import { Header, Footer } from '@core/inc';
+import Error from '@core/containers/Error';
+import { Profile } from '@core/containers/dashboard';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

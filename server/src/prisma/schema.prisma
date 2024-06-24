@@ -9,12 +9,12 @@ datasource db {
 
 model users {
   id     Int     @id @default(autoincrement())
-  uname  String
   email  String?
-  mobnr  String?
   psw    String
   img    String?
   locked BigInt?
+  mobnr  String?
+  uname  String
 }
 
 model logs {

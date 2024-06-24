@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
-import Img from 'ui/Img';
-import LogoImg from 'assets/logo.webp';
+
+// Components
+import Img from '@core/ui/Img';
+import LogoImg from '@assets/logo.webp';
 
 const LogoBox: React.FC = () => {
   return (
