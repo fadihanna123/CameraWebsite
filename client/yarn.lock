@@ -2669,13 +2669,14 @@
   resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-8.1.5.tgz#c0c064b3ebdc0b3c97b7f449ed96ab59c484cab6"
   integrity sha512-9qwPX/uGhdHaVjeVUSwJUSbKX7g9goyhGYdKVuCEyl7vHR9Kp7Zkag2sEHmVdd9ixTea3jk2GZQEbnBDNQNGnw==
 
-"@storybook/preset-create-react-app@8.0.9":
-  version "8.0.9"
-  resolved "https://registry.yarnpkg.com/@storybook/preset-create-react-app/-/preset-create-react-app-8.0.9.tgz#b09eea0b5b3c873141202fa648b6a31a0d957fe9"
-  integrity sha512-7IjDztstczSFoLlzhWt6MAE2IKVA1B2CLiXRVlw1aK9+dv5n0ctZQzRCwwvTQXdlI3ABSqB7Gn6khKJOBYUhlg==
+"@storybook/preset-create-react-app@8.1.11":
+  version "8.1.11"
+  resolved "https://registry.yarnpkg.com/@storybook/preset-create-react-app/-/preset-create-react-app-8.1.11.tgz#5d9d9d766f14c91a4fbe133561bb13beae089bba"
+  integrity sha512-aDVux18+Ew39WRqSpVncxJOzjFbspFW7x6Wcg3lWJnjMKAKuQ23Plh8ICcm74SxC8Xm7dyZzxi/upeHph6KdXg==
   dependencies:
     "@pmmmwh/react-refresh-webpack-plugin" "^0.5.1"
-    "@storybook/types" "8.0.9"
+    "@storybook/react-docgen-typescript-plugin" "1.0.6--canary.9.0c3f3b7.0"
+    "@storybook/types" "8.1.11"
     "@types/semver" "^7.5.6"
     pnp-webpack-plugin "^1.7.0"
     semver "^7.5.4"
