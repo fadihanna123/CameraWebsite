@@ -1,13 +1,13 @@
 import { Route, Routes } from 'react-router-dom';
 import React from 'react';
 
-import About from '../containers/About';
-import Register from '../containers/auth/Register';
-import Contact from '../containers/Contact';
-import Start from '../containers/Start';
+import About from './About';
+import Register from './auth/Register';
+import Contact from './Contact';
+import Start from './Start';
 import { Header, Footer } from '../inc';
-import Error from '../containers/Error';
-import { Profile } from '../containers/dashboard';
+import Error from './Error';
+import { Profile } from './dashboard';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

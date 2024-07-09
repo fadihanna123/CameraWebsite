@@ -1,6 +1,6 @@
 FROM node:20.15.0-alpine3.20
 WORKDIR /frontend
-COPY yarn.lock package.json .
+COPY yarn.lock package.json ./
 RUN yarn --silent --ignore-scripts
 COPY . .
 EXPOSE 3000
