@@ -3,6 +3,8 @@ services:
     image: mysql:lts-oraclelinux9
     container_name: camera_website_db
     restart: 'no'
+    ports:
+      - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: camera_website_db
