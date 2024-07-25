@@ -5,7 +5,11 @@ import useTitle from '../hooks/useTitle';
 import useTranslation from '../hooks/useTranslate';
 import { useAppSelector } from '../redux/app';
 import { getLang, getLoading } from '../redux/reducers';
-import { Btn, Heading, Input, Para, TxtArea } from '../ui';
+import Btn from '../ui/Btn';
+import Heading from '../ui/Heading';
+import Input from '../ui/Input';
+import Para from '../ui/Para';
+import TxtArea from '../ui/TxtArea';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

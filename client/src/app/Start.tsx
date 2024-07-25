@@ -1,10 +1,12 @@
 import React from 'react';
 
 // Components
-import { useTitle, useTranslate } from '../hooks';
+import useTitle from '../hooks/useTitle';
+import useTranslate from '../hooks/useTranslate';
 import { useAppSelector } from '../redux/app';
 import { getLang, getLogin } from '../redux/reducers';
-import { Heading, Para } from '../ui';
+import Heading from '../ui/Heading';
+import Para from '../ui/Para';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

@@ -1,7 +1,7 @@
 import { Meta } from '@storybook/react';
 
 // Components
-import { TxtArea } from '../ui';
+import TxtArea from '../ui/TxtArea';
 
 const meta: Meta<typeof TxtArea> = {
   title: 'TextArea',

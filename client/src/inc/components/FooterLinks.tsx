@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 // Components
-import { useTranslate } from '../../hooks';
+import useTranslate from '../../hooks/useTranslate';
 import { useAppSelector } from '../../redux/app';
 import { getLang, getLogin } from '../../redux/reducers';
 

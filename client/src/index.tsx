@@ -6,7 +6,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 // Components
 import './sass/main.scss';
-import { App } from './containers';
+import App from './containers/App';
 import { store } from './redux/app';
 
 if (process.env.NODE_ENV === 'development') {

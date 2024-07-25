@@ -5,9 +5,11 @@ import About from './About';
 import Register from './auth/Register';
 import Contact from './Contact';
 import Start from './Start';
-import { Header, Footer } from '../inc';
+import Header from '../inc/Header';
+import Footer from '../inc/Footer';
+
 import Error from './Error';
-import { Profile } from './dashboard';
+import Profile from './dashboard/Profile';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
