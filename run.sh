@@ -2,5 +2,5 @@ git fetch
 git fetch --all
 git fetch --prune
 git pull
-yarn --emoji --silent --ignore-scripts
+yarn setup
 docker compose up --build
