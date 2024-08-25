@@ -2,16 +2,17 @@ import React, { useEffect } from 'react';
 
 // Components
 import Layout from '../app/Layout';
-import { useAppDispatch } from '../redux/app';
 import { setLang, setLogin } from '../redux/reducers';
 import { sessionStorageKeys } from '../utils/constants';
+import useReduxConsts from '../hooks/useReduxConsts';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
  */
 
 const App: React.FC = () => {
-  const dispatch = useAppDispatch();
+  const { dispatch } = useReduxConsts();
+
   const lang = sessionStorage.getItem(sessionStorageKeys.Lang);
   const token = sessionStorage.getItem(sessionStorageKeys.Token);
 

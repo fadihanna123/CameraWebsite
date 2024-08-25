@@ -4,29 +4,18 @@ import { Flip, toast } from 'react-toastify';
 // Components
 import { doLogOut } from '../../functions';
 import useTranslation from '../../hooks/useTranslate';
-import { useAppDispatch, useAppSelector } from '../../redux/app';
-import {
-  getAuthor,
-  getLang,
-  getLoading,
-  setAuthor,
-} from '../../redux/reducers';
+import { setAuthor } from '../../redux/reducers';
 import Btn from '../../ui/Btn';
 import Heading from '../../ui/Heading';
 import { sessionStorageKeys } from '../../utils/constants';
+import useReduxConsts from '../../hooks/useReduxConsts';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
  */
 
 const LogOutBox: React.FC = () => {
-  const author = useAppSelector(getAuthor);
-
-  const lang = useAppSelector(getLang);
-
-  const loading = useAppSelector(getLoading);
-
-  const dispatch = useAppDispatch();
+  const { author, loading, lang, dispatch } = useReduxConsts();
 
   useEffect(() => {
     const author = sessionStorage.getItem(sessionStorageKeys.Author) ?? '';

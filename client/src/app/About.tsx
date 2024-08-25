@@ -3,13 +3,12 @@ import React from 'react';
 // Components
 import useTitle from '../hooks/useTitle';
 import useTranslate from '../hooks/useTranslate';
-import { useAppSelector } from '../redux/app';
-import { getLang } from '../redux/reducers';
 import Heading from '../ui/Heading';
 import Para from '../ui/Heading';
+import useReduxConsts from '../hooks/useReduxConsts';
 
 const About: React.FC = () => {
-  const lang = useAppSelector(getLang);
+  const { lang } = useReduxConsts();
 
   useTitle('Surveillance systems Inc - Om oss');
 

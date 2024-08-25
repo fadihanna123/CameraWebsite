@@ -2,12 +2,10 @@ import { Link } from 'react-router-dom';
 
 // Components
 import useTranslate from '../../hooks/useTranslate';
-import { useAppSelector } from '../../redux/app';
-import { getLang, getLogin } from '../../redux/reducers';
+import useReduxConsts from '../../hooks/useReduxConsts';
 
 const FooterLinks: React.FC = () => {
-  const login = useAppSelector(getLogin);
-  const lang = useAppSelector(getLang);
+  const { login, lang } = useReduxConsts();
 
   return (
     <ul className='footerlinks'>

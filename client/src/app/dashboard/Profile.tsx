@@ -1,16 +1,15 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 
 // Components
 import useTitle from '../../hooks/useTitle';
-import { getLogin } from '../../redux/reducers';
+import useReduxConsts from '../../hooks/useReduxConsts';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
  */
 
 const Profile: React.FC = () => {
-  const login = useSelector(getLogin);
+  const { login } = useReduxConsts();
 
   useTitle('Surveillance systems Inc - Profil');
 

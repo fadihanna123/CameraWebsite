@@ -3,15 +3,11 @@ import { Link } from 'react-router-dom';
 // Components
 import { langSwitcher } from '../../functions';
 import useTranslate from '../../hooks/useTranslate';
-import { useAppDispatch, useAppSelector } from '../../redux/app';
-import { getLang, getLogin } from '../../redux/reducers';
 import Menu from '../../ui/Menu';
+import useReduxConsts from '../../hooks/useReduxConsts';
 
 const NavBar: React.FC = () => {
-  const login = useAppSelector(getLogin);
-
-  const dispatch = useAppDispatch();
-  const lang = useAppSelector(getLang);
+  const { login, lang, dispatch } = useReduxConsts();
 
   return (
     <Menu classNames={['navbar']}>

@@ -3,20 +3,17 @@ import React from 'react';
 // Components
 import useTitle from '../../hooks/useTitle';
 import useTranslation from '../../hooks/useTranslate';
-import { useAppSelector } from '../../redux/app';
-import { getLang, getLogin } from '../../redux/reducers';
 import Heading from '../../ui/Heading';
 import Para from '../../ui/Para';
 import RegisterForm from '../../containers/auth/RegisterForm';
+import useReduxConsts from '../../hooks/useReduxConsts';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
  */
 
 const Register: React.FC = () => {
-  const login = useAppSelector(getLogin);
-
-  const lang = useAppSelector(getLang);
+  const { login, lang } = useReduxConsts();
 
   useTitle('Surveillance systems Inc - Registrera dig');
 

@@ -1,15 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import useTitle from '../hooks/useTitle';
 import useTranslation from '../hooks/useTranslate';
-import { useAppSelector } from '../redux/app';
-import { getLang, getLoading } from '../redux/reducers';
 import Btn from '../ui/Btn';
 import Heading from '../ui/Heading';
 import Input from '../ui/Input';
 import Para from '../ui/Para';
 import TxtArea from '../ui/TxtArea';
+import useReduxConsts from '../hooks/useReduxConsts';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
@@ -17,18 +15,13 @@ import TxtArea from '../ui/TxtArea';
 
 const Contact: React.FC = () => {
   useTitle('Surveillance systems Inc - Kontakta oss');
-
   /**
    * @param {{ p10: { padding: string }}}
    */
   const styles = {
     p10: { padding: '10px' },
   };
-
-  const lang = useAppSelector(getLang);
-
-  const loading = useAppSelector(getLoading);
-
+  const { lang, loading } = useReduxConsts();
   return (
     <main className='main'>
       <Heading>Kontakta oss</Heading>

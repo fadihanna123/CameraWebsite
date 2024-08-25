@@ -5,32 +5,19 @@ import { useNavigate } from 'react-router-dom';
 // Components
 import { checkLogin, loginTyper } from '../../functions';
 import useTranslation from '../../hooks/useTranslate';
-import { useAppDispatch, useAppSelector } from '../../redux/app';
-import {
-  getLang,
-  getLoading,
-  getLogin,
-  getLoginForm,
-} from '../../redux/reducers';
 import Btn from '../../ui/Btn';
 import Heading from '../../ui/Heading';
 import Input from '../../ui/Input';
 import LogOutBox from '../../containers/auth/LogOutBox';
+import useReduxConsts from '../../hooks/useReduxConsts';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
  */
 
 const Login: React.FC = () => {
-  const loginForm = useAppSelector(getLoginForm);
+  const { lang, login, loginForm, loading, dispatch } = useReduxConsts();
 
-  const login = useAppSelector(getLogin);
-
-  const lang = useAppSelector(getLang);
-
-  const loading = useAppSelector(getLoading);
-
-  const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
   return (

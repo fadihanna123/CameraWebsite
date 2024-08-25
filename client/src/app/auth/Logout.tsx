@@ -3,17 +3,14 @@ import React from 'react';
 
 // Components
 import { doLogOut } from '../../functions';
-import { useAppDispatch, useAppSelector } from '../../redux/app';
-import { getLang } from '../../redux/reducers';
+import useReduxConsts from '../../hooks/useReduxConsts';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
  */
 
 const Logout: React.FC = () => {
-  const login = useAppSelector(getLang);
-
-  const dispatch = useAppDispatch();
+  const { login, dispatch } = useReduxConsts();
 
   return <>{login ? doLogOut(dispatch) : <Navigate to='/' />}</>;
 };

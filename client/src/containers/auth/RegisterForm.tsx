@@ -4,24 +4,17 @@ import { Flip, ToastContainer } from 'react-toastify';
 // Components
 import { RegisterTyper, RegisterUser } from '../../functions';
 import useTranslation from '../../hooks/useTranslate';
-import { useAppDispatch, useAppSelector } from '../../redux/app';
-import { getLang, getLoading, getRegisterForm } from '../../redux/reducers';
 import Btn from '../../ui/Btn';
 import FileUploader from '../../ui/FileUploader';
 import Input from '../../ui/Input';
+import useReduxConsts from '../../hooks/useReduxConsts';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
  */
 
 const RegisterForm: React.FC = () => {
-  const registerForm = useAppSelector(getRegisterForm);
-
-  const lang = useAppSelector(getLang);
-
-  const loading = useAppSelector(getLoading);
-
-  const dispatch = useAppDispatch();
+  const { registerForm, lang, loading, dispatch } = useReduxConsts();
 
   return (
     <form encType='multipart/form-data' method='post'>
