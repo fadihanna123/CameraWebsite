@@ -29,7 +29,7 @@ declare global {
     mobnr: string;
     psw: string;
     repsw: string;
-    avatar: string;
+    avatar: any;
   }
 
   interface HeadingProps {

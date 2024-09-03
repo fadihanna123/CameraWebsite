@@ -5,10 +5,7 @@ import { baseURL } from '../utils';
  * @author Fadi Hanna<fhanna181@gmail.com>
  */
 
-const globalHeader = 'application/json';
-
 axios.defaults.baseURL = baseURL;
-axios.defaults.headers.common['Content-Type'] = globalHeader;
 
 export const request = {
   get: async <T>(url: Paths): Promise<T> => {

@@ -23,6 +23,9 @@ export const RegisterUser = async (
 ): Promise<void> => {
   try {
     // dispatch(setLoading(true));
+    const avatar_file = document.getElementById(
+      'register_avatar'
+    )! as HTMLInputElement;
 
     const myForm = new FormData();
     myForm.append('uname', registerForm.uname);
@@ -30,11 +33,7 @@ export const RegisterUser = async (
     myForm.append('mobnr', registerForm.mobnr);
     myForm.append('psw', registerForm.psw);
     myForm.append('repsw', registerForm.repsw);
-    myForm.append('avatar', registerForm.avatar);
-
-    // for (const pair of myForm.entries()) {
-    //   console.log(pair[0] + ', ' + pair[1]);
-    // }
+    myForm.append('avatar', avatar_file!.files![0]);
 
     await registerUser(myForm)
       .then((res) => {
