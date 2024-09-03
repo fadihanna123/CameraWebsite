@@ -22,9 +22,11 @@ export const doRegister = async (
   res: Response
 ): Promise<Response<any, Record<string, any>> | undefined> => {
   const { uname, email, mobnr, psw, repsw } = req.body;
+  // eslint-disable-next-line no-console
+  console.log(req.files);
 
   if (!uname || !email || !mobnr || !psw || !repsw) {
-    // Om användaren inte fyllde i alla obligatoriska rutor.
+    // If the user did not fill in all required fields.
     storeError(
       'Du måste fylla i alla obligatoriska rutor!',
       'POST',
@@ -34,9 +36,9 @@ export const doRegister = async (
       message: 'Du måste fylla i alla obligatoriska rutor!',
     });
   } else {
-    // Om användaren fyllde i alla obligatoriska rutor.
+    // If the user filled in all required fields.
     if (!validator.isEmail(email)) {
-      // Om e-postadressen är inte korrekt skriven.
+      // If the email address is not written correctly.
       storeError(
         'Du måste fylla in en korrekt e-postadress!',
         'POST',
@@ -46,12 +48,12 @@ export const doRegister = async (
         message: 'Du måste fylla in en korrekt e-postadress!',
       });
     } else {
-      // Om e-postadressen är korrekt skriven.
+      // If the email address is written correctly.
       if (
         !validator.isLength(psw, { min: 8 }) &&
         !validator.isLength(repsw, { min: 8 })
       ) {
-        // Om lösenord och bekräfta lösenord fälten inte innehåller starka lösenord som har minst 8 tecken.
+        // If the password and confirm password fields do not contain strong passwords that are at least 8 characters long.
         storeError(
           'Du måste välja ett lösenord som är minst 8 tecken!',
           'POST',
@@ -62,9 +64,9 @@ export const doRegister = async (
           message: 'Du måste välja ett lösenord som är minst 8 tecken!',
         });
       } else {
-        // Om lösenord och bekräfta lösenord fälten innehåller starka lösenord som har minst 8 tecken.
+        // If the password and confirm Password fields contain strong passwords that have at least 8 characters.
         if (psw !== repsw) {
-          // Om lösenord och bekräfta lösenord fälten inte matchar varandra.
+          // If the password and confirm password fields do not match.
           storeError(
             'Ditt lösenord matchar inte det bekräftade lösenordet.',
             'POST',
@@ -75,7 +77,7 @@ export const doRegister = async (
             message: 'Ditt lösenord matchar inte det bekräftade lösenordet.',
           });
         } else {
-          // Om lösenord och bekräfta lösenord fälten matchar varandra.
+          // If the password and confirm password fields match each other.
           const findUser = await prisma.users.count({
             where: {
               uname,
@@ -84,7 +86,7 @@ export const doRegister = async (
           });
 
           if (findUser !== 0) {
-            // Om användaren hittades i databasen.
+            // If the user was found in the database.
             storeLog(
               'Du är redan registrerad hos oss. Du kan logga in ovan.',
               'POST',
@@ -95,10 +97,10 @@ export const doRegister = async (
               message: 'Du är redan registrerad hos oss. Du kan logga in ovan.',
             });
           } else {
-            // Om användaren inte hittades i databasen.
+            // If the user was not found in the database.
             try {
-              const file = (req as any).files.myFile
-                ? (req as any).files.myFile
+              const avatar = (req as any).files.avatar
+                ? (req as any).files.avatar
                 : '';
 
               if (
@@ -109,15 +111,13 @@ export const doRegister = async (
                 return res.status(400).send('Var vänlig välj en bild.');
               }
 
-              await file.mv(
-                `./uploads/${file.name}`,
-                file.name,
-                (err: Error) => {
-                  if (err) {
-                    return logger.error(err);
-                  }
+              const uploadPath = `src/uploads/${avatar.name}`;
+
+              avatar.mv(uploadPath, avatar.name, (err: Error) => {
+                if (err) {
+                  return logger.error(err);
                 }
-              );
+              });
 
               const userModel = await prisma.users.create({
                 data: {
@@ -126,7 +126,7 @@ export const doRegister = async (
                   psw,
                   mobnr,
                   locked: 0,
-                  img: (req as any).files.img.name,
+                  avatar: avatar.name,
                 },
               });
 
@@ -144,9 +144,9 @@ export const doRegister = async (
               storeError((error as Error).message, 'POST', '/register');
               logger.error('\x1b[31m', (error as Error).message);
             }
-          } // Slut om användaren inte hittades i databasen.
-        } // Slut om lösenord och bekräfta lösenord fälten matchar varandra.
-      } // Slut lösenord och bekräfta lösenord fälten innehåller starka lösenord som har minst 8 tecken.
-    } // Slut om e-postadressen är korrekt skriven.
-  } // Slut om användaren fyllde i alla obligatoriska rutor.
+          } // End if the user was not found in the database.
+        } // End if password and confirm password fields match each other.
+      } // End if password and confirm Password fields contain strong passwords that are at least 8 characters long.
+    } // End if the email address is correctly written.
+  } // End if the user filled in all required boxes.
 };

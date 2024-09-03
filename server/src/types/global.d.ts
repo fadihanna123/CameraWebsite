@@ -34,7 +34,7 @@ declare global {
    * @param { string } repsw
    * @param { string } mobnr
    * @param { number } locked
-   * @param { Buffer } img
+   * @param { Buffer } avatar
    */
   interface IUsers {
     id?: string;
@@ -44,7 +44,7 @@ declare global {
     repsw: string;
     mobnr: string;
     locked: number;
-    img: Buffer;
+    avatar: string;
   }
 
   /**

@@ -13,8 +13,8 @@ model users {
   email  String?
   mobnr  String?
   psw    String
-  img    String?
   locked BigInt?
+  avatar String?
 }
 
 model logs {

@@ -4,7 +4,7 @@ import { doRegister } from '@core/controllers';
 
 const router: Router = Router();
 
-// Registreringsprocess.
+// Registration process
 router.post<Routes>('/register', doRegister);
 
 export default router;

@@ -26,11 +26,11 @@ export const doLogin = async (
   };
 
   if (!uname || !psw) {
-    // Om användaren inte fyllde i alla rutor.
+    // If the user did not fill in all the boxes.
     storeLog('Du måste fylla i alla rutor!', 'POST', '/login');
     res.json({ message: 'Du måste fylla i alla rutor!' });
   } else {
-    // Om användaren fyllde i alla rutor.
+    // If the user filled in all the boxes.
     try {
       const result = await prisma.users.findMany({
         where: {
@@ -50,14 +50,14 @@ export const doLogin = async (
           message: 'Det finns något fel i ditt användarnamn/lösenord.',
         });
       } else {
-        // Returnera accesToken.
+        // Return accessToken.
         const accessToken = jwt.sign(userObject, process.env['Token']!);
         res.json({ accessToken, author: uname });
       }
     } catch (err) {
-      // Om det finns något fel..
+      // If there is any error..
       storeError((err as Error).message, 'POST', '/login');
       return res.status(500).send();
     }
-  } // Slut om användaren fyllde i alla rutor.
+  } // End if the user filled in all boxes.
 };

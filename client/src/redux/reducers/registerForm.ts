@@ -14,7 +14,7 @@ const initialState: IRegisterForm = {
   mobnr: '',
   psw: '',
   repsw: '',
-  img: '',
+  avatar: '',
 };
 
 export const registerFormSlice = createSlice({

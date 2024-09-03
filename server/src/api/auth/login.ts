@@ -4,7 +4,7 @@ import { doLogin } from '@core/controllers';
 
 const router = Router();
 
-// Inloggningskontroll.
+// Login control
 router.post<Routes>('/login', doLogin);
 
 export default router;

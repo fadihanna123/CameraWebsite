@@ -22,11 +22,7 @@ export const RegisterUser = async (
   registerForm: IRegisterForm
 ): Promise<void> => {
   try {
-    dispatch(setLoading(true));
-
-    const file = document.querySelector(
-      "input[type='file']"
-    ) as HTMLInputElement;
+    // dispatch(setLoading(true));
 
     const myForm = new FormData();
     myForm.append('uname', registerForm.uname);
@@ -34,7 +30,11 @@ export const RegisterUser = async (
     myForm.append('mobnr', registerForm.mobnr);
     myForm.append('psw', registerForm.psw);
     myForm.append('repsw', registerForm.repsw);
-    myForm.append('img', file?.files![0]);
+    myForm.append('avatar', registerForm.avatar);
+
+    // for (const pair of myForm.entries()) {
+    //   console.log(pair[0] + ', ' + pair[1]);
+    // }
 
     await registerUser(myForm)
       .then((res) => {

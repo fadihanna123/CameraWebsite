@@ -33,7 +33,11 @@ export const registerUser = async (
   myForm: FormData
 ): Promise<IRegisterData> => {
   try {
-    return await request.post<IRegisterData>(registerEndPoint as Paths, myForm);
+    return await request.post<IRegisterData>(
+      registerEndPoint as Paths,
+      myForm,
+      { headers: { 'Content-Type': 'multipart/form-data' } }
+    );
   } catch (error: any) {
     throw new Error(error);
   }

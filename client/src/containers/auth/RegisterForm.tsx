@@ -124,13 +124,13 @@ const RegisterForm: React.FC = () => {
             <FileUploader
               type='file'
               id='img'
-              val={registerForm.img}
+              val={registerForm.avatar}
               changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
                 RegisterTyper(e, registerForm, dispatch)
               }
               acceptValues='image/*'
               isRequired={true}
-              name='img'
+              name='avatar'
             />
           </section>
         </section>

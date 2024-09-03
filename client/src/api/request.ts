@@ -16,11 +16,7 @@ export const request = {
     return data;
   },
 
-  post: async <T>(
-    url: Paths,
-    redata: unknown,
-    headers?: { headers: Record<string, never> }
-  ): Promise<T> => {
+  post: async <T>(url: Paths, redata: unknown, headers?: any): Promise<T> => {
     const { data } = await axios.post<T>(url, redata, headers);
     return data;
   },

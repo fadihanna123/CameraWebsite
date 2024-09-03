@@ -12,6 +12,7 @@ import { errorHandler, storeLog, allowedURLs } from '@core/utils';
 import { connectDb } from '@core/db';
 import cors, { CorsOptions } from 'cors';
 import { rateLimit } from 'express-rate-limit';
+import fileUpload from 'express-fileupload';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
@@ -61,6 +62,8 @@ server.use(express.urlencoded({ extended: true }));
 server.use(helmet());
 // Use login routes.
 server.use(login);
+// Add file upload middleware.
+server.use(fileUpload());
 // Use register routes.
 server.use(register);
 // Handle if someone access unknown or not found route.
