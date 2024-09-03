@@ -22,8 +22,6 @@ export const doRegister = async (
   res: Response
 ): Promise<Response<any, Record<string, any>> | undefined> => {
   const { uname, email, mobnr, psw, repsw } = req.body;
-  // eslint-disable-next-line no-console
-  console.log(req.files);
 
   if (!uname || !email || !mobnr || !psw || !repsw) {
     // If the user did not fill in all required fields.
