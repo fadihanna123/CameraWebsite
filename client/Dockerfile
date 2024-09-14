@@ -1,5 +1,6 @@
 FROM node:20.16.0-alpine3.20
 WORKDIR /frontend
+RUN npm i -g serve
 COPY yarn.lock package.json ./
 RUN yarn --silent --ignore-scripts
 COPY . .
