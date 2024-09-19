@@ -1,8 +1,8 @@
-FROM node:20.16.0-alpine3.20
+FROM node:20.17.0-alpine3.20
 WORKDIR /frontend
 RUN npm i -g serve
 COPY yarn.lock package.json ./
-RUN yarn --silent --ignore-scripts
+RUN yarn setup
 COPY . .
 EXPOSE 3000
 CMD ["yarn", "dev"]

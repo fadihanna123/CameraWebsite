@@ -12,7 +12,7 @@
 }
 
 // Styles for mobiles
-@media screen and (min-width: 320px) and (max-width: 768px) {
+@media screen and (width < 320px) and (width > 768px) {
   #{map-get($selectorMap, contactCol)} {
     width: 100%;
   }

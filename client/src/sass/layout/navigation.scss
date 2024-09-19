@@ -1,6 +1,6 @@
 #{map-get($selectorMap, navBar)} {
   display: $flex;
-  justify-content: $spaceAround;
+  justify-content: $space-around;
   transition: 0.3s;
 }
 
@@ -15,7 +15,7 @@
 }
 
 // Styles for mobile
-@media screen and (min-width: 320px) and (max-width: 768px) {
+@media screen and (width < 320px) and (width > 768px) {
   #{map-get($selectorMap, navBar)} {
     text-align: $cntr;
   }

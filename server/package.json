@@ -19,6 +19,7 @@
     "url": "https://localhost:5000"
   },
   "scripts": {
+    "setup": "yarn --ignore-scripts --silent --emoji --production",
     "dev": "ts-node-dev --poll -r tsconfig-paths/register src/server",
     "seed": "prisma db push && prisma db pull && prisma generate",
     "seed-delete": "prisma migrate reset",
@@ -26,7 +27,8 @@
     "lint": "eslint .",
     "format": "prettier -w .",
     "dbDocs": "npx prisma generate",
-    "docs": "apidoc -i src/ -o docs/"
+    "docs": "apidoc -i src/ -o docs/",
+    "clear": "rimraf node_modules dist build"
   },
   "prisma": {
     "schema": "src/prisma/schema.prisma"
