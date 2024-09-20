@@ -3,6 +3,7 @@ import { Response } from 'express';
 import { logger } from '@core/tools';
 import { storeError, storeLog } from '@core/utils';
 import validator from 'validator';
+import * as path from 'path';
 
 /**
  * Registration functionality.
@@ -109,7 +110,13 @@ export const doRegister = async (
                 return res.status(400).send('Var vänlig välj en bild.');
               }
 
-              const uploadPath = `src/uploads/${avatar.name}`;
+              const UPLOAD_ROOT = path.resolve('src/uploads');
+              const uploadPath = path.resolve(UPLOAD_ROOT, avatar.name);
+
+              if (!uploadPath.startsWith(UPLOAD_ROOT)) {
+                storeLog('Invalid upload path.', 'POST', '/register');
+                return res.status(400).send('Invalid upload path.');
+              }
 
               avatar.mv(uploadPath, avatar.name, (err: Error) => {
                 if (err) {
