@@ -33,6 +33,7 @@ node_modules/
 storybook-static
 
 # dotenv environment variable files
+.docker.env
 .env
 
 ### VisualStudioCode ###

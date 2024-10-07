@@ -19,12 +19,12 @@
     "url": "https://localhost:5000"
   },
   "scripts": {
-    "setup": "yarn --ignore-scripts --silent --emoji --production",
+    "setup": "yarn --ignore-scripts --silent --emoji",
     "dev": "ts-node-dev --poll -r tsconfig-paths/register src/server",
     "seed": "prisma db push && prisma db pull && prisma generate",
     "seed-delete": "prisma migrate reset",
     "seed-migrate": "prisma migrate dev",
-    "lint": "eslint .",
+    "lint": "eslint . && tsc --noEmit",
     "format": "prettier -w .",
     "dbDocs": "npx prisma generate",
     "docs": "apidoc -i src/ -o docs/",
@@ -51,6 +51,7 @@
     "eslint-plugin-prettier": "^5.2.1",
     "express-rate-limit": "^7.4.0",
     "node-cron": "^3.0.3",
+    "prettier": "^3.3.3",
     "prisma": "^5.17.0",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.5.4"

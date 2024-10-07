@@ -32,7 +32,7 @@
     "build": "yarn prebuild && set \"GENERATE_SOURCEMAP=false\" && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint .",
+    "lint": "eslint . && tsc --noEmit",
     "format": "prettier -w .",
     "preview": "yarn build && serve build",
     "storybook": "storybook dev -p 6006",
