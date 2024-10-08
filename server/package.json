@@ -19,7 +19,7 @@
     "url": "https://localhost:5000"
   },
   "scripts": {
-    "setup": "yarn --ignore-scripts --silent --emoji",
+    "setup": "yarn --ignore-scripts --silent --emoji --immutable",
     "dev": "ts-node-dev --poll -r tsconfig-paths/register src/server",
     "seed": "prisma db push && prisma db pull && prisma generate",
     "seed-delete": "prisma migrate reset",

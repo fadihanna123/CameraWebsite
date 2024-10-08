@@ -26,18 +26,19 @@
     "sass": "^1.77.8"
   },
   "scripts": {
-    "setup": "yarn --ignore-scripts --silent --emoji",
+    "setup": "yarn --ignore-scripts --silent --emoji --immutable",
     "dev": "react-scripts start",
     "prebuild": "rm -rf build dist",
     "build": "yarn prebuild && set \"GENERATE_SOURCEMAP=false\" && react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject",
-    "lint": "eslint . && tsc --noEmit",
+    "lint": "eslint . && tsc",
     "format": "prettier -w .",
     "preview": "yarn build && serve build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "clear": "rimraf node_modules dist build"
+    "clear": "rimraf node_modules dist build",
+    "ci": "yarn build && yarn lint && rimraf dist build"
   },
   "browserslist": {
     "production": [

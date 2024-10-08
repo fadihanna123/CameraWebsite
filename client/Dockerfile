@@ -1,6 +1,6 @@
-FROM node:20.17.0-alpine3.20
+FROM node:20.18.0-alpine3.20
 WORKDIR /frontend
-RUN npm i -g serve
+RUN npm i -g --ignore-scripts --silent --emoji serve
 COPY yarn.lock package.json ./
 RUN yarn setup
 COPY . .
