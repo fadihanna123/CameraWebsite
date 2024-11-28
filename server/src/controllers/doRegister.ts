@@ -1,9 +1,10 @@
-import { prisma } from 'db';
-import { Response } from 'express';
 import { logger } from '@core/tools';
 import { storeError, storeLog } from '@core/utils';
-import validator from 'validator';
+import { prisma } from 'db';
+import { Response } from 'express';
+import { DateTime } from 'luxon';
 import * as path from 'path';
+import validator from 'validator';
 
 /**
  * Registration functionality.
@@ -124,6 +125,10 @@ export const doRegister = async (
                 }
               });
 
+              const created_at = DateTime.fromJSDate(new Date(), {
+                zone: 'Europe/Stockholm',
+              }).toFormat('yyyy-MM-dd HH:mm');
+
               const userModel = await prisma.users.create({
                 data: {
                   uname,
@@ -132,6 +137,7 @@ export const doRegister = async (
                   mobnr,
                   locked: 0,
                   avatar: avatar.name,
+                  created_at,
                 },
               });
 

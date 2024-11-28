@@ -21,9 +21,11 @@ export const storeError = async (
   method?: string,
   located?: string
 ): Promise<void> => {
-  const rnd: number = Math.floor(Math.random() * 1000);
+  const created_at = DateTime.fromJSDate(new Date(), {
+    zone: 'Europe/Stockholm',
+  }).toFormat('yyyy-MM-dd HH:mm');
 
-  const time = DateTime.fromJSDate(new Date()).toFormat('yyyy-MM-dd HH:mm');
+  const rnd: number = Math.floor(Math.random() * 1000);
 
   await prisma.errors.create({
     data: {
@@ -31,7 +33,7 @@ export const storeError = async (
       method: method ?? '/',
       message,
       located: located ?? '/',
-      time,
+      created_at,
     },
   });
 };

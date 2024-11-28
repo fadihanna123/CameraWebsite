@@ -21,16 +21,16 @@ export const storeLog = async (
   method: string = '/',
   located: string = '/'
 ): Promise<void> => {
-  const time: string = DateTime.fromJSDate(new Date()).toFormat(
-    'yyyy-MM-dd HH:mm'
-  );
+  const created_at = DateTime.fromJSDate(new Date(), {
+    zone: 'Europe/Stockholm',
+  }).toFormat('yyyy-MM-dd HH:mm');
 
   await prisma.logs.create({
     data: {
       message,
       method: method,
       located: located,
-      time,
+      created_at,
     },
   });
 };

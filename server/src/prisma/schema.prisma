@@ -8,28 +8,29 @@ datasource db {
 }
 
 model users {
-  id     Int     @id @default(autoincrement())
-  uname  String
-  email  String?
-  mobnr  String?
-  psw    String
-  locked BigInt?
-  avatar String?
+  id         Int     @id @default(autoincrement())
+  uname      String
+  email      String?
+  mobnr      String?
+  psw        String
+  locked     BigInt?
+  avatar     String?
+  created_at String?
 }
 
 model logs {
-  id      Int     @id @default(autoincrement())
-  method  String
-  message String?
-  located String
-  time    String
+  id         Int     @id @default(autoincrement())
+  method     String
+  message    String?
+  located    String
+  created_at String
 }
 
 model errors {
-  id      Int     @id @default(autoincrement())
-  errorId Int
-  method  String
-  message String?
-  located String
-  time    String
+  id         Int     @id @default(autoincrement())
+  errorId    Int
+  method     String
+  message    String?
+  located    String
+  created_at String
 }
