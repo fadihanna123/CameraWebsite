@@ -1,0 +1,396 @@
+input::-webkit-file-upload-button {
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+input::file-selector-button {
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  transition: all 0.5s linear;
+}
+
+.txtinput {
+  height: 35px;
+}
+
+.txtArea,
+.txtinput {
+  border: 0;
+  border-radius: 8px;
+  display: block;
+  font-size: 18px;
+  padding: 1%;
+  text-indent: 10px;
+  transition: all 0.5s linear;
+  width: 100%;
+}
+
+.txtArea {
+  height: 100px;
+}
+
+label {
+  display: inline-block;
+  text-align: left;
+  width: 180px;
+}
+
+.btn {
+  background: #000;
+  color: #fff;
+  display: flex;
+  font-size: 20px;
+  margin: 0 auto;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.errorheading {
+  color: red;
+  transition: 0.3s;
+}
+
+.link {
+  color: #000ff0;
+  text-decoration: none;
+}
+
+.link,
+.modal {
+  transition: 0.3s;
+}
+
+.modal {
+  animation: show-modal 0.4s ease-out forwards;
+  animation-duration: 0.3s;
+  background: #0009;
+  display: block;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.modal-header {
+  color: red;
+  font-size: 30px;
+}
+
+.modal-body,
+.modal-header {
+  margin: 10px;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.modal-body {
+  color: #000;
+}
+
+.modal-main {
+  background: #fff;
+  font-size: 20px;
+  height: auto;
+  left: 50%;
+  padding: 40px;
+  position: fixed;
+  text-align: center;
+  top: 20%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s;
+  width: 40%;
+}
+
+@keyframes show-modal {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+    transition: 0.3s;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    transition: 0.3s;
+  }
+}
+
+@media (max-width: 319px) and (min-width: 769px) {
+  .modal-main {
+    width: 95%;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  list-style: none;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+}
+
+*,
+img {
+  transition: 0.3s;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+.footerbox {
+  background: #fff;
+  border: 1px solid #fff;
+  color: #000;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.footerrow {
+  display: flex;
+  justify-content: space-around;
+  transition: 0.3s;
+}
+
+.footercol {
+  padding: 40px;
+  transition: 0.3s;
+  width: 50%;
+}
+
+.footercol address {
+  font-size: 25px;
+  transition: 0.3s;
+}
+
+.footerlinks {
+  display: flex;
+  flex-direction: row;
+  font-size: 24px;
+  padding: 10px;
+  transition: all 0.3s;
+}
+
+.footerlinks li {
+  margin: 30px;
+}
+
+@media screen and (max-width: 319px) and (min-width: 769px) {
+  .footerrow {
+    flex-direction: column;
+  }
+
+  .footercol {
+    width: 100%;
+  }
+
+  .footercol,
+  .footerlinks {
+    text-align: center;
+  }
+}
+
+.topbar {
+  background: url('./assets/background.jpg');
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.logoimg,
+.topbar {
+  transition: all 0.3s;
+}
+
+.logoimg {
+  border: 1px solid #000;
+  border-radius: 100px;
+  height: 200px;
+  width: 460px;
+}
+
+.logobox {
+  transition: all 0.3s;
+  width: 98%;
+}
+
+.loginheading {
+  font-size: 25px;
+  font-weight: 700;
+  margin: 10px;
+  text-align: center;
+  transition: all 0.3s;
+}
+
+.loginsection {
+  transition: 0.3s;
+  width: 90%;
+}
+
+.loginrow {
+  display: flex;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.logincol {
+  margin-bottom: 15px;
+  transition: 0.3s;
+  width: 50%;
+}
+
+.logoutbox {
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+.logoutbox .btn {
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s;
+}
+
+@media screen and (max-width: 319px) and (min-width: 769px) {
+  .logoimg {
+    height: 100%;
+  }
+
+  .loginbox,
+  .logobox,
+  .logoimg {
+    width: 100%;
+  }
+
+  .loginbox label {
+    padding: 0;
+  }
+
+  .loginrow {
+    text-align: center;
+  }
+
+  .logincol {
+    width: 100%;
+  }
+
+  .logoutbox {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  transition: 0.3s;
+}
+
+.container .navbar .link {
+  border: 1px solid #fff;
+  color: #fff;
+  margin: 10px;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 319px) and (min-width: 769px) {
+  .navbar {
+    text-align: center;
+  }
+}
+
+body {
+  background: #000;
+  transition: 0.3s;
+}
+
+.container {
+  color: #fff;
+  margin: 10px;
+  transition: 0.3s;
+}
+
+.aboutTxt {
+  margin-top: 50px;
+}
+
+.main {
+  border: 1px solid #fff;
+  font-size: 20px;
+  padding: 10px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+@media screen and (max-width: 319px) and (min-width: 769px) {
+  body {
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .contactrow,
+  .loginrow,
+  .navbar,
+  .registerrow,
+  .topbar {
+    flex-direction: column;
+  }
+}
+
+.contactrow {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.contactcol {
+  margin-bottom: 15px;
+  transition: 0.3s;
+  width: 15%;
+}
+
+@media screen and (max-width: 319px) and (min-width: 769px) {
+  .contactcol {
+    width: 100%;
+  }
+}
+
+.registerrow {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  transition: all 0.3s;
+}
+
+.registercol {
+  margin-bottom: 15px;
+  transition: all 0.3s;
+  width: 20%;
+}
+
+.registerspeccol {
+  margin-bottom: 15px;
+  transition: 0.3s;
+  width: 15%;
+}
+
+@media screen and (max-width: 319px) and (min-width: 769px) {
+  .registercol {
+    width: 100%;
+  }
+}

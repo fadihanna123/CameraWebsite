@@ -66,8 +66,6 @@ server.use(login);
 server.use(fileUpload());
 // Use register routes.
 server.use(register);
-// Handle if someone access unknown or not found route.
-server.use((_, res) => res.send('This route does not exist!'));
 // Handle errors.
 server.use(errorHandler);
 

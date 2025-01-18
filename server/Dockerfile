@@ -1,4 +1,4 @@
-FROM node:20.18.0-alpine3.20
+FROM node:22.13.0-alpine3.20
 WORKDIR /backend
 COPY yarn.lock package.json ./
 RUN npm i --silent --ignore-scripts -g prisma ts-node-dev 

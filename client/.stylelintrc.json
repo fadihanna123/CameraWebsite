@@ -3,6 +3,10 @@
   "rules": {
     "scss/dollar-variable-pattern": null,
     "value-keyword-case": null,
-    "scss/no-global-function-names": null
+    "scss/no-global-function-names": null,
+    "selector-class-pattern": null,
+    "property-no-vendor-prefix": null,
+    "media-feature-range-notation": null,
+    "scss/at-rule-no-unknown": null
   }
 }
