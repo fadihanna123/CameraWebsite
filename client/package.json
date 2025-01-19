@@ -1,6 +1,6 @@
 {
   "name": "surveillance_website_client",
-  "version": "0.1.55",
+  "version": "0.1.56",
   "author": {
     "name": "Fadi Hanna",
     "email": "fhanna181@gmail.com"
@@ -72,7 +72,7 @@
     "eslint": "9.18.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-config-react-app": "^7.0.1",
-    "eslint-plugin-prettier": "^5.2.2",
+    "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-storybook": "^0.11.2",
     "globals": "^15.14.0",
