@@ -49,3 +49,6 @@ build
 
 # Folder config file
 [Dd]esktop.ini
+
+# Types
+react-app-env.d.ts

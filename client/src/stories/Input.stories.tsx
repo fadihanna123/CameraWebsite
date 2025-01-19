@@ -2,6 +2,7 @@ import { Meta } from '@storybook/react';
 
 // Components
 import Input from '../ui/Input';
+import { JSX } from 'react';
 
 const meta: Meta<typeof Input> = {
   title: 'Input',
