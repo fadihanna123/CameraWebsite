@@ -27,7 +27,14 @@
     "noImplicitOverride": true,
     "noImplicitThis": true,
     "typeRoots": ["./node_modules/@types", "./src/types"],
-    "types": ["eslint", "jest", "react", "react-router-dom", "react-dom"],
+    "types": [
+      "eslint",
+      "jest",
+      "react",
+      "react-router-dom",
+      "react-dom",
+      "node"
+    ],
     "strictNullChecks": true,
     "strictBindCallApply": true,
     "strictFunctionTypes": true,
