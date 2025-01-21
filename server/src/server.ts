@@ -63,7 +63,7 @@ server.use(helmet());
 // Use login routes.
 server.use(login);
 // Add file upload middleware.
-server.use(fileUpload());
+server.use(fileUpload() as any);
 // Use register routes.
 server.use(register);
 // Handle errors.
