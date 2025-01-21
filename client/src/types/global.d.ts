@@ -104,6 +104,8 @@ declare global {
   }
 
   type Paths = 'login' | 'register';
+
+  declare module '*.webp';
 }
 
 export {};
