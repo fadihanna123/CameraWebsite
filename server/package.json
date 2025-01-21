@@ -22,6 +22,7 @@
     "setup": "yarn --ignore-scripts --silent --emoji --immutable",
     "dev": "ts-node-dev --poll -r tsconfig-paths/register src/server",
     "seed": "prisma db push && prisma db pull && prisma generate",
+    "dev:prod": "yarn seed && yarn dev",
     "seed-delete": "prisma migrate reset",
     "lint": "eslint . && tsc --noEmit",
     "format": "prettier -w .",
