@@ -2,7 +2,7 @@ import { Meta } from '@storybook/react';
 
 // Components
 import Img from '../ui/Img';
-import bgImage from '../background.jpg';
+import bgImage from '../assets/background.jpg';
 import { JSX } from 'react';
 
 const meta: Meta<typeof Img> = {
