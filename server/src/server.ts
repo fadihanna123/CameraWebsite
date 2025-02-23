@@ -2,13 +2,12 @@
 import 'dotenv/config';
 import '@core/tasks';
 
-import login from '@core/api/auth/login';
-import register from '@core/api/auth/register';
+import routes from '@core/api/auth/routes';
 import { listenFn } from '@core/controllers';
 import express, { Application } from 'express';
 import helmet from 'helmet';
 import { logger } from '@core/tools';
-import { errorHandler, storeLog, allowedURLs } from '@core/utils';
+import { storeLog, allowedURLs } from '@core/utils';
 import { connectDb } from '@core/db';
 import cors, { CorsOptions } from 'cors';
 import { rateLimit } from 'express-rate-limit';
@@ -60,14 +59,10 @@ server.use(express.json({ type: 'application/json', limit: '1kb' }));
 server.use(express.urlencoded({ extended: true }));
 // Add security to the server.
 server.use(helmet());
-// Use login routes.
-server.use(login);
 // Add file upload middleware.
 server.use(fileUpload() as any);
-// Use register routes.
-server.use(register);
-// Handle errors.
-server.use(errorHandler);
+// Use routes.
+server.use('/api/auth/', routes);
 
 export const port = PORT || 5000;
 

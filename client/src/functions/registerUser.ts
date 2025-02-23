@@ -22,7 +22,7 @@ export const RegisterUser = async (
   registerForm: IRegisterForm
 ): Promise<void> => {
   try {
-    // dispatch(setLoading(true));
+    dispatch(setLoading(true));
     const avatar_file = document.getElementById(
       'register_avatar'
     )! as HTMLInputElement;

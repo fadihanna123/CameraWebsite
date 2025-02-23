@@ -99,31 +99,26 @@ export const doRegister = async (
           } else {
             // If the user was not found in the database.
             try {
-              const avatar = (req as any).files.avatar
-                ? (req as any).files.avatar
-                : '';
+              const avatar = (req as any).files?.avatar || '';
 
-              if (
-                !(req as any).files ||
-                Object.keys((req as any).files).length === 0
-              ) {
-                storeLog('Var vänlig välj en bild.', 'POST', '/register');
-                return res.status(400).send('Var vänlig välj en bild.');
-              }
+              if (avatar) {
+                const UPLOAD_ROOT = path.resolve('./src/uploads');
+                const uploadPath = path.resolve(UPLOAD_ROOT, avatar.name);
 
-              const UPLOAD_ROOT = path.resolve('src/uploads');
-              const uploadPath = path.resolve(UPLOAD_ROOT, avatar.name);
+                avatar.mv(uploadPath, avatar.name, (err: Error) => {
+                  if (err) {
+                    return logger.error(err);
+                  }
 
-              if (!uploadPath.startsWith(UPLOAD_ROOT)) {
-                storeLog('Invalid upload path.', 'POST', '/register');
-                return res.status(400).send('Invalid upload path.');
-              }
+                  // eslint-disable-next-line no-console
+                  console.log('File Uploaded');
+                });
 
-              avatar.mv(uploadPath, avatar.name, (err: Error) => {
-                if (err) {
-                  return logger.error(err);
+                if (!uploadPath.startsWith(UPLOAD_ROOT)) {
+                  storeLog('Invalid upload path.', 'POST', '/register');
+                  return res.status(400).send('Invalid upload path.');
                 }
-              });
+              }
 
               const created_at = DateTime.fromJSDate(new Date(), {
                 zone: 'Europe/Stockholm',
@@ -152,8 +147,8 @@ export const doRegister = async (
                 });
               }
             } catch (error) {
-              storeError((error as Error).message, 'POST', '/register');
-              logger.error('\x1b[31m', (error as Error).message);
+              // eslint-disable-next-line no-console
+              console.log(error);
             }
           } // End if the user was not found in the database.
         } // End if password and confirm password fields match each other.
