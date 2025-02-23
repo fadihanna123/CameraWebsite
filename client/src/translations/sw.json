@@ -16,5 +16,13 @@
   "About": "Om oss",
   "Welcome": "Välkommen",
   "Profile": "Profil",
-  "Start": "Startsida"
+  "Start": "Startsida",
+  "Welcome_Text": "Varsågod logga in ovan för att kunna se dina videofilmer.",
+  "Send": "Skicka",
+  "Contact_Us": "Kontakta Oss",
+  "Contact_Text": "Ni kan nå oss via dessa kontaktuppifter:",
+  "Phone_Number": "Telefonnummer",
+  "Mobile_Number": "Mobil",
+  "Full_Name": "Fullständigt namn",
+  "Email_Address": "E-postadress"
 }

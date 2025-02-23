@@ -1,0 +1,107 @@
+@media screen and (min-width: 319px) and (max-width: 769px) {
+  body {
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .logoimg {
+    height: 100%;
+  }
+
+  .loginbox,
+  .logobox,
+  .logoimg {
+    width: 100%;
+  }
+
+  .loginbox label {
+    text-align: center;
+    padding: 0;
+  }
+
+  .loginrow {
+    text-align: center;
+  }
+
+  .logincol {
+    width: 100%;
+  }
+
+  .logoutbox {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .loginsection .txtinput {
+    width: 100%;
+  }
+
+  .modal-main {
+    width: 95%;
+  }
+
+  .contactrow,
+  .loginrow,
+  .navbar,
+  .topbar {
+    margin-right: auto;
+    margin-left: auto;
+    flex-direction: column;
+  }
+
+  .registerrow {
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    transition: all 0.3s;
+  }
+
+  .registercol {
+    width: 100%;
+    margin-bottom: 15px;
+    transition: all 0.3s;
+  }
+
+  .registerrow label {
+    text-align: center;
+  }
+
+  .contactrow label {
+    width: 8em;
+  }
+
+  .contactinfo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar {
+    text-align: center;
+  }
+
+  .footerrow {
+    flex-direction: column;
+  }
+
+  .footercol {
+    width: 100%;
+  }
+
+  .footercol,
+  .footerlinks {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contactcol {
+    width: 100%;
+  }
+
+  .contactinforow {
+    flex-direction: column;
+  }
+}

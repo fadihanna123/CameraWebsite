@@ -5,7 +5,8 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 // Components
-import './main.css';
+import './styles/main.css';
+import './styles/mobile.css';
 import App from './containers/App';
 import { store } from './redux/app';
 

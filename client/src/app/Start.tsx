@@ -19,9 +19,7 @@ const Start: React.FC = () => {
   return (
     <main className='main'>
       <Heading>{useTranslate('Welcome', lang)}!</Heading>
-      {!login && (
-        <Para>Varsågod logga in ovan för att kunna se dina videofilmer.</Para>
-      )}
+      {!login && <Para>{useTranslate('Welcome_Text', lang)}</Para>}
     </main>
   );
 };

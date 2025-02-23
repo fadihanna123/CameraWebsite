@@ -5,7 +5,6 @@ import useTranslation from '../hooks/useTranslate';
 import Btn from '../ui/Btn';
 import Heading from '../ui/Heading';
 import Input from '../ui/Input';
-import Para from '../ui/Para';
 import TxtArea from '../ui/TxtArea';
 import useReduxConsts from '../hooks/useReduxConsts';
 
@@ -24,30 +23,41 @@ const Contact: React.FC = () => {
   const { lang, loading } = useReduxConsts();
   return (
     <main className='main'>
-      <Heading>Kontakta oss</Heading>
-      <Para>Ni kan nå oss via dessa kontaktuppifter:</Para>
-      <Para>
-        <br />
-        <b>Telefonnummer: </b>
-        <a style={styles.p10} href='tel:0808444975' className='link'>
-          08-08444975
-        </a>
-        <br />
-        <b>Mobilnummer: </b>
-        <a style={styles.p10} href='tel:072897526' className='link'>
-          072-897526
-        </a>
-        <br />
-        <b>Facebook: </b>
-        <Link style={styles.p10} to='/#' className='link'>
-          Surveillance systems Inc.
-        </Link>
-        <br />
-      </Para>
+      <Heading>{useTranslation('Contact_Us', lang)}</Heading>
+      <span>{useTranslation('Contact_Text', lang)}</span>
+      <div className='contactinforow'>
+        <div className='contactinfocol'>
+          <b>{useTranslation('Phone_Number', lang)}: </b>
+        </div>
+        <div className='contactinfocol'>
+          <a style={styles.p10} href='tel:0808444975' className='contactlink'>
+            08-08444975
+          </a>
+        </div>
+        <div className='contactinfocol'>
+          <b>{useTranslation('Mobile_Number', lang)}: </b>
+        </div>
+        <div className='contactinfocol'>
+          <a style={styles.p10} href='tel:072897526' className='contactlink'>
+            072-897526
+          </a>
+        </div>
+        <div className='contactinfocol'>
+          <b>Facebook: </b>
+        </div>
+        <div className='contactinfocol'>
+          <Link style={styles.p10} to='#' className='contactlink'>
+            Surveillance systems Inc.
+          </Link>
+        </div>
+      </div>
+      <br />
       <section className='contactbox'>
         <section className='contactrow'>
           <section className='contactcol'>
-            <label htmlFor='fullname'>Fullständigt namn: </label>
+            <label htmlFor='fullname'>
+              {useTranslation('Full_Name', lang)}:
+            </label>
           </section>
           <section className='contactcol'>
             <Input id='fullname' className={['txtinput']} />
@@ -56,7 +66,9 @@ const Contact: React.FC = () => {
 
         <section className='contactrow'>
           <section className='contactcol'>
-            <label htmlFor='epost'>E-postadress: </label>
+            <label htmlFor='epost'>
+              {useTranslation('Email_Address', lang)}:{' '}
+            </label>
           </section>
           <section className='contactcol'>
             <Input
@@ -70,7 +82,9 @@ const Contact: React.FC = () => {
 
         <section className='contactrow'>
           <section className='contactcol'>
-            <label htmlFor='mobnr'>Mobilnummer: </label>
+            <label htmlFor='mobnr'>
+              {useTranslation('Mobile_Number', lang)}:{' '}
+            </label>
           </section>
           <section className='contactcol'>
             <Input
@@ -90,7 +104,7 @@ const Contact: React.FC = () => {
           </section>
         </section>
         <Btn disabled={loading} className={['btn']}>
-          Skicka
+          {useTranslation('Send', lang)}
         </Btn>
       </section>
     </main>

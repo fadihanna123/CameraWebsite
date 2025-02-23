@@ -16,5 +16,13 @@
   "About": "About",
   "Welcome": "Welcome",
   "Profile": "Profile",
-  "Start": "Start"
+  "Start": "Start",
+  "Welcome_Text": "Please login above to view your videos.",
+  "Send": "Send",
+  "Contact_Us": "Contact Us",
+  "Contact_Text": "You can reach us via their contact details:",
+  "Phone_Number": "Telefonnumber",
+  "Mobile_Number": "Mobile",
+  "Full_Name": "Full Name",
+  "Email_Address": "Email"
 }
