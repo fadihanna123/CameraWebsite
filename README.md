@@ -10,8 +10,6 @@
 </p>
 
 > Camera Website
-## [Demo](https://camerawebsite-client.netlify.app)
-
 ## Author
 
 👤 **Fadi Hanna**
