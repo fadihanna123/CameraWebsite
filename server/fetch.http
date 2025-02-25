@@ -1,6 +1,6 @@
 @base=http://localhost:{{PORT}}
 ###
-POST {{base}}/login
+POST {{base}}/api/auth/login
 Content-Type: application/json
 
 {
@@ -8,4 +8,14 @@ Content-Type: application/json
     "psw": "123"
 }
 ###
-POST {{base}}/register
+POST {{base}}/api/auth/register
+Content-Type: application/json
+
+{
+    "uname": "Erik",
+    "email": "erik@gmail.com",
+    "mobnr": "07343827",
+    "psw": "1234567890",
+    "repsw": "1234567890",
+    "avatar": "a.jpg"
+}
