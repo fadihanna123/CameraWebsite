@@ -26,14 +26,15 @@
     "noImplicitAny": true,
     "noImplicitOverride": true,
     "noImplicitThis": true,
-    "typeRoots": ["./node_modules/@types", "./src/types"],
+    "typeRoots": ["./node_modules/@types", "./src/types", "./node_modules"],
     "types": [
       "eslint",
       "jest",
       "react",
       "react-router-dom",
       "react-dom",
-      "node"
+      "node",
+      "vite/client"
     ],
     "strictNullChecks": true,
     "strictBindCallApply": true,
@@ -44,8 +45,23 @@
     "noUnusedLocals": true,
     "noPropertyAccessFromIndexSignature": true,
     "removeComments": true,
-    "outDir": "build"
+    "outDir": "build",
+    "baseUrl": "./",
+    "paths": {
+      "@core/*": ["./src/*"],
+      "@app/*": ["./src/app/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@api/*": ["./src/api/*"],
+      "@inc/*": ["./src/inc/*"],
+      "@containers/*": ["./src/containers/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@functions/*": ["./src/functions/*"],
+      "@redux/*": ["./src/redux/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@ui/*": ["./src/ui/*"]
+    }
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "include": ["**/*.ts", "**/*.tsx", "**/'.mts", "**/*.d.ts"],
+  "exclude": ["./node_modules"]
 }

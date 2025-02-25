@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 
 // Components
-import { langSwitcher } from '../../functions';
-import useTranslate from '../../hooks/useTranslate';
-import Menu from '../../ui/Menu';
-import useReduxConsts from '../../hooks/useReduxConsts';
+import { langSwitcher } from '@functions/langSwitcher';
+import useTranslate from '@hooks/useTranslate';
+import Menu from '@ui/Menu';
+import useReduxConsts from '@hooks/useReduxConsts';
 
 const NavBar: React.FC = () => {
   const { login, lang, dispatch } = useReduxConsts();

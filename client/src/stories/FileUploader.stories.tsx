@@ -1,8 +1,8 @@
+import { JSX } from 'react';
 import { Meta } from '@storybook/react';
 
 // Components
-import FileUploader from '../ui/FileUploader';
-import { JSX } from 'react';
+import FileUploader from '@ui/FileUploader';
 
 const meta: Meta<typeof FileUploader> = {
   title: 'FileUploader',
@@ -20,7 +20,6 @@ export const Default: any = Template.bind({});
 Default.args = {
   id: 'fileUpload',
   changeFunc: () => {
-    // eslint-disable-next-line no-console
     console.log('Changed!');
   },
   acceptValues: 'image/png',

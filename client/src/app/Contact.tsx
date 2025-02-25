@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useTitle from '../hooks/useTitle';
-import useTranslation from '../hooks/useTranslate';
-import Btn from '../ui/Btn';
-import Heading from '../ui/Heading';
-import Input from '../ui/Input';
-import TxtArea from '../ui/TxtArea';
-import useReduxConsts from '../hooks/useReduxConsts';
+
+// Components
+import useTitle from '@hooks/useTitle';
+import useTranslation from '@hooks/useTranslate';
+import Btn from '@ui/Btn';
+import Heading from '@ui/Heading';
+import Input from '@ui/Input';
+import TxtArea from '@ui/TxtArea';
+import useReduxConsts from '@hooks/useReduxConsts';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

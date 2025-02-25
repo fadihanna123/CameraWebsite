@@ -2,13 +2,13 @@ import React, { useEffect } from 'react';
 import { Flip, toast } from 'react-toastify';
 
 // Components
-import { doLogOut } from '../../functions';
-import useTranslation from '../../hooks/useTranslate';
-import { setAuthor } from '../../redux/reducers';
-import Btn from '../../ui/Btn';
-import Heading from '../../ui/Heading';
-import { sessionStorageKeys } from '../../utils/constants';
-import useReduxConsts from '../../hooks/useReduxConsts';
+import { doLogOut } from '@functions/doLogOut';
+import useTranslation from '@hooks/useTranslate';
+import { setAuthor } from '@redux/reducers/author';
+import Btn from '@ui/Btn';
+import Heading from '@ui/Heading';
+import { sessionStorageKeys } from '@utils/constants';
+import useReduxConsts from '@hooks/useReduxConsts';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // Components
-import useTitle from '../hooks/useTitle';
-import Heading from '../ui/Heading';
-import Para from '../ui/Para';
+import useTitle from '@hooks/useTitle';
+import Heading from '@ui/Heading';
+import Para from '@ui/Para';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

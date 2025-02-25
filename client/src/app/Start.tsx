@@ -1,11 +1,11 @@
 import React from 'react';
 
 // Components
-import useTitle from '../hooks/useTitle';
-import useTranslate from '../hooks/useTranslate';
-import Heading from '../ui/Heading';
-import Para from '../ui/Para';
-import useReduxConsts from '../hooks/useReduxConsts';
+import useTitle from '@hooks/useTitle';
+import useTranslate from '@hooks/useTranslate';
+import Heading from '@ui/Heading';
+import Para from '@ui/Para';
+import useReduxConsts from '@hooks/useReduxConsts';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

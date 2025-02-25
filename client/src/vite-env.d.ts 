@@ -1,0 +1,13 @@
+/// <reference types="vite/client" />
+/// <reference types="vite/types/importMeta.d.ts" />
+
+interface ImportMetaEnv {
+    NODE_ENV: 'development' | 'production';
+    VITE_BACKEND_URL: string;
+    VITE_LOGIN_API: string;
+    VITE_REGISTER_API: string;
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv;
+}

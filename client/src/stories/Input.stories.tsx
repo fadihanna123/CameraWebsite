@@ -1,8 +1,8 @@
+import { JSX } from 'react';
 import { Meta } from '@storybook/react';
 
 // Components
-import Input from '../ui/Input';
-import { JSX } from 'react';
+import Input from '@ui/Input';
 
 const meta: Meta<typeof Input> = {
   title: 'Input',
@@ -25,7 +25,6 @@ Default.args = {
   val: '',
   isRequired: true,
   changeFunc: () => {
-    // eslint-disable-next-line no-console
     console.log('Changed!');
   },
   acceptValues: '',

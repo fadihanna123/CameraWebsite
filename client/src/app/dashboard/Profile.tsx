@@ -1,8 +1,8 @@
 import React from 'react';
 
 // Components
-import useTitle from '../../hooks/useTitle';
-import useReduxConsts from '../../hooks/useReduxConsts';
+import useTitle from '@hooks/useTitle';
+import useReduxConsts from '@hooks/useReduxConsts';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

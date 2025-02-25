@@ -1,8 +1,8 @@
+import { JSX } from 'react';
 import { Meta } from '@storybook/react';
 
 // Components
-import Btn from '../ui/Btn';
-import { JSX } from 'react';
+import Btn from '@ui/Btn';
 
 const meta: Meta<typeof Btn> = {
   title: 'Button',
@@ -25,7 +25,6 @@ Default.args = {
   className: ['btn'],
   children: 'Send',
   clickFunc: () => {
-    // eslint-disable-next-line no-console
     console.log('🖱️Clicked!');
   },
 };

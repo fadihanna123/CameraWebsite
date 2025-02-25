@@ -1,7 +1,8 @@
-// Components
-import useReduxConsts from '../../hooks/useReduxConsts';
-import { doLogOut } from '../../functions';
 import { Navigate } from 'react-router-dom';
+
+// Components
+import useReduxConsts from '@hooks/useReduxConsts';
+import { doLogOut } from '@functions/doLogOut';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

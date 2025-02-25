@@ -3,13 +3,14 @@ import { Flip, ToastContainer } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
 // Components
-import { checkLogin, loginTyper } from '../../functions';
-import useTranslation from '../../hooks/useTranslate';
-import Btn from '../../ui/Btn';
-import Heading from '../../ui/Heading';
-import Input from '../../ui/Input';
-import LogOutBox from '../../containers/auth/LogOutBox';
-import useReduxConsts from '../../hooks/useReduxConsts';
+import useTranslation from '@hooks/useTranslate';
+import Btn from '@ui/Btn';
+import Heading from '@ui/Heading';
+import Input from '@ui/Input';
+import LogOutBox from '@containers/auth/LogOutBox';
+import useReduxConsts from '@hooks/useReduxConsts';
+import { loginTyper } from '@functions/loginTyper';
+import { checkLogin } from '@functions/checkLogin';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

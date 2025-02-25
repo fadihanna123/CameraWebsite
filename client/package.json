@@ -1,6 +1,7 @@
 {
   "name": "surveillance_website_client",
   "version": "0.1.58",
+  "type": "module",
   "author": {
     "name": "Fadi Hanna",
     "email": "fhanna181@gmail.com"
@@ -28,14 +29,14 @@
   },
   "scripts": {
     "setup": "yarn --ignore-scripts --silent --emoji --immutable",
-    "dev": "react-scripts start",
+    "dev": "vite",
     "prebuild": "rimraf build",
-    "build": "yarn prebuild && set \"GENERATE_SOURCEMAP=false\" && react-scripts build",
+    "build": "yarn prebuild && set \"GENERATE_SOURCEMAP=false\" && vite build",
     "test": "jest",
     "eject": "react-scripts eject",
     "lint": "eslint . && htmlhint **/*.html && stylelint **/*.css && tsc --noEmit",
     "format": "prettier -w .",
-    "preview": "yarn build && serve build",
+    "preview": "yarn build && vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "ci": "yarn lint && yarn test && yarn build",
@@ -70,6 +71,7 @@
     "@types/react-router-dom": "5.3.3",
     "@typescript-eslint/eslint-plugin": "8.25.0",
     "@typescript-eslint/parser": "8.25.0",
+    "@vitejs/plugin-react": "^4.3.4",
     "eslint": "9.21.0",
     "eslint-config-prettier": "10.0.1",
     "eslint-config-react-app": "7.0.1",
@@ -86,7 +88,10 @@
     "stylelint-config-standard": "37.0.0",
     "stylelint-config-standard-scss": "14.0.0",
     "tailwindcss": "4.0.8",
-    "typescript": "5.7.3"
+    "typescript": "5.7.3",
+    "vite": "^6.2.0",
+    "vite-plugin-commonjs": "^0.10.4",
+    "vite-tsconfig-paths": "^5.1.4"
   },
   "engines": {
     "node": ">=16.0.0",

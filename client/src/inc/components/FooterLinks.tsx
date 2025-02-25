@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 
 // Components
-import useTranslate from '../../hooks/useTranslate';
-import useReduxConsts from '../../hooks/useReduxConsts';
+import useTranslate from '@hooks/useTranslate';
+import useReduxConsts from '@hooks/useReduxConsts';
 
 const FooterLinks: React.FC = () => {
   const { login, lang } = useReduxConsts();

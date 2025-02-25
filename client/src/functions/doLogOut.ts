@@ -2,8 +2,8 @@ import { toast } from 'react-toastify';
 import { Dispatch } from 'redux';
 
 // Components
-import { setLogin } from '../redux/reducers';
-import { sessionStorageKeys } from '../utils';
+import { setLogin } from '@redux/reducers/login';
+import { sessionStorageKeys } from '@utils/constants';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

@@ -1,8 +1,8 @@
 import React from 'react';
 
 // Components
-import Login from '../app/auth/Login';
-import MainHeader from '../ui/MainHeader';
+import Login from '@app/auth/Login';
+import MainHeader from '@ui/MainHeader';
 import NavBar from './components/NavBar';
 import LogoBox from './components/LogoBox';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Dispatch } from 'redux';
 
 // Components
-import { setRegisterForm } from '../redux/reducers';
+import { setRegisterForm } from '@redux/reducers/registerForm';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

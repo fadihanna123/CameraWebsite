@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { baseURL } from '../utils';
+import { baseURL } from '@utils/envsVariables';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>

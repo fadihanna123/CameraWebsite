@@ -5,8 +5,8 @@ import About from './About';
 import Register from './auth/Register';
 import Contact from './Contact';
 import Start from './Start';
-import Header from '../inc/Header';
-import Footer from '../inc/Footer';
+import Header from '@inc/Header';
+import Footer from '@inc/Footer';
 
 import Error from './Error';
 import Profile from './dashboard/Profile';
