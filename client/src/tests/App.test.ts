@@ -1,6 +1,7 @@
+import { it } from 'vitest';
+
 // Components
 import { loginUser } from '@functions/apiStore';
-
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
  */

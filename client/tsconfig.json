@@ -9,8 +9,8 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "ES2015",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
@@ -19,7 +19,6 @@
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "alwaysStrict": true,
-    "checkJs": true,
     "declaration": true,
     "declarationMap": true,
     "moduleDetection": "force",
@@ -34,7 +33,8 @@
       "react-router-dom",
       "react-dom",
       "node",
-      "vite/client"
+      "vite/client",
+      "vitest/globals"
     ],
     "strictNullChecks": true,
     "strictBindCallApply": true,
@@ -59,9 +59,10 @@
       "@functions/*": ["./src/functions/*"],
       "@redux/*": ["./src/redux/*"],
       "@utils/*": ["./src/utils/*"],
-      "@ui/*": ["./src/ui/*"]
+      "@ui/*": ["./src/ui/*"],
+      "@tests/*": ["./src/tests/*"]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx", "**/'.mts", "**/*.d.ts"],
+  "include": ["**/*.ts", "**/*.tsx", "**/*.mts", "**/*.d.ts"],
   "exclude": ["./node_modules"]
 }
