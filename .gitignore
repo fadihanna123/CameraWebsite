@@ -47,6 +47,7 @@ launch.json
 
 # Build
 build
+dist
 
 # Folder config file
 [Dd]esktop.ini
