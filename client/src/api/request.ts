@@ -7,8 +7,6 @@ import { baseURL } from '@utils/envsVariables';
 
 axios.defaults.baseURL = baseURL;
 
-console.log(baseURL);
-
 export const request = {
   get: async <T>(url: Paths): Promise<T> => {
     const { data } = await axios.get<T>(url);
