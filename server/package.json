@@ -1,6 +1,6 @@
 {
   "name": "surveillance_server",
-  "version": "1.0.44",
+  "version": "1.0.45",
   "homepage": "https://localhost:5000",
   "license": "MIT",
   "private": "true",
@@ -20,15 +20,15 @@
   },
   "scripts": {
     "setup": "yarn --ignore-scripts --silent --emoji --immutable",
-    "dev": "ts-node-dev --poll -r tsconfig-paths/register src/server",
+    "dev": "ts-node-dev --poll -r tsconfig-paths/register ./src/server",
     "seed": "prisma db push && prisma db pull && prisma generate",
     "dev:prod": "yarn seed && yarn dev",
     "seed-delete": "prisma migrate reset",
-    "lint": "eslint . && tsc --noEmit",
-    "format": "prettier -w .",
+    "lint": "eslint ./ && tsc --noEmit",
+    "format": "prettier -w ./",
     "prebuild": "rimraf build",
-    "build": "esbuild src/server.ts --bundle --platform=node --outdir=build --minify --sourcemap --packages=external",
-    "clear": "rimraf node_modules build"
+    "build": "esbuild ./src/server.ts --bundle --platform=node --outdir=build --minify --sourcemap --packages=external",
+    "clear": "rimraf ./node_modules ./build"
   },
   "prisma": {
     "schema": "src/prisma/schema.prisma"
