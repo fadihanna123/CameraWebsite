@@ -8,76 +8,66 @@ import Heading from '@ui/Heading';
 import Input from '@ui/Input';
 import LogOutBox from '@containers/auth/LogOutBox';
 import useReduxConsts from '@hooks/useReduxConsts';
-import { loginTyper } from '@functions/loginTyper';
 import { checkLogin } from '@functions/checkLogin';
+import { useForm } from 'react-hook-form';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
  */
 
 const Login: React.FC = () => {
-  const { lang, login, loginForm, loading, dispatch } = useReduxConsts();
-
+  const { lang, login, loading, dispatch } = useReduxConsts();
+  const { register, handleSubmit } = useForm<ILoginForm>();
   const navigate = useNavigate();
 
   return (
     <>
       {!login ? (
-        <form>
+        <form
+          onSubmit={handleSubmit((loginForm: ILoginForm) => {
+            checkLogin(dispatch, navigate, loginForm);
+          })}
+        >
           <section className='loginsection'>
             <Heading className={['loginheading']}>
               {useTranslation('Login', lang)}
             </Heading>
             <section className='loginrow'>
               <section className='logincol'>
-                <label htmlFor='loginuname'>
+                <label htmlFor='login_uname'>
                   {useTranslation('Username', lang)}:
                 </label>
               </section>
               <section className='logincol'>
                 <Input
-                  id='loginuname'
-                  type='text'
+                  name={'uname'}
+                  id='login_uname'
                   className={['txtinput']}
-                  name='uname'
-                  changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
-                    loginTyper(e, loginForm, dispatch)
-                  }
-                  val={loginForm.uname}
-                  isRequired={true}
+                  register={register}
+                  isRequired
                 />
               </section>
             </section>
 
             <div className='loginrow'>
               <div className='logincol'>
-                <label htmlFor='loginpsw'>
+                <label htmlFor='login_psw'>
                   {useTranslation('Password', lang)}:
                 </label>
               </div>
               <div className='logincol'>
                 <Input
-                  id='loginpsw'
+                  name={'psw'}
+                  id='login_psw'
                   type='password'
                   className={['txtinput']}
-                  name='psw'
-                  changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
-                    loginTyper(e, loginForm, dispatch)
-                  }
-                  val={loginForm.psw}
-                  isRequired={true}
+                  isRequired
                   autoComplete='on'
+                  register={register}
                 />
               </div>
             </div>
-            <Btn
-              className={['btn']}
-              clickFunc={() => {
-                checkLogin(dispatch, loginForm);
-                navigate('/');
-              }}
-              disabled={loading}
-            >
+            <Btn className={['btn']} disabled={loading}>
               {useTranslation('Login', lang)}
             </Btn>
           </section>

@@ -6,6 +6,7 @@ import { sessionStorageKeys } from '@utils/constants';
 import { loginUser } from './apiStore';
 import { setLogin } from '@redux/reducers/login';
 import { setLoading } from '@redux/reducers/loading';
+import { NavigateFunction } from 'react-router-dom';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
@@ -22,6 +23,7 @@ import { setLoading } from '@redux/reducers/loading';
  */
 export const checkLogin = async (
   dispatch: Dispatch<any>,
+  navigate: NavigateFunction,
   loginForm: ILoginForm
 ): Promise<void> => {
   dispatch(setLoading(true));
@@ -37,6 +39,7 @@ export const checkLogin = async (
         sessionStorage.setItem(sessionStorageKeys.Token, res.accessToken);
 
         dispatch(setLogin(true));
+        navigate('/');
       } else {
         if (res.message) {
           toast.error(res.message);

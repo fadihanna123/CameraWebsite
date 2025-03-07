@@ -31,10 +31,13 @@ export const loginUser = async (loginForm: ILoginForm): Promise<ILoginData> => {
  * @example registerUser({ uname: 'Erik', email: 'ab@gmail.com', mobnr: '075 11 75 147', psw: 123, repsw: 123, img: 'me.jpg' });
  */
 export const registerUser = async (
-  myForm: FormData
+  registerForm: FormData
 ): Promise<IRegisterData> => {
   try {
-    return await request.post<IRegisterData>(registerEndPoint as Paths, myForm);
+    return await request.post<IRegisterData>(
+      registerEndPoint as Paths,
+      registerForm
+    );
   } catch (error: any) {
     throw new Error(error);
   }

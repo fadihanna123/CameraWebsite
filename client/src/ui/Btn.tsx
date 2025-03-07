@@ -9,7 +9,7 @@ const Btn: React.FC<BtnProps> = ({
 }: BtnProps) => (
   <button
     style={btnStyle}
-    type='button'
+    type='submit'
     className={className?.join(' ')}
     disabled={disabled}
     onClick={clickFunc}

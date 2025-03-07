@@ -24,6 +24,8 @@ export const doLogOut = (dispatch: Dispatch<any>): void => {
     sessionStorage.removeItem(sessionStorageKeys.User);
 
     dispatch(setLogin(false));
+
+    location.reload();
   } catch (err) {
     toast.error((err as Error).message);
   }

@@ -9,12 +9,15 @@ import Heading from '@ui/Heading';
 import Input from '@ui/Input';
 import TxtArea from '@ui/TxtArea';
 import useReduxConsts from '@hooks/useReduxConsts';
+import { useForm } from 'react-hook-form';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
  */
 
 const Contact: React.FC = () => {
+  const { register } = useForm();
+
   useTitle('Surveillance systems Inc - Kontakta oss');
   /**
    * @param {{ p10: { padding: string }}}
@@ -23,6 +26,7 @@ const Contact: React.FC = () => {
     p10: { padding: '10px' },
   };
   const { lang, loading } = useReduxConsts();
+
   return (
     <main className='main'>
       <Heading>{useTranslation('Contact_Us', lang)}</Heading>
@@ -54,27 +58,33 @@ const Contact: React.FC = () => {
         </div>
       </div>
       <br />
-      <section className='contactbox'>
+
+      <form className='contactbox'>
         <section className='contactrow'>
           <section className='contactcol'>
-            <label htmlFor='fullname'>
+            <label htmlFor='contact_fullname'>
               {useTranslation('Full_Name', lang)}:
             </label>
           </section>
           <section className='contactcol'>
-            <Input id='fullname' className={['txtinput']} />
+            <Input
+              {...register('contact_fullname')}
+              id='contact_fullname'
+              className={['txtinput']}
+            />
           </section>
         </section>
 
         <section className='contactrow'>
           <section className='contactcol'>
-            <label htmlFor='epost'>
+            <label htmlFor='contact_fullname_epost'>
               {useTranslation('Email_Address', lang)}:{' '}
             </label>
           </section>
           <section className='contactcol'>
             <Input
-              id='epost'
+              id='contact_epost'
+              {...register('contact_epost')}
               placeHolder='user@gmail.com'
               type='email'
               className={['txtinput']}
@@ -84,14 +94,15 @@ const Contact: React.FC = () => {
 
         <section className='contactrow'>
           <section className='contactcol'>
-            <label htmlFor='mobnr'>
+            <label htmlFor='contact_mobnr'>
               {useTranslation('Mobile_Number', lang)}:{' '}
             </label>
           </section>
           <section className='contactcol'>
             <Input
+              {...register('contact_mobnr')}
               placeHolder='07X-XXXXXXX'
-              id='mobnr'
+              id='contact_mobnr'
               className={['txtinput']}
             />
           </section>
@@ -99,16 +110,22 @@ const Contact: React.FC = () => {
 
         <section className='contactrow'>
           <section className='contactcol'>
-            <label htmlFor='msg'>{useTranslation('Message', lang)}: </label>
+            <label htmlFor='contact_msg'>
+              {useTranslation('Message', lang)}:{' '}
+            </label>
           </section>
           <section className='contactcol'>
-            <TxtArea id='msg' className={['txtArea']}></TxtArea>
+            <TxtArea
+              {...register('contact_msg')}
+              id='contact_msg'
+              className={['txtArea']}
+            ></TxtArea>
           </section>
         </section>
         <Btn disabled={loading} className={['btn']}>
           {useTranslation('Send', lang)}
         </Btn>
-      </section>
+      </form>
     </main>
   );
 };

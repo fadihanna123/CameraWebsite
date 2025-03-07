@@ -1,3 +1,5 @@
+import { UseFormRegister } from 'react-hook-form';
+
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
@@ -52,6 +54,8 @@ declare global {
     acceptValues?: string;
     autoComplete?: string;
     placeHolder?: string;
+    defaultVal?: string;
+    register?: UseFormRegister;
   }
 
   interface BtnProps {
