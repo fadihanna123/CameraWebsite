@@ -10,6 +10,7 @@ import Footer from '@inc/Footer';
 
 import Error from './Error';
 import Profile from './dashboard/Profile';
+import { Flip, ToastContainer } from 'react-toastify';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
@@ -28,6 +29,7 @@ const Layout: React.FC = () => (
       <Route path='*' element={<Start />} />
     </Routes>
     <Footer />
+    <ToastContainer transition={Flip} hideProgressBar={true} />
   </section>
 );
 

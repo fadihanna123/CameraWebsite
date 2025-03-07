@@ -11,11 +11,12 @@ declare global {
   interface ILoginData {
     accessToken: string;
     message: string;
-    author: string;
+    user: UserData;
   }
 
   interface IRegisterData {
     message: string;
+    type: string;
   }
 
   interface ILoginForm {
@@ -31,6 +32,8 @@ declare global {
     repsw: string;
     avatar: any;
   }
+
+  type UserData = IRegisterForm;
 
   interface HeadingProps {
     headingLevel?: 1 | number;

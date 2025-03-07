@@ -1,4 +1,4 @@
-import { Flip, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { Dispatch } from 'redux';
 
 // Components
@@ -27,22 +27,25 @@ export const checkLogin = async (
   dispatch(setLoading(true));
 
   try {
-    await loginUser(loginForm)
-      .then((res) => {
-        if (res.accessToken) {
-          sessionStorage.setItem(sessionStorageKeys.Token, res.accessToken);
-          sessionStorage.setItem(sessionStorageKeys.Author, res.author);
+    await loginUser(loginForm).then((res) => {
+      if (res.accessToken) {
+        sessionStorage.setItem(
+          sessionStorageKeys.User,
+          JSON.stringify(res.user)
+        );
 
-          dispatch(setLogin(true));
-        } else {
-          toast.error(res.message, { transition: Flip });
+        sessionStorage.setItem(sessionStorageKeys.Token, res.accessToken);
+
+        dispatch(setLogin(true));
+      } else {
+        if (res.message) {
+          toast.error(res.message);
         }
-      })
-      .catch((err) =>
-        toast.error((err as Error).message, { transition: Flip })
-      );
+      }
+    });
   } catch (err) {
-    toast.error((err as Error).message, { transition: Flip });
+    console.error(err);
+    toast.error((err as Error).message);
   } finally {
     dispatch(setLoading(false));
   }

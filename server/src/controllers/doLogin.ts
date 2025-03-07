@@ -32,18 +32,18 @@ export const doLogin = async (
   } else {
     // If the user filled in all the boxes.
     try {
-      const result = await prisma.users.findMany({
+      const user = await prisma.users.findFirst({
         where: {
           uname,
           psw,
         },
       });
 
-      if (result.length === 0) {
+      if (!user) {
         storeError(
           'Det finns något fel i ditt användarnamn/lösenord.',
           'POST',
-          '/login'
+          '/api/auth/login'
         );
 
         res.json({
@@ -52,12 +52,23 @@ export const doLogin = async (
       } else {
         // Return accessToken.
         const accessToken = jwt.sign(userObject, process.env['Token']!);
-        res.json({ accessToken, author: uname });
+
+        res.json({
+          accessToken,
+          user: {
+            uname,
+            email: user?.email,
+            mobnr: user?.mobnr,
+            locked: user?.locked,
+            avatar: user?.avatar,
+            created_at: user?.created_at,
+          },
+        });
       }
     } catch (err) {
       // If there is any error..
-      storeError((err as Error).message, 'POST', '/login');
-      return res.status(500).send();
+      storeError((err as Error).message, 'POST', '/api/auth/login');
+      return res.status(500).send({ message: (err as Error).message });
     }
   } // End if the user filled in all boxes.
 };

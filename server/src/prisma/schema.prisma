@@ -13,7 +13,7 @@ model users {
   email      String?
   mobnr      String?
   psw        String
-  locked     BigInt?
+  locked     Int?
   avatar     String?
   created_at String?
 }

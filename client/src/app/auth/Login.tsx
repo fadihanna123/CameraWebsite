@@ -1,5 +1,4 @@
 import React from 'react';
-import { Flip, ToastContainer } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
 // Components
@@ -82,7 +81,6 @@ const Login: React.FC = () => {
               {useTranslation('Login', lang)}
             </Btn>
           </section>
-          <ToastContainer transition={Flip} />
         </form>
       ) : (
         <LogOutBox />

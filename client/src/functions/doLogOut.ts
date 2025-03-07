@@ -21,7 +21,7 @@ export const doLogOut = (dispatch: Dispatch<any>): void => {
   try {
     sessionStorage.removeItem(sessionStorageKeys.Token);
 
-    sessionStorage.removeItem(sessionStorageKeys.Author);
+    sessionStorage.removeItem(sessionStorageKeys.User);
 
     dispatch(setLogin(false));
   } catch (err) {

@@ -34,6 +34,7 @@ export const doRegister = async (
     );
     res.json({
       message: 'Du måste fylla i alla obligatoriska rutor!',
+      type: 'info',
     });
   } else {
     // If the user filled in all required fields.
@@ -46,6 +47,7 @@ export const doRegister = async (
       );
       res.json({
         message: 'Du måste fylla in en korrekt e-postadress!',
+        type: 'info',
       });
     } else {
       // If the email address is written correctly.
@@ -62,6 +64,7 @@ export const doRegister = async (
 
         res.json({
           message: 'Du måste välja ett lösenord som är minst 8 tecken!',
+          type: 'info',
         });
       } else {
         // If the password and confirm Password fields contain strong passwords that have at least 8 characters.
@@ -75,6 +78,7 @@ export const doRegister = async (
 
           res.json({
             message: 'Ditt lösenord matchar inte det bekräftade lösenordet.',
+            type: 'info',
           });
         } else {
           // If the password and confirm password fields match each other.
@@ -95,6 +99,7 @@ export const doRegister = async (
 
             res.json({
               message: 'Du är redan registrerad hos oss. Du kan logga in ovan.',
+              typepe: 'info',
             });
           } else {
             // If the user was not found in the database.
@@ -144,6 +149,7 @@ export const doRegister = async (
                 );
                 res.send({
                   message: 'Tack för registrering. \n Var vänlig och logga in.',
+                  type: 'success',
                 });
               }
             } catch (error) {

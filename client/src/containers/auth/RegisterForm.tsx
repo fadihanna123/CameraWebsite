@@ -1,5 +1,4 @@
 import React from 'react';
-import { Flip, ToastContainer } from 'react-toastify';
 
 // Components
 import useTranslation from '@hooks/useTranslate';
@@ -9,6 +8,7 @@ import Input from '@ui/Input';
 import useReduxConsts from '@hooks/useReduxConsts';
 import { RegisterTyper } from '@functions/RegisterTyper';
 import { RegisterUser } from '@functions/registerUser';
+import { useNavigate } from 'react-router-dom';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
@@ -16,6 +16,7 @@ import { RegisterUser } from '@functions/registerUser';
 
 const RegisterForm: React.FC = () => {
   const { registerForm, lang, loading, dispatch } = useReduxConsts();
+  const navigate = useNavigate();
 
   return (
     <form encType='multipart/form-data' method='post'>
@@ -138,12 +139,11 @@ const RegisterForm: React.FC = () => {
         <Btn
           disabled={loading}
           className={['btn']}
-          clickFunc={() => RegisterUser(dispatch, registerForm)}
+          clickFunc={() => RegisterUser(dispatch, registerForm, navigate)}
         >
           {useTranslation('Register', lang)}
         </Btn>
       </section>
-      <ToastContainer transition={Flip} />
     </form>
   );
 };

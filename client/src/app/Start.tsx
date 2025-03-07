@@ -13,13 +13,23 @@ import useReduxConsts from '@hooks/useReduxConsts';
 
 const Start: React.FC = () => {
   const { login, lang } = useReduxConsts();
-
+  const getUserData = JSON.parse(sessionStorage.getItem('user')!);
   useTitle('Surveillance systems Inc - Startsida');
 
   return (
     <main className='main'>
-      <Heading>{useTranslate('Welcome', lang)}!</Heading>
-      {!login && <Para>{useTranslate('Welcome_Text', lang)}</Para>}
+      {login ? (
+        <Heading>
+          {getUserData.uname.charAt(0).toUpperCase() +
+            getUserData.uname.slice(1)}
+          !
+        </Heading>
+      ) : (
+        <>
+          <Heading>{useTranslate('Welcome', lang)}!</Heading>
+          <Para>{useTranslate('Welcome_Text', lang)}</Para>
+        </>
+      )}
     </main>
   );
 };
