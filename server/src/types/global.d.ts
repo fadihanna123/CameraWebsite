@@ -55,7 +55,7 @@ declare global {
     body: T;
   }
 
-  type Routes = '/login' | '/register';
+  type Routes = '/' | '/login' | '/register' | '/:id';
 }
 
 export {};

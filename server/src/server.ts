@@ -2,7 +2,8 @@
 import 'dotenv/config';
 import '@core/tasks';
 
-import routes from '@core/api/auth/routes';
+import authRoutes from '@core/api/auth/routes';
+import userRoutes from '@core/api/users/routes';
 import { listenFn } from '@core/controllers';
 import express, { Application } from 'express';
 import helmet from 'helmet';
@@ -62,7 +63,8 @@ server.use(helmet());
 // Add file upload middleware.
 server.use(fileUpload() as any);
 // Use routes.
-server.use('/api/auth/', routes);
+server.use('/api/auth/', authRoutes);
+server.use('/api/users', userRoutes);
 
 export const port = PORT || 5000;
 

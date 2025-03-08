@@ -1,0 +1,23 @@
+import { privateToken } from '@core/utils';
+import { Request, Response, NextFunction } from 'express';
+import jwt from 'jsonwebtoken';
+
+export const verifyToken = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  const Header = req.headers.authorization;
+  const token = Header && Header.split(' ')?.[1];
+
+  if (!token) return res.sendStatus(401);
+
+  try {
+    jwt.verify(token, privateToken!);
+
+    next();
+  } catch (error) {
+    console.log(error);
+    return res.sendStatus(403);
+  }
+};

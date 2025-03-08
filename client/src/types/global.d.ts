@@ -81,6 +81,7 @@ declare global {
     isRequired?: boolean;
     changeFunc?: ChangeEventHandler<HTMLInputElement>;
     acceptValues?: string;
+    register?: UseFormRegister;
   }
 
   interface TxtAreaProps {

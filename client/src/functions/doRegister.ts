@@ -5,6 +5,7 @@ import { Dispatch } from 'redux';
 import { setLoading } from '@redux/reducers/loading';
 import { registerUser } from './apiStore';
 import { NavigateFunction } from 'react-router-dom';
+import { Ref, RefObject } from 'react';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
@@ -12,16 +13,17 @@ import { NavigateFunction } from 'react-router-dom';
 
 /**
  * Register a user.
- * @function RegisterUser
+ * @function doRegister
  * @async
  * @param { Dispatch<any> } dispatch
  * @returns { Promise<void> }
  * @example RegisterUser(dispatch);
  */
-export const RegisterUser = async (
+export const doRegister = async (
   dispatch: Dispatch<any>,
   registerForm: IRegisterForm,
-  navigate: NavigateFunction
+  navigate: NavigateFunction,
+  registerFormRef: Ref<HTMLFormElement>
 ): Promise<void> => {
   try {
     dispatch(setLoading(true));
@@ -49,6 +51,8 @@ export const RegisterUser = async (
               navigate('/');
             }, 2000);
           }
+
+          (registerFormRef! as RefObject<HTMLFormElement>).current.reset();
         }
       })
       .catch((err) => toast.error((err as Error).message));

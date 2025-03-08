@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
 // Components
@@ -15,16 +15,18 @@ import { useForm } from 'react-hook-form';
  * @author Fadi Hanna<fhanna181@gmail.com>
  */
 
-const Contact: React.FC = () => {
+const Contact: FC = () => {
   const { register } = useForm();
 
   useTitle('Surveillance systems Inc - Kontakta oss');
+
   /**
    * @param {{ p10: { padding: string }}}
    */
   const styles = {
     p10: { padding: '10px' },
   };
+
   const { lang, loading } = useReduxConsts();
 
   return (

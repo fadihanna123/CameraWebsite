@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 // Components
 import useTranslation from '@hooks/useTranslate';
@@ -6,119 +6,120 @@ import Btn from '@ui/Btn';
 import FileUploader from '@ui/FileUploader';
 import Input from '@ui/Input';
 import useReduxConsts from '@hooks/useReduxConsts';
-import { RegisterTyper } from '@functions/RegisterTyper';
-import { RegisterUser } from '@functions/registerUser';
+import { doRegister } from '@core/functions/doRegister';
 import { useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
  */
 
 const RegisterForm: React.FC = () => {
-  const { registerForm, lang, loading, dispatch } = useReduxConsts();
+  const { lang, loading, dispatch } = useReduxConsts();
+  const { register, handleSubmit } = useForm<IRegisterForm>();
   const navigate = useNavigate();
+  const registerFormRef = useRef(null);
 
   return (
-    <form encType='multipart/form-data' method='post'>
+    <form
+      onSubmit={handleSubmit((registerForm: IRegisterForm) => {
+        doRegister(dispatch, registerForm, navigate, registerFormRef);
+      })}
+      encType='multipart/form-data'
+      method='post'
+      ref={registerFormRef}
+    >
       <section className='registerbox'>
         <section className='registerrow'>
           <section className='registercol'>
-            <label htmlFor='uname'>{useTranslation('Username', lang)}: </label>
+            <label htmlFor='register_uname'>
+              {useTranslation('Username', lang)}:{' '}
+            </label>
           </section>
           <section className='registercol'>
             <Input
-              id='uname'
-              val={registerForm.uname}
-              changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
-                RegisterTyper(e, registerForm, dispatch)
-              }
+              id='register_uname'
               name='uname'
               isRequired={true}
               className={['txtinput']}
+              register={register}
             />
           </section>
         </section>
         <section className='registerrow'>
           <section className='registercol'>
-            <label htmlFor='email'>{useTranslation('Email', lang)}: </label>
+            <label htmlFor='register_email'>
+              {useTranslation('Email', lang)}:{' '}
+            </label>
           </section>
           <section className='registercol'>
             <Input
               type='email'
-              id='email'
+              id='register_email'
               placeHolder='user@gmail.com'
-              val={registerForm.email}
-              changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
-                RegisterTyper(e, registerForm, dispatch)
-              }
               isRequired={true}
               className={['txtinput']}
               name='email'
+              register={register}
             />
           </section>
         </section>
         <section className='registerrow'>
           <section className='registercol'>
-            <label htmlFor='mobnr'>
+            <label htmlFor='register_mobnr'>
               {useTranslation('Mobilenumber', lang)}:
             </label>
           </section>
           <section className='registercol'>
             <Input
-              type='text'
-              id='mobnr'
-              val={registerForm.mobnr}
-              changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
-                RegisterTyper(e, registerForm, dispatch)
-              }
+              id='register_mobnr'
               className={['txtinput']}
               name='mobnr'
               autoComplete='tel-local'
               placeHolder='07X-XXXXXXX'
+              register={register}
             />
           </section>
         </section>
         <section className='registerrow'>
           <section className='registercol'>
-            <label htmlFor='psw'>{useTranslation('Password', lang)}: </label>
+            <label htmlFor='register_psw'>
+              {useTranslation('Password', lang)}:{' '}
+            </label>
           </section>
           <section className='registercol'>
             <Input
               type='password'
-              id='psw'
-              val={registerForm.psw}
-              changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
-                RegisterTyper(e, registerForm, dispatch)
-              }
+              id='register_psw'
               isRequired={true}
               className={['txtinput']}
               name='psw'
               autoComplete='new-password'
+              register={register}
             />
           </section>
         </section>
         <section className='registerrow'>
           <section className='registercol'>
-            <label htmlFor='repsw'>{useTranslation('repsw', lang)}: </label>
+            <label htmlFor='register_repsw'>
+              {useTranslation('repsw', lang)}:{' '}
+            </label>
           </section>
           <section className='registercol'>
             <Input
               type='password'
-              id='repsw'
-              val={registerForm.repsw}
-              changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
-                RegisterTyper(e, registerForm, dispatch)
-              }
+              id='register_repsw'
               isRequired={true}
               className={['txtinput']}
               name='repsw'
               autoComplete='new-password'
+              register={register}
             />
           </section>
         </section>
         <section className='registerrow'>
           <section className='registercol'>
-            <label htmlFor='img'>
+            <label htmlFor='register_avatar'>
               {useTranslation('Profilephoto', lang)}:{' '}
             </label>
           </section>
@@ -126,21 +127,13 @@ const RegisterForm: React.FC = () => {
             <FileUploader
               type='file'
               id='register_avatar'
-              val={registerForm.avatar}
-              changeFunc={(e: React.ChangeEvent<HTMLInputElement>) =>
-                RegisterTyper(e, registerForm, dispatch)
-              }
               acceptValues='image/*'
-              isRequired={true}
               name='avatar'
+              register={register}
             />
           </section>
         </section>
-        <Btn
-          disabled={loading}
-          className={['btn']}
-          clickFunc={() => RegisterUser(dispatch, registerForm, navigate)}
-        >
+        <Btn disabled={loading} className={['btn']}>
           {useTranslation('Register', lang)}
         </Btn>
       </section>

@@ -112,6 +112,14 @@ label {
 
 .link {
   text-decoration: none;
+  padding: 20px;
+}
+
+.errorLink {
+  text-decoration: none;
+  display: inline-block;
+  margin: 10px;
+  color: #fff;
 }
 
 .fa-solid {

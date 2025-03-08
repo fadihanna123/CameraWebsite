@@ -24,5 +24,6 @@
   "Phone_Number": "Telefonnummer",
   "Mobile_Number": "Mobil",
   "Full_Name": "Fullständigt namn",
-  "Email_Address": "E-postadress"
+  "Email_Address": "E-postadress",
+  "NotFound_Text": "Sidan som du letar efter finns inte"
 }

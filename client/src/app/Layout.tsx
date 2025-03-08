@@ -25,8 +25,7 @@ const Layout: React.FC = () => (
       <Route path='/Contact' element={<Contact />} />
       <Route path='/Register' element={<Register />} />
       <Route path='/Profile' element={<Profile />} />
-      <Route element={<Error />} />
-      <Route path='*' element={<Start />} />
+      <Route path='*' element={<Error />} />
     </Routes>
     <Footer />
     <ToastContainer transition={Flip} hideProgressBar={true} />

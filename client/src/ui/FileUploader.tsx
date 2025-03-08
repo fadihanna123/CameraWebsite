@@ -11,8 +11,10 @@ const FileUploader: React.FC<FileUploaderProps> = ({
   isRequired,
   name,
   className,
+  register,
 }: FileUploaderProps) => (
   <Input
+    {...(register ? register(name) : {})}
     type='file'
     id={id}
     val={val}

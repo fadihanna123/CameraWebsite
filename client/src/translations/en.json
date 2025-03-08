@@ -24,5 +24,6 @@
   "Phone_Number": "Telefonnumber",
   "Mobile_Number": "Mobile",
   "Full_Name": "Full Name",
-  "Email_Address": "Email"
+  "Email_Address": "Email",
+  "NotFound_Text": "The page you are looking for could not be found"
 }
