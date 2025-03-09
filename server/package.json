@@ -1,6 +1,6 @@
 {
   "name": "surveillance_server",
-  "version": "1.0.45",
+  "version": "1.0.46",
   "homepage": "https://localhost:5000",
   "license": "MIT",
   "private": "true",
@@ -9,7 +9,7 @@
     "type": "git",
     "url": "https://github.com/fadihanna123/CameraWebsite/tree/main/server"
   },
-  "lastUpgrade": "20250304",
+  "lastUpgrade": "20250309",
   "author": {
     "name": "Fadi Hanna",
     "email": "fhanna181@gmail.com"
@@ -20,9 +20,9 @@
   },
   "scripts": {
     "setup": "yarn --ignore-scripts --silent --emoji --immutable",
+    "start": "node ./build/server.js",
     "dev": "ts-node-dev --poll -r tsconfig-paths/register ./src/server",
     "seed": "prisma db push && prisma db pull && prisma generate",
-    "dev:prod": "yarn seed && yarn dev",
     "seed-delete": "prisma migrate reset",
     "lint": "eslint ./ && tsc --noEmit",
     "format": "prettier -w ./",
@@ -46,8 +46,8 @@
     "@typescript-eslint/parser": "8.26.0",
     "cors": "2.8.5",
     "dotenv": "16.4.7",
-    "eslint": "9.21.0",
-    "eslint-config-prettier": "10.0.2",
+    "eslint": "9.22.0",
+    "eslint-config-prettier": "10.1.1",
     "eslint-plugin-prettier": "5.2.3",
     "express-rate-limit": "7.5.0",
     "node-cron": "3.0.3",

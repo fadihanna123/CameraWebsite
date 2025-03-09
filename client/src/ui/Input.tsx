@@ -5,7 +5,6 @@ const Input: React.FC<InputProps> = ({
   type = 'text',
   className,
   name,
-  val,
   isRequired,
   acceptValues,
   autoComplete,
@@ -20,7 +19,6 @@ const Input: React.FC<InputProps> = ({
       id={id}
       type={type}
       className={className?.join(' ')}
-      value={val}
       required={isRequired}
       accept={acceptValues}
       autoComplete={autoComplete}

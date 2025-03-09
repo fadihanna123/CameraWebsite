@@ -1,15 +1,17 @@
-@base=http://localhost:{{PORT}}
+@base=http://localhost:{{ PORT }}/api
 ###
-POST {{base}}/api/auth/login
+POST {{ base }}/auth/login
 Content-Type: application/json
+apiKey: {{ APIKEY }}
 
 {
-    "uname": "Erik",
-    "psw": "123"
+    "uname": "erik",
+    "psw": "1234567890"
 }
 ###
-POST {{base}}/api/auth/register
+POST {{ base }}/auth/register
 Content-Type: application/json
+apiKey: {{ APIKEY }}
 
 {
     "uname": "Erik",
@@ -19,3 +21,12 @@ Content-Type: application/json
     "repsw": "1234567890",
     "avatar": "a.jpg"
 }
+
+
+GET {{ base }}/users/
+Content-Type: application/json
+apiKey: {{ APIKEY }}
+
+GET {{ base }}/users/1
+Content-Type: application/json
+apiKey: {{ APIKEY }}

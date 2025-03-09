@@ -5,8 +5,6 @@ import authorReducer from '../reducers/author';
 import langReducer from '../reducers/lang';
 import loadingReducer from '../reducers/loading';
 import loginReducer from '../reducers/login';
-import loginFormReducer from '../reducers/loginForm';
-import registerFormReducer from '../reducers/registerForm';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
@@ -14,11 +12,9 @@ import registerFormReducer from '../reducers/registerForm';
 
 export const store = configureStore({
   reducer: {
-    loginForm: loginFormReducer,
     login: loginReducer,
     lang: langReducer,
     author: authorReducer,
-    registerForm: registerFormReducer,
     loading: loadingReducer,
   },
 });

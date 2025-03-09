@@ -1,6 +1,6 @@
 {
   "name": "CameraWebsite",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "repository": "https://github.com/fadihanna123/CameraWebsite.git",
   "author": "Fadi Hanna <54924938+fadihanna123@users.noreply.github.com>",
   "license": "MIT",
@@ -15,6 +15,6 @@
     "clear": "npx rimraf node_modules && cd server && npx rimraf node_modules && cd .. && cd client && npx rimraf node_modules build"
   },
   "devDependencies": {
-    "vite": "6.2.0"
+    "vite": "6.2.1"
   }
 }

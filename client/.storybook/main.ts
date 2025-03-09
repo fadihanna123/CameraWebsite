@@ -21,6 +21,7 @@ const config: StorybookConfig = {
   },
   core: {
     disableTelemetry: true,
+    builder: '@storybook/builder-vite',
   },
   framework: {
     name: '@storybook/react-webpack5',
@@ -29,6 +30,5 @@ const config: StorybookConfig = {
   docs: {
     autodocs: 'tag',
   },
-  staticDirs: ['..\\public'],
 };
 export default config;

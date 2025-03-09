@@ -22,11 +22,10 @@ Default.args = {
   type: 'text',
   className: ['form-control'],
   name: 'myInput',
-  val: '',
   isRequired: true,
-  changeFunc: () => {
-    console.log('Changed!');
-  },
   acceptValues: '',
   autoComplete: 'off',
+  placeHolder: 'Type here...',
+  defaultVal: 'Erik',
+  register: null,
 };

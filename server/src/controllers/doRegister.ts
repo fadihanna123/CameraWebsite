@@ -101,7 +101,7 @@ export const doRegister = async (
               res.json({
                 message:
                   'Du är redan registrerad hos oss. Du kan logga in ovan.',
-                typepe: 'info',
+                type: 'info',
               });
             } else {
               // If the user was not found in the database.

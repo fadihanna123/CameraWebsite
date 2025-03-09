@@ -18,10 +18,8 @@ const Template = (args: JSX.IntrinsicAttributes & FileUploaderProps) => (
 export const Default: any = Template.bind({});
 
 Default.args = {
+  register: null,
   id: 'fileUpload',
-  changeFunc: () => {
-    console.log('Changed!');
-  },
   acceptValues: 'image/png',
   isRequired: true,
   name: 'fileUpload',

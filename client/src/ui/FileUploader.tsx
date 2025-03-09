@@ -4,9 +4,7 @@ import React from 'react';
 import Input from './Input';
 
 const FileUploader: React.FC<FileUploaderProps> = ({
-  val,
   id,
-  changeFunc,
   acceptValues,
   isRequired,
   name,
@@ -17,8 +15,6 @@ const FileUploader: React.FC<FileUploaderProps> = ({
     {...(register ? register(name) : {})}
     type='file'
     id={id}
-    val={val}
-    changeFunc={changeFunc}
     acceptValues={acceptValues}
     isRequired={isRequired}
     name={name}
