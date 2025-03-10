@@ -28,6 +28,7 @@ declare global {
 
   interface IRegisterForm {
     uname: string;
+    fullname: string;
     email: string;
     mobnr: string;
     psw: string;

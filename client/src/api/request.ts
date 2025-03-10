@@ -1,11 +1,12 @@
 import axios from 'axios';
-import { baseURL } from '@utils/envsVariables';
+import { apiKey, baseURL } from '@utils/envsVariables';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
  */
 
 axios.defaults.baseURL = baseURL;
+axios.defaults.headers.common['apiKey'] = apiKey;
 
 export const request = {
   get: async <T>(url: Paths): Promise<T> => {

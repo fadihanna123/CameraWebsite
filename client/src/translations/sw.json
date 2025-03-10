@@ -25,5 +25,7 @@
   "Mobile_Number": "Mobil",
   "Full_Name": "Fullständigt namn",
   "Email_Address": "E-postadress",
-  "NotFound_Text": "Sidan som du letar efter finns inte"
+  "NotFound_Text": "Sidan som du letar efter finns inte",
+  "Profile_Coming_Soon_Text": "Profil sidan kommer snart",
+  "Login_Require_Text": "Du måste logga in för att se innehållet"
 }

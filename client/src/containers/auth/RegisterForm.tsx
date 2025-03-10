@@ -32,6 +32,23 @@ const RegisterForm: React.FC = () => {
       <section className='registerbox'>
         <section className='registerrow'>
           <section className='registercol'>
+            <label htmlFor='register_fullname'>
+              {useTranslation('Full_Name', lang)}:{' '}
+            </label>
+          </section>
+          <section className='registercol'>
+            <Input
+              id='register_fullname'
+              name='fullname'
+              isRequired={true}
+              className={['txtinput']}
+              register={register}
+            />
+          </section>
+        </section>
+
+        <section className='registerrow'>
+          <section className='registercol'>
             <label htmlFor='register_uname'>
               {useTranslation('Username', lang)}:{' '}
             </label>
@@ -46,6 +63,7 @@ const RegisterForm: React.FC = () => {
             />
           </section>
         </section>
+
         <section className='registerrow'>
           <section className='registercol'>
             <label htmlFor='register_email'>
@@ -64,6 +82,7 @@ const RegisterForm: React.FC = () => {
             />
           </section>
         </section>
+
         <section className='registerrow'>
           <section className='registercol'>
             <label htmlFor='register_mobnr'>
@@ -81,6 +100,7 @@ const RegisterForm: React.FC = () => {
             />
           </section>
         </section>
+
         <section className='registerrow'>
           <section className='registercol'>
             <label htmlFor='register_psw'>
@@ -99,6 +119,7 @@ const RegisterForm: React.FC = () => {
             />
           </section>
         </section>
+
         <section className='registerrow'>
           <section className='registercol'>
             <label htmlFor='register_repsw'>
@@ -117,6 +138,7 @@ const RegisterForm: React.FC = () => {
             />
           </section>
         </section>
+
         <section className='registerrow'>
           <section className='registercol'>
             <label htmlFor='register_avatar'>
@@ -133,6 +155,7 @@ const RegisterForm: React.FC = () => {
             />
           </section>
         </section>
+
         <Btn disabled={loading} className={['btn']}>
           {useTranslation('Register', lang)}
         </Btn>

@@ -6,6 +6,8 @@ import useTranslate from '@hooks/useTranslate';
 import Heading from '@ui/Heading';
 import Para from '@ui/Para';
 import useReduxConsts from '@hooks/useReduxConsts';
+import { getStorage } from '@core/functions';
+import { sessionStorageKeys } from '@core/utils/constants';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
@@ -13,13 +15,15 @@ import useReduxConsts from '@hooks/useReduxConsts';
 
 const Start: React.FC = () => {
   const { login, lang } = useReduxConsts();
-  const getUserData = JSON.parse(sessionStorage.getItem('user')!);
+  const getUserData = JSON.parse(getStorage(sessionStorageKeys.User) || '{}');
+
   useTitle('Surveillance systems Inc - Startsida');
 
   return (
     <main className='main'>
       {login ? (
         <Heading>
+          <span>{useTranslate('Welcome', lang)} </span>
           {getUserData.uname.charAt(0).toUpperCase() +
             getUserData.uname.slice(1)}
           !

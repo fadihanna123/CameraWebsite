@@ -9,6 +9,7 @@ import Btn from '@ui/Btn';
 import Heading from '@ui/Heading';
 import { sessionStorageKeys } from '@utils/constants';
 import useReduxConsts from '@hooks/useReduxConsts';
+import { getStorage } from '@core/functions';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
@@ -19,7 +20,7 @@ const LogOutBox: React.FC = () => {
 
   useEffect(() => {
     const author = JSON.parse(
-      sessionStorage.getItem(sessionStorageKeys.User) ?? ''
+      getStorage(sessionStorageKeys.User) || '{}'
     ).uname;
 
     try {

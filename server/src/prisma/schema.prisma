@@ -10,6 +10,7 @@ datasource db {
 model users {
   id         Int     @id @default(autoincrement())
   uname      String
+  fullname   String
   email      String?
   mobnr      String?
   psw        String

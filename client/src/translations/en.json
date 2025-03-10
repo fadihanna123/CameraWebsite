@@ -25,5 +25,7 @@
   "Mobile_Number": "Mobile",
   "Full_Name": "Full Name",
   "Email_Address": "Email",
-  "NotFound_Text": "The page you are looking for could not be found"
+  "NotFound_Text": "The page you are looking for could not be found",
+  "Profile_Coming_Soon_Text": "Profile page coming soon",
+  "Login_Require_Text": "Please login to view your videos"
 }

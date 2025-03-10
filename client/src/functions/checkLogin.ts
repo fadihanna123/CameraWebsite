@@ -7,6 +7,7 @@ import { loginUser } from './apiStore';
 import { setLogin } from '@redux/reducers/login';
 import { setLoading } from '@redux/reducers/loading';
 import { NavigateFunction } from 'react-router-dom';
+import { setStorage } from './storage';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
@@ -31,12 +32,9 @@ export const checkLogin = async (
   try {
     await loginUser(loginForm).then((res) => {
       if (res.accessToken) {
-        sessionStorage.setItem(
-          sessionStorageKeys.User,
-          JSON.stringify(res.user)
-        );
+        setStorage(sessionStorageKeys.User, res.user);
 
-        sessionStorage.setItem(sessionStorageKeys.Token, res.accessToken);
+        setStorage(sessionStorageKeys.Token, res.accessToken);
 
         dispatch(setLogin(true));
         navigate('/');

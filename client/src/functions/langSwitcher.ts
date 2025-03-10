@@ -4,6 +4,7 @@ import { Dispatch } from 'redux';
 // Components
 import { setLang } from '@redux/reducers/lang';
 import { sessionStorageKeys } from '@utils/constants';
+import { setStorage } from './storage';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
@@ -19,7 +20,7 @@ import { sessionStorageKeys } from '@utils/constants';
  */
 export const langSwitcher = (lang: string, dispatch: Dispatch<any>): void => {
   try {
-    sessionStorage.setItem(sessionStorageKeys.Lang, lang);
+    setStorage(sessionStorageKeys.Lang, lang);
 
     dispatch(setLang(lang));
   } catch (err) {

@@ -16,3 +16,8 @@ export const loginEndPoint: string | undefined = import.meta.env[
 export const registerEndPoint: string | undefined = import.meta.env[
   'VITE_REGISTER_API'
 ];
+
+/**
+ * @type string | undefined
+ */
+export const apiKey: string | undefined = import.meta.env['VITE_API_KEY'];

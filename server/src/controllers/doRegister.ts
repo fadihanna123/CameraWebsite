@@ -24,7 +24,7 @@ export const doRegister = async (
   res: Response
 ): Promise<Response<any, Record<string, any>> | undefined> => {
   if (req.get('apiKey') === apiKey) {
-    const { uname, email, mobnr, psw, repsw } = req.body;
+    const { uname, fullname, email, mobnr, psw, repsw } = req.body;
 
     if (!uname || !email || !mobnr || !psw || !repsw) {
       // If the user did not fill in all required fields.
@@ -135,6 +135,7 @@ export const doRegister = async (
                   data: {
                     uname,
                     email,
+                    fullname,
                     psw,
                     mobnr,
                     locked: 0,

@@ -39,6 +39,7 @@ declare global {
   interface IUsers {
     id?: string;
     uname: string;
+    fullname: string;
     email: string;
     psw: string;
     repsw: string;

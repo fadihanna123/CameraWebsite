@@ -6,6 +6,7 @@ import { sessionStorageKeys } from '@utils/constants';
 import useReduxConsts from '@hooks/useReduxConsts';
 import { setLang } from '@redux/reducers/lang';
 import { setLogin } from '@redux/reducers/login';
+import { getStorage, setStorage } from '@core/functions';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
@@ -14,8 +15,8 @@ import { setLogin } from '@redux/reducers/login';
 const App: React.FC = () => {
   const { dispatch } = useReduxConsts();
 
-  const lang = sessionStorage.getItem(sessionStorageKeys.Lang);
-  const token = sessionStorage.getItem(sessionStorageKeys.Token);
+  const lang = getStorage(sessionStorageKeys.Lang);
+  const token = getStorage(sessionStorageKeys.Token);
 
   useEffect(() => {
     if (lang === '') {
@@ -23,7 +24,7 @@ const App: React.FC = () => {
     }
 
     if (lang === null || undefined) {
-      sessionStorage.setItem(sessionStorageKeys.Lang, 'en');
+      setStorage(sessionStorageKeys.Lang, 'en');
     }
 
     dispatch(setLang(lang!));

@@ -33,6 +33,7 @@ export const doRegister = async (
 
     const myForm = new FormData();
     myForm.append('uname', registerForm.uname);
+    myForm.append('fullname', registerForm.fullname);
     myForm.append('email', registerForm.email);
     myForm.append('mobnr', registerForm.mobnr);
     myForm.append('psw', registerForm.psw);

@@ -59,6 +59,7 @@ export const doLogin = async (
             accessToken,
             user: {
               uname,
+              fullname: user?.fullname,
               email: user?.email,
               mobnr: user?.mobnr,
               locked: user?.locked,
