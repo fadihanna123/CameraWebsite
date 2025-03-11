@@ -1,5 +1,5 @@
 import { UseFormRegister } from 'react-hook-form';
-
+import enTranslations from '@core/translations/en.json';
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
@@ -9,6 +9,20 @@ declare global {
       NODE_ENV: 'development' | 'production';
     }
   }
+
+  interface User {
+    id: string;
+    uname: string;
+    fullname: string;
+    email: string;
+    psw: string;
+    repsw: string;
+    mobnr: string;
+    locked: number;
+    avatar: string;
+  }
+
+  type Translations = typeof enTranslations;
 
   interface ILoginData {
     accessToken: string;
@@ -92,10 +106,10 @@ declare global {
 
   interface ImgProps {
     source: string;
-    className: string[];
+    className?: string[];
     alt: string;
-    ariaLabel: string;
-    dimensions: number[];
+    ariaLabel?: string;
+    dimensions?: number[];
   }
 
   interface MainFooterProps {

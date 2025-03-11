@@ -17,9 +17,7 @@ img {
 }
 
 img {
-  height: auto;
   max-width: 100%;
-  width: 100%;
 }
 
 input::-webkit-file-upload-button {
@@ -343,4 +341,16 @@ body {
 
 .aboutTxt {
   margin-top: 50px;
+}
+
+.profileContainer {
+  display: flex;
+}
+
+.profileLeft {
+  width: 50%;
+}
+
+.profileRight {
+  width: 50%;
 }

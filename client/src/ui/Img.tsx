@@ -12,8 +12,8 @@ const Img: React.FC<ImgProps> = ({
     className={className?.join(' ')}
     alt={alt}
     aria-label={ariaLabel}
-    width={dimensions[0]}
-    height={dimensions[1]}
+    width={dimensions && dimensions[0]}
+    height={dimensions && dimensions[1]}
   />
 );
 

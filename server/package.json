@@ -1,6 +1,6 @@
 {
   "name": "surveillance_server",
-  "version": "1.0.46",
+  "version": "1.0.47",
   "homepage": "https://localhost:5000",
   "license": "MIT",
   "private": "true",
@@ -9,7 +9,7 @@
     "type": "git",
     "url": "https://github.com/fadihanna123/CameraWebsite/tree/main/server"
   },
-  "lastUpgrade": "20250309",
+  "lastUpgrade": "20250311",
   "author": {
     "name": "Fadi Hanna",
     "email": "fhanna181@gmail.com"
@@ -42,8 +42,8 @@
     "@types/luxon": "3.4.2",
     "@types/node-cron": "3.0.11",
     "@types/validator": "13.12.2",
-    "@typescript-eslint/eslint-plugin": "8.26.0",
-    "@typescript-eslint/parser": "8.26.0",
+    "@typescript-eslint/eslint-plugin": "8.26.1",
+    "@typescript-eslint/parser": "8.26.1",
     "cors": "2.8.5",
     "dotenv": "16.4.7",
     "eslint": "9.22.0",
@@ -52,14 +52,14 @@
     "express-rate-limit": "7.5.0",
     "node-cron": "3.0.3",
     "prettier": "3.5.3",
-    "prisma": "6.4.1",
+    "prisma": "6.5.0",
     "rimraf": "6.0.1",
     "ts-node-dev": "2.0.0",
     "tsconfig-paths": "4.2.0",
     "typescript": "5.8.2"
   },
   "dependencies": {
-    "@prisma/client": "6.4.1",
+    "@prisma/client": "6.5.0",
     "apidoc": "1.2.0",
     "express": "4.21.2",
     "express-fileupload": "1.5.1",
