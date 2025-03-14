@@ -3,6 +3,7 @@ import { Response } from 'express';
 import jwt from 'jsonwebtoken';
 import { apiKey, privateToken, storeError, storeLog } from '@core/utils';
 import { logger } from '@core/tools';
+import bcrypt from 'bcryptjs';
 
 /**
  * Do a login check.
@@ -37,11 +38,12 @@ export const doLogin = async (
         const user = await prisma.users.findFirst({
           where: {
             uname,
-            psw,
           },
         });
 
-        if (!user) {
+        const matchPsw = await bcrypt.compare(psw, user ? user.psw : '');
+
+        if (!matchPsw) {
           storeError(
             'Det finns något fel i ditt användarnamn/lösenord.',
             'POST',

@@ -5,6 +5,7 @@ import { Response } from 'express';
 import { DateTime } from 'luxon';
 import * as path from 'path';
 import validator from 'validator';
+import bcrypt from 'bcryptjs';
 
 /**
  * Registration functionality.
@@ -24,7 +25,10 @@ export const doRegister = async (
   res: Response
 ): Promise<Response<any, Record<string, any>> | undefined> => {
   if (req.get('apiKey') === apiKey) {
-    const { uname, fullname, email, mobnr, psw, repsw } = req.body;
+    const { uname, fullname, email, mobnr } = req.body;
+    const salt = bcrypt.genSaltSync(10);
+    const psw = await bcrypt.hash(req.body.psw, salt);
+    const repsw = await bcrypt.hash(req.body.repsw, salt);
 
     if (!uname || !email || !mobnr || !psw || !repsw) {
       // If the user did not fill in all required fields.
@@ -117,7 +121,6 @@ export const doRegister = async (
                       return logger.error(err);
                     }
 
-                    // eslint-disable-next-line no-console
                     console.log('File Uploaded');
                   });
 
@@ -157,7 +160,6 @@ export const doRegister = async (
                   });
                 }
               } catch (error) {
-                // eslint-disable-next-line no-console
                 console.log(error);
               }
             } // End if the user was not found in the database.

@@ -57,3 +57,6 @@ react-app-env.d.ts
 
 # Uploads
 uploads
+
+# Mac files
+.DS_Store

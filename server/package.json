@@ -1,15 +1,15 @@
 {
   "name": "surveillance_server",
-  "version": "1.0.47",
+  "version": "1.0.48",
   "homepage": "https://localhost:5000",
   "license": "MIT",
   "private": "true",
   "bugs": "https://github.com/fadihanna123/CameraWebsite/issues",
+  "lastUpgrade": "20250311",
   "repository": {
     "type": "git",
     "url": "https://github.com/fadihanna123/CameraWebsite/tree/main/server"
   },
-  "lastUpgrade": "20250311",
   "author": {
     "name": "Fadi Hanna",
     "email": "fhanna181@gmail.com"
