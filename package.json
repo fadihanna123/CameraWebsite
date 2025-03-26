@@ -16,6 +16,6 @@
     "clear": "npx rimraf node_modules && cd server && npx rimraf node_modules && cd .. && cd client && npx rimraf node_modules build"
   },
   "devDependencies": {
-    "vite": "6.2.2"
+    "vite": "6.2.3"
   }
 }
