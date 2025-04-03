@@ -15,7 +15,7 @@ import { sessionStorageKeys } from '@core/utils/constants';
 
 const Start: React.FC = () => {
   const { login, lang } = useReduxConsts();
-  const getUserData = JSON.parse(getStorage(sessionStorageKeys.User) || '{}');
+  const getUserData = JSON.parse(getStorage(sessionStorageKeys.User) ?? '{}');
 
   useTitle('Surveillance systems Inc - Startsida');
 

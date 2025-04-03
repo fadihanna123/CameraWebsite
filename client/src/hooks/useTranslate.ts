@@ -19,8 +19,6 @@ const useTranslate = (val: keyof Translations, lang: string): any => {
     data = require('../translations/sw.json');
   }
 
-  console.log(data);
-
   return data[val];
 };
 

@@ -8,7 +8,7 @@ import Start from './Start';
 import Header from '@inc/Header';
 import Footer from '@inc/Footer';
 
-import Error from './Error';
+import Error from './ErrorPage';
 import Profile from './dashboard/Profile';
 import { Flip, ToastContainer } from 'react-toastify';
 

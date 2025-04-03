@@ -38,7 +38,7 @@ export const doRegister = async (
     myForm.append('mobnr', registerForm.mobnr);
     myForm.append('psw', registerForm.psw);
     myForm.append('repsw', registerForm.repsw);
-    myForm.append('avatar', avatar_file!.files![0]);
+    myForm.append('avatar', avatar_file.files![0]);
 
     await registerUser(myForm)
       .then((res) => {

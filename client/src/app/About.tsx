@@ -1,13 +1,12 @@
-import React from 'react';
+import { FC } from 'react';
 
 // Components
 import useTitle from '@hooks/useTitle';
 import useTranslate from '@hooks/useTranslate';
-import Heading from '@ui/Heading';
-import Para from '@ui/Heading';
+import { Heading, Para } from '@ui/index';
 import useReduxConsts from '@hooks/useReduxConsts';
 
-const About: React.FC = () => {
+const About: FC = () => {
   const { lang } = useReduxConsts();
 
   useTitle('Surveillance systems Inc - Om oss');

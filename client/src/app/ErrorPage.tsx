@@ -12,7 +12,7 @@ import useReduxConsts from '@core/hooks/useReduxConsts';
  * @author Fadi Hanna<fhanna181@gmail.com>
  */
 
-const Error: FC = () => {
+const ErrorPage: FC = () => {
   const { lang } = useReduxConsts();
   useTitle('Surveillance systems Inc - Sidan finns inte');
 
@@ -29,4 +29,4 @@ const Error: FC = () => {
   );
 };
 
-export default Error;
+export default ErrorPage;

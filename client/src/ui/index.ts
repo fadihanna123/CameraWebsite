@@ -1,0 +1,10 @@
+export { default as Btn } from './Btn';
+export { default as FileUploader } from './FileUploader';
+export { default as Heading } from './Heading';
+export { default as Img } from './Img';
+export { default as Input } from './Input';
+export { default as MainFooter } from './MainFooter';
+export { default as MainHeader } from './MainHeader';
+export { default as Menu } from './Menu';
+export { default as Para } from './Para';
+export { default as TxtArea } from './TxtArea';

@@ -20,7 +20,7 @@ const LogOutBox: React.FC = () => {
 
   useEffect(() => {
     const author = JSON.parse(
-      getStorage(sessionStorageKeys.User) || '{}'
+      getStorage(sessionStorageKeys.User) ?? '{}'
     ).uname;
 
     try {

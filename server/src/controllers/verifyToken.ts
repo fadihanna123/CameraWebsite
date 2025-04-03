@@ -8,7 +8,7 @@ export const verifyToken = async (
   next: NextFunction
 ) => {
   const Header = req.headers.authorization;
-  const token = Header && Header.split(' ')?.[1];
+  const token = Header?.split(' ')?.[1];
 
   if (!token) return res.sendStatus(401);
 
