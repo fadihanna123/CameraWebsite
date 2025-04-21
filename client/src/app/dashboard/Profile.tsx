@@ -20,6 +20,7 @@ const Profile: React.FC = () => {
   );
   const email = useTranslate('Email', lang);
   const mobileNumber = useTranslate('Mobile_Number', lang);
+  const loginRequireText = useTranslate('Login_Require_Text', lang);
 
   useTitle('Surveillance systems Inc - Profil');
 
@@ -60,7 +61,7 @@ const Profile: React.FC = () => {
           </div>
         </div>
       ) : (
-        useTranslate('Login_Require_Text', lang)
+        loginRequireText
       )}
     </main>
   );
