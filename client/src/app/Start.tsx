@@ -18,6 +18,8 @@ const Start: React.FC = () => {
   const getUserData = JSON.parse(getStorage(sessionStorageKeys.User) ?? '{}');
 
   useTitle('Surveillance systems Inc - Startsida');
+  const welcome = useTranslate('Welcome', lang);
+  const welcomeText = useTranslate('Welcome_Text', lang);
 
   return (
     <main className='main'>
@@ -30,8 +32,8 @@ const Start: React.FC = () => {
         </Heading>
       ) : (
         <>
-          <Heading>{useTranslate('Welcome', lang)}!</Heading>
-          <Para>{useTranslate('Welcome_Text', lang)}</Para>
+          <Heading>{welcome}!</Heading>
+          <Para>{welcomeText}</Para>
         </>
       )}
     </main>
