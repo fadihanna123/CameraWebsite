@@ -25,7 +25,7 @@ const Start: React.FC = () => {
     <main className='main'>
       {login ? (
         <Heading>
-          <span>{useTranslate('Welcome', lang)} </span>
+          <span>{welcome} </span>
           {getUserData.uname.charAt(0).toUpperCase() +
             getUserData.uname.slice(1)}
           !
