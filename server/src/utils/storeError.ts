@@ -1,6 +1,7 @@
 // @ts-check
 import { prisma } from '@core/db';
 import { DateTime } from 'luxon';
+import crypto from 'crypto';
 
 /**
  * @author Fadi Hanna<fhanna181@gmail.com>
@@ -24,12 +25,11 @@ export const storeError = async (
   const created_at = DateTime.fromJSDate(new Date(), {
     zone: 'Europe/Stockholm',
   }).toFormat('yyyy-MM-dd HH:mm');
-
-  const rnd: number = Math.floor(Math.random() * 1000);
+  const rnd = crypto.randomBytes(1);
 
   await prisma.errors.create({
     data: {
-      errorId: rnd,
+      errorId: Number(rnd),
       method: method ?? '/',
       message,
       located: located ?? '/',

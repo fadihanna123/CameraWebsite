@@ -1,7 +1,7 @@
-FROM node:22.14.0-alpine3.20
+FROM node:22.14.0-alpine
 WORKDIR /backend
 COPY yarn.lock package.json ./
 RUN yarn setup
-COPY . .
+COPY ./ ./
 EXPOSE 5000
 CMD ["yarn", "dev"]
