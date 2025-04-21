@@ -38,10 +38,8 @@ export const checkLogin = async (
 
         dispatch(setLogin(true));
         navigate('/');
-      } else {
-        if (res.message) {
-          toast.error(res.message);
-        }
+      } else if (res.message) {
+        toast.error(res.message);
       }
     });
   } catch (err) {

@@ -13,7 +13,7 @@ export const verifyToken = async (
   if (!token) return res.sendStatus(401);
 
   try {
-    jwt.verify(token, privateToken!);
+    jwt.verify(token, privateToken as string);
 
     next();
   } catch (error) {

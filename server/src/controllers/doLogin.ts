@@ -55,7 +55,7 @@ export const doLogin = async (
           });
         } else {
           // Return accessToken.
-          const accessToken = jwt.sign(userObject, privateToken!);
+          const accessToken = jwt.sign(userObject, privateToken as string);
 
           res.json({
             accessToken,

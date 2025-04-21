@@ -66,7 +66,7 @@ server.use(fileUpload() as any);
 server.use('/api/auth/', authRoutes);
 server.use('/api/users', userRoutes);
 
-export const port = PORT || 5000;
+export const port = PORT ?? 5000;
 
 if (process.env.NODE_ENV !== 'test') {
   // Start the server.

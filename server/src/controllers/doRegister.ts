@@ -110,7 +110,7 @@ export const doRegister = async (
             } else {
               // If the user was not found in the database.
               try {
-                const avatar = (req as any).files?.avatar || '';
+                const avatar = (req as any).files?.avatar ?? '';
 
                 if (avatar) {
                   const UPLOAD_ROOT = path.resolve('./src/uploads');
