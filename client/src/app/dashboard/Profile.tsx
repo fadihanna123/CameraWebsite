@@ -18,6 +18,8 @@ const Profile: React.FC = () => {
   const getUserData: User = JSON.parse(
     getStorage(sessionStorageKeys.User || '{}')!
   );
+  const email = useTranslate('Email', lang);
+  const mobileNumber = useTranslate('Mobile_Number', lang);
 
   useTitle('Surveillance systems Inc - Profil');
 
@@ -36,9 +38,8 @@ const Profile: React.FC = () => {
             />
             <br />
             <b>Username:</b> {getUserData.uname} <br />
-            <b>{useTranslate('Email', lang)}:</b> {getUserData.email} <br />
-            <b>{useTranslate('Mobile_Number', lang)}:</b> {getUserData.mobnr}{' '}
-            <br />
+            <b>{email}:</b> {getUserData.email} <br />
+            <b>{mobileNumber}:</b> {getUserData.mobnr} <br />
           </div>
 
           <div className='profileRight'>
