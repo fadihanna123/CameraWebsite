@@ -1,6 +1,6 @@
 # Camera Website
 
-A full-stack web application for managing and displaying videos as be taken of the camera. This project consists of a React frontend and a Node.js backend, both written in TypeScript.
+A full-stack web application for login and register to manage and displaying videos as be taken of the camera. This project consists of a React frontend and a Node.js backend, both written in TypeScript.
 
 - Modern React frontend with TypeScript
 - Node.js backend with TypeScript
