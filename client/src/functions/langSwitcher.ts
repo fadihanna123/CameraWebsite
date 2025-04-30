@@ -7,7 +7,7 @@ import { sessionStorageKeys } from '@utils/constants';
 import { setStorage } from './storage';
 
 /**
- * @author Fadi Hanna<fhanna181@gmail.com>
+ * @author Fadi Hanna
  */
 
 /**

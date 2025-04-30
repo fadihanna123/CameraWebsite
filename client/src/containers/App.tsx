@@ -9,7 +9,7 @@ import { setLogin } from '@redux/reducers/login';
 import { getStorage, setStorage } from '@core/functions';
 
 /**
- * @author Fadi Hanna<fhanna181@gmail.com>
+ * @author Fadi Hanna
  */
 
 const App: React.FC = () => {

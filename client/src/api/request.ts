@@ -2,7 +2,7 @@ import axios from 'axios';
 import { apiKey, baseURL } from '@utils/envsVariables';
 
 /**
- * @author Fadi Hanna<fhanna181@gmail.com>
+ * @author Fadi Hanna
  */
 
 axios.defaults.baseURL = baseURL;

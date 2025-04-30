@@ -10,7 +10,7 @@ import Heading from '@core/ui/Heading';
 import Img from '@core/ui/Img';
 import DefaultProfilePhoto from '@assets/defaultProfilePhoto.jpg';
 /**
- * @author Fadi Hanna<fhanna181@gmail.com>
+ * @author Fadi Hanna
  */
 
 const Profile: React.FC = () => {

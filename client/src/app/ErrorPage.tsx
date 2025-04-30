@@ -9,7 +9,7 @@ import useTranslate from '@core/hooks/useTranslate';
 import useReduxConsts from '@core/hooks/useReduxConsts';
 
 /**
- * @author Fadi Hanna<fhanna181@gmail.com>
+ * @author Fadi Hanna
  */
 
 const ErrorPage: FC = () => {

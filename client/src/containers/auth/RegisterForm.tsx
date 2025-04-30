@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
 /**
- * @author Fadi Hanna<fhanna181@gmail.com>
+ * @author Fadi Hanna
  */
 
 const RegisterForm: React.FC = () => {

@@ -3,7 +3,7 @@ import { prisma } from 'db';
 import { fileCleaner } from './fileClenaer';
 
 /**
- * @author Fadi Hanna<fhanna181@gmail.com>
+ * @author Fadi Hanna
  */
 
 /**

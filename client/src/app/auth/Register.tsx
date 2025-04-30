@@ -9,7 +9,7 @@ import RegisterForm from '@containers/auth/RegisterForm';
 import useReduxConsts from '@hooks/useReduxConsts';
 
 /**
- * @author Fadi Hanna<fhanna181@gmail.com>
+ * @author Fadi Hanna
  */
 
 const Register: React.FC = () => {

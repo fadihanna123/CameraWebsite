@@ -5,7 +5,7 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from '@redux/app';
 
 /**
- * @author Fadi Hanna<fhanna181@gmail.com>
+ * @author Fadi Hanna
  */
 
 const initialState = '';

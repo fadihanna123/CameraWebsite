@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 /**
- * @author Fadi Hanna<fhanna181@gmail.com>
+ * @author Fadi Hanna
  */
 
 /**

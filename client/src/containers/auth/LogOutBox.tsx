@@ -12,7 +12,7 @@ import useReduxConsts from '@hooks/useReduxConsts';
 import { getStorage } from '@core/functions';
 
 /**
- * @author Fadi Hanna<fhanna181@gmail.com>
+ * @author Fadi Hanna
  */
 
 const LogOutBox: React.FC = () => {

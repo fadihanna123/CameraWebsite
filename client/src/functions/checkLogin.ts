@@ -10,7 +10,7 @@ import { NavigateFunction } from 'react-router-dom';
 import { setStorage } from './storage';
 
 /**
- * @author Fadi Hanna<fhanna181@gmail.com>
+ * @author Fadi Hanna
  */
 
 /**

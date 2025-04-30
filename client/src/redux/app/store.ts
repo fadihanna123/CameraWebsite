@@ -7,7 +7,7 @@ import loadingReducer from '../reducers/loading';
 import loginReducer from '../reducers/login';
 
 /**
- * @author Fadi Hanna<fhanna181@gmail.com>
+ * @author Fadi Hanna
  */
 
 export const store = configureStore({

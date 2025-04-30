@@ -3,7 +3,7 @@ import { loginEndPoint, registerEndPoint } from '@utils/envsVariables';
 import { request } from '@api/request';
 
 /**
- * @author Fadi Hanna<fhanna181@gmail.com>
+ * @author Fadi Hanna
  */
 
 /**

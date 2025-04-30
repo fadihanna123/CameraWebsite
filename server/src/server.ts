@@ -15,7 +15,7 @@ import { rateLimit } from 'express-rate-limit';
 import fileUpload from 'express-fileupload';
 
 /**
- * @author Fadi Hanna<fhanna181@gmail.com>
+ * @author Fadi Hanna
  */
 
 // deepcode ignore UseCsurfForExpress: CSurf package is deprecated.

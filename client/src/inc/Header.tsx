@@ -7,7 +7,7 @@ import NavBar from './components/NavBar';
 import LogoBox from './components/LogoBox';
 
 /**
- * @author Fadi Hanna<fhanna181@gmail.com>
+ * @author Fadi Hanna
  */
 
 const Header: React.FC = () => {

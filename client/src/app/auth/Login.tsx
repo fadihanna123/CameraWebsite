@@ -12,7 +12,7 @@ import { checkLogin } from '@functions/checkLogin';
 import { useForm } from 'react-hook-form';
 
 /**
- * @author Fadi Hanna<fhanna181@gmail.com>
+ * @author Fadi Hanna
  */
 
 const Login: React.FC = () => {
