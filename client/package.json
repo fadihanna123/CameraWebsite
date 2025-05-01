@@ -58,7 +58,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "3.3.1",
     "@eslint/js": "9.23.0",
-    "@reduxjs/toolkit": "2.6.1",
+    "@reduxjs/toolkit": "2.7.0",
     "@storybook/addon-essentials": "8.6.12",
     "@storybook/addon-interactions": "8.6.12",
     "@storybook/addon-links": "8.6.12",
