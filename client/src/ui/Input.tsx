@@ -11,6 +11,8 @@ const Input: React.FC<InputProps> = ({
   placeHolder,
   defaultVal,
   register,
+  style,
+  maxLength,
 }: InputProps) => {
   return (
     <input
@@ -24,6 +26,8 @@ const Input: React.FC<InputProps> = ({
       autoComplete={autoComplete}
       placeholder={placeHolder}
       defaultValue={defaultVal}
+      style={style}
+      maxLength={maxLength}
     />
   );
 };

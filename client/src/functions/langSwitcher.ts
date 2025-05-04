@@ -20,6 +20,7 @@ import { setStorage } from './storage';
  */
 export const langSwitcher = (lang: string, dispatch: Dispatch<any>): void => {
   try {
+    console.log(lang);
     setStorage(sessionStorageKeys.Lang, lang);
 
     dispatch(setLang(lang));

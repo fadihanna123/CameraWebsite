@@ -71,6 +71,8 @@ declare global {
     placeHolder?: string;
     defaultVal?: string;
     register?: UseFormRegister;
+    style?: object;
+    maxLength?: number;
   }
 
   interface BtnProps {

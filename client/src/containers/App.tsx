@@ -19,12 +19,9 @@ const App: React.FC = () => {
   const token = getStorage(sessionStorageKeys.Token);
 
   useEffect(() => {
-    if (lang === '') {
-      dispatch(setLang('en'));
-    }
-
-    if (lang === null || undefined) {
+    if (!lang) {
       setStorage(sessionStorageKeys.Lang, 'en');
+      dispatch(setLang('en'));
     }
 
     dispatch(setLang(lang!));

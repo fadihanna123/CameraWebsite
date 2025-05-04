@@ -11,5 +11,5 @@ export const getStorage = (key: sessionStorageKeys) => {
 };
 
 export const setStorage = (key: string, value: any) => {
-  sessionStorage.setItem(key, JSON.stringify(value));
+  sessionStorage.setItem(key, value);
 };

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // Components
@@ -18,6 +18,7 @@ import { useForm } from 'react-hook-form';
 const Login: React.FC = () => {
   const { lang, login, loading, dispatch } = useReduxConsts();
   const { register, handleSubmit } = useForm<ILoginForm>();
+  const [viewPsw, setViewPsw] = useState<boolean>(false);
   const navigate = useNavigate();
 
   return (
@@ -34,7 +35,7 @@ const Login: React.FC = () => {
             </Heading>
             <section className='loginrow'>
               <section className='logincol'>
-                <label htmlFor='login_uname'>
+                <label htmlFor='login_uname' className='loginLabel'>
                   {useTranslation('Username', lang)}:
                 </label>
               </section>
@@ -51,20 +52,31 @@ const Login: React.FC = () => {
 
             <div className='loginrow'>
               <div className='logincol'>
-                <label htmlFor='login_psw'>
+                <label htmlFor='login_psw' className='loginLabel'>
                   {useTranslation('Password', lang)}:
                 </label>
               </div>
               <div className='logincol'>
-                <Input
-                  name={'psw'}
-                  id='login_psw'
-                  type='password'
-                  className={['txtinput']}
-                  isRequired
-                  autoComplete='on'
-                  register={register}
-                />
+                <div className='pswFieldContainer'>
+                  <Input
+                    name={'psw'}
+                    id='login_psw'
+                    type={viewPsw ? 'text' : 'password'}
+                    className={['txtinput']}
+                    isRequired
+                    autoComplete='on'
+                    register={register}
+                    maxLength={12}
+                  />
+
+                  <span onClick={() => setViewPsw(!viewPsw)}>
+                    {viewPsw ? (
+                      <i className='fa-solid fa-eye-slash'></i>
+                    ) : (
+                      <i className='fa-solid fa-eye'></i>
+                    )}
+                  </span>
+                </div>
               </div>
             </div>
             <Btn className={['btn']} disabled={loading}>

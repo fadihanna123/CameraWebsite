@@ -67,7 +67,7 @@ input::file-selector-button {
 }
 
 .txtinput {
-  width: 100%;
+  width: 150px;
   height: 35px;
 }
 
@@ -207,14 +207,30 @@ label {
 
 .footercol address {
   font-size: 25px;
+  white-space: nowrap;
   transition: 0.3s;
+}
+
+.langSelector {
+  background: #000;
+  color: #fff;
+  margin: 10px;
+  padding: 10px;
+  transition: all 0.3s;
+}
+
+.langSelectorContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .footerlinks {
   display: flex;
   flex-direction: row;
-  font-size: 24px;
+  font-size: 21px;
   padding: 10px;
+  white-space: nowrap;
   transition: all 0.3s;
 }
 
@@ -268,10 +284,23 @@ label {
   transition: 0.3s all;
 }
 
+.pswFieldContainer {
+  display: flex;
+  align-items: center;
+
+  & span {
+    margin-left: -30px;
+  }
+}
+
 .logincol {
   margin-bottom: 15px;
   transition: 0.3s all;
-  width: 50%;
+  width: 55%;
+}
+
+.loginLabel {
+  color: #fff;
 }
 
 .logoutbox {

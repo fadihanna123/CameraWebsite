@@ -32,20 +32,17 @@ const NavBar: React.FC = () => {
         <i className='fa-solid fa-address-card'></i>{' '}
         {useTranslate('About', lang)}
       </Link>
-      <Link
-        to='#'
-        onClick={() => langSwitcher('en', dispatch)}
-        className='link'
-      >
-        <i className='fa-solid fa-language'></i> EN
-      </Link>
-      <Link
-        to='#'
-        onClick={() => langSwitcher('sw', dispatch)}
-        className='link'
-      >
-        <i className='fa-solid fa-language'></i> SV
-      </Link>
+      <div className='langSelectorContainer'>
+        <select
+          value={lang || 'en'}
+          onChange={(e) => langSwitcher(e.target.value, dispatch)}
+          name='langList'
+          className='langSelector'
+        >
+          <option value='en'>EN</option>
+          <option value='sv'>SV</option>
+        </select>
+      </div>
     </Menu>
   );
 };
