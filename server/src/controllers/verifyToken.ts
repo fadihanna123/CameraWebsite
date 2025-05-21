@@ -10,14 +10,16 @@ export const verifyToken = async (
   const Header = req.headers.authorization;
   const token = Header?.split(' ')?.[1];
 
-  if (!token) return res.sendStatus(401);
+  if (!token) {
+    res.sendStatus(401);
+  }
 
   try {
-    jwt.verify(token, privateToken as string);
+    jwt.verify(token!, privateToken as string);
 
     next();
   } catch (error) {
     console.log(error);
-    return res.sendStatus(403);
+    res.sendStatus(403);
   }
 };

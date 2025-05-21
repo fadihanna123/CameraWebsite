@@ -6,8 +6,8 @@ import { getUserById } from '@core/controllers/getUserById';
 const router = Router();
 
 // Get all users
-router.get<Routes>('/', verifyToken, getAllUsers);
+router.get('/', verifyToken, getAllUsers);
 // Get a user data by id
-router.get<Routes>('/:id', verifyToken, getUserById);
+router.get('/:id', verifyToken, getUserById);
 
 export default router;

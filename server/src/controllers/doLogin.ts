@@ -14,13 +14,9 @@ import bcrypt from 'bcryptjs';
  * @route POST /login
  * @param { typedRequestedBody<IUsers> } req
  * @param { Response } res
- * @returns { Promise<Response<any, Record<string, any>> | undefined> } Promise.
  * @example doLogin(req, res);
  */
-export const doLogin = async (
-  req: typedRequestBody<IUsers>,
-  res: Response
-): Promise<Response<any, Record<string, any>> | undefined> => {
+export const doLogin = async (req: typedRequestBody<IUsers>, res: Response) => {
   if (req.get('apiKey') === apiKey) {
     const { uname, psw } = req.body;
 
@@ -73,7 +69,7 @@ export const doLogin = async (
       } catch (err) {
         // If there is any error..
         storeError((err as Error).message, 'POST', '/api/auth/login');
-        return res.status(500).send({ message: (err as Error).message });
+        res.status(500).send({ message: (err as Error).message });
       }
     } // End if the user filled in all boxes.
   } // End if apiKey is found and correct.

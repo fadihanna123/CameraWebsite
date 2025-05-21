@@ -16,14 +16,13 @@ import bcrypt from 'bcryptjs';
  * @param { typedRequestedBody<IUsers> } req
  * @param { Response } res
  * @access Public
- * @returns { Promise<Response<any, Record<string, any>> | undefined> } Promise
  * @example doRegister(req, res);
  */
 // deepcode ignore NoRateLimitingForExpensiveWebOperation: The fix is already there in server.ts.
 export const doRegister = async (
   req: typedRequestBody<IUsers>,
   res: Response
-): Promise<Response<any, Record<string, any>> | undefined> => {
+) => {
   if (req.get('apiKey') === apiKey) {
     const { uname, fullname, email, mobnr } = req.body;
     const salt = bcrypt.genSaltSync(10);
@@ -126,7 +125,7 @@ export const doRegister = async (
 
                   if (!uploadPath.startsWith(UPLOAD_ROOT)) {
                     storeLog('Invalid upload path.', 'POST', '/register');
-                    return res.status(400).send('Invalid upload path.');
+                    res.status(400).send('Invalid upload path.');
                   }
                 }
 
