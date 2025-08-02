@@ -22,6 +22,7 @@
     "start": "node ./build/server.js",
     "dev": "ts-node-dev --poll -r tsconfig-paths/register ./src/server",
     "seed": "prisma db push && prisma db pull && prisma generate",
+    "studio": "prisma studio",
     "seed-delete": "prisma migrate reset",
     "lint": "eslint ./ && tsc --noEmit",
     "format": "prettier -w ./",
