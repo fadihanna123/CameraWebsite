@@ -1,8 +1,8 @@
 {
   "name": "surveillance_website_client",
-  "version": "0.1.66",
+  "version": "0.1.67",
   "type": "module",
-  "lastUpgrade": "20250731",
+  "lastUpgrade": "20250802",
   "author": {
     "name": "Fadi Hanna"
   },
@@ -19,7 +19,7 @@
     "axios": "1.11.0",
     "react": "19.1.1",
     "react-dom": "19.1.1",
-    "react-hook-form": "7.61.1",
+    "react-hook-form": "7.62.0",
     "react-redux": "9.2.0",
     "react-router-dom": "7.7.1",
     "react-scripts": "5.0.1",
