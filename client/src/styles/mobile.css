@@ -104,4 +104,9 @@
   .contactinforow {
     flex-direction: column;
   }
+
+  .langSelector{
+    width: 100%;
+    text-align: center;
+  }
 }
