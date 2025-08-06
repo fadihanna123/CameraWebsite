@@ -1,7 +1,7 @@
 {
   "name": "surveillance_server",
-  "version": "1.0.52",
-  "lastUpgrade": "20250804",
+  "version": "1.0.53",
+  "lastUpgrade": "20250806",
   "homepage": "https://localhost:5000",
   "license": "MIT",
   "private": "true",
@@ -48,7 +48,7 @@
     "dotenv": "17.2.1",
     "eslint": "9.32.0",
     "eslint-config-prettier": "10.1.8",
-    "eslint-plugin-prettier": "5.5.3",
+    "eslint-plugin-prettier": "5.5.4",
     "express-rate-limit": "8.0.1",
     "node-cron": "4.2.1",
     "prettier": "3.6.2",
