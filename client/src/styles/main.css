@@ -300,7 +300,8 @@ label {
 }
 
 .loginLabel {
-  color: #fff;
+  padding-left: 30px;
+  color: #000;
 }
 
 .logoutbox {
