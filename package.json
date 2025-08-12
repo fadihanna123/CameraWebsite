@@ -13,6 +13,7 @@
     "seed": "yarn --cwd ./server seed",
     "fetch-changes": "git fetch && git fetch --prune && git pull",
     "ci": "yarn --cwd ./client build && yarn --cwd ./client test && yarn --cwd ./client lint",
+    "archive": "yarn pack --filename=cameraWebsite-full.zip",
     "clear": "npx rimraf node_modules && cd server && npx rimraf node_modules && cd .. && cd client && npx rimraf node_modules build"
   },
   "devDependencies": {
