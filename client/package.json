@@ -1,8 +1,8 @@
 {
   "name": "surveillance_website_client",
-  "version": "0.1.71",
+  "version": "0.1.72",
   "type": "module",
-  "lastUpgrade": "20250812",
+  "lastUpgrade": "20250814",
   "author": {
     "name": "Fadi Hanna"
   },
@@ -89,7 +89,6 @@
     "stylelint": "16.23.1",
     "stylelint-config-standard": "39.0.0",
     "stylelint-config-standard-scss": "15.0.1",
-    "tailwindcss": "4.1.11",
     "typescript": "5.9.2",
     "vite": "7.1.2",
     "vite-plugin-commonjs": "0.10.4",
