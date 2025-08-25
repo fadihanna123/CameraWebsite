@@ -33,8 +33,7 @@
       "react-router-dom",
       "react-dom",
       "node",
-      "vite/client",
-      "vitest/globals"
+      "vite/client"
     ],
     "strictNullChecks": true,
     "strictBindCallApply": true,
