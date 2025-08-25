@@ -1,5 +1,5 @@
 import { JSX } from 'react';
-import { Meta } from '@storybook/react';
+import { Meta } from '@storybook/react-vite';
 
 // Components
 import FileUploader from '@ui/FileUploader';

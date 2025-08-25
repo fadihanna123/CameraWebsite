@@ -3,6 +3,7 @@
   "Username": "Username",
   "Email": "Email",
   "Password": "Password",
+  "Mobilenumber": "Mobilnumber",
   "repsw": "Confirm password",
   "Logout": "Logout",
   "Register": "Register",
