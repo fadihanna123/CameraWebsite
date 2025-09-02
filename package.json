@@ -6,7 +6,7 @@
   "author": "Fadi Hanna <54924938+fadihanna123@users.noreply.github.com>",
   "license": "MIT",
   "scripts": {
-    "setup": "yarn --silent --ignore-scripts --emoji --immutable && yarn --silent --ignore-scripts --emoji --immutable --cwd ./server && yarn --silent --ignore-scripts --emoji --immutable --cwd ./client",
+    "setup": "yarn --silent --ignore-scripts --emoji --immutable && yarn --cwd ./server --silent --ignore-scripts --emoji --immutable && yarn --cwd ./client --silent --ignore-scripts --emoji --immutable",
     "dev": "npx concurrently \"cd server && yarn dev\" \"cd client && yarn dev\"",
     "format": "yarn --cwd ./server format && yarn --cwd ./client format",
     "lint": "yarn --cwd ./server lint && yarn --cwd ./client lint",

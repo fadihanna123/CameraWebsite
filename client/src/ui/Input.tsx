@@ -13,6 +13,7 @@ const Input: React.FC<InputProps> = ({
   register,
   style,
   maxLength,
+  onKeyDown,
 }: InputProps) => {
   return (
     <input
@@ -28,6 +29,7 @@ const Input: React.FC<InputProps> = ({
       defaultValue={defaultVal}
       style={style}
       maxLength={maxLength}
+      onKeyDown={onKeyDown}
     />
   );
 };

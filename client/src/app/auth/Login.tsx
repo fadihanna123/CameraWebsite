@@ -46,6 +46,15 @@ const Login: React.FC = () => {
                   className={['txtinput']}
                   register={register}
                   isRequired
+                  onKeyDown={(e: KeyboardEvent) => {
+                    if (e.key === 'Enter') {
+                      e.preventDefault();
+                      checkLogin(dispatch, navigate, {
+                        uname: (e.target as HTMLInputElement).value,
+                        psw: (e.target as HTMLInputElement).value,
+                      });
+                    }
+                  }}
                 />
               </section>
             </section>
@@ -67,6 +76,15 @@ const Login: React.FC = () => {
                     autoComplete='on'
                     register={register}
                     maxLength={12}
+                    onKeyDown={(e: KeyboardEvent) => {
+                      if (e.key === 'Enter') {
+                        e.preventDefault();
+                        checkLogin(dispatch, navigate, {
+                          uname: (e.target as HTMLInputElement).value,
+                          psw: (e.target as HTMLInputElement).value,
+                        });
+                      }
+                    }}
                   />
 
                   <span onClick={() => setViewPsw(!viewPsw)}>

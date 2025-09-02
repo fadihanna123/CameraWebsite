@@ -73,6 +73,7 @@ declare global {
     register?: UseFormRegister;
     style?: object;
     maxLength?: number;
+    onKeyDown?: KeyboardEventHandler<HTMLInputElement>;
   }
 
   interface BtnProps {
