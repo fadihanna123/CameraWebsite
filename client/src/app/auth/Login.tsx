@@ -77,6 +77,10 @@ const Login: React.FC = () => {
                     register={register}
                     maxLength={12}
                     onKeyDown={(e: KeyboardEvent) => {
+                      if (e.ctrlKey && e.key === 'k') {
+                        setViewPsw(!viewPsw);
+                      }
+
                       if (e.key === 'Enter') {
                         e.preventDefault();
                         checkLogin(dispatch, navigate, {
