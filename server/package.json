@@ -19,7 +19,6 @@
   },
   "scripts": {
     "setup": "yarn --ignore-scripts --silent --emoji --immutable",
-    "start": "node ./build/server.js",
     "dev": "ts-node-dev --poll -r tsconfig-paths/register ./src/server",
     "seed": "prisma db push && prisma db pull && prisma generate",
     "studio": "prisma studio",
@@ -27,7 +26,6 @@
     "lint": "eslint ./ && tsc --noEmit",
     "format": "prettier -w ./",
     "prebuild": "rimraf build",
-    "build": "esbuild ./src/server.ts --bundle --platform=node --outdir=build --minify --sourcemap --packages=external",
     "clear": "rimraf ./node_modules ./build"
   },
   "prisma": {
