@@ -1,4 +1,5 @@
 // Components
+import { getPageLoading } from '@core/redux/reducers/pageLoading';
 import { useAppDispatch, useAppSelector } from '@redux/app';
 import { getAuthor } from '@redux/reducers/author';
 import { getLang } from '@redux/reducers/lang';
@@ -14,9 +15,11 @@ const useReduxConsts = () => {
 
   const author = useAppSelector(getAuthor);
 
+  const pageLoading = useAppSelector(getPageLoading);
+
   const dispatch = useAppDispatch();
 
-  return { login, lang, loading, author, dispatch };
+  return { login, lang, loading, author, pageLoading, dispatch };
 };
 
 export default useReduxConsts;

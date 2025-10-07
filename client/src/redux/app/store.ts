@@ -5,6 +5,7 @@ import authorReducer from '../reducers/author';
 import langReducer from '../reducers/lang';
 import loadingReducer from '../reducers/loading';
 import loginReducer from '../reducers/login';
+import pageLoadingReducer from '../reducers/pageLoading';
 
 /**
  * @author Fadi Hanna
@@ -16,6 +17,7 @@ export const store = configureStore({
     lang: langReducer,
     author: authorReducer,
     loading: loadingReducer,
+    pageLoading: pageLoadingReducer,
   },
 });
 

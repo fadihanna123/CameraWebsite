@@ -7,18 +7,21 @@ import useReduxConsts from '@hooks/useReduxConsts';
 import { setLang } from '@redux/reducers/lang';
 import { setLogin } from '@redux/reducers/login';
 import { getStorage, setStorage } from '@core/functions';
-
+import { setPageLoading } from '@core/redux/reducers/pageLoading';
+import { ClipLoader } from 'react-spinners';
 /**
  * @author Fadi Hanna
  */
 
 const App: React.FC = () => {
-  const { dispatch } = useReduxConsts();
+  const { pageLoading, dispatch } = useReduxConsts();
 
   const lang = getStorage(sessionStorageKeys.Lang);
   const token = getStorage(sessionStorageKeys.Token);
 
   useEffect(() => {
+    const timeout = setTimeout(() => dispatch(setPageLoading(false)), 1000);
+
     if (!lang) {
       setStorage(sessionStorageKeys.Lang, 'en');
       dispatch(setLang('en'));
@@ -31,7 +34,22 @@ const App: React.FC = () => {
     } else {
       dispatch(setLogin(false));
     }
+    return () => clearTimeout(timeout);
   }, []);
+
+  if (pageLoading) {
+    return (
+      <div className='pageLoading'>
+        <ClipLoader
+          color={'#fff'}
+          loading={pageLoading}
+          size={130}
+          aria-label='Loading Spinner'
+          data-testid='loader'
+        />
+      </div>
+    );
+  }
 
   return <Layout />;
 };
