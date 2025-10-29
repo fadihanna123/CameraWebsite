@@ -27,6 +27,7 @@ services:
 
   api:
     build: ./server
+    image: ${DOCKER_USERNAME}/camera-website-backend:latest
     container_name: camera_website_backend
     ports:
       - 5000:5000
@@ -42,6 +43,7 @@ services:
 
   web:
     build: ./client
+    image: ${DOCKER_USERNAME}/camera-website-frontend:latest
     container_name: camera_website_fronted
     ports:
       - 3000:3000
