@@ -22,7 +22,7 @@
     "lint": "eslint && tsc --noEmit",
     "format": "prettier -w ./",
     "prebuild": "rimraf build",
-    "build": "esbuild ./src/server.ts --minify --bundle --platform=node --outfile=build/server.js",
+    "build": "esbuild ./src/server.ts --minify --bundle --platform=node --packages=external --outfile=build/server.js",
     "start": "node ./build/server.js",
     "clear": "rimraf ./node_modules ./build"
   },
