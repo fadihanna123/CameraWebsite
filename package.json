@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "setup": "yarn --silent --ignore-scripts --emoji --immutable && yarn --cwd ./server --silent --ignore-scripts --emoji --immutable && yarn --cwd ./client --silent --ignore-scripts --emoji --immutable",
+    "build": "yarn --cwd ./server build && yarn --cwd ./client build",
     "dev": "npx concurrently \"cd server && yarn dev\" \"cd client && yarn dev\"",
     "format": "yarn --cwd ./server format && yarn --cwd ./client format",
     "lint": "yarn --cwd ./server lint && yarn --cwd ./client lint",

@@ -6,7 +6,6 @@ A full-stack web application for login and register to manage and displaying vid
 - Node.js backend with TypeScript
 - Docker support for both client and server
 - Storybook for component documentation
-- Comprehensive testing setup
 - ESLint and Prettier for code quality
 - StyleLint for CSS/SCSS styling
 - Continuous Integration workflow
@@ -18,7 +17,6 @@ A full-stack web application for login and register to manage and displaying vid
 - React with TypeScript
 - Vite for build tooling
 - Storybook for component documentation
-- Vitest for testing
 - StyleLint for CSS/SCSS linting
 
 ### Backend
@@ -51,6 +49,7 @@ yarn setup
 3. Set up environment variables:
 
    - Copy `.docker.env.example` to `.docker.env` in both client and server directories
+   - Copy `.env.example` to `.env` in both client and server directories
    - Update the environment variables as needed
 
 4. Start the development servers:
@@ -81,9 +80,7 @@ docker-compose up
 
 The project includes a comprehensive testing setup:
 
-- Frontend tests using Vitest
 - Component testing with Storybook
-- Run tests with: `yarn --cwd ./client test`
 
 ## 📝 Code Quality
 
@@ -100,7 +97,9 @@ This project maintains high code quality standards using:
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Screenshot
-![Screenshot](screenshot.png "Screenshot")
+
+![Screenshot](screenshot.png 'Screenshot')
+
 ## ✍️ Author
 
 Fadi Hanna - [GitHub Profile](https://github.com/fadihanna123)
@@ -115,4 +114,4 @@ Fadi Hanna - [GitHub Profile](https://github.com/fadihanna123)
 
 ## 📦 Version
 
-Current version: 1.0.4
+Current version: 1.0.10

@@ -36,7 +36,7 @@ export const doRegister = async (
         'POST',
         '/register'
       );
-      res.json({
+      res.status(404).json({
         message: 'Du måste fylla i alla obligatoriska rutor!',
         type: 'info',
       });
@@ -49,7 +49,7 @@ export const doRegister = async (
           'POST',
           '/register'
         );
-        res.json({
+        res.status(404).json({
           message: 'Du måste fylla in en korrekt e-postadress!',
           type: 'info',
         });
@@ -66,7 +66,7 @@ export const doRegister = async (
             '/register'
           );
 
-          res.json({
+          res.status(404).json({
             message: 'Du måste välja ett lösenord som är minst 8 tecken!',
             type: 'info',
           });
@@ -80,7 +80,7 @@ export const doRegister = async (
               '/register'
             );
 
-            res.json({
+            res.status(404).json({
               message: 'Ditt lösenord matchar inte det bekräftade lösenordet.',
               type: 'info',
             });
@@ -101,7 +101,7 @@ export const doRegister = async (
                 '/register'
               );
 
-              res.json({
+              res.status(404).json({
                 message:
                   'Du är redan registrerad hos oss. Du kan logga in ovan.',
                 type: 'info',
@@ -120,7 +120,7 @@ export const doRegister = async (
                       return logger.error(err);
                     }
 
-                    console.log('File Uploaded');
+                    storeLog('File Uploaded', 'POST', '/register');
                   });
 
                   if (!uploadPath.startsWith(UPLOAD_ROOT)) {
@@ -152,7 +152,7 @@ export const doRegister = async (
                     'POST',
                     '/register'
                   );
-                  res.send({
+                  res.status(201).send({
                     message:
                       'Tack för registrering. \n Var vänlig och logga in.',
                     type: 'success',
@@ -172,6 +172,6 @@ export const doRegister = async (
 
     logger.error('No headers provided POST /api/auth/register!');
 
-    res.json({ message: 'FORBIDDEN' });
+    res.status(401).json({ message: 'FORBIDDEN' });
   } // End if apiKey is not correct or not found.
 };

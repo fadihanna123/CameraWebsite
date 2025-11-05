@@ -13,23 +13,18 @@
   "author": {
     "name": "Fadi Hanna"
   },
-  "apidoc": {
-    "name": "CameraWebsite Docs",
-    "url": "https://localhost:5000"
-  },
   "scripts": {
     "setup": "yarn --ignore-scripts --silent --emoji --immutable",
     "dev": "ts-node-dev --poll -r tsconfig-paths/register ./src/server",
     "seed": "prisma db push && prisma db pull && prisma generate",
     "studio": "prisma studio",
     "seed-delete": "prisma migrate reset",
-    "lint": "eslint ./ && tsc --noEmit",
+    "lint": "eslint && tsc --noEmit",
     "format": "prettier -w ./",
     "prebuild": "rimraf build",
+    "build": "esbuild ./src/server.ts --minify --bundle --platform=node --outfile=build/server.js --format=esm",
+    "start": "node ./build/server.js",
     "clear": "rimraf ./node_modules ./build"
-  },
-  "prisma": {
-    "schema": "src/prisma/schema.prisma"
   },
   "devDependencies": {
     "@types/cors": "2.8.19",
@@ -58,7 +53,6 @@
   },
   "dependencies": {
     "@prisma/client": "6.17.0",
-    "apidoc": "1.2.0",
     "bcryptjs": "^3.0.2",
     "express": "5.1.0",
     "express-fileupload": "1.5.2",

@@ -22,7 +22,7 @@ export const getAllUsers = async (
   if (req.get('apiKey') === apiKey) {
     try {
       const getData = await prisma.users.findMany();
-      res.json(getData);
+      res.status(200).json(getData);
     } catch (err) {
       // If there is any error..
       storeError((err as Error).message, 'POST', '/api/users/');
@@ -34,6 +34,6 @@ export const getAllUsers = async (
 
     logger.error('No headers provided GET /api/users/!');
 
-    res.json({ message: 'FORBIDDEN' });
+    res.status(401).json({ message: 'FORBIDDEN' });
   } // End if apiKey is not correct or not found.
 };

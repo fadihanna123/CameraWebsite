@@ -25,6 +25,8 @@ export const doRegister = async (
   navigate: NavigateFunction,
   registerFormRef: Ref<HTMLFormElement>
 ): Promise<void> => {
+  if (!registerForm) return;
+
   try {
     dispatch(setLoading(true));
     const avatar_file = document.getElementById(

@@ -20,6 +20,7 @@ export const getUserById = async (
 ) => {
   if (req.get('apiKey') === apiKey) {
     const { id } = req.params;
+
     try {
       const getUser = await prisma.users.findUnique({
         where: {
@@ -28,9 +29,9 @@ export const getUserById = async (
       });
 
       if (getUser) {
-        res.json(getUser);
+        res.status(200).json(getUser);
       } else {
-        res.json({ message: 'User not found' });
+        res.status(404).json({ message: 'User not found' });
       }
     } catch (err) {
       // If there is any error..
@@ -43,6 +44,6 @@ export const getUserById = async (
 
     logger.error('No headers provided GET /api/users/:id!');
 
-    res.json({ message: 'FORBIDDEN' });
+    res.status(401).json({ message: 'FORBIDDEN' });
   } // End if apiKey is not correct or not found.
 };

@@ -27,7 +27,7 @@ export const doLogin = async (req: typedRequestBody<IUsers>, res: Response) => {
     if (!uname || !psw) {
       // If the user did not fill in all the boxes.
       storeLog('Du måste fylla i alla rutor!', 'POST', '/login');
-      res.json({ message: 'Du måste fylla i alla rutor!' });
+      res.status(404).json({ message: 'Du måste fylla i alla rutor!' });
     } else {
       // If the user filled in all the boxes.
       try {
@@ -46,14 +46,14 @@ export const doLogin = async (req: typedRequestBody<IUsers>, res: Response) => {
             '/api/auth/login'
           );
 
-          res.json({
+          res.status(404).json({
             message: 'Det finns något fel i ditt användarnamn/lösenord.',
           });
         } else {
           // Return accessToken.
           const accessToken = jwt.sign(userObject, privateToken as string);
 
-          res.json({
+          res.status(200).json({
             accessToken,
             user: {
               uname,
@@ -78,6 +78,6 @@ export const doLogin = async (req: typedRequestBody<IUsers>, res: Response) => {
 
     logger.error('No headers provided POST /api/auth/login!');
 
-    res.json({ message: 'FORBIDDEN' });
+    res.status(401).json({ message: 'FORBIDDEN' });
   } // End if apiKey is not correct or not found.
 };

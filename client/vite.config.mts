@@ -18,6 +18,9 @@ export default defineConfig({
     open: false,
     host: true,
   },
+  build: {
+    outDir: 'build',
+  },
   base: '/',
   plugins: [react(), commonjs(), tsconfigPaths()],
 });

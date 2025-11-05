@@ -1,24 +1,24 @@
 services:
   db:
     image: mysql:lts-oraclelinux9
-    container_name: camera_website_db
-    restart: "no"
+    container_name: ${DATABASE_NAME}
+    restart: 'unless-stopped'
     ports:
       - 3306:3306
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: camera_website_db
-      MYSQL_PASSWORD: "0000"
-      MYSQL_USER: fadi
+      MYSQL_ROOT_PASSWORD: ${DATABASE_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DATABASE_NAME}
+      MYSQL_PASSWORD: ${DATABASE_PASSWORD}
+      MYSQL_USER: ${DATABASE_USERNAME}
     volumes:
-      - camera_website_db-data:/var/lib/mysql
+      - ${DATABASE_NAME}-data:/var/lib/mysql
 
   db_admin:
     image: phpmyadmin
     container_name: camera_website_db_admin
     ports:
       - 8080:80
-    restart: "no"
+    restart: 'unless-stopped'
     environment:
       PMA_HOST: db
       MYSQL_ROOT_PASSWORD: root
@@ -37,7 +37,7 @@ services:
     volumes:
       - ./server:/backend
       - /backend/node_modules
-    restart: "no"
+    restart: 'unless-stopped'
     links:
       - db
 
@@ -52,7 +52,7 @@ services:
     volumes:
       - ./client:/frontend
       - /frontend/node_modules
-    restart: "no"
+    restart: 'unless-stopped'
     links:
       - api
 

@@ -10,10 +10,13 @@ declare global {
      * @param { string } Token
      */
     interface ProcessEnv {
-      PORT: number;
+      DEV_PORT: number;
+      PROD_PORT: number;
+      ALLOWEDOMAINS: string;
+      APIKEY: string;
+      TOKEN: string;
       DATABASE_URL: string;
       NODE_ENV: 'development' | 'production' | 'test';
-      Token: string;
     }
   }
 

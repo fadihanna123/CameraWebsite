@@ -8,7 +8,7 @@ datasource db {
 }
 
 model users {
-  id         Int     @id @default(autoincrement())
+  id         Int       @id @default(autoincrement())
   uname      String
   fullname   String
   email      String?
@@ -16,22 +16,22 @@ model users {
   psw        String
   locked     Int?
   avatar     String?
-  created_at String?
+  created_at DateTime?
 }
 
 model logs {
-  id         Int     @id @default(autoincrement())
+  id         Int      @id @default(autoincrement())
   method     String
   message    String?
   located    String
-  created_at String
+  created_at DateTime @default(now())
 }
 
 model errors {
-  id         Int     @id @default(autoincrement())
+  id         Int      @id @default(autoincrement())
   errorId    Int
   method     String
   message    String?
   located    String
-  created_at String
+  created_at DateTime @default(now())
 }

@@ -3,9 +3,12 @@ import enTranslations from '@core/translations/en.json';
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
-      REACT_APP_BACKEND_URL: string;
-      REACT_APP_LOGIN_API: string;
-      REACT_APP_REGISTER_API: string;
+      VITE_BACKEND_URL: string;
+      VITE_LOGIN_API: string;
+      VITE_REGISTER_API: string;
+      VITE_API_KEY: string;
+      WATCHPACK_POLLING: boolean;
+      GENERATE_SOURCEMAP: boolean;
       NODE_ENV: 'development' | 'production';
     }
   }

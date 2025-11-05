@@ -7,12 +7,14 @@ import userRoutes from '@core/api/users/routes';
 import { listenFn } from '@core/controllers';
 import express, { Application } from 'express';
 import helmet from 'helmet';
+import { Request, Response } from 'express';
 import { logger } from '@core/tools';
 import { storeLog, allowedURLs } from '@core/utils';
 import { connectDb } from '@core/db';
 import cors, { CorsOptions } from 'cors';
 import { rateLimit } from 'express-rate-limit';
 import fileUpload from 'express-fileupload';
+import { errorHandler } from './utils/errorHandler';
 
 /**
  * @author Fadi Hanna
@@ -55,7 +57,7 @@ server.use(rateLimit(limiter));
 // Handle connection to database.
 connectDb();
 // Parse JSON bodies (as send by API clients) and add 1 kb limit to sending json.
-server.use(express.json({ type: 'application/json', limit: '1kb' }));
+server.use(express.json({ type: 'application/json', limit: '10mb' }));
 // Parse URL-encoded bodies (as sent by HTML forms)
 server.use(express.urlencoded({ extended: true }));
 // Add security to the server.
@@ -65,6 +67,12 @@ server.use(fileUpload() as any);
 // Use routes.
 server.use('/api/auth/', authRoutes);
 server.use('/api/users', userRoutes);
+server.use((req: Request, res: Response) => {
+  res.status(404).json({ error: 'Not Found' });
+});
+
+// Handle errors
+server.use(errorHandler);
 
 export const port = PORT ?? 5000;
 
