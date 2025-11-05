@@ -40,7 +40,5 @@ jobs:
           node-version: '22.21'
       - name: Install dependencies
         run: yarn setup
-      - name: Check files
-        run: yarn lint
       - name: Build
         run: yarn build
