@@ -22,7 +22,7 @@
     "lint": "eslint && tsc --noEmit",
     "format": "prettier -w ./",
     "prebuild": "rimraf build",
-    "build": "esbuild ./src/server.ts --minify --bundle --platform=node --outfile=build/server.js --format=esm",
+    "build": "esbuild ./src/server.ts --minify --bundle --platform=node --outfile=build/server.js",
     "start": "node ./build/server.js",
     "clear": "rimraf ./node_modules ./build"
   },
@@ -39,6 +39,7 @@
     "@typescript-eslint/parser": "8.46.0",
     "cors": "2.8.5",
     "dotenv": "17.2.3",
+    "esbuild": "^0.25.12",
     "eslint": "9.37.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.4",
