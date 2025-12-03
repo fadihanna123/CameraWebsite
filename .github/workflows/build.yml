@@ -3,9 +3,9 @@ name: Build
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ['main']
+    branches: ["main"]
   pull_request:
-    branches: ['main']
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -37,8 +37,12 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '22.21'
+          node-version: "22.21"
       - name: Install dependencies
         run: yarn setup
+
+      - name: Create Certificates
+        run: npm i -g mkcert && mkcert -install && cd client && mkdir -p .cert && mkcert -key-file ./.cert/key.pem -cert-file ./.cert/cert.pem 'localhost'
+
       - name: Build
         run: yarn build
