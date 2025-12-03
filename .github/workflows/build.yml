@@ -40,9 +40,3 @@ jobs:
           node-version: "22.21"
       - name: Install dependencies
         run: yarn setup
-
-      - name: Create Certificates
-        run: npm i -g mkcert && cd client && mkdir -p .cert && mkcert -key-file ./.cert/key.pem -cert-file ./.cert/cert.pem 'localhost'
-
-      - name: Build
-        run: yarn build
