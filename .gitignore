@@ -60,3 +60,6 @@ uploads
 
 # Mac files
 .DS_Store
+
+# Certificates
+.cert
