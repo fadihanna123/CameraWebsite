@@ -1,9 +1,9 @@
-import { prisma } from '@core/db';
 import { Response } from 'express';
 import jwt from 'jsonwebtoken';
 import { apiKey, privateToken, storeError, storeLog } from '@core/utils';
 import { logger } from '@core/tools';
 import bcrypt from 'bcryptjs';
+import { connection } from '@core/db';
 
 /**
  * Do a login check.
@@ -31,11 +31,16 @@ export const doLogin = async (req: typedRequestBody<IUsers>, res: Response) => {
     } else {
       // If the user filled in all the boxes.
       try {
-        const user = await prisma.users.findFirst({
-          where: {
-            uname,
-          },
-        });
+        let user: any;
+        connection.query(
+          'SELECT * FROM users WHERE uname = ?',
+          [uname],
+          (err, results) => {
+            user = results;
+          }
+        );
+
+        console.log(user);
 
         const matchPsw = await bcrypt.compare(psw, user ? user.psw : '');
 

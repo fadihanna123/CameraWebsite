@@ -1,5 +1,5 @@
 // @ts-check
-import { prisma } from '@core/db';
+import { connection } from '@core/db';
 
 /**
  * @author Fadi Hanna
@@ -20,11 +20,7 @@ export const storeLog = async (
   method: string = '/',
   located: string = '/'
 ): Promise<void> => {
-  await prisma.logs.create({
-    data: {
-      message,
-      method: method,
-      located: located,
-    },
-  });
+  connection.query(
+    `INSERT INTO logs (message, method, located) VALUES ('${message}', '${method}', '${located}')`
+  );
 };

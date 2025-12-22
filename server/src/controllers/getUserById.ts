@@ -1,7 +1,7 @@
-import { prisma } from '@core/db';
 import { Response } from 'express';
 import { apiKey, storeError } from '@core/utils';
 import { logger } from '@core/tools';
+import { connection } from '@core/db';
 
 /**
  * Get a users by id.
@@ -22,11 +22,14 @@ export const getUserById = async (
     const { id } = req.params;
 
     try {
-      const getUser = await prisma.users.findUnique({
-        where: {
-          id: Number(id),
-        },
-      });
+      let getUser;
+      connection.query(
+        'SELECT * FROM users WHERE id = ?',
+        [id],
+        (err, results) => {
+          getUser = results;
+        }
+      );
 
       if (getUser) {
         res.status(200).json(getUser);

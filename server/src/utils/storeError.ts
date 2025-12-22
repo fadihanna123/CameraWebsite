@@ -1,5 +1,5 @@
 // @ts-check
-import { prisma } from '@core/db';
+import { connection } from '@core/db';
 import { DateTime } from 'luxon';
 import crypto from 'crypto';
 
@@ -27,13 +27,7 @@ export const storeError = async (
   }).toFormat('yyyy-MM-dd HH:mm');
   const rnd = crypto.randomBytes(1);
 
-  await prisma.errors.create({
-    data: {
-      errorId: Number(rnd),
-      method: method ?? '/',
-      message,
-      located: located ?? '/',
-      created_at,
-    },
-  });
+  connection.query(
+    `INSERT INTO errors (errorId, method, message, located, created_at) VALUES (${Number(rnd)}, '${method ?? '/'}, '${message}', '${located ?? '/'}, '${created_at}')`
+  );
 };

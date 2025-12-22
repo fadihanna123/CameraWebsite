@@ -1,4 +1,4 @@
-import { prisma } from 'db';
+import { connection } from 'db';
 
 import { fileCleaner } from './fileClenaer';
 
@@ -14,7 +14,7 @@ import { fileCleaner } from './fileClenaer';
  * @example logsRemover();
  */
 export const logsRemover = async (): Promise<void> => {
-  await prisma.logs.deleteMany();
-  await prisma.errors.deleteMany();
+  await connection.query('DELETE FROM logs');
+  await connection.query('DELETE FROM errors');
   fileCleaner();
 };

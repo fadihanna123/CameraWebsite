@@ -1,11 +1,11 @@
 import { logger } from '@core/tools';
 import { apiKey, storeError, storeLog } from '@core/utils';
-import { prisma } from 'db';
 import { Response } from 'express';
 import { DateTime } from 'luxon';
 import * as path from 'path';
 import validator from 'validator';
 import bcrypt from 'bcryptjs';
+import { connection } from '@core/db';
 
 /**
  * Registration functionality.
@@ -86,14 +86,16 @@ export const doRegister = async (
             });
           } else {
             // If the password and confirm password fields match each other.
-            const findUser = await prisma.users.count({
-              where: {
-                uname,
-                email,
-              },
-            });
+            let findUser;
+            connection.query(
+              'SELECT * FROM users WHERE uname = ? AND email = ?',
+              [uname, email],
+              (err, results) => {
+                findUser = results;
+              }
+            );
 
-            if (findUser !== 0) {
+            if (findUser!.length !== 0) {
               // If the user was found in the database.
               storeLog(
                 'Du är redan registrerad hos oss. Du kan logga in ovan.',
@@ -133,18 +135,23 @@ export const doRegister = async (
                   zone: 'Europe/Stockholm',
                 }).toFormat('yyyy-MM-dd HH:mm');
 
-                const userModel = await prisma.users.create({
-                  data: {
+                let userModel;
+                connection.query(
+                  'INSERT INTO users (uname, email, fullname, psw, mobnr, locked, avatar, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+                  [
                     uname,
                     email,
                     fullname,
                     psw,
                     mobnr,
-                    locked: 0,
-                    avatar: avatar.name,
+                    0,
+                    avatar.name,
                     created_at,
-                  },
-                });
+                  ],
+                  (err, results) => {
+                    userModel = results;
+                  }
+                );
 
                 if (userModel) {
                   storeLog(

@@ -1,7 +1,7 @@
-import { prisma } from '@core/db';
 import { Response } from 'express';
 import { apiKey, storeError } from '@core/utils';
 import { logger } from '@core/tools';
+import { connection } from '@core/db';
 
 /**
  * Get all users.
@@ -21,7 +21,11 @@ export const getAllUsers = async (
 ) => {
   if (req.get('apiKey') === apiKey) {
     try {
-      const getData = await prisma.users.findMany();
+      let getData;
+      connection.query('SELECT * FROM users', (err, results) => {
+        getData = results;
+      });
+
       res.status(200).json(getData);
     } catch (err) {
       // If there is any error..

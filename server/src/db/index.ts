@@ -1,12 +1,21 @@
-import { PrismaClient } from '@prisma/client';
 import { logger } from '@core/tools';
 import { storeError, storeLog } from '@core/utils';
+import mysql from 'mysql2';
 
 /**
  * @author Fadi Hanna
  */
 
-const prisma = new PrismaClient();
+const { DATABASE_HOST, DATABASE_USERNAME, DATABASE_PSW, DATABASE_NAME } =
+  process.env;
+
+// Create the connection to database
+export const connection = mysql.createConnection({
+  host: DATABASE_HOST,
+  user: DATABASE_USERNAME,
+  password: DATABASE_PSW,
+  database: DATABASE_NAME,
+});
 
 /**
  * Connect the database and check if it success.
@@ -15,15 +24,25 @@ const prisma = new PrismaClient();
  * @returns { Promise<void> } A promise
  * @example connectDb();
  */
-const connectDb = async (): Promise<void> => {
-  try {
-    await prisma.$connect();
-    logger.info('Database is connnected');
-    storeLog('Database is connnected');
-  } catch (error) {
-    logger.error('Database has error', error.message);
-    storeError(`Database has error ${error.message}`);
-  }
-};
+export const connectDb = async (): Promise<void> => {
+  return new Promise((resolve, reject) => {
+    // Check if already connected
+    if (connection.state === 'connected') {
+      logger.info('Already connected to database');
+      return resolve();
+    }
+    // Test the connection
+    connection.ping((err) => {
+      if (err) {
+        const errorMsg = `Database connection failed: ${err.message}`;
+        logger.error(errorMsg);
+        storeError(errorMsg);
+        return reject(err);
+      }
 
-export { connectDb, prisma };
+      logger.info('Successfully connected to database');
+      storeLog('Successfully connected to database');
+      resolve();
+    });
+  });
+};
