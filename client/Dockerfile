@@ -1,4 +1,4 @@
-FROM node:22.20-alpine
+FROM node:24.12-alpine
 WORKDIR /frontend
 RUN npm i -g --ignore-scripts --silent --emoji serve
 COPY yarn.lock package.json ./

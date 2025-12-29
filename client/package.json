@@ -1,8 +1,8 @@
 {
   "name": "surveillance_website_client",
-  "version": "0.1.77",
+  "version": "0.1.78",
   "type": "module",
-  "lastUpgrade": "20251222",
+  "lastUpgrade": "20251229",
   "author": {
     "name": "Fadi Hanna"
   },
@@ -72,8 +72,8 @@
     "@types/node": "25.0.3",
     "@types/react": "19.2.7",
     "@types/react-router-dom": "5.3.3",
-    "@typescript-eslint/eslint-plugin": "8.50.0",
-    "@typescript-eslint/parser": "8.50.0",
+    "@typescript-eslint/eslint-plugin": "8.50.1",
+    "@typescript-eslint/parser": "8.50.1",
     "@vitejs/plugin-react": "5.1.2",
     "eslint": "9.39.2",
     "eslint-config-prettier": "10.1.8",
