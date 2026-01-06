@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 
 // Components
 import useTitle from '@hooks/useTitle';
@@ -12,7 +12,7 @@ import useReduxConsts from '@hooks/useReduxConsts';
  * @author Fadi Hanna
  */
 
-const Register: React.FC = () => {
+const Register: FC = () => {
   const { login, lang } = useReduxConsts();
 
   useTitle('Surveillance systems Inc - Registrera dig');

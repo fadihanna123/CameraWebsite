@@ -6,7 +6,7 @@
       "type": "shell",
       "command": "yarn --silent --ignore-scripts --production --emoji",
       "options": {
-        "cwd": "server"
+        "cwd": "./server"
       },
       "presentation": {
         "reveal": "silent",
@@ -18,7 +18,7 @@
       "type": "shell",
       "command": "yarn --silent --ignore-scripts --production --emoji",
       "options": {
-        "cwd": "client"
+        "cwd": "./client"
       },
       "presentation": {
         "reveal": "silent",
@@ -30,7 +30,7 @@
       "type": "shell",
       "command": "rimraf node_modules",
       "options": {
-        "cwd": "server"
+        "cwd": "./server"
       },
       "presentation": {
         "reveal": "silent",
@@ -40,9 +40,9 @@
     {
       "label": "Remove Dependencies - Client",
       "type": "shell",
-      "command": "rimraf node_modules",
+      "command": "rimraf ./node_modules ./build",
       "options": {
-        "cwd": "client"
+        "cwd": "./client"
       },
       "presentation": {
         "reveal": "silent",

@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 
 // Components
 import useTitle from '@hooks/useTitle';
@@ -13,14 +13,15 @@ import DefaultProfilePhoto from '@assets/defaultProfilePhoto.jpg';
  * @author Fadi Hanna
  */
 
-const Profile: React.FC = () => {
+const Profile: FC = () => {
   const { login, lang } = useReduxConsts();
   const getUserData: User = JSON.parse(
     getStorage(sessionStorageKeys.User || '{}')!
   );
-  const email = useTranslate('Email', lang);
-  const mobileNumber = useTranslate('Mobile_Number', lang);
-  const loginRequireText = useTranslate('Login_Require_Text', lang);
+
+  const email: string = useTranslate('Email', lang);
+  const mobileNumber: string = useTranslate('Mobile_Number', lang);
+  const loginRequireText: string = useTranslate('Login_Require_Text', lang);
 
   useTitle('Surveillance systems Inc - Profil');
 

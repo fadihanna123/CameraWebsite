@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { FC, useState } from 'react';
+import { NavigateFunction, useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 
 // Components
 import useTranslation from '@hooks/useTranslate';
@@ -9,17 +10,16 @@ import Input from '@ui/Input';
 import LogOutBox from '@containers/auth/LogOutBox';
 import useReduxConsts from '@hooks/useReduxConsts';
 import { checkLogin } from '@functions/checkLogin';
-import { useForm } from 'react-hook-form';
 
 /**
  * @author Fadi Hanna
  */
 
-const Login: React.FC = () => {
+const Login: FC = () => {
   const { lang, login, loading, dispatch } = useReduxConsts();
   const { register, handleSubmit } = useForm<ILoginForm>();
   const [viewPsw, setViewPsw] = useState<boolean>(false);
-  const navigate = useNavigate();
+  const navigate: NavigateFunction = useNavigate();
 
   return (
     <>
@@ -49,6 +49,7 @@ const Login: React.FC = () => {
                   onKeyDown={(e: KeyboardEvent) => {
                     if (e.key === 'Enter') {
                       e.preventDefault();
+
                       checkLogin(dispatch, navigate, {
                         uname: (e.target as HTMLInputElement).value,
                         psw: (e.target as HTMLInputElement).value,
