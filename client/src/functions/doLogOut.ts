@@ -3,7 +3,7 @@ import { Dispatch } from 'redux';
 
 // Components
 import { setLogin } from '@redux/reducers/login';
-import { sessionStorageKeys } from '@utils/constants';
+import { localStorageKeys } from '@utils/constants';
 
 /**
  * @author Fadi Hanna
@@ -19,9 +19,9 @@ import { sessionStorageKeys } from '@utils/constants';
  */
 export const doLogOut = (dispatch: Dispatch<any>): void => {
   try {
-    sessionStorage.removeItem(sessionStorageKeys.Token);
+    localStorage.removeItem(localStorageKeys.Token);
 
-    sessionStorage.removeItem(sessionStorageKeys.User);
+    localStorage.removeItem(localStorageKeys.User);
 
     dispatch(setLogin(false));
 

@@ -1,9 +1,9 @@
 /**
- * sessionStorageKeys
+ * localStorageKeys
  * @enum { string }
- * @example sessionStorageKeys.Lang
+ * @example localStorageKeys.Lang
  */
-export enum sessionStorageKeys {
+export enum localStorageKeys {
   Lang = 'lang',
   User = 'user',
   Token = 'token',

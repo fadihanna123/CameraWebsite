@@ -7,7 +7,7 @@ import useTranslation from '@hooks/useTranslate';
 import { setAuthor } from '@redux/reducers/author';
 import Btn from '@ui/Btn';
 import Heading from '@ui/Heading';
-import { sessionStorageKeys } from '@utils/constants';
+import { localStorageKeys } from '@utils/constants';
 import useReduxConsts from '@hooks/useReduxConsts';
 import { getStorage } from '@core/functions';
 
@@ -19,9 +19,7 @@ const LogOutBox: React.FC = () => {
   const { author, loading, lang, dispatch } = useReduxConsts();
 
   useEffect(() => {
-    const author = JSON.parse(
-      getStorage(sessionStorageKeys.User) ?? '{}'
-    ).uname;
+    const author = JSON.parse(getStorage(localStorageKeys.User) ?? '{}').uname;
 
     try {
       setAuthor(author);

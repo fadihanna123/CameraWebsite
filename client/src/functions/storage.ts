@@ -1,7 +1,7 @@
-import { sessionStorageKeys } from '@core/utils';
+import { localStorageKeys } from '@core/utils';
 
-export const getStorage = (key: sessionStorageKeys) => {
-  const data = sessionStorage.getItem(key);
+export const getStorage = (key: localStorageKeys) => {
+  const data = localStorage.getItem(key);
 
   if (data) {
     return data;
@@ -10,6 +10,6 @@ export const getStorage = (key: sessionStorageKeys) => {
   return null;
 };
 
-export const setStorage = (key: string, value: any) => {
-  sessionStorage.setItem(key, value);
+export const setStorage = (key: localStorageKeys, value: any) => {
+  localStorage.setItem(key, value);
 };

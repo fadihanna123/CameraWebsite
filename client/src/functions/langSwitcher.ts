@@ -3,7 +3,7 @@ import { Dispatch } from 'redux';
 
 // Components
 import { setLang } from '@redux/reducers/lang';
-import { sessionStorageKeys } from '@utils/constants';
+import { localStorageKeys } from '@utils/constants';
 import { setStorage } from './storage';
 
 /**
@@ -20,7 +20,7 @@ import { setStorage } from './storage';
  */
 export const langSwitcher = (lang: string, dispatch: Dispatch<any>): void => {
   try {
-    setStorage(sessionStorageKeys.Lang, lang);
+    setStorage(localStorageKeys.Lang, lang);
 
     dispatch(setLang(lang));
   } catch (err) {

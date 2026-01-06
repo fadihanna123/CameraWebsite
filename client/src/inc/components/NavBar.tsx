@@ -40,7 +40,7 @@ const NavBar: React.FC = () => {
           className='langSelector'
         >
           <option value='en'>EN</option>
-          <option value='sv'>SV</option>
+          <option value='sw'>SV</option>
         </select>
       </div>
     </Menu>

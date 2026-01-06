@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 // Components
 import Layout from '@app/Layout';
-import { sessionStorageKeys } from '@utils/constants';
+import { localStorageKeys } from '@utils/constants';
 import useReduxConsts from '@hooks/useReduxConsts';
 import { setLang } from '@redux/reducers/lang';
 import { setLogin } from '@redux/reducers/login';
@@ -16,14 +16,14 @@ import { ClipLoader } from 'react-spinners';
 const App: React.FC = () => {
   const { pageLoading, dispatch } = useReduxConsts();
 
-  const lang = getStorage(sessionStorageKeys.Lang);
-  const token = getStorage(sessionStorageKeys.Token);
+  const lang = getStorage(localStorageKeys.Lang);
+  const token = getStorage(localStorageKeys.Token);
 
   useEffect(() => {
     const timeout = setTimeout(() => dispatch(setPageLoading(false)), 1000);
 
     if (!lang) {
-      setStorage(sessionStorageKeys.Lang, 'en');
+      setStorage(localStorageKeys.Lang, 'en');
       dispatch(setLang('en'));
     }
 

@@ -5,7 +5,7 @@ import useTitle from '@hooks/useTitle';
 import useReduxConsts from '@hooks/useReduxConsts';
 import useTranslate from '@core/hooks/useTranslate';
 import { getStorage } from '@core/functions';
-import { sessionStorageKeys } from '@core/utils';
+import { localStorageKeys } from '@core/utils/constants';
 import Heading from '@core/ui/Heading';
 import Img from '@core/ui/Img';
 import DefaultProfilePhoto from '@assets/defaultProfilePhoto.jpg';
@@ -16,7 +16,7 @@ import DefaultProfilePhoto from '@assets/defaultProfilePhoto.jpg';
 const Profile: FC = () => {
   const { login, lang } = useReduxConsts();
   const getUserData: User = JSON.parse(
-    getStorage(sessionStorageKeys.User || '{}')!
+    getStorage(localStorageKeys.User || '{}')!
   );
 
   const email: string = useTranslate('Email', lang);

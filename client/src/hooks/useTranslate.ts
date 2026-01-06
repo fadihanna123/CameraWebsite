@@ -13,11 +13,11 @@
 const useTranslate = (val: keyof Translations, lang: string): any => {
   let data;
 
-  if (lang === 'en') {
-    data = require('../translations/en.json');
-  } else {
-    data = require(`../translations/${lang}.json`);
+  if (!lang) {
+    lang = 'en';
   }
+
+  data = require(`../translations/${lang}.json`);
 
   return data[val];
 };

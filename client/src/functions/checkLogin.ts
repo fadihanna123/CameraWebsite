@@ -2,7 +2,7 @@ import { toast } from 'react-toastify';
 import { Dispatch } from 'redux';
 
 // Components
-import { sessionStorageKeys } from '@utils/constants';
+import { localStorageKeys } from '@utils/constants';
 import { loginUser } from './apiStore';
 import { setLogin } from '@redux/reducers/login';
 import { setLoading } from '@redux/reducers/loading';
@@ -32,9 +32,9 @@ export const checkLogin = async (
   try {
     await loginUser(loginForm).then((res) => {
       if (res.accessToken) {
-        setStorage(sessionStorageKeys.User, res.user);
+        setStorage(localStorageKeys.User, res.user);
 
-        setStorage(sessionStorageKeys.Token, res.accessToken);
+        setStorage(localStorageKeys.Token, res.accessToken);
 
         dispatch(setLogin(true));
         navigate('/');
