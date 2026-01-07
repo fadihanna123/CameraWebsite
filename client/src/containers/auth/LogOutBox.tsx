@@ -19,7 +19,9 @@ const LogOutBox: React.FC = () => {
   const { author, loading, lang, dispatch } = useReduxConsts();
 
   useEffect(() => {
-    const author = JSON.parse(getStorage(localStorageKeys.User) ?? '{}').uname;
+    const author: string = JSON.parse(
+      getStorage(localStorageKeys.User) ?? '{}'
+    ).uname;
 
     try {
       setAuthor(author);

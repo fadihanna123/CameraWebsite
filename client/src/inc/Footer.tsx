@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 
 // Components
 import MainFooter from '@ui/MainFooter';
@@ -9,7 +9,7 @@ import FooterLinks from './components/FooterLinks';
  * @author Fadi Hanna
  */
 
-const Footer: React.FC = () => {
+const Footer: FC = () => {
   return (
     <MainFooter classNames={['footerbox']}>
       <section className='footerrow'>

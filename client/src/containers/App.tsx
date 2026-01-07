@@ -20,7 +20,10 @@ const App: React.FC = () => {
   const token = getStorage(localStorageKeys.Token);
 
   useEffect(() => {
-    const timeout = setTimeout(() => dispatch(setPageLoading(false)), 1000);
+    const timeout: NodeJS.Timeout = setTimeout(
+      () => dispatch(setPageLoading(false)),
+      1000
+    );
 
     if (!lang) {
       setStorage(localStorageKeys.Lang, 'en');

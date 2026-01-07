@@ -56,7 +56,10 @@ export const doLogin = async (req: typedRequestBody<IUsers>, res: Response) => {
           });
         } else {
           // Return accessToken.
-          const accessToken = jwt.sign(userObject, privateToken as string);
+          const accessToken: string = jwt.sign(
+            userObject,
+            privateToken as string
+          );
 
           res.status(200).json({
             accessToken,
@@ -71,7 +74,7 @@ export const doLogin = async (req: typedRequestBody<IUsers>, res: Response) => {
             },
           });
         }
-      } catch (err) {
+      } catch (err: Error | unknown) {
         // If there is any error..
         storeError((err as Error).message, 'POST', '/api/auth/login');
         res.status(500).send({ message: (err as Error).message });

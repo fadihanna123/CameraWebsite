@@ -25,9 +25,9 @@ export const doRegister = async (
 ) => {
   if (req.get('apiKey') === apiKey) {
     const { uname, fullname, email, mobnr } = req.body;
-    const salt = bcrypt.genSaltSync(10);
-    const psw = await bcrypt.hash(req.body.psw, salt);
-    const repsw = await bcrypt.hash(req.body.repsw, salt);
+    const salt: string = bcrypt.genSaltSync(10);
+    const psw: string = await bcrypt.hash(req.body.psw, salt);
+    const repsw: string = await bcrypt.hash(req.body.repsw, salt);
 
     if (!uname || !email || !mobnr || !psw || !repsw) {
       // If the user did not fill in all required fields.
@@ -49,6 +49,7 @@ export const doRegister = async (
           'POST',
           '/register'
         );
+
         res.status(404).json({
           message: 'Du måste fylla in en korrekt e-postadress!',
           type: 'info',
@@ -131,7 +132,7 @@ export const doRegister = async (
                   }
                 }
 
-                const created_at = DateTime.fromJSDate(new Date(), {
+                const created_at: string = DateTime.fromJSDate(new Date(), {
                   zone: 'Europe/Stockholm',
                 }).toFormat('yyyy-MM-dd HH:mm');
 

@@ -9,12 +9,11 @@ import { fileCleaner } from './fileClenaer';
 /**
  * Clean log and error data in the database and call fileCleaner.
  * @function logsRemover
- * @async
- * @returns { Promise<void> }
+ * @returns { void }
  * @example logsRemover();
  */
-export const logsRemover = async (): Promise<void> => {
-  await connection.query('DELETE FROM logs');
-  await connection.query('DELETE FROM errors');
+export const logsRemover = (): void => {
+  connection.query('DELETE FROM logs');
+  connection.query('DELETE FROM errors');
   fileCleaner();
 };

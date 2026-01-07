@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { FC, RefObject, useRef } from 'react';
 
 // Components
 import useTranslation from '@hooks/useTranslate';
@@ -7,18 +7,18 @@ import FileUploader from '@ui/FileUploader';
 import Input from '@ui/Input';
 import useReduxConsts from '@hooks/useReduxConsts';
 import { doRegister } from '@core/functions/doRegister';
-import { useNavigate } from 'react-router-dom';
+import { NavigateFunction, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
 /**
  * @author Fadi Hanna
  */
 
-const RegisterForm: React.FC = () => {
+const RegisterForm: FC = () => {
   const { lang, loading, dispatch } = useReduxConsts();
   const { register, handleSubmit } = useForm<IRegisterForm>();
-  const navigate = useNavigate();
-  const registerFormRef = useRef(null);
+  const navigate: NavigateFunction = useNavigate();
+  const registerFormRef: RefObject<HTMLFormElement | null> = useRef(null);
 
   return (
     <form

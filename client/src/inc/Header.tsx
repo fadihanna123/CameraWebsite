@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 
 // Components
 import Login from '@app/auth/Login';
@@ -10,7 +10,7 @@ import LogoBox from './components/LogoBox';
  * @author Fadi Hanna
  */
 
-const Header: React.FC = () => {
+const Header: FC = () => {
   return (
     <MainHeader>
       <nav className='topbar'>

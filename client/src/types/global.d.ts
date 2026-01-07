@@ -1,4 +1,6 @@
 import { UseFormRegister } from 'react-hook-form';
+
+// Translations
 import enTranslations from '@core/translations/en.json';
 declare global {
   namespace NodeJS {
@@ -9,7 +11,7 @@ declare global {
       VITE_API_KEY: string;
       WATCHPACK_POLLING: boolean;
       GENERATE_SOURCEMAP: boolean;
-      NODE_ENV: 'development' | 'production';
+      NODE_ENV: 'development' | 'production' | 'test';
     }
   }
 
